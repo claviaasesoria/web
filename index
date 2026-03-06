@@ -573,7 +573,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="sobre-avatar">J</div>
         <h2>Una persona real<br>al otro lado</h2>
         <p class="sobre-tagline">Clavia es un despacho independiente de gestión y contabilidad. Trabajo de forma directa con cada cliente, sin grandes estructuras ni intermediarios.</p>
-        <div class="sobre-firma">Juan Zanza</div>
+        <div class="sobre-firma">JZ</div>
         <div class="sobre-cargo">Gestor administrativo · Fundador de Clavia</div>
       </div>
       <div class="sobre-texto rv" style="transition-delay:.15s">
