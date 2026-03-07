@@ -36,8 +36,9 @@ body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
 @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes orb-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
-.rv.on{opacity:1;transform:translateY(0)}
+.rv{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease}
+.js-ready .rv{opacity:0;transform:translateY(20px)}
+.js-ready .rv.on{opacity:1;transform:translateY(0)}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 0;transition:all .3s;border-bottom:1px solid transparent}
 nav.stuck{background:rgba(253,240,232,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
 .nav-row{display:flex;align-items:center;justify-content:space-between}
@@ -255,19 +256,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .cnt-ico{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px}
 .cnt-txt strong{display:block;font-size:14px;color:rgba(255,255,255,.8);font-weight:600;margin-bottom:2px}
 .cnt-txt span{font-size:13px;color:rgba(255,255,255,.35)}
-.form-box{background:var(--cream);border-radius:var(--rr);padding:36px;position:relative;z-index:1}
-.form-title{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:22px}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fg{margin-bottom:14px}
-.fl{display:block;font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--grey);margin-bottom:6px}
-.fi,.fsel,.fta{width:100%;padding:11px 14px;background:var(--cream);border:1.5px solid var(--line);border-radius:var(--r);font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
-.fi::placeholder,.fta::placeholder{color:var(--grey2)}
-.fi:focus,.fsel:focus,.fta:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(232,83,42,.08);background:#fff}
-.fta{resize:vertical;min-height:88px}
-.fsel{appearance:none;cursor:pointer;background:#fff}
-.fsub{width:100%;padding:14px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(232,83,42,.25);margin-top:4px}
-.fsub:hover{background:var(--coral2);transform:translateY(-1px)}
-.fnote{text-align:center;font-size:12px;color:var(--grey2);margin-top:10px}
+.tally-box{position:relative;z-index:1;background:var(--cream);border-radius:var(--rr);padding:8px 8px 0;overflow:hidden}
+.tally-box iframe{display:block;width:100%;min-height:520px}
 @media(max-width:960px){
   .hero-layout,.why-layout,.sobre-layout,.faq-layout,.contact-layout,.erp-layout{grid-template-columns:1fr;gap:48px}
   .hero-card{max-width:440px}.steps-row{grid-template-columns:1fr 1fr}
@@ -573,7 +563,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="sobre-avatar">J</div>
         <h2>Una persona real<br>al otro lado</h2>
         <p class="sobre-tagline">Clavia es un despacho independiente de gestión y contabilidad. Trabajo de forma directa con cada cliente, sin grandes estructuras ni intermediarios.</p>
-        <div class="sobre-firma">JZ</div>
+        <div class="sobre-firma">Juan Zanza</div>
         <div class="sobre-cargo">Gestor administrativo · Fundador de Clavia</div>
       </div>
       <div class="sobre-texto rv" style="transition-delay:.15s">
@@ -630,23 +620,9 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <div class="cnt-feat"><div class="cnt-ico">🎁</div><div class="cnt-txt"><strong>Primer mes completamente gratis</strong><span>Sin tarjeta de crédito ni compromiso</span></div></div>
           <div class="cnt-feat"><div class="cnt-ico">🔄</div><div class="cnt-txt"><strong>Onboarding guiado</strong><span>Te explicamos cada paso del apoderamiento en la AEAT</span></div></div>
         </div>
-       <iframe data-tally-src="https://tally.so/embed/WOo5KN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="727" frameborder="0" marginheight="0" marginwidth="0" title="Clavia · Algo de información"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-            </div>
-            <div class="fg">
-              <label class="fl">¿Tienes gestoría ahora?</label>
-              <select name="gestoria" class="fsel">
-                <option value="">Selecciona...</option>
-                <option>No, llevo yo solo mi contabilidad</option>
-                <option>Sí, quiero cambiarme</option>
-                <option>Soy nuevo autónomo, me doy de alta ahora</option>
-              </select>
-            </div>
-            <div class="fg"><label class="fl">Cuéntanos tu situación (opcional)</label><textarea name="mensaje" class="fta" placeholder="Cualquier detalle que nos ayude a preparar tu propuesta..."></textarea></div>
-            <input type="hidden" name="_subject" value="Nueva consulta — Clavia">
-            <button type="submit" class="fsub">Solicitar consulta gratuita →</button>
-            <p class="fnote">Te respondemos en menos de 24h · Sin compromiso · Primer mes gratis</p>
-          </form>
+        <div class="tally-box rv" style="transition-delay:.15s">
+          <iframe data-tally-src="https://tally.so/embed/WOo5KN?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="727" frameborder="0" marginheight="0" marginwidth="0" title="Clavia · Consulta gratuita"></iframe>
+          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
         </div>
       </div>
     </div>
@@ -662,7 +638,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <span class="flogo-d"></span>
         </a>
         <p class="ftag">Gestoría online para autónomos, creativos y emprendedores digitales.</p>
-        <p class="ftag" style="margin-top:8px;font-size:11px;opacity:.5">NIF: — · hola@clavia.es<br>Nàquera, Valencia</p>
+        <p class="ftag" style="margin-top:8px;font-size:11px;opacity:.5">NIF: — · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f3730333e1f3c333e29363e713a2c">[email&#160;protected]</a><br>Nàquera, Valencia</p>
       </div>
       <div>
         <div class="fh">Servicios</div>
@@ -710,13 +686,14 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     <button class="cb-accept" onclick="acceptCookies()">Aceptar</button>
   </div>
 </div>
-<script>function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}
+<script>
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}
 function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 window.addEventListener('scroll',()=>{const n=document.getElementById('nav');if(n)n.classList.toggle('stuck',window.scrollY>40)});
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
 function doFaq(btn){const row=btn.closest('.frow');const was=row.classList.contains('open');document.querySelectorAll('.frow.open').forEach(r=>r.classList.remove('open'));if(!was)row.classList.add('open')}
+document.documentElement.classList.add('js-ready');
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));</script>
-</body>
-</html>
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
