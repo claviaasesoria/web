@@ -258,6 +258,11 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .cnt-txt span{font-size:13px;color:rgba(255,255,255,.35)}
 .tally-box{position:relative;z-index:1;background:var(--cream);border-radius:var(--rr);padding:8px 8px 0;overflow:hidden}
 .tally-box iframe{display:block;width:100%;min-height:520px}
+.form-box{background:var(--cream);border-radius:var(--rr);padding:36px;position:relative;z-index:1}
+.form-title{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:16px}
+.fsub{width:100%;padding:15px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(232,83,42,.25);cursor:pointer}
+.fsub:hover{background:var(--coral2);transform:translateY(-1px)}
+.fnote{text-align:center;font-size:12px;color:var(--grey2);margin-top:10px}
 @media(max-width:960px){
   .hero-layout,.why-layout,.sobre-layout,.faq-layout,.contact-layout,.erp-layout{grid-template-columns:1fr;gap:48px}
   .hero-card{max-width:440px}.steps-row{grid-template-columns:1fr 1fr}
@@ -620,9 +625,27 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <div class="cnt-feat"><div class="cnt-ico">🎁</div><div class="cnt-txt"><strong>Primer mes completamente gratis</strong><span>Sin tarjeta de crédito ni compromiso</span></div></div>
           <div class="cnt-feat"><div class="cnt-ico">🔄</div><div class="cnt-txt"><strong>Onboarding guiado</strong><span>Te explicamos cada paso del apoderamiento en la AEAT</span></div></div>
         </div>
-        <div class="tally-box rv" style="transition-delay:.15s">
-          <iframe data-tally-src="https://tally.so/embed/WOo5KN?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="727" frameborder="0" marginheight="0" marginwidth="0" title="Clavia · Consulta gratuita"></iframe>
-          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        <div class="form-box rv" style="transition-delay:.15s">
+          <div class="form-title">Solicitar consulta gratuita</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin-bottom:28px">Cuéntanos tu situación en un formulario rápido de 5 preguntas. Te respondemos con una propuesta personalizada en menos de 24 horas.</p>
+          <a href="https://tally.so/r/WOo5KN" target="_blank" rel="noopener" class="fsub" style="display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none">
+            Abrir formulario de consulta →
+          </a>
+          <p class="fnote">Se abre en una página nueva · Sin compromiso · Primer mes gratis</p>
+          <div style="margin-top:28px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px">
+            <div class="cnt-feat" style="gap:12px">
+              <div style="width:32px;height:32px;border-radius:7px;background:var(--coral-lo);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px">⏱️</div>
+              <div><strong style="display:block;font-size:13px;color:var(--ink);margin-bottom:2px">Solo 5 preguntas</strong><span style="font-size:12px;color:var(--grey)">Menos de 2 minutos</span></div>
+            </div>
+            <div class="cnt-feat" style="gap:12px">
+              <div style="width:32px;height:32px;border-radius:7px;background:var(--coral-lo);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px">📬</div>
+              <div><strong style="display:block;font-size:13px;color:var(--ink);margin-bottom:2px">Respuesta en menos de 24h</strong><span style="font-size:12px;color:var(--grey)">Con propuesta personalizada</span></div>
+            </div>
+            <div class="cnt-feat" style="gap:12px">
+              <div style="width:32px;height:32px;border-radius:7px;background:var(--coral-lo);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px">🎁</div>
+              <div><strong style="display:block;font-size:13px;color:var(--ink);margin-bottom:2px">Primer mes completamente gratis</strong><span style="font-size:12px;color:var(--grey)">Sin tarjeta de crédito</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
