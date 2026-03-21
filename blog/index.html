@@ -110,10 +110,14 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .nl-btn{background:var(--coral);color:#fff;border:none;padding:12px 22px;border-radius:var(--r);font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-hero{padding:100px 20px 60px}.blog-wrap{padding:48px 20px 80px}.nl-form{flex-direction:column}}
+nav.nav-dark:not(.stuck) .logo-text{color:#fff}
+nav.nav-dark:not(.stuck) .nav-links a{color:rgba(255,255,255,.65)}
+nav.nav-dark:not(.stuck) .nav-links a:hover{color:#fff}
+nav.nav-dark:not(.stuck) .ham span{background:#fff}
 </style>
 </head>
 <body>
-<nav id="nav">
+<nav id="nav" class="nav-dark">
   <div class="wrap">
     <div class="nav-row">
       <a href="../index.html" class="logo">
