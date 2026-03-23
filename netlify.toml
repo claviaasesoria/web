@@ -6,6 +6,11 @@
   to = "/especialidades/musicos-artistas.html"
   status = 301
 
+[[redirects]]
+  from = "/especialidades/"
+  to = "/especialidades/musicos-artistas.html"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
