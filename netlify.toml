@@ -5,11 +5,13 @@
   from = "/especialidades"
   to = "/especialidades/musicos-artistas.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/especialidades/"
   to = "/especialidades/musicos-artistas.html"
   status = 301
+  force = true
 
 [[headers]]
   for = "/*"
