@@ -8,9 +8,9 @@
 <meta name="description" content="Aviso legal de Clavia. Información sobre el titular del sitio web y condiciones de uso.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root {
   --cream:#fdf0e8; --cream2:#f5e2d0; --cream3:#e8cdb4;
@@ -207,7 +207,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff!important}
 <script>function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}
 function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
-window.addEventListener('scroll',()=>{const n=document.getElementById('nav');if(n)n.classList.toggle('stuck',window.scrollY>40)});
+(()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
 function doFaq(btn){const row=btn.closest('.frow');const was=row.classList.contains('open');document.querySelectorAll('.frow.open').forEach(r=>r.classList.remove('open'));if(!was)row.classList.add('open')}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:.12});
