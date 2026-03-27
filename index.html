@@ -279,6 +279,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   .fbot{flex-direction:column;text-align:center}.orb{width:400px;height:400px;top:-60px;right:-100px}
 }
 </style>
+<script>if(localStorage.getItem('clavia_consent')==='accepted'){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}</script>
 </head>
 <body>
 <nav id="nav">
@@ -732,7 +733,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   </div>
 </div>
 <script>
-function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');if(!window.gtag){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}}
 function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();

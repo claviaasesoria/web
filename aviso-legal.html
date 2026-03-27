@@ -96,6 +96,7 @@ nav.nav-dark:not(.stuck) .nav-links a{color:rgba(255,255,255,.7)!important}
 nav.nav-dark:not(.stuck) .nav-links a:hover{color:#fff!important}
 nav.nav-dark:not(.stuck) .ham span{background:#fff!important}
 </style>
+<script>if(localStorage.getItem('clavia_consent')==='accepted'){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}</script>
 </head>
 <body>
 <nav id="nav" class="nav-dark">
@@ -228,7 +229,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff!important}
     <button class="cb-accept" onclick="acceptCookies()">Aceptar</button>
   </div>
 </div>
-<script>function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}
+<script>function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');if(!window.gtag){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}}
 function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
