@@ -77,7 +77,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .cookie-banner a{color:var(--coral)}
 .cookie-btns{display:flex;gap:10px;flex-shrink:0}
 .cb-accept{background:var(--coral);color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:1px}
-.cb-reject{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);padding:9px 16px;border-radius:5px;cursor:pointer;font-family:var(--mono);font-size:11px}
+.cb-reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.4);padding:9px 16px;border-radius:5px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
 .eyebrow::before{content:'';width:20px;height:1.5px;background:var(--sage)}
 .legal-hero{background:var(--forest);padding:110px 40px 60px;text-align:center}
@@ -128,25 +128,79 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff!important}
 </div>
 <div class="legal-hero">
   <h1>Política de Cookies</h1>
-  <p>Última actualización: enero 2025</p>
+  <p>Última actualización: marzo 2026</p>
 </div>
 <div class="legal-body">
 <h2>1. ¿Qué son las cookies?</h2>
-<p>Las cookies son pequeños archivos de texto que los sitios web guardan en tu navegador cuando los visitas. Nos permiten recordar tus preferencias y mejorar la experiencia de navegación.</p>
+<p>Las cookies son pequeños archivos de texto que los sitios web almacenan en tu navegador cuando los visitas. Permiten recordar preferencias, analizar el uso del sitio y mejorar la experiencia de navegación.</p>
+<p>Este sitio web utiliza únicamente cookies técnicas propias y cookies analíticas de terceros (Google Analytics). No utilizamos cookies de publicidad ni de seguimiento entre sitios.</p>
+
 <h2>2. Cookies que utilizamos</h2>
-<p><strong>Cookies técnicas (necesarias):</strong> imprescindibles para el funcionamiento del sitio. Guardan tus preferencias de cookies. No requieren consentimiento.</p>
-<p><strong>Cookies analíticas:</strong> nos permiten entender cómo se usa el sitio web para mejorarlo. Solo se activan con tu consentimiento. Utilizamos Google Analytics de forma anonimizada.</p>
-<h2>3. Cómo gestionar las cookies</h2>
-<p>Puedes gestionar tus preferencias de cookies en cualquier momento desde el aviso que aparece al pie de página. También puedes configurar tu navegador para bloquear todas las cookies, aunque esto puede afectar al funcionamiento del sitio.</p>
+<p>A continuación se detalla cada cookie instalada por este sitio, conforme a lo exigido por la Guía de Cookies de la Agencia Española de Protección de Datos (AEPD, 2023):</p>
+
+<style>
+.cookie-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:13.5px}
+.cookie-table th{background:var(--forest);color:#fff;padding:10px 12px;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:1px;font-weight:400}
+.cookie-table td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--grey);vertical-align:top;line-height:1.5}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table td strong{color:var(--forest)}
+</style>
+
+<p><strong>Cookies técnicas (no requieren consentimiento)</strong> — Base jurídica: art. 22.2 LSSI, interés legítimo del prestador.</p>
+<table class="cookie-table">
+  <tr>
+    <th>Nombre</th><th>Proveedor</th><th>Finalidad</th><th>Duración</th><th>Tipo</th>
+  </tr>
+  <tr>
+    <td><strong>clavia_consent</strong></td>
+    <td>Clavia (propia)</td>
+    <td>Almacena la preferencia de consentimiento de cookies del usuario (aceptado / solo necesarias)</td>
+    <td>1 año</td>
+    <td>Propia</td>
+  </tr>
+</table>
+
+<p><strong>Cookies analíticas (requieren consentimiento)</strong> — Base jurídica: art. 6.1.a RGPD, consentimiento del usuario.</p>
+<table class="cookie-table">
+  <tr>
+    <th>Nombre</th><th>Proveedor</th><th>Finalidad</th><th>Duración</th><th>Tipo</th>
+  </tr>
+  <tr>
+    <td><strong>_ga</strong></td>
+    <td>Google LLC</td>
+    <td>Distingue usuarios únicos en Google Analytics. Genera un identificador anónimo.</td>
+    <td>2 años</td>
+    <td>Tercero</td>
+  </tr>
+  <tr>
+    <td><strong>_ga_XXXXXXXX</strong></td>
+    <td>Google LLC</td>
+    <td>Mantiene el estado de sesión de Google Analytics 4</td>
+    <td>2 años</td>
+    <td>Tercero</td>
+  </tr>
+</table>
+<p>Las cookies analíticas solo se instalan si el usuario acepta expresamente en el aviso de cookies. Si seleccionas "Solo necesarias", Google Analytics no se carga ni deposita ninguna cookie en tu navegador.</p>
+
+<h2>3. Transferencias internacionales de datos</h2>
+<p>Google Analytics (GA4) transfiere datos a <strong>Google LLC</strong>, con sede en Estados Unidos. Esta transferencia está amparada por la <strong>Decisión de adecuación de la Comisión Europea sobre el Marco de Privacidad de Datos UE-EE.UU.</strong> (Data Privacy Framework, julio 2023), que garantiza un nivel de protección equivalente al europeo.</p>
+<p>Puedes consultar la certificación de Google en el DPF en <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener">dataprivacyframework.gov</a> y su política de privacidad completa en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+<h2>4. Cómo gestionar tus preferencias</h2>
+<p>Puedes cambiar tu elección en cualquier momento. Para ello, borra las cookies de tu navegador y vuelve a acceder a clavia.es — el aviso de consentimiento aparecerá de nuevo.</p>
+<p>También puedes configurar tu navegador para bloquear o eliminar cookies directamente:</p>
 <ul>
-  <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
-  <li><strong>Firefox:</strong> Preferencias → Privacidad y seguridad</li>
-  <li><strong>Safari:</strong> Preferencias → Privacidad</li>
+  <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+  <li><strong>Firefox:</strong> Preferencias → Privacidad y seguridad → Cookies y datos del sitio</li>
+  <li><strong>Safari:</strong> Ajustes → Privacidad → Gestionar datos del sitio web</li>
+  <li><strong>Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies</li>
 </ul>
-<h2>4. Cookies de terceros</h2>
-<p>Este sitio puede incluir funcionalidades de terceros (Google Analytics) que establecen sus propias cookies. Consulta sus políticas de privacidad para más información.</p>
-<h2>5. Más información</h2>
-<p>Para cualquier duda sobre nuestra política de cookies, puedes contactarnos en <strong>info@clavia.es</strong>.</p>
+<p>Ten en cuenta que bloquear todas las cookies puede afectar al funcionamiento de algunos sitios web.</p>
+<p>Adicionalmente, puedes desactivar el seguimiento de Google Analytics en todos los sitios mediante el complemento oficial: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+<h2>5. Derechos y contacto</h2>
+<p>En relación con las cookies que implican tratamiento de datos personales, puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación escribiendo a <a href="mailto:info@clavia.es">info@clavia.es</a>. Para más información, consulta nuestra <a href="privacidad.html">Política de privacidad</a>.</p>
+<p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, puedes presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>.</p>
 </div>
 <footer>
   <div class="wrap">
@@ -189,7 +243,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff!important}
       </div>
     </div>
     <div class="fbot">
-      <div class="fcp">© 2025 Clavia · clavia.es · Gestoría online para autónomos</div>
+      <div class="fcp">© 2026 Clavia · clavia.es · Gestoría online para autónomos</div>
       <div class="fleg">
         <a href="privacidad.html">Política de privacidad</a>
         <a href="aviso-legal.html">Aviso legal</a>
