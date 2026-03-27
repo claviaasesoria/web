@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bienvenido/a a Clavia · Tu guía de inicio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --ink:#1C1410; --ink2:#3D2E26;
+  --coral:#E8532A; --coral-l:#FDF0EB; --coral-m:#F5C4B0;
+  --sage:#2D6A4F; --sage-l:#EAF4EF; --sage-m:#A8D4BC;
+  --cream:#FAF7F2; --cream2:#F3EDE4;
+  --grey:#7A6A60; --grey-l:#F5F0EB; --grey-m:#DDD5CC;
+  --blue:#2563EB; --blue-l:#EFF6FF;
+  --gold:#B45309; --gold-l:#FFFBEB;
+  --border:#E8DDD5;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --r:10px; --r-sm:6px;
+  --sh:0 2px 12px rgba(28,20,16,.06), 0 1px 3px rgba(28,20,16,.04);
+  --sh-lg:0 8px 32px rgba(28,20,16,.1), 0 2px 8px rgba(28,20,16,.06);
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);font-family:var(--sans);color:var(--ink);line-height:1.6;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ── Layout ────────────────────────────────────────────────────────────── */
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.section{padding:64px 0}
+.section + .section{padding-top:0}
+
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+.hero{background:var(--ink);position:relative;overflow:hidden;padding:0}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-circle1{position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:var(--coral);opacity:.12}
+.hero-circle2{position:absolute;bottom:-80px;left:-40px;width:240px;height:240px;border-radius:50%;background:var(--sage);opacity:.1}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+.hero-inner{position:relative;z-index:1;padding:52px 24px 56px;max-width:720px;margin:0 auto}
+.hero-logo{display:flex;align-items:baseline;gap:2px;margin-bottom:32px}
+.hero-logo-text{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;letter-spacing:-.5px}
+.hero-logo-dot{width:6px;height:6px;background:var(--coral);border-radius:50%;margin-bottom:10px}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.5px;text-transform:uppercase;font-weight:500;margin-bottom:20px}
+.hero-tag-dot{width:6px;height:6px;background:var(--sage-m);border-radius:50%;flex-shrink:0}
+.hero-h1{font-family:var(--serif);font-size:clamp(36px,6vw,54px);font-weight:300;color:#fff;line-height:1.08;margin-bottom:8px;letter-spacing:-.5px}
+.hero-h1 em{font-style:italic;color:var(--coral)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;max-width:480px;margin-bottom:36px;font-weight:300}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px}
+.hero-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 14px;font-size:13px;color:rgba(255,255,255,.75);font-weight:400}
+.hero-pill-ico{font-size:15px}
+.hero-pill strong{color:#fff;font-weight:600}
+.hero-scroll{margin-top:44px;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.3);font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+.hero-scroll-line{width:32px;height:1px;background:rgba(255,255,255,.2)}
+
+/* ── Steps nav ─────────────────────────────────────────────────────────── */
+.steps-nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.steps-nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;max-width:720px;margin:0 auto}
+.steps-nav-inner::-webkit-scrollbar{display:none}
+.nav-item{display:flex;align-items:center;gap:8px;padding:14px 18px;font-size:12.5px;font-weight:500;color:var(--grey);border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0}
+.nav-item:hover{color:var(--ink)}
+.nav-item.active{color:var(--coral);border-bottom-color:var(--coral)}
+.nav-num{width:20px;height:20px;border-radius:50%;background:var(--grey-l);color:var(--grey);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.nav-item.active .nav-num{background:var(--coral);color:#fff}
+
+/* ── Section header ─────────────────────────────────────────────────────── */
+.sec-header{margin-bottom:32px}
+.sec-num{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+.sec-num-badge{width:22px;height:22px;background:var(--coral);color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec-h2{font-family:var(--serif);font-size:clamp(26px,4vw,34px);font-weight:400;line-height:1.15;color:var(--ink);letter-spacing:-.3px;margin-bottom:8px}
+.sec-h2 em{font-style:italic;color:var(--coral)}
+.sec-lead{font-size:15px;color:var(--grey);line-height:1.75;max-width:560px;font-weight:300}
+
+/* ── Step cards ─────────────────────────────────────────────────────────── */
+.steps-grid{display:flex;flex-direction:column;gap:3px;margin-bottom:32px}
+.step-card{display:flex;gap:16px;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;transition:all .2s;cursor:default}
+.step-card:hover{border-color:var(--coral-m);box-shadow:var(--sh)}
+.step-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.step-num{width:32px;height:32px;background:var(--coral);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-line{width:1px;flex:1;background:var(--border);margin:6px 0}
+.step-card:last-child .step-line{display:none}
+.step-emoji{font-size:22px;margin-top:2px}
+.step-body{flex:1}
+.step-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.4}
+.step-desc{font-size:13.5px;color:var(--grey);line-height:1.65}
+.step-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.3px;margin-bottom:6px}
+.t-day5{background:rgba(45,106,79,.12);color:var(--sage)}
+.t-trimestral{background:rgba(232,83,42,.12);color:var(--coral)}
+.t-siempre{background:rgba(37,99,235,.1);color:var(--blue)}
+
+/* ── Calendar strip ─────────────────────────────────────────────────────── */
+.calendar{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:32px}
+.calendar-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.cal-months{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.cal-month{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cal-label{font-size:9px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:5px 0;border-radius:4px;width:100%;text-align:center;transition:all .2s}
+.cal-label.normal{background:var(--grey-l);color:var(--grey)}
+.cal-label.quarter{background:var(--coral);color:#fff}
+.cal-label.renta{background:var(--sage);color:#fff}
+.cal-dot{width:6px;height:6px;background:var(--sage);border-radius:50%}
+.cal-day{font-size:7px;color:var(--sage);font-weight:700}
+.cal-legend{display:flex;align-items:center;gap:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.cal-leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--grey)}
+.cal-leg-box{width:12px;height:12px;border-radius:2px}
+.cal-leg-dot{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+
+/* ── Drive box ─────────────────────────────────────────────────────────── */
+.drive-box{background:var(--sage-l);border:1px solid var(--sage-m);border-radius:var(--r);padding:24px;margin-bottom:32px}
+.drive-box-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.drive-box-ico{font-size:24px}
+.drive-box-title{font-size:16px;font-weight:600;color:var(--ink)}
+.drive-box-sub{font-size:13px;color:var(--sage);font-weight:500}
+.drive-box-body{font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:16px}
+.drive-path{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--sage-m);border-radius:var(--r-sm);padding:10px 14px;flex-wrap:wrap}
+.drive-folder{display:flex;align-items:center;gap:5px;font-size:12px;font-family:var(--mono);color:var(--sage);font-weight:500;background:var(--sage-l);padding:3px 8px;border-radius:4px}
+.drive-arrow{color:var(--grey-m);font-size:13px}
+.drive-tip{display:flex;align-items:flex-start;gap:10px;background:rgba(45,106,79,.07);border-radius:var(--r-sm);padding:12px;margin-top:14px;font-size:13px;color:var(--ink2);line-height:1.6}
+
+/* ── Doc grid ─────────────────────────────────────────────────────────── */
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.doc-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px}
+.doc-card-ico{font-size:22px;margin-bottom:8px}
+.doc-card-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.doc-card-body{font-size:13px;color:var(--grey);line-height:1.6}
+.doc-tip{background:var(--gold-l);border:1px solid rgba(180,83,9,.15);border-radius:var(--r-sm);padding:14px;font-size:13.5px;color:var(--gold);line-height:1.65;display:flex;gap:10px}
+
+/* ── Auth options ─────────────────────────────────────────────────────── */
+.auth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.auth-card{border-radius:var(--r);padding:20px;position:relative;transition:all .2s;cursor:default}
+.auth-card:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+.auth-card.rec{background:var(--coral-l);border:1.5px solid var(--coral-m)}
+.auth-card.opt{background:#fff;border:1px solid var(--border)}
+.auth-rec-badge{position:absolute;top:-1px;right:12px;background:var(--coral);color:#fff;font-size:9px;font-weight:700;letter-spacing:.5px;padding:3px 8px;border-radius:0 0 6px 6px}
+.auth-emoji{font-size:28px;margin-bottom:10px}
+.auth-letter{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.auth-card.rec .auth-letter{color:var(--coral)}
+.auth-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.auth-body{font-size:12.5px;color:var(--grey);line-height:1.6}
+.auth-note{background:var(--blue-l);border:1px solid rgba(37,99,235,.15);border-radius:var(--r-sm);padding:13px 16px;font-size:13.5px;color:#1e40af;line-height:1.65;display:flex;gap:10px}
+
+/* ── Payment section ─────────────────────────────────────────────────────── */
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.pay-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px}
+.pay-card-ico{font-size:20px;margin-bottom:8px}
+.pay-card-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:4px}
+.pay-card-value{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.pay-card-body{font-size:13px;color:var(--grey);line-height:1.6}
+
+/* ── Plan table ─────────────────────────────────────────────────────────── */
+.plan-table{width:100%;border-collapse:collapse;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);margin-bottom:12px}
+.plan-table th{background:var(--ink);color:#fff;font-size:11px;font-weight:600;padding:10px 14px;text-align:left;letter-spacing:.3px}
+.plan-table td{padding:10px 14px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:middle}
+.plan-table tr:last-child td{border-bottom:none}
+.plan-table tr:nth-child(even) td{background:var(--grey-l)}
+.plan-table tr:nth-child(odd) td{background:#fff}
+.plan-price-cell{font-weight:700;color:var(--coral);font-size:15px;white-space:nowrap}
+.plan-name{font-weight:600;color:var(--ink)}
+
+/* ── Checklist ─────────────────────────────────────────────────────────── */
+.checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.check-item{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;transition:all .2s}
+.check-item:hover{border-color:var(--sage-m)}
+.check-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+.check-body{}
+.check-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.check-desc{font-size:13px;color:var(--grey);line-height:1.6}
+
+/* ── Contact box ─────────────────────────────────────────────────────────── */
+.contact-box{background:var(--sage-l);border:1px solid var(--sage-m);border-radius:var(--r);padding:28px;margin-bottom:32px}
+.contact-box-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:20px;letter-spacing:-.2px}
+.contact-rows{display:flex;flex-direction:column;gap:12px}
+.contact-row{display:flex;align-items:center;gap:14px;background:#fff;border-radius:var(--r-sm);padding:13px 16px}
+.contact-row-ico{font-size:20px;flex-shrink:0}
+.contact-row-label{font-size:12px;font-weight:700;color:var(--sage);letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
+.contact-row-value{font-size:14px;font-weight:600;color:var(--ink)}
+.contact-row-note{font-size:12px;color:var(--grey)}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.footer{background:var(--ink);padding:40px 0;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;margin-bottom:8px}
+.footer-logo span{color:var(--coral)}
+.footer-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px}
+.footer-final{font-size:14px;color:rgba(255,255,255,.6);line-height:1.75;max-width:420px;margin:0 auto}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.divider{height:1px;background:var(--border);margin:48px 0}
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .5s ease both}
+.d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media(max-width:580px){
+  .doc-grid,.pay-grid,.auth-grid{grid-template-columns:1fr}
+  .auth-grid{grid-template-columns:1fr}
+  .cal-months{grid-template-columns:repeat(6,1fr)}
+  .hero-pills{flex-direction:column}
+  .hero-pill{width:fit-content}
+  .steps-nav-inner{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-circle1"></div>
+    <div class="hero-circle2"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <span class="hero-logo-text">clavia</span>
+      <span class="hero-logo-dot"></span>
+    </div>
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Guía de bienvenida</div>
+    <h1 class="hero-h1">Bienvenido/a<br>a <em>Clavia.</em></h1>
+    <p class="hero-sub">Todo lo que necesitas saber para empezar — sin complicaciones, sin tecnicismos, sin que tengas que pensar en fiscal nunca más.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><span class="hero-pill-ico">🔓</span><span><strong>Sin permanencia</strong> — cancela cuando quieras</span></div>
+      <div class="hero-pill"><span class="hero-pill-ico">💬</span><span><strong>Todo online</strong> — sin desplazamientos</span></div>
+      <div class="hero-pill"><span class="hero-pill-ico">🤝</span><span><strong>Gestor personal</strong> — siempre el mismo</span></div>
+    </div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div>Sigue leyendo</div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     NAV STICKY
+═══════════════════════════════════════════ -->
+<nav class="steps-nav" id="mainNav">
+  <div class="steps-nav-inner">
+    <a class="nav-item active" href="#flujo" onclick="setActive(this)"><span class="nav-num">1</span>Cómo trabajamos</a>
+    <a class="nav-item" href="#documentacion" onclick="setActive(this)"><span class="nav-num">2</span>Documentación</a>
+    <a class="nav-item" href="#hacienda" onclick="setActive(this)"><span class="nav-num">3</span>Acceso Hacienda</a>
+    <a class="nav-item" href="#cobros" onclick="setActive(this)"><span class="nav-num">4</span>Cobros</a>
+    <a class="nav-item" href="#inicio" onclick="setActive(this)"><span class="nav-num">5</span>Primeros pasos</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     1. CÓMO TRABAJAMOS
+═══════════════════════════════════════════ -->
+<section class="section" id="flujo">
+  <div class="wrap">
+    <div class="sec-header fade-up">
+      <div class="sec-num"><span class="sec-num-badge">1</span>El proceso</div>
+      <h2 class="sec-h2">Cómo vamos a<br>trabajar <em>juntos</em></h2>
+      <p class="sec-lead">Hemos diseñado el proceso para que tú no tengas que pensar en fiscal. Tu trabajo es hacer facturas y mandárnoslas. El nuestro, que Hacienda esté siempre contenta.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card fade-up d1">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div style="font-size:24px;flex-shrink:0;margin-top:2px">📂</div>
+        <div class="step-body">
+          <span class="step-tag t-day5">Día 5 de cada mes</span>
+          <div class="step-title">Nos mandas las facturas del mes anterior</div>
+          <div class="step-desc">Subes al Google Drive compartido las facturas emitidas y recibidas del mes anterior. Sin ordenar, sin clasificar — las subimos tal cual y nosotros lo gestionamos. Tienes hasta el día 5 del mes siguiente.</div>
+        </div>
+      </div>
+
+      <div class="step-card fade-up d2">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div style="font-size:24px;flex-shrink:0;margin-top:2px">✅</div>
+        <div class="step-body">
+          <span class="step-tag t-siempre">Continuo</span>
+          <div class="step-title">Nosotros contabilizamos y revisamos</div>
+          <div class="step-desc">Procesamos toda la documentación, revisamos que cuadra todo y te avisamos si falta algo o hay alguna incidencia que debas conocer. Tú no tienes que hacer nada.</div>
+        </div>
+      </div>
+
+      <div class="step-card fade-up d3">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div style="font-size:24px;flex-shrink:0;margin-top:2px">📊</div>
+        <div class="step-body">
+          <span class="step-tag t-trimestral">Cada trimestre</span>
+          <div class="step-title">Presentamos tus modelos fiscales</div>
+          <div class="step-desc">IVA, IRPF, retenciones y los modelos que correspondan a tu caso. Todo presentado en plazo y con copia enviada a tu email. Siempre dentro del calendario legal.</div>
+        </div>
+      </div>
+
+      <div class="step-card fade-up d4">
+        <div class="step-left">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div style="font-size:24px;flex-shrink:0;margin-top:2px">💬</div>
+        <div class="step-body">
+          <span class="step-tag t-siempre">Siempre disponible</span>
+          <div class="step-title">Cualquier duda, nos escribes</div>
+          <div class="step-desc">¿Puedo deducir esto? ¿Qué pasa si me llega una carta de Hacienda? ¿Cómo facturo a este cliente de fuera? Por WhatsApp o email, respondemos el mismo día en horario laboral.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="calendar fade-up">
+      <div class="calendar-title">📅 Calendario del año — cuándo pasa cada cosa</div>
+      <div class="cal-months">
+        <div class="cal-month"><div class="cal-label quarter">ENE<br><span style="font-size:7px;opacity:.8">4T+anual</span></div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">FEB</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">MAR</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label quarter">ABR<br><span style="font-size:7px;opacity:.8">1T</span></div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">MAY</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label renta">JUN<br><span style="font-size:7px;opacity:.9">Renta</span></div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label quarter">JUL<br><span style="font-size:7px;opacity:.8">2T</span></div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">AGO</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">SEP</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label quarter">OCT<br><span style="font-size:7px;opacity:.8">3T</span></div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">NOV</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+        <div class="cal-month"><div class="cal-label normal">DIC</div><div class="cal-dot"></div><div class="cal-day">5</div></div>
+      </div>
+      <div class="cal-legend">
+        <div class="cal-leg-item"><div class="cal-leg-box" style="background:var(--coral);border-radius:2px"></div>Presentación trimestral (20 del mes)</div>
+        <div class="cal-leg-item"><div class="cal-leg-box" style="background:var(--sage);border-radius:2px"></div>Renta — hasta el 30 de junio</div>
+        <div class="cal-leg-item"><div class="cal-leg-dot"></div>Día 5 — nos mandas facturas</div>
+      </div>
+      <p style="font-size:11.5px;color:var(--grey);margin-top:10px;line-height:1.6">⚠️ <strong>Enero es el mes más intenso:</strong> se presentan los modelos del 4T (303, 130) más los resúmenes anuales (390 IVA, 190 retenciones, 347 operaciones con terceros). Todo en plazo — tú no tienes que hacer nada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     2. DOCUMENTACIÓN
+═══════════════════════════════════════════ -->
+<section class="section" id="documentacion" style="background:var(--cream2)">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num"><span class="sec-num-badge">2</span>Documentación</div>
+      <h2 class="sec-h2">Qué documentación<br><em>mandarnos</em></h2>
+      <p class="sec-lead">Es más sencillo de lo que parece. Si tienes dudas sobre si algo sirve o no, mándalo igualmente — nosotros decidimos.</p>
+    </div>
+
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-card-ico">📄</div>
+        <div class="doc-card-title">Facturas emitidas</div>
+        <div class="doc-card-body">Las facturas que tú has generado a tus clientes ese mes. En PDF o exportadas desde tu software.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-ico">🧾</div>
+        <div class="doc-card-title">Facturas recibidas</div>
+        <div class="doc-card-body">Las facturas que has pagado: material, software, servicios, suscripciones, alquiler de local o despacho...</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-ico">🤳</div>
+        <div class="doc-card-title">Tickets y gastos menores</div>
+        <div class="doc-card-body">Parking, transporte, dietas. Una foto con el móvil y lo subes directamente. No hace falta escáner.</div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-ico">💻</div>
+        <div class="doc-card-title">Acceso a tu software</div>
+        <div class="doc-card-body">Si usas Holded, Factura Directa u otro programa de facturación, puedes darnos acceso — cero trabajo para ti.</div>
+      </div>
+    </div>
+
+    <div class="doc-tip">
+      <span style="font-size:18px;flex-shrink:0">💡</span>
+      <span><strong>¿Tienes dudas sobre si algo es deducible?</strong> Mándalo de todas formas y nosotros lo revisamos. Es mejor que sobre a que falte. El extracto bancario solo te lo pediremos si necesitamos cuadrar algo concreto.</span>
+    </div>
+
+    <div style="height:28px"></div>
+
+    <!-- Drive -->
+    <div class="drive-box">
+      <div class="drive-box-head">
+        <div class="drive-box-ico">📁</div>
+        <div>
+          <div class="drive-box-title">Cómo mandarnos la documentación</div>
+          <div class="drive-box-sub">Google Drive compartido — sin emails con adjuntos</div>
+        </div>
+      </div>
+      <div class="drive-box-body">
+        Te creamos una carpeta de Google Drive con tu nombre. Dentro encontrarás una carpeta por cada mes. Solo tienes que abrir la del mes en curso y arrastrar tus archivos — desde el ordenador o desde el móvil. Sin emails con adjuntos, sin WhatsApps con 40 PDFs.
+      </div>
+      <div class="drive-path">
+        <div class="drive-folder">📁 Tu nombre</div>
+        <span class="drive-arrow">›</span>
+        <div class="drive-folder">📂 01_Enero</div>
+        <span class="drive-arrow">›</span>
+        <div class="drive-folder">📂 02_Febrero</div>
+        <span class="drive-arrow">›</span>
+        <div class="drive-folder" style="color:var(--grey);opacity:.6">...</div>
+      </div>
+      <div class="drive-tip">
+        <span style="font-size:17px;flex-shrink:0">📱</span>
+        <span><strong>Consejo:</strong> instala Google Drive en el móvil. Puedes fotografiar un ticket y subirlo en 10 segundos desde donde estés — sin esperar a llegar a casa.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     3. ACCESO HACIENDA
+═══════════════════════════════════════════ -->
+<section class="section" id="hacienda">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num"><span class="sec-num-badge">3</span>Acceso a Hacienda</div>
+      <h2 class="sec-h2">Cómo accedemos<br>a Hacienda <em>en tu nombre</em></h2>
+      <p class="sec-lead">Para presentar tus impuestos necesitamos poder acceder a la Sede Electrónica de la AEAT. Tienes tres opciones — elige la que más cómoda te resulte, y puedes cambiar cuando quieras.</p>
+    </div>
+
+    <div class="auth-grid">
+      <div class="auth-card rec">
+        <div class="auth-rec-badge">RECOMENDADO</div>
+        <div class="auth-emoji">🔐</div>
+        <div class="auth-letter">Opción A</div>
+        <div class="auth-title">Apoderamiento en la AEAT</div>
+        <div class="auth-body">Nos autorizas una sola vez en la Sede Electrónica. A partir de ahí actuamos directamente sin molestarte. Cero trabajo para ti cada trimestre.</div>
+      </div>
+      <div class="auth-card opt">
+        <div class="auth-emoji">🔑</div>
+        <div class="auth-letter">Opción B</div>
+        <div class="auth-title">Cl@ve o certificado digital</div>
+        <div class="auth-body">Cada vez que hay que presentar algo, nos facilitas acceso puntual con tu Cl@ve PIN o certificado digital. Algo más de gestión, máximo control.</div>
+      </div>
+      <div class="auth-card opt">
+        <div class="auth-emoji">📋</div>
+        <div class="auth-letter">Opción C</div>
+        <div class="auth-title">Tú presentas el borrador</div>
+        <div class="auth-body">Nosotros preparamos todo y te mandamos el borrador listo para presentar. Tú lo revisas y lo presentas con tus propias credenciales.</div>
+      </div>
+    </div>
+
+    <div class="auth-note">
+      <span style="font-size:18px;flex-shrink:0">💡</span>
+      <span>Si no sabes cuál elegir, te recomendamos la <strong>Opción A</strong> — es la más cómoda y la que usan la mayoría de nuestros clientes. El proceso dura menos de 5 minutos y te guiamos paso a paso cuando llegue el momento.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     4. COBROS
+═══════════════════════════════════════════ -->
+<section class="section" id="cobros" style="background:var(--cream2)">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num"><span class="sec-num-badge">4</span>Tus pagos</div>
+      <h2 class="sec-h2">Automático y<br><em>sin sorpresas</em></h2>
+      <p class="sec-lead">Domicilias el pago una sola vez y ya no tienes que pensar en ello. Cada mes recibes tu factura con el desglose de IVA.</p>
+    </div>
+
+    <div class="pay-grid">
+      <div class="pay-card">
+        <div class="pay-card-ico">💳</div>
+        <div class="pay-card-label">Forma de pago</div>
+        <div class="pay-card-value">Domiciliación bancaria</div>
+        <div class="pay-card-body">Nos facilitas tu IBAN una sola vez. El cobro se realiza automáticamente a principios de cada mes.</div>
+      </div>
+      <div class="pay-card">
+        <div class="pay-card-ico">📅</div>
+        <div class="pay-card-label">Cuándo se cobra</div>
+        <div class="pay-card-value">Entre el 1 y el 5 de cada mes</div>
+        <div class="pay-card-body">Sin sorpresas. Siempre el mismo importe salvo que cambies de plan.</div>
+      </div>
+      <div class="pay-card">
+        <div class="pay-card-ico">🧾</div>
+        <div class="pay-card-label">Factura</div>
+        <div class="pay-card-value">Mensual por email</div>
+        <div class="pay-card-body">Con desglose de IVA. Puedes deducirla como gasto de tu actividad profesional.</div>
+      </div>
+      <div class="pay-card">
+        <div class="pay-card-ico">🔄</div>
+        <div class="pay-card-label">Cambiar de plan</div>
+        <div class="pay-card-value">En cualquier momento</div>
+        <div class="pay-card-body">Sin permanencia, sin penalización. El cambio aplica desde el mes siguiente.</div>
+      </div>
+    </div>
+
+    <!-- Planes -->
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Precio mensual</th>
+          <th>Qué incluye</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="plan-name">Básico</td>
+          <td class="plan-price-cell">39 € <span style="font-size:11px;color:var(--grey);font-weight:400">(IVA incl.)</span></td>
+          <td style="font-size:12.5px;color:var(--grey)">IVA trimestral (303) · IRPF fraccionado (130) · Declaración de la Renta * · Alta en Hacienda (037) · Consultas</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Estándar</td>
+          <td class="plan-price-cell">59 € <span style="font-size:11px;color:var(--grey);font-weight:400">(IVA incl.)</span></td>
+          <td style="font-size:12.5px;color:var(--grey)">Todo lo anterior + Intracomunitario · Alquileres · Retenciones (111) · Actividad en varios epígrafes</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Pro</td>
+          <td class="plan-price-cell">79 € <span style="font-size:11px;color:var(--grey);font-weight:400">(IVA incl.)</span></td>
+          <td style="font-size:12.5px;color:var(--grey)">Todo lo anterior + Requerimientos AEAT rutinarios ** · Revisión trimestral · Videollamada 30 min</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--grey);line-height:1.7">
+      * La Renta está incluida a partir de la tercera mensualidad abonada en el mismo ejercicio fiscal.<br>
+      ** Cubre requerimientos informativos rutinarios. No incluye inspecciones formales ni procedimientos de recurso.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     5. PRIMEROS PASOS
+═══════════════════════════════════════════ -->
+<section class="section" id="inicio">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num"><span class="sec-num-badge">5</span>Empezamos</div>
+      <h2 class="sec-h2">Tus próximos<br><em>pasos</em></h2>
+      <p class="sec-lead">Cinco cosas que necesitamos para arrancarlo todo. En menos de 24 horas estás dado de alta y listo para empezar.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="check-item">
+        <span class="check-ico">✍️</span>
+        <div class="check-body">
+          <div class="check-title">Firma la hoja de encargo</div>
+          <div class="check-desc">Te la enviamos por email. Puedes firmarlo digitalmente o simplemente responder al email confirmando tu aceptación.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="check-ico">📁</span>
+        <div class="check-body">
+          <div class="check-title">Acepta la invitación de Google Drive</div>
+          <div class="check-desc">Te llegará un email de Google. Al aceptarlo tienes tu carpeta lista para subir facturas desde el primer momento.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="check-ico">🔐</span>
+        <div class="check-body">
+          <div class="check-title">Cuéntanos qué método prefieres para Hacienda</div>
+          <div class="check-desc">Apoderamiento, Cl@ve o que tú presentes el borrador. Si no sabes cuál elegir, te explicamos las ventajas de cada uno sin compromiso.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="check-ico">🏦</span>
+        <div class="check-body">
+          <div class="check-title">Facilítanos tu IBAN para la domiciliación</div>
+          <div class="check-desc">Lo puedes mandar por WhatsApp o email. Es el único dato bancario que necesitamos — solo para domiciliar el pago mensual.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="check-ico">💬</span>
+        <div class="check-body">
+          <div class="check-title">Escríbenos si tienes cualquier duda</div>
+          <div class="check-desc">Antes, durante y siempre. Estamos en WhatsApp y en info@clavia.es. No hay preguntas tontas cuando se trata de tus impuestos.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-box">
+      <div class="contact-box-title">¿Tienes alguna duda? Estamos aquí.</div>
+      <div class="contact-rows">
+        <div class="contact-row">
+          <span class="contact-row-ico">💬</span>
+          <div>
+            <div class="contact-row-label">WhatsApp</div>
+            <!-- ✏️ EDITA AQUÍ: sustituye por tu número real -->
+            <div class="contact-row-value">+34 XXX XXX XXX</div>
+            <div class="contact-row-note">Respuesta el mismo día en horario laboral</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-ico">📧</span>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-value">info@clavia.es</div>
+            <div class="contact-row-note">Para consultas más extensas o envío de documentación</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-ico">🌐</span>
+          <div>
+            <div class="contact-row-label">Web</div>
+            <div class="contact-row-value">clavia.es</div>
+            <div class="contact-row-note">Información sobre planes y servicios</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-logo">clavia<span>.</span></div>
+    <div class="footer-sub">Gestoría online para autónomos</div>
+    <div class="footer-final">
+      Gracias por confiar en Clavia. Nuestro compromiso es que nunca tengas que preocuparte por tus impuestos. Tú céntrate en tu negocio — nosotros nos encargamos del resto.
+    </div>
+  </div>
+</footer>
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Update active nav on scroll
+const sections = ['flujo','documentacion','hacienda','cobros','inicio'];
+const navItems = document.querySelectorAll('.nav-item');
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) obs.observe(el);
+});
+
+// Fade-up on scroll
+const fadeEls = document.querySelectorAll('.fade-up');
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  fadeObs.observe(el);
+});
+</script>
+</body>
+</html>
