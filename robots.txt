@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clavia.es/sitemap.xml
