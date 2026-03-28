@@ -166,6 +166,9 @@ a{color:inherit;text-decoration:none}
 .checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
 .check-item{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;transition:all .2s}
 .check-item:hover{border-color:var(--sage-m)}
+.check-item.done{background:var(--cream2);border-color:var(--sage-m);opacity:.75}
+.check-item.done .check-title{color:var(--grey);text-decoration:line-through;text-decoration-color:var(--sage)}
+.check-item.done .check-desc{color:var(--grey)}
 .check-ico{font-size:22px;flex-shrink:0;margin-top:1px}
 .check-body{}
 .check-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
@@ -465,14 +468,14 @@ a{color:inherit;text-decoration:none}
       <div class="pay-card">
         <div class="pay-card-ico">💳</div>
         <div class="pay-card-label">Forma de pago</div>
-        <div class="pay-card-value">Domiciliación bancaria</div>
-        <div class="pay-card-body">Nos facilitas tu IBAN una sola vez. El cobro se realiza automáticamente a principios de cada mes.</div>
+        <div class="pay-card-value">GoCardless o Stripe</div>
+        <div class="pay-card-body">Recibes una invitación por email para configurar la domiciliación SEPA desde GoCardless — sin compartir tu IBAN directamente. Si prefieres pagar con tarjeta, también puedes hacerlo a través de Stripe.</div>
       </div>
       <div class="pay-card">
         <div class="pay-card-ico">📅</div>
         <div class="pay-card-label">Cuándo se cobra</div>
-        <div class="pay-card-value">Entre el 1 y el 5 de cada mes</div>
-        <div class="pay-card-body">Sin sorpresas. Siempre el mismo importe salvo que cambies de plan.</div>
+        <div class="pay-card-value">Mensualmente</div>
+        <div class="pay-card-body">El ciclo se fija desde el día de tu alta. Sin sorpresas — siempre el mismo importe salvo que cambies de plan.</div>
       </div>
       <div class="pay-card">
         <div class="pay-card-ico">🧾</div>
@@ -534,11 +537,18 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div class="checklist">
-      <div class="check-item">
-        <span class="check-ico">✍️</span>
+      <div class="check-item done">
+        <span class="check-ico">✅</span>
         <div class="check-body">
-          <div class="check-title">Firma la hoja de encargo</div>
-          <div class="check-desc">Te la enviamos por email. Puedes firmarlo digitalmente o simplemente responder al email confirmando tu aceptación.</div>
+          <div class="check-title">Hoja de encargo firmada</div>
+          <div class="check-desc">Ya la has firmado al confirmar tu alta. Tienes copia en tu email para cualquier consulta.</div>
+        </div>
+      </div>
+      <div class="check-item done">
+        <span class="check-ico">✅</span>
+        <div class="check-body">
+          <div class="check-title">Pago configurado</div>
+          <div class="check-desc">Te hemos enviado la invitación de GoCardless para la domiciliación SEPA. Si prefieres tarjeta, usa el enlace de Stripe que encontrarás en ese mismo email.</div>
         </div>
       </div>
       <div class="check-item">
@@ -556,17 +566,10 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
       <div class="check-item">
-        <span class="check-ico">🏦</span>
-        <div class="check-body">
-          <div class="check-title">Facilítanos tu IBAN para la domiciliación</div>
-          <div class="check-desc">Lo puedes mandar por WhatsApp o email. Es el único dato bancario que necesitamos — solo para domiciliar el pago mensual.</div>
-        </div>
-      </div>
-      <div class="check-item">
         <span class="check-ico">💬</span>
         <div class="check-body">
           <div class="check-title">Escríbenos si tienes cualquier duda</div>
-          <div class="check-desc">Antes, durante y siempre. Estamos en WhatsApp y en info@clavia.es. No hay preguntas tontas cuando se trata de tus impuestos.</div>
+          <div class="check-desc">Antes, durante y siempre. Por WhatsApp al <strong>+34 XXX XXX XXX</strong> o a info@clavia.es. No hay preguntas tontas cuando se trata de tus impuestos.</div>
         </div>
       </div>
     </div>
