@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gestoría Online para Autónomos · Desde 39€/mes · Clavia</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://clavia.es/autonomos">
+<meta name="description" content="Tu gestoría online para autónomos. IVA, IRPF y Renta gestionados por tu asesor personal desde 39€/mes IVA incluido. Sin permanencia.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
+<link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{
+  --cream:#fdf0e8;--cream2:#f5e2d0;--cream3:#e8cdb4;
+  --forest:#1c1410;--forest2:#7c3a2d;
+  --sage:#2d6a4f;--sage-lo:rgba(45,106,79,.12);--sage-bd:rgba(45,106,79,.28);
+  --coral:#e8532a;--coral2:#f06030;--coral-lo:rgba(232,83,42,.1);
+  --ink:#1c0e08;--ink2:#3d2418;
+  --grey:#7a5545;--grey2:#aa8878;
+  --line:rgba(28,14,8,.1);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --r:8px;--rr:16px;--rrr:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:180px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes orb-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,83,42,.4)}70%{box-shadow:0 0 0 10px rgba(232,83,42,0)}}
+
+/* NAV — minimal, solo logo + CTA */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:16px 0;transition:all .3s;border-bottom:1px solid transparent}
+nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
+.nav-row{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:4px;text-decoration:none}
+.logo-text{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.3px;line-height:1}
+.logo-dot{width:7px;height:7px;background:var(--sage);border-radius:50%;margin-bottom:12px;flex-shrink:0}
+.nav-cta{background:var(--coral);color:#fff;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;transition:background .2s,transform .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--coral2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;background:var(--cream)}
+.orb{position:absolute;top:-100px;right:-180px;width:650px;height:650px;border-radius:50%;background:conic-gradient(from 0deg,#0b2218,#0e6644,#00c07a,#0b2218);opacity:.06;pointer-events:none;animation:orb-spin 30s linear infinite}
+.orb2{position:absolute;bottom:-60px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,var(--coral) 0%,transparent 70%);opacity:.05;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
+.hero-label::before{content:'';width:20px;height:1.5px;background:var(--sage)}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,5.2vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.5px;color:var(--ink);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--forest2)}
+.hero h1 .ul{position:relative;display:inline-block}
+.hero h1 .ul::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--coral);border-radius:2px}
+.hero-p{font-size:17px;color:var(--grey);line-height:1.72;max-width:460px;margin-bottom:32px}
+.hero-cta-wrap{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.btn-main{background:var(--coral);color:#fff;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(232,83,42,.35);animation:pulse 2.5s infinite;width:fit-content}
+.btn-main:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,83,42,.42);animation:none}
+.btn-sub{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--grey);cursor:pointer;background:none;border:none;padding:0;width:fit-content}
+.btn-sub:hover{color:var(--ink)}
+.trust-row{display:flex;flex-wrap:wrap;gap:16px}
+.trust-chip{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--grey2)}
+.trust-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0}
+
+/* HERO CARD */
+.hcard{background:var(--forest);border-radius:var(--rrr);padding:36px 32px;position:relative;overflow:hidden;animation:fadeUp .8s .15s both;box-shadow:0 28px 64px rgba(20,40,28,.28)}
+.hcard::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(0,192,122,.18);pointer-events:none}
+.hcard-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,192,122,.15);border:1px solid rgba(0,192,122,.3);color:rgba(0,192,122,.9);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:20px;font-family:var(--mono)}
+.hcard-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#00c07a;flex-shrink:0}
+.hcard-price{font-family:var(--serif);font-size:76px;font-weight:400;color:#fff;line-height:1;margin-bottom:3px;display:flex;align-items:flex-start;gap:3px}
+.hcard-price sup{font-size:28px;padding-top:12px}
+.hcard-price-note{font-size:13px;color:rgba(255,255,255,.38);margin-bottom:28px;font-family:var(--mono);letter-spacing:.5px}
+.hcard-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.hcard-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.78)}
+.hcard-list li::before{content:'';width:18px;height:18px;border-radius:50%;background:rgba(0,192,122,.22);border:1px solid rgba(0,192,122,.35);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300c07a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.hcard-btn{width:100%;padding:15px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 18px rgba(232,83,42,.38)}
+.hcard-btn:hover{background:var(--coral2);transform:translateY(-1px)}
+.hcard-note{text-align:center;font-size:12px;color:rgba(255,255,255,.28);margin-top:10px;font-family:var(--mono)}
+
+/* URGENCY BAR */
+.urgency{background:var(--coral);padding:11px 0;text-align:center}
+.urgency p{font-size:13px;color:#fff;font-weight:600;letter-spacing:.3px}
+.urgency strong{font-weight:800}
+
+/* LOGOS / TRUST */
+.trust-bar{padding:44px 0;border-bottom:1px solid var(--line)}
+.trust-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.trust-bar-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--grey2);white-space:nowrap}
+.trust-pills{display:flex;flex-wrap:wrap;gap:10px}
+.tpill{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:7px}
+.tpill-ico{font-size:15px}
+
+/* PROBLEMA / SOLUCIÓN */
+.ps{padding:88px 0}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ps-label{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--coral);margin-bottom:16px;font-weight:700}
+.ps h2{font-family:var(--serif);font-size:clamp(30px,3.6vw,48px);font-weight:400;line-height:1.06;color:var(--ink);margin-bottom:20px}
+.ps h2 em{font-style:italic;color:var(--forest2)}
+.ps-pain{display:flex;flex-direction:column;gap:12px;margin-bottom:0}
+.pain-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:rgba(232,83,42,.05);border:1px solid rgba(232,83,42,.12);border-radius:var(--r)}
+.pain-x{width:22px;height:22px;border-radius:50%;background:rgba(232,83,42,.12);color:var(--coral);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pain-txt{font-size:14px;color:var(--grey);line-height:1.5}
+.pain-txt strong{color:var(--ink2);display:block;margin-bottom:2px;font-size:14px}
+.sol-list{display:flex;flex-direction:column;gap:12px}
+.sol-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:rgba(45,106,79,.05);border:1px solid rgba(45,106,79,.15);border-radius:var(--r)}
+.sol-ico{width:22px;height:22px;border-radius:50%;background:rgba(45,106,79,.15);color:var(--sage);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.sol-txt{font-size:14px;color:var(--grey);line-height:1.5}
+.sol-txt strong{color:var(--ink2);display:block;margin-bottom:2px;font-size:14px}
+
+/* CÓMO FUNCIONA */
+.how{padding:88px 0;background:var(--cream2)}
+.section-hd{margin-bottom:52px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
+.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--sage)}
+.eyebrow::after{content:'';width:16px;height:1.5px;background:var(--sage)}
+.section-hd h2{font-family:var(--serif);font-size:clamp(30px,3.6vw,46px);font-weight:400;color:var(--ink);line-height:1.06;margin-bottom:12px}
+.section-hd h2 em{font-style:italic;color:var(--forest2)}
+.section-hd p{font-size:15px;color:var(--grey);max-width:480px;margin:0 auto;line-height:1.7}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--rr);overflow:hidden;margin-bottom:44px}
+.step{background:var(--cream);padding:32px 24px;position:relative}
+.step-n{font-family:var(--serif);font-size:44px;font-weight:300;color:var(--cream3);line-height:1;margin-bottom:16px}
+.step-t{font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:8px;font-weight:400}
+.step-d{font-size:13px;color:var(--grey);line-height:1.6}
+.how-cta{text-align:center}
+
+/* PRECIOS */
+.pricing{padding:88px 0;background:var(--forest);position:relative;overflow:hidden}
+.pricing::before{content:'';position:absolute;bottom:-120px;right:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(0,192,122,.14) 0%,transparent 60%);pointer-events:none}
+.pricing .eyebrow{color:rgba(255,255,255,.4)}
+.pricing .eyebrow::before,.pricing .eyebrow::after{background:rgba(255,255,255,.25)}
+.pricing .section-hd h2{color:#fff}
+.pricing .section-hd h2 em{color:rgba(45,106,79,.85)}
+.pricing .section-hd p{color:rgba(255,255,255,.45)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.plan{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--rr);padding:32px 26px;position:relative;transition:transform .25s,background .25s}
+.plan:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
+.plan.hi{background:var(--cream);border-color:var(--cream)}
+.plan.hi:hover{background:#fff}
+.plan.hi::before{content:'Más popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 16px;border-radius:100px}
+.plan-tier{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px}
+.plan.hi .plan-tier{color:var(--grey)}
+.plan-price{font-family:var(--serif);font-size:52px;font-weight:400;color:#fff;line-height:1;margin-bottom:3px;display:flex;align-items:flex-start;gap:3px}
+.plan.hi .plan-price{color:var(--ink)}
+.plan-price sup{font-size:21px;padding-top:9px}
+.plan-mo{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:22px;font-family:var(--mono)}
+.plan.hi .plan-mo{color:var(--grey2)}
+.plan-sep{height:1px;background:rgba(255,255,255,.08);margin-bottom:20px}
+.plan.hi .plan-sep{background:var(--line)}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.plan-feats li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.58)}
+.plan.hi .plan-feats li{color:var(--ink2)}
+.ck{width:16px;height:16px;border-radius:4px;background:rgba(0,192,122,.18);flex-shrink:0;margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300c07a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.plan.hi .ck{background-color:rgba(0,192,122,.13);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%230e6644' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
+.plan-btn{width:100%;padding:12px;border-radius:var(--r);font-size:14px;font-weight:600;font-family:var(--sans);border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.55);transition:all .2s;cursor:pointer}
+.plan-btn:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25)}
+.plan.hi .plan-btn{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,83,42,.3)}
+.plan.hi .plan-btn:hover{background:var(--coral2)}
+.plan-notes{margin-top:20px;padding:0 2px;font-size:11px;color:rgba(255,255,255,.22);line-height:1.8;font-family:var(--mono)}
+
+/* FAQ */
+.faq{padding:88px 0}
+.faq-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.faq-left{position:sticky;top:100px}
+.faq-left h2{font-family:var(--serif);font-size:clamp(28px,3.2vw,42px);font-weight:400;color:var(--ink);line-height:1.06;margin-bottom:14px}
+.faq-left h2 em{font-style:italic;color:var(--forest2)}
+.faq-left p{font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:24px}
+.faq-rows{display:flex;flex-direction:column}
+.frow{border-top:1px solid var(--line)}
+.frow:last-child{border-bottom:1px solid var(--line)}
+.fq{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:none;border:none;text-align:left;font-size:15px;font-weight:600;color:var(--ink);font-family:var(--sans);gap:12px;cursor:pointer}
+.fq-ico{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:400;color:var(--grey);flex-shrink:0;transition:all .2s}
+.fq.open .fq-ico{background:var(--coral);border-color:var(--coral);color:#fff;transform:rotate(45deg)}
+.fa{font-size:14px;color:var(--grey);line-height:1.7;padding-bottom:18px;display:none}
+.fa.open{display:block}
+
+/* CTA FINAL */
+.cta-final{padding:88px 0;background:var(--forest);text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,83,42,.12) 0%,transparent 60%);pointer-events:none}
+.cta-final h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,58px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:16px}
+.cta-final h2 em{font-style:italic;color:rgba(45,106,79,.9)}
+.cta-final p{font-size:17px;color:rgba(255,255,255,.5);max-width:460px;margin:0 auto 36px;line-height:1.7}
+.btn-main-lg{background:var(--coral);color:#fff;padding:18px 42px;border-radius:100px;font-size:17px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 28px rgba(232,83,42,.4);cursor:pointer}
+.btn-main-lg:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(232,83,42,.45)}
+.cta-final-trust{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+.cta-trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.35);font-family:var(--mono)}
+.cta-trust-item::before{content:'✓';color:rgba(0,192,122,.7);font-weight:700}
+
+/* FOOTER mini */
+.footer-mini{background:var(--forest);border-top:1px solid rgba(255,255,255,.06);padding:24px 0}
+.footer-mini-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.flogo{display:flex;align-items:center;gap:4px}
+.flogo-w{font-family:var(--serif);font-size:18px;color:rgba(255,255,255,.6);font-weight:500;line-height:1}
+.flogo-d{width:5px;height:5px;background:var(--sage);border-radius:50%;margin-bottom:9px;flex-shrink:0}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.25);transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.5)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hcard{padding:28px 24px}
+  .hcard-price{font-size:60px}
+  .ps-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr;gap:0}
+  .faq-left{position:static;margin-bottom:40px}
+  .trust-bar-inner{flex-direction:column;align-items:flex-start;gap:16px}
+  .hero h1{font-size:40px}
+  .cta-final-trust{gap:14px}
+}
+@media(max-width:480px){
+  .steps{grid-template-columns:1fr}
+  .nav-cta{padding:9px 16px;font-size:13px}
+}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1c1410;z-index:999;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:2px solid #e8532a;transform:translateY(0);transition:transform .4s}
+.cookie-banner.hidden{transform:translateY(110%)}
+.cookie-banner p{font-size:13px;color:rgba(255,255,255,.55);margin:0}
+.cookie-banner a{color:#e8532a}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cb-accept{background:#e8532a;color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer;font-size:11px;letter-spacing:1px}
+.cb-reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.4);padding:9px 16px;border-radius:5px;cursor:pointer;font-size:11px}
+</style>
+</head>
+<body>
+
+<!-- NAV MINIMAL -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="/" class="logo">
+        <span class="logo-text">clavia</span>
+        <span class="logo-dot"></span>
+      </a>
+      <a href="https://tally.so/r/TULINK" target="_blank" class="nav-cta" id="nav-cta-btn">Consulta gratuita →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb"></div><div class="orb2"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div style="animation:fadeUp .5s .05s both">
+        <div class="hero-label">Gestoría online · España</div>
+        <h1>Tu declaración<br>trimestral,<br><em>sin el <span class="ul">agobio</span></em></h1>
+        <p class="hero-p">IVA, IRPF y Renta gestionados por tu asesor personal. Tú solo mandas las facturas — nosotros nos encargamos de todo lo demás. A precio fijo y sin sorpresas.</p>
+        <div class="hero-cta-wrap">
+          <a href="https://tally.so/r/TULINK" target="_blank" class="btn-main" id="hero-cta-btn">
+            Solicitar consulta gratuita →
+          </a>
+          <button class="btn-sub" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">
+            ↓ Ver cómo funciona
+          </button>
+        </div>
+        <div class="trust-row">
+          <div class="trust-chip">Desde 39€/mes IVA incl.</div>
+          <div class="trust-chip">Sin permanencia</div>
+          <div class="trust-chip">Respuesta en 24h</div>
+          <div class="trust-chip">100% online</div>
+        </div>
+      </div>
+
+      <div class="hcard">
+        <div class="hcard-badge">Plazas disponibles</div>
+        <div class="hcard-label" style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Tu plan desde</div>
+        <div class="hcard-price"><sup>€</sup>39</div>
+        <div class="hcard-price-note">/ mes · precio fijo · IVA incl.</div>
+        <ul class="hcard-list">
+          <li>IVA trimestral (Modelo 303)</li>
+          <li>IRPF trimestral (Modelo 130)</li>
+          <li>Declaración de la Renta incluida*</li>
+          <li>Alta en Hacienda incluida</li>
+          <li>Asesor personal por WhatsApp</li>
+          <li>Sin permanencia ni costes ocultos</li>
+        </ul>
+        <button class="hcard-btn" onclick="window.open('https://tally.so/r/TULINK','_blank')" id="hcard-cta-btn">
+          Empezar ahora — es gratis →
+        </button>
+        <div class="hcard-note">Sin permanencia · Sin compromiso · Consulta gratuita</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BAR -->
+<div class="urgency">
+  <p><strong>Sin permanencia:</strong> cancela cuando quieras, sin coste ni penalización.</p>
+</div>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="wrap">
+    <div class="trust-bar-inner">
+      <span class="trust-bar-label">Lo que incluye cualquier plan</span>
+      <div class="trust-pills">
+        <div class="tpill"><span class="tpill-ico">📋</span> IVA trimestral</div>
+        <div class="tpill"><span class="tpill-ico">📊</span> IRPF trimestral</div>
+        <div class="tpill"><span class="tpill-ico">📄</span> Declaración de la Renta*</div>
+        <div class="tpill"><span class="tpill-ico">💬</span> Asesor por WhatsApp</div>
+        <div class="tpill"><span class="tpill-ico">🔓</span> Sin permanencia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA / SOLUCIÓN -->
+<section class="ps" id="por-que">
+  <div class="wrap">
+    <div class="ps-grid">
+      <div>
+        <div class="ps-label">El problema</div>
+        <h2>Llevar los trimestres<br>no debería<br><em>quitarte el sueño</em></h2>
+        <div class="ps-pain" style="margin-top:24px">
+          <div class="pain-item">
+            <div class="pain-x">✕</div>
+            <div class="pain-txt">
+              <strong>Plazos imposibles de seguir</strong>
+              20 de enero, 20 de abril, 20 de julio… y siempre con el agua al cuello.
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-x">✕</div>
+            <div class="pain-txt">
+              <strong>Gestorías que no responden</strong>
+              Mandas un email y tardas tres días en saber si alguien lo ha leído.
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-x">✕</div>
+            <div class="pain-txt">
+              <strong>Facturas sorpresa al final del trimestre</strong>
+              "Son 80€ más por la Renta." "Esto no estaba incluido."
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-x">✕</div>
+            <div class="pain-txt">
+              <strong>Permanencias de 12 meses</strong>
+              Atrapado aunque el servicio sea mediocre. Sin salida.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ps-label">La solución</div>
+        <h2>Clavia lo gestiona<br><em>todo por ti</em></h2>
+        <div class="sol-list" style="margin-top:24px">
+          <div class="sol-item">
+            <div class="sol-ico">✓</div>
+            <div class="sol-txt">
+              <strong>Cero preocupaciones con Hacienda</strong>
+              Tu asesor presenta todos los modelos en plazo. Tú solo mandas las facturas antes del día 5 cada mes.
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-ico">✓</div>
+            <div class="sol-txt">
+              <strong>Respuesta en menos de 24 horas</strong>
+              Por WhatsApp, email o videollamada. Un asesor real que conoce tu negocio, no un bot.
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-ico">✓</div>
+            <div class="sol-txt">
+              <strong>Precio fijo, sin sorpresas</strong>
+              39, 59 o 79€/mes IVA incluido. Lo que ves es lo que pagas. Siempre.
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-ico">✓</div>
+            <div class="sol-txt">
+              <strong>Sin permanencia, cancela cuando quieras</strong>
+              Ni contratos anuales ni penalizaciones. Si un mes no encajamos, nos avisas y listo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="how" id="como-funciona">
+  <div class="wrap">
+    <div class="section-hd">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De cero a <em>tranquilidad</em><br>en 4 pasos</h2>
+      <p>Sin papeles, sin desplazamientos, sin esperas. Todo desde tu móvil u ordenador.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-t">Consulta gratuita</div>
+        <div class="step-d">Rellena el formulario. Cuéntanos tu actividad y te respondemos en menos de 24 horas con una propuesta.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-t">Firma digital</div>
+        <div class="step-d">Firmamos el contrato 100% online. Sin desplazamientos, sin oficinas, sin papeles físicos.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-t">Alta en Hacienda</div>
+        <div class="step-d">Gestionamos tu apoderamiento en la AEAT para operar en tu nombre. Un trámite que se hace una sola vez.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-t">Tú a lo tuyo</div>
+        <div class="step-d">Mándanos tus facturas cada mes antes del día 5. Tu asesor se encarga del resto — trimestres, Renta y todo lo que surja.</div>
+      </div>
+    </div>
+    <div class="how-cta">
+      <a href="https://tally.so/r/TULINK" target="_blank" class="btn-main" style="margin:0 auto" id="how-cta-btn">
+        Empezar ahora — consulta gratuita →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="pricing" id="precios">
+  <div class="wrap">
+    <div class="section-hd">
+      <div class="eyebrow">Precios</div>
+      <h2>Precio fijo.<br><em>Sin sorpresas.</em></h2>
+      <p>Sabes exactamente lo que pagas cada mes. Sin costes ocultos, sin permanencia, sin letra pequeña.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-tier">Básico</div>
+        <div class="plan-price"><sup>€</sup>39</div>
+        <div class="plan-mo">/ mes · IVA incluido</div>
+        <div class="plan-sep"></div>
+        <ul class="plan-feats">
+          <li><span class="ck"></span>IVA trimestral (Mod. 303)</li>
+          <li><span class="ck"></span>IRPF trimestral (Mod. 130)</li>
+          <li><span class="ck"></span>Retenciones (Mod. 111)</li>
+          <li><span class="ck"></span>Resúmenes anuales (390, 190, 347)</li>
+          <li><span class="ck"></span>Alta en Hacienda incluida</li>
+          <li><span class="ck"></span>Hasta 50 facturas/mes</li>
+          <li><span class="ck"></span>WhatsApp y email (resp. 48h)</li>
+        </ul>
+        <button class="plan-btn" onclick="window.open('https://tally.so/r/TULINK','_blank')" id="plan-basico-btn">Empezar con Básico</button>
+      </div>
+      <div class="plan hi">
+        <div class="plan-tier">Estándar</div>
+        <div class="plan-price"><sup>€</sup>59</div>
+        <div class="plan-mo">/ mes · IVA incluido</div>
+        <div class="plan-sep"></div>
+        <ul class="plan-feats">
+          <li><span class="ck"></span>Todo el plan Básico</li>
+          <li><span class="ck"></span>Mod. 349 Intracomunitario</li>
+          <li><span class="ck"></span>Mod. 115 Retención Alquileres</li>
+          <li><span class="ck"></span>Declaración de la Renta incluida*</li>
+          <li><span class="ck"></span>Hasta 100 facturas/mes</li>
+          <li><span class="ck"></span>WhatsApp y email (resp. 24h)</li>
+        </ul>
+        <button class="plan-btn" onclick="window.open('https://tally.so/r/TULINK','_blank')" id="plan-estandar-btn">Empezar con Estándar</button>
+      </div>
+      <div class="plan">
+        <div class="plan-tier">Pro</div>
+        <div class="plan-price"><sup>€</sup>79</div>
+        <div class="plan-mo">/ mes · IVA incluido</div>
+        <div class="plan-sep"></div>
+        <ul class="plan-feats">
+          <li><span class="ck"></span>Todo el plan Estándar</li>
+          <li><span class="ck"></span>Facturas ilimitadas</li>
+          <li><span class="ck"></span>Requerimientos AEAT rutinarios**</li>
+          <li><span class="ck"></span>Revisión fiscal trimestral</li>
+          <li><span class="ck"></span>Videollamada trimestral 30 min</li>
+          <li><span class="ck"></span>Prioridad en respuesta</li>
+        </ul>
+        <button class="plan-btn" onclick="window.open('https://tally.so/r/TULINK','_blank')" id="plan-pro-btn">Empezar con Pro</button>
+      </div>
+    </div>
+    <div class="plan-notes">
+      * Renta incluida a partir de la 3.ª mensualidad abonada en ese ejercicio fiscal.<br>
+      ** Solo requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas (art. 141 LGT). Excluye inspecciones formales, actas, recursos y reclamaciones.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-left">
+        <div class="eyebrow" style="justify-content:flex-start">Preguntas frecuentes</div>
+        <h2>Todo lo que<br>necesitas<br><em>saber</em></h2>
+        <p>Si tienes alguna duda que no esté aquí, escríbenos. Respondemos en menos de 24h.</p>
+        <a href="https://tally.so/r/TULINK" target="_blank" class="btn-main" style="font-size:14px;padding:13px 26px" id="faq-cta-btn">Consulta gratuita →</a>
+      </div>
+      <div class="faq-rows">
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Qué incluye exactamente el Plan Básico?<span class="fq-ico">+</span></button>
+          <div class="fa">El Plan Básico incluye IVA trimestral (Modelo 303), IRPF fraccionado (Modelo 130), retenciones si procede (Modelo 111), y los resúmenes anuales obligatorios (390, 190, 347). También incluimos el alta en Hacienda si eres nuevo autónomo. Todo por 39€/mes IVA incluido, sin costes adicionales por consultas puntuales.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿La declaración de la Renta está incluida?<span class="fq-ico">+</span></button>
+          <div class="fa">Sí, en los planes Estándar y Pro la Renta está incluida a partir de la 3.ª mensualidad abonada en ese ejercicio fiscal. En el Plan Básico se puede añadir como servicio puntual. La condición de las 3 mensualidades no es una permanencia: puedes cancelar cuando quieras igualmente.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Puedo cancelar en cualquier momento?<span class="fq-ico">+</span></button>
+          <div class="fa">Sí, sin penalización y sin coste de salida. Solo pedimos un preaviso de 15 días naturales. Sin contratos anuales, sin cláusulas de permanencia. Si Clavia no te convence, cancelas y listo.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Cómo os mando las facturas?<span class="fq-ico">+</span></button>
+          <div class="fa">Por WhatsApp, email o en tu carpeta compartida de Google Drive. Cualquier formato: foto con el móvil, PDF, Excel. Nos adaptamos a lo que te resulte más cómodo. Solo necesitamos que nos las mandes antes del día 5 de cada mes.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Cuánto tarda en estar todo listo?<span class="fq-ico">+</span></button>
+          <div class="fa">En menos de 24 horas te respondemos con una propuesta. Una vez aceptada, firmamos digitalmente y gestionamos el apoderamiento con la AEAT. En 2-3 días laborables estás operativo y con tu asesor asignado.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Y si tengo dudas fiscales fuera del trimestre?<span class="fq-ico">+</span></button>
+          <div class="fa">Las consultas están incluidas en el precio. Escríbenos por WhatsApp o email cuando necesites resolver algo. El tiempo de respuesta es de 24-48h según el plan, sin coste adicional por cada pregunta.</div>
+        </div>
+        <div class="frow">
+          <button class="fq" onclick="doFaq(this)">¿Cómo funciona el cambio de gestoría?<span class="fq-ico">+</span></button>
+          <div class="fa">Es más sencillo de lo que parece. Nosotros gestionamos el traspaso: pedimos los documentos a tu gestoría anterior, actualizamos el apoderamiento en la AEAT y te ponemos al día sin que tengas que hacer casi nada. Sin interrupciones en tu gestión fiscal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>¿Listo para<br><em>olvidarte de Hacienda?</em></h2>
+    <p>Cuéntanos tu situación y te preparamos una propuesta en menos de 24 horas. Sin compromiso ni permanencia.</p>
+    <button class="btn-main-lg" onclick="window.open('https://tally.so/r/TULINK','_blank')" id="final-cta-btn">
+      Solicitar consulta gratuita →
+    </button>
+    <div class="cta-final-trust">
+      <div class="cta-trust-item">Sin permanencia</div>
+      <div class="cta-trust-item">Precio fijo desde 39€/mes IVA incl.</div>
+      <div class="cta-trust-item">Respuesta en 24h</div>
+      <div class="cta-trust-item">100% online</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER MINI -->
+<footer class="footer-mini">
+  <div class="wrap">
+    <div class="footer-mini-inner">
+      <a href="/" class="flogo">
+        <span class="flogo-w">clavia</span>
+        <span class="flogo-d"></span>
+      </a>
+      <div class="footer-links">
+        <a href="/aviso-legal.html">Aviso legal</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',window.scrollY>40)
+})
+
+// FAQ
+function doFaq(btn){
+  const fa=btn.nextElementSibling
+  const isOpen=fa.classList.contains('open')
+  document.querySelectorAll('.fa.open').forEach(el=>{el.classList.remove('open');el.previousElementSibling.classList.remove('open')})
+  if(!isOpen){fa.classList.add('open');btn.classList.add('open')}
+}
+
+// GA4 + Google Ads conversion tracking
+function trackCTA(id){
+  if(typeof gtag!=='undefined'){
+    gtag('event','click_cta',{event_category:'CTA',event_label:id})
+    gtag('event','conversion',{send_to:'AW-CONVERSION_ID/CONVERSION_LABEL'})
+  }
+}
+document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
+  btn.addEventListener('click',()=>trackCTA(btn.id))
+})
+</script>
+
+<script>if(localStorage.getItem('clavia_consent')==='accepted'){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}</script>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies técnicas y analíticas para mejorar tu experiencia. <a href="/cookies.html">Política de cookies</a></p>
+  <div class="cookie-btns">
+    <button class="cb-reject" onclick="rejectCookies()">Solo necesarias</button>
+    <button class="cb-accept" onclick="acceptCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script>
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');if(!window.gtag){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}}
+function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
+if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
+</script>
+
+</body>
+</html>
