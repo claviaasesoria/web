@@ -23,10 +23,11 @@ function loadGA(){
   window.gtag=function(){dataLayer.push(arguments)};
   gtag('js',new Date());
   gtag('config','G-JMYYM5NKN8');
+  gtag('config','AW-18046267747');
   // Evento lead en GA4
   gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1});
-  // Conversión Google Ads — sustituir con tu ID real desde Google Ads → Herramientas → Conversiones
-  // gtag('event','conversion',{send_to:'AW-XXXXXXXXX/XXXXXXXXX'});
+  // Conversión Google Ads — sustituir AW-XXXXXXXXX con el label de la acción de conversión cuando lo tengas
+  // gtag('event','conversion',{send_to:'AW-18046267747/XXXXXXXXX'});
 }
 if(localStorage.getItem('clavia_consent')==='accepted') loadGA();
 </script>
