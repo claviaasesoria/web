@@ -285,19 +285,22 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Clavia",
-  "description": "Gestoría fiscal y contable online para autónomos en España. Precio fijo desde 39€/mes, sin permanencia.",
+  "description": "Gestoría fiscal y contable online para autónomos en España. IVA, IRPF y Renta desde 39€/mes (IVA incl.), sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
   "url": "https://clavia.es",
   "logo": "https://clavia.es/favicon.svg",
   "email": "info@clavia.es",
-  "areaServed": {
-    "@type": "Country",
-    "name": "ES"
-  },
-  "serviceType": ["Gestoría fiscal", "Contabilidad para autónomos", "Declaración de IVA", "Declaración de IRPF", "Declaración de la Renta"],
+  "telephone": "+34634450038",
+  "areaServed": [
+    {"@type": "Country", "name": "ES"},
+    {"@type": "City", "name": "Valencia"},
+    {"@type": "AdministrativeArea", "name": "Comunitat Valenciana"}
+  ],
+  "serviceType": ["Gestoría fiscal", "Gestoría online autónomos", "Contabilidad para autónomos", "Declaración de IVA", "Declaración de IRPF", "Declaración de la Renta", "Asesoría fiscal autónomos"],
   "priceRange": "39€–79€/mes",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
     "addressCountry": "ES"
   },
   "sameAs": []
@@ -638,6 +641,46 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   </div>
 </section>
 
+<!-- BLOG -->
+<section style="padding:80px 0;background:var(--cream2)">
+  <div class="wrap">
+    <div class="section-header rv">
+      <div class="eyebrow">Blog fiscal</div>
+      <h2>Lo que necesitas saber<br><em>como autónomo</em></h2>
+      <p>Guías prácticas sobre impuestos, deducciones y novedades fiscales para autónomos en España. Sin tecnicismos.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px">
+      <a href="/blog/iva-franquiciado-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IVA · Actualidad</div>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">IVA Franquiciado para Autónomos en 2026</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">Qué es, quién puede acogerse, cuándo entra en vigor y si te conviene. Todo sin rodeos.</p>
+        <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
+      </a>
+      <a href="/blog/gastos-deducibles-autonomos-2026" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IRPF · Deducciones</div>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Gastos Deducibles para Autónomos: La Guía Completa</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">Qué puedes deducir en IRPF e IVA, límites del coche y la vivienda, y los errores que más sanciona Hacienda.</p>
+        <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
+      </a>
+      <a href="/blog/cuanto-cuesta-ser-autonomo-2026" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Costes · Cuota RETA</div>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">¿Cuánto Cuesta Ser Autónomo en 2026?</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">La cuenta completa: cuota RETA, IRPF, IVA y gestoría. Con tres ejemplos reales según nivel de ingresos.</p>
+        <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
+      </a>
+      <a href="/blog/bizum-hacienda-autonomos-2026" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Novedades · Hacienda</div>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Hacienda Controla tus Bizum en 2026</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">Qué ha cambiado desde enero de 2026, qué tienes que declarar y qué no. Sin alarmismo.</p>
+        <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="/blog/" class="btn-outline">Ver todos los artículos →</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -708,7 +751,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <span class="flogo-w">clavia</span>
           <span class="flogo-d"></span>
         </a>
-        <p class="ftag">Gestoría online para autónomos, creativos y emprendedores digitales.</p>
+        <p class="ftag">Gestoría online para autónomos, creativos y emprendedores digitales. Con sede en Valencia, trabajamos con autónomos de toda España.</p>
         <p class="ftag" style="margin-top:8px;font-size:11px;opacity:.5"><a href="mailto:info@clavia.es" style="color:inherit">info@clavia.es</a><br><a href="https://wa.me/34634450038" target="_blank" rel="noopener" style="color:inherit">634 450 038</a></p>
       </div>
       <div>
