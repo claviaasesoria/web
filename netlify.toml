@@ -1,15 +1,88 @@
 [build]
   publish = "."
 
+# ── Redirects .html → canonical (sin .html) ──────────────────────────────────
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/gastos-deducibles-autonomos-2026.html"
+  to = "/blog/gastos-deducibles-autonomos-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/cuanto-cuesta-ser-autonomo-2026.html"
+  to = "/blog/cuanto-cuesta-ser-autonomo-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/iva-franquiciado-autonomos.html"
+  to = "/blog/iva-franquiciado-autonomos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/renta-2025-autonomos.html"
+  to = "/blog/renta-2025-autonomos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/bizum-hacienda-autonomos-2026.html"
+  to = "/blog/bizum-hacienda-autonomos-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/verifactu-factura-electronica-autonomos.html"
+  to = "/blog/verifactu-factura-electronica-autonomos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/cuota-autonomos-2026-ingresos-reales.html"
+  to = "/blog/cuota-autonomos-2026-ingresos-reales"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/especialidades/freelances-digitales.html"
+  to = "/especialidades/freelances-digitales"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/especialidades/influencers.html"
+  to = "/especialidades/influencers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/especialidades/musicos-artistas.html"
+  to = "/especialidades/musicos-artistas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/especialidades/nomadas-digitales.html"
+  to = "/especialidades/nomadas-digitales"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/especialidades"
-  to = "/especialidades/musicos-artistas.html"
+  to = "/especialidades/musicos-artistas"
   status = 301
   force = true
 
 [[redirects]]
   from = "/especialidades/"
-  to = "/especialidades/musicos-artistas.html"
+  to = "/especialidades/musicos-artistas"
   status = 301
   force = true
 
