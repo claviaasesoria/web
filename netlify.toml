@@ -86,6 +86,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/retencion-irpf-facturas-autonomos.html"
+  to = "/blog/retencion-irpf-facturas-autonomos"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
