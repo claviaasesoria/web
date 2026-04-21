@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Gestoría para Freelances Digitales · Clavia</title>
 <link rel="canonical" href="https://clavia.es/especialidades/freelances-digitales">
-<meta name="description" content="Gestoría online para diseñadores, programadores y consultores freelance. Facturación internacional, IVA, IRPF. Desde 39€/mes.">
+<meta name="description" content="Gestoría online para diseñadores, programadores y consultores freelance. Facturación internacional, IVA, IRPF. Desde 39€/mes (IVA incl.).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gestoría para Freelances Digitales · Clavia">
+<meta property="og:description" content="Gestoría online para diseñadores, programadores y consultores freelance. Facturación internacional, IVA, IRPF. Desde 39€/mes (IVA incl.).">
+<meta property="og:url" content="https://clavia.es/especialidades/freelances-digitales">
+<meta property="og:site_name" content="Clavia">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
@@ -37,7 +42,7 @@ body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
 @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes orb-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rv{opacity:1;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:translateY(0)}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 0;transition:all .3s;border-bottom:1px solid transparent}
 nav.stuck{background:rgba(253,240,232,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
@@ -120,12 +125,16 @@ p strong{color:var(--forest)}
 .cta-band h3{font-family:var(--serif);font-size:clamp(24px,3vw,36px);color:#fff;font-weight:400;line-height:1.1;margin:0 0 14px}
 .cta-band h3 em{font-style:italic;color:rgba(0,192,122,.8)}
 .cta-band p{font-size:15px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 30px}
+.spec-faq{margin:40px 0}.afrow{border-top:1px solid var(--line)}.afrow:last-child{border-bottom:1px solid var(--line)}.afq{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}.afq-ico{font-size:20px;font-weight:300;color:var(--grey2);flex-shrink:0;transition:transform .2s}.afq.open .afq-ico{transform:rotate(45deg)}.afa{display:none;padding:0 0 18px;font-size:14px;color:var(--grey);line-height:1.7}.afa.open{display:block}
 @media(max-width:700px){main{padding:56px 20px 80px}.grid2{grid-template-columns:1fr}.cta-band{padding:40px 28px}.page-hero{padding:100px 20px 60px}}
 nav.nav-dark:not(.stuck) .logo-text{color:#fff}
 nav.nav-dark:not(.stuck) .nav-links a{color:rgba(255,255,255,.65)}
 nav.nav-dark:not(.stuck) .nav-links a:hover{color:#fff}
 nav.nav-dark:not(.stuck) .ham span{background:#fff}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Tengo que darme de alta como autónomo si facturo a clientes extranjeros?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si realizas una actividad económica de forma habitual, tienes que darte de alta en Hacienda (Modelo 036/037) y en la Seguridad Social (RETA), independientemente de si tus clientes son españoles o extranjeros."}},{"@type":"Question","name":"¿Qué modelos presento si tengo clientes en la UE?","acceptedAnswer":{"@type":"Answer","text":"Además del Modelo 303 y el Modelo 130, necesitarás el Modelo 349 para declarar operaciones intracomunitarias. Las facturas a empresas de la UE van sin IVA aplicando la inversión del sujeto pasivo."}},{"@type":"Question","name":"¿Puedo deducir el ordenador y el software?","acceptedAnswer":{"@type":"Answer","text":"Sí, proporcional al uso profesional. Si es de uso exclusivamente profesional, es deducible al 100%. El software de trabajo como Adobe, Figma o GitHub es deducible al 100%."}},{"@type":"Question","name":"¿Cómo declaro los ingresos cobrados por PayPal o Stripe?","acceptedAnswer":{"@type":"Answer","text":"Los ingresos cobrados a través de PayPal, Stripe, Wise o cualquier plataforma de pago son ingresos de actividad económica y tributan igual que cualquier otro cobro."}},{"@type":"Question","name":"¿Cuándo necesito el régimen OSS?","acceptedAnswer":{"@type":"Answer","text":"El OSS es necesario si vendes servicios digitales a particulares de otros países de la UE y superas 10.000€ anuales en ese tipo de ventas. Permite declarar el IVA de todos los países UE desde España sin darte de alta en cada uno."}}]}
+</script>
 </head>
 <body>
 <nav id="nav" class="nav-dark">
@@ -160,7 +169,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   <div class="ph-tag">Especialidad · Freelances digitales</div>
   <h1>Gestoría para freelances<br><em>que trabajan en digital</em></h1>
   <p>Clientes internacionales, plataformas de pago, gastos tecnológicos. Lo gestionamos todo.</p>
-  <a href="../index.html#contacto" class="ph-cta">Primer mes gratis →</a>
+  <a href="../index.html#contacto" class="ph-cta">Empezar ahora →</a>
   <div class="ph-note">Sin permanencia · Respuesta en 24h</div>
 </div>
 <main>
@@ -205,9 +214,17 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   <div class="card"><h4>Marketing y presencia</h4><p>Dominio, hosting, web, herramientas de email marketing, publicidad online.</p></div>
 </div>
 </div>
+<h2>Preguntas frecuentes sobre <em>freelances digitales</em></h2>
+<div class="spec-faq">
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Tengo que darme de alta si facturo a clientes extranjeros?<span class="afq-ico">+</span></button><div class="afa">Sí. Si realizas una actividad económica de forma habitual, tienes que darte de alta en Hacienda (Modelo 036/037) y en la Seguridad Social (RETA), independientemente de si tus clientes son españoles o extranjeros. La nacionalidad del cliente no afecta a tu obligación de alta.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Qué modelos presento si tengo clientes en la UE?<span class="afq-ico">+</span></button><div class="afa">Además del <strong>Modelo 303</strong> (IVA) y el <strong>Modelo 130</strong> (IRPF fraccionado), necesitarás el <strong>Modelo 349</strong> para declarar las operaciones intracomunitarias. Las facturas a empresas de la UE van sin IVA aplicando la inversión del sujeto pasivo.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Puedo deducir el ordenador y el software de trabajo?<span class="afq-ico">+</span></button><div class="afa">Sí, proporcional al uso profesional. Si el ordenador es de uso exclusivamente profesional, es deducible al 100%. Si tiene uso mixto, la AEAT acepta generalmente entre el 50% y el 100% dependiendo de la actividad. El software de trabajo (Adobe, Figma, GitHub) es deducible al 100%.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Cómo declaro los ingresos que cobro por PayPal o Stripe?<span class="afq-ico">+</span></button><div class="afa">Los ingresos cobrados a través de PayPal, Stripe, Wise o cualquier plataforma de pago son ingresos de actividad económica y tributan igual que cualquier otro cobro. El importe a declarar es el neto recibido en euros.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Cuándo necesito el régimen OSS?<span class="afq-ico">+</span></button><div class="afa">El régimen <strong>OSS (One Stop Shop)</strong> es necesario si vendes servicios digitales o productos digitales a particulares de otros países de la UE y superas 10.000€ anuales en ese tipo de ventas. Te permite declarar el IVA de todos los países de la UE desde España sin registrarte en cada uno.</div></div>
+</div>
 <div class="cta-band">
   <h3>¿Listo para simplificar<br><em>tu fiscalidad?</em></h3>
-  <p>Cuéntanos tu situación y te preparamos una propuesta personalizada en menos de 24 horas. El primer mes es completamente gratis.</p>
+  <p>Cuéntanos tu situación y te preparamos una propuesta personalizada en menos de 24 horas.</p>
   <a href="../index.html#contacto" class="btn-coral">Solicitar consulta gratuita →</a>
 </div>
 </main>
@@ -220,7 +237,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
           <span class="flogo-d"></span>
         </a>
         <p class="ftag">Gestoría online para autónomos, creativos y emprendedores digitales.</p>
-        <p class="ftag" style="margin-top:8px;font-size:11px;opacity:.5">NIF: — · hola@clavia.es<br>Nàquera, Valencia</p>
+        <p class="ftag" style="margin-top:8px;font-size:11px;opacity:.5">NIF: 20047795Y · info@clavia.es<br>Nàquera, Valencia</p>
       </div>
       <div>
         <div class="fh">Servicios</div>
@@ -238,21 +255,21 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
           <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
           <li><a href="../index.html#por-que">Por qué Clavia</a></li>
           <li><a href="../index.html#faq">FAQ</a></li>
-          <li><a href="../blog/index.html">Blog fiscal</a></li>
+          <li><a href="/blog/">Blog fiscal</a></li>
         </ul>
       </div>
       <div>
         <div class="fh">Especialidades</div>
         <ul class="fli">
-          <li><a href="../especialidades/musicos-artistas.html">Músicos y artistas</a></li>
-          <li><a href="../especialidades/freelances-digitales.html">Freelances digitales</a></li>
-          <li><a href="../especialidades/influencers.html">Influencers y creadores</a></li>
-          <li><a href="../especialidades/nomadas-digitales.html">Nómadas digitales</a></li>
+          <li><a href="/especialidades/musicos-artistas">Músicos y artistas</a></li>
+          <li><a href="/especialidades/freelances-digitales">Freelances digitales</a></li>
+          <li><a href="/especialidades/influencers">Influencers y creadores</a></li>
+          <li><a href="/especialidades/nomadas-digitales">Nómadas digitales</a></li>
         </ul>
       </div>
     </div>
     <div class="fbot">
-      <div class="fcp">© 2025 Clavia · clavia.es · Gestoría online para autónomos</div>
+      <div class="fcp">© 2026 Clavia · clavia.es · Gestoría online para autónomos</div>
       <div class="fleg">
         <a href="../privacidad.html">Política de privacidad</a>
         <a href="../aviso-legal.html">Aviso legal</a>
@@ -273,6 +290,7 @@ function rejectCookies(){localStorage.setItem('clavia_consent','rejected');docum
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
+function toggleFaq(btn){const a=btn.nextElementSibling;const open=btn.classList.toggle('open');a.classList.toggle('open',open)}
 function doFaq(btn){const row=btn.closest('.frow');const was=row.classList.contains('open');document.querySelectorAll('.frow.open').forEach(r=>r.classList.remove('open'));if(!was)row.classList.add('open')}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));</script>
