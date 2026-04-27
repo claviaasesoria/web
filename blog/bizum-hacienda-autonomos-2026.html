@@ -28,8 +28,21 @@
   "author": {"@type": "Organization", "name": "Clavia", "url": "https://clavia.es"},
   "publisher": {"@type": "Organization", "name": "Clavia", "url": "https://clavia.es"},
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-02",
+  "dateModified": "2026-04-27",
   "mainEntityOfPage": "https://clavia.es/blog/bizum-hacienda-autonomos-2026"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Tengo que facturar todos los cobros que recibo por Bizum?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, si son cobros por actividad profesional. Todo ingreso derivado de tu actividad como autónomo requiere factura, independientemente del medio de pago: Bizum, transferencia, efectivo o tarjeta. El importe mínimo no existe: 5€ o 5.000€, la obligación es la misma."}},
+    {"@type": "Question", "name": "¿Los Bizum entre amigos se reportan a Hacienda?", "acceptedAnswer": {"@type": "Answer", "text": "No. La normativa (Real Decreto 253/2025) solo obliga a los bancos a reportar los cobros por Bizum de empresarios y profesionales. Los pagos entre particulares —dividir una cena, devolver dinero a un amigo, un regalo— no se reportan. El propio Ministerio de Hacienda lo aclaró expresamente en diciembre de 2025."}},
+    {"@type": "Question", "name": "¿Qué pasa si no declaro un ingreso cobrado por Bizum?", "acceptedAnswer": {"@type": "Answer", "text": "Las consecuencias son las mismas que por no declarar cualquier otro ingreso: requerimiento de la AEAT, liquidación complementaria con intereses de demora y sanción de entre el 50% y el 150% de la cuota no ingresada. Desde 2026 la probabilidad de detección ha aumentado drásticamente porque los bancos informan mensualmente a Hacienda de todos los cobros por Bizum profesionales."}},
+    {"@type": "Question", "name": "¿Necesito darme de alta en Bizum comercial?", "acceptedAnswer": {"@type": "Answer", "text": "No es obligatorio por ley, pero sí recomendable si cobras habitualmente por Bizum. El Bizum comercial facilita separar cobros profesionales de personales, tiene límites de operación más altos y genera registros más claros. Si no lo tienes, puedes cobrar por el Bizum personal, pero debes llevar un control manual de qué cobros son profesionales."}},
+    {"@type": "Question", "name": "¿Desde cuándo controla Hacienda los Bizum?", "acceptedAnswer": {"@type": "Answer", "text": "Desde el 1 de enero de 2026, cuando entró en vigor el Real Decreto 253/2025. La primera remesa de datos que los bancos enviaron a Hacienda fue en febrero de 2026, con los cobros de enero. Antes, solo se reportaban operaciones superiores a 3.000€; ahora se reportan todas sin umbral mínimo."}}
+  ]
 }
 </script>
 <style>
@@ -153,6 +166,16 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
 .art-cta h3{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;margin-bottom:12px}
 .art-cta p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.75}
 .art-cta .btn-coral{box-shadow:0 4px 20px rgba(232,83,42,.3);font-size:16px;padding:16px 34px;color:#fff!important;text-decoration:none!important}
+
+/* FAQ accordion */
+.art-faq{margin:32px 0 48px;border-top:1px solid var(--line)}
+.afrow{border-bottom:1px solid var(--line)}
+.afq{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-family:var(--serif);font-size:18px;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+.afq:hover{color:var(--coral)}
+.afq-ico{width:24px;height:24px;border-radius:50%;background:var(--cream2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--grey);transition:transform .3s,background .2s;font-style:normal}
+.afq.open .afq-ico{transform:rotate(45deg);background:var(--coral);color:#fff}
+.afa{display:none;padding:0 0 20px;font-size:15px;color:var(--ink2);line-height:1.8}
+.afa.open{display:block}
 
 /* Responsive */
 @media(max-width:700px){
@@ -372,6 +395,15 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   <li><strong>Asegúrate de que tu gestoría tiene los extractos bancarios.</strong> El cruce que hará Hacienda es automático. El que tiene que hacer tu gestor para cuadrar tus números, también.</li>
 </ol>
 
+<h2>Preguntas frecuentes sobre Bizum y Hacienda</h2>
+<div class="art-faq">
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Tengo que facturar todos los cobros que recibo por Bizum?<span class="afq-ico">+</span></button><div class="afa">Sí, si son cobros por <strong>actividad profesional</strong>. Todo ingreso derivado de tu actividad como autónomo requiere factura, independientemente del medio de pago: Bizum, transferencia, efectivo o tarjeta. El importe mínimo no existe: 5€ o 5.000€, la obligación es la misma.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Los Bizum entre amigos se reportan a Hacienda?<span class="afq-ico">+</span></button><div class="afa">No. La normativa solo obliga a los bancos a reportar los cobros de <strong>empresarios y profesionales</strong>. Los pagos entre particulares (dividir una cena, devolver dinero, un regalo) no se reportan. El propio Ministerio de Hacienda lo aclaró expresamente en diciembre de 2025.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Qué pasa si no declaro un ingreso cobrado por Bizum?<span class="afq-ico">+</span></button><div class="afa">Las consecuencias son las mismas que por no declarar cualquier otro ingreso: requerimiento de la AEAT, liquidación complementaria con intereses de demora y <strong>sanción de entre el 50% y el 150%</strong> de la cuota no ingresada. Desde 2026 la probabilidad de detección es mucho mayor porque los bancos informan mensualmente.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Necesito darme de alta en Bizum comercial?<span class="afq-ico">+</span></button><div class="afa">No es obligatorio, pero sí recomendable si cobras habitualmente por Bizum. El <strong>Bizum comercial</strong> facilita separar cobros profesionales de personales, tiene límites de operación más altos y genera registros más claros para tu gestor.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Desde cuándo controla Hacienda los Bizum?<span class="afq-ico">+</span></button><div class="afa">Desde el <strong>1 de enero de 2026</strong>, cuando entró en vigor el Real Decreto 253/2025. La primera remesa de datos fue en febrero de 2026, con los cobros de enero. Antes, solo se reportaban operaciones superiores a 3.000€; ahora se reportan todas sin umbral mínimo.</div></div>
+</div>
+
 <div class="art-cta">
   <h3>Necesitas poner orden en tu facturación?</h3>
   <p>En Clavia gestionamos la contabilidad y los trimestrales de autónomos desde 39&euro;/mes (IVA incl.). Si cobras por Bizum, transferencia o lo que sea &mdash; nos aseguramos de que todo cuadre antes de que lo compruebe Hacienda.</p>
@@ -444,6 +476,7 @@ function rejectCookies(){localStorage.setItem('clavia_consent','rejected');docum
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
+function toggleFaq(btn){const a=btn.nextElementSibling;const open=btn.classList.toggle('open');a.classList.toggle('open',open)}
 </script>
 </body>
 </html>

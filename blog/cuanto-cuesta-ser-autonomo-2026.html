@@ -28,8 +28,21 @@
   "author": {"@type": "Organization", "name": "Clavia", "url": "https://clavia.es"},
   "publisher": {"@type": "Organization", "name": "Clavia", "url": "https://clavia.es"},
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-22",
+  "dateModified": "2026-04-27",
   "mainEntityOfPage": "https://clavia.es/blog/cuanto-cuesta-ser-autonomo-2026"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Cuánto paga de impuestos un autónomo que factura 2.000€ al mes?", "acceptedAnswer": {"@type": "Answer", "text": "Un autónomo que factura 2.000€ netos al mes paga aproximadamente: cuota RETA ~329€ (tramo 2.030-2.330€), IRPF estimado ~300-400€ (tipo efectivo ~15-20%) y gestoría ~39-59€. En total, entre 670€ y 790€/mes en costes fijos. Le quedan limpios entre 1.210€ y 1.330€."}},
+    {"@type": "Question", "name": "¿La cuota de autónomos es deducible en la declaración de la Renta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, al 100%. La cuota RETA que pagas cada mes a la Seguridad Social es un gasto deducible de tu actividad económica, lo que reduce tu base imponible del IRPF. Si estás en el tramo del 30%, por cada 100€ de cuota recuperas aproximadamente 30€ en la Renta."}},
+    {"@type": "Question", "name": "¿Qué es la tarifa plana de autónomos y quién puede pedirla en 2026?", "acceptedAnswer": {"@type": "Answer", "text": "La tarifa plana es una cuota reducida de 80€/mes durante los primeros 12 meses para autónomos que se dan de alta por primera vez (o que llevan al menos 2 años sin estarlo). En 2026 las cuotas están congeladas respecto a 2025. Algunas comunidades autónomas (Madrid, Andalucía, Canarias, Murcia) bonifican esos 80€ con la 'cuota cero'."}},
+    {"@type": "Question", "name": "¿Cuándo conviene crear una SL en lugar de seguir como autónomo?", "acceptedAnswer": {"@type": "Answer", "text": "La frontera habitual está entre 40.000€ y 50.000€ de beneficio neto anual. Por debajo de ese umbral, los costes de constitución y gestión de una SL (impuesto de sociedades, nómina de administrador, contabilidad obligatoria) suelen superar el ahorro fiscal. Por encima, el tipo del 25% del IS puede ser inferior al IRPF progresivo. Siempre conviene analizar el caso concreto."}},
+    {"@type": "Question", "name": "¿Qué gastos puede deducir un autónomo para pagar menos impuestos?", "acceptedAnswer": {"@type": "Answer", "text": "Los principales gastos deducibles para un autónomo son: cuota RETA (100%), alquiler de local o una parte de la vivienda habitual si trabajas desde casa (límites del 30%), suministros (30% de la parte afecta), equipo informático y mobiliario (amortización), formación, gestoría, publicidad, seguro RC, teléfono y, en estimación directa simplificada, los gastos de difícil justificación (7% del rendimiento neto, máximo 2.000€)."}}
+  ]
 }
 </script>
 <style>
@@ -155,6 +168,16 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
 .art-cta h3{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;margin-bottom:12px}
 .art-cta p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.75}
 .art-cta .btn-coral{box-shadow:0 4px 20px rgba(232,83,42,.3);font-size:16px;padding:16px 34px;color:#fff!important;text-decoration:none!important}
+
+/* FAQ accordion */
+.art-faq{margin:32px 0 48px;border-top:1px solid var(--line)}
+.afrow{border-bottom:1px solid var(--line)}
+.afq{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-family:var(--serif);font-size:18px;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+.afq:hover{color:var(--coral)}
+.afq-ico{width:24px;height:24px;border-radius:50%;background:var(--cream2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--grey);transition:transform .3s,background .2s;font-style:normal}
+.afq.open .afq-ico{transform:rotate(45deg);background:var(--coral);color:#fff}
+.afa{display:none;padding:0 0 20px;font-size:15px;color:var(--ink2);line-height:1.8}
+.afa.open{display:block}
 
 @media(max-width:700px){
   .art-hero{padding:110px 20px 56px}
@@ -426,6 +449,15 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
 
 <p>El patrón es claro: <strong>cuanto más facturas, mayor porcentaje se va en costes</strong>, pero también mayor es tu neto absoluto. La clave no es minimizar los costes a toda costa, sino tenerlos controlados y planificados.</p>
 
+<h2>Preguntas frecuentes sobre el coste de ser autónomo</h2>
+<div class="art-faq">
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Cuánto paga de impuestos un autónomo que factura 2.000€ al mes?<span class="afq-ico">+</span></button><div class="afa">Aproximadamente: cuota RETA ~329€ (tramo 2.030-2.330€), IRPF estimado ~300-400€ (tipo efectivo ~15-20%) y gestoría ~39-59€. En total, entre <strong>670€ y 790€/mes en costes fijos</strong>. Le quedan limpios entre 1.210€ y 1.330€.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿La cuota de autónomos es deducible en la declaración de la Renta?<span class="afq-ico">+</span></button><div class="afa">Sí, al <strong>100%</strong>. La cuota RETA que pagas cada mes a la Seguridad Social reduce tu base imponible del IRPF. Si estás en el tramo del 30%, por cada 100€ de cuota recuperas aproximadamente 30€ en la Renta.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Qué es la tarifa plana de autónomos y quién puede pedirla en 2026?<span class="afq-ico">+</span></button><div class="afa">La tarifa plana es una cuota reducida de <strong>80€/mes durante los primeros 12 meses</strong> para autónomos que se dan de alta por primera vez (o que llevan al menos 2 años sin estarlo). Algunas comunidades autónomas (Madrid, Andalucía, Canarias, Murcia) bonifican esos 80€ con la llamada "cuota cero".</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Cuándo conviene crear una SL en lugar de seguir como autónomo?<span class="afq-ico">+</span></button><div class="afa">La frontera habitual está entre <strong>40.000€ y 50.000€ de beneficio neto anual</strong>. Por debajo, los costes de constitución y gestión de una SL suelen superar el ahorro fiscal. Por encima, el tipo del 25% del Impuesto de Sociedades puede ser inferior al IRPF progresivo. Siempre conviene analizar el caso concreto.</div></div>
+  <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Qué gastos puede deducir un autónomo para pagar menos impuestos?<span class="afq-ico">+</span></button><div class="afa">Los principales: cuota RETA (100%), alquiler de local o parte de la vivienda (con límites), suministros (30% de la parte afecta), equipo informático (amortización), formación, gestoría, publicidad, seguro RC, teléfono y los <strong>gastos de difícil justificación</strong> (7% del rendimiento neto, máximo 2.000€ en estimación directa simplificada).</div></div>
+</div>
+
 <div class="art-cta">
   <h3>¿Necesitas que alguien te haga estos números?</h3>
   <p>En Clavia gestionamos el IVA, IRPF y la Renta de autónomos desde 39&euro;/mes (IVA incl.). Te calculamos tu situación fiscal real antes de que te des de alta &mdash; o después, para optimizar lo que ya pagas.</p>
@@ -498,6 +530,7 @@ function rejectCookies(){localStorage.setItem('clavia_consent','rejected');docum
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
+function toggleFaq(btn){const a=btn.nextElementSibling;const open=btn.classList.toggle('open');a.classList.toggle('open',open)}
 </script>
 </body>
 </html>
