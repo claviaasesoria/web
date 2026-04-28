@@ -592,7 +592,7 @@ document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
 })
 </script>
 
-<script>if(localStorage.getItem('clavia_consent')==='accepted'){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-18046267747')}</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',localStorage.getItem('clavia_consent')==='accepted'?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-18046267747')</script>
 
 <div class="cookie-banner" id="cookieBanner">
   <p>Usamos cookies técnicas y analíticas para mejorar tu experiencia. <a href="/cookies.html">Política de cookies</a></p>
@@ -603,8 +603,8 @@ document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
 </div>
 
 <script>
-function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');if(!window.gtag){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-18046267747')}}
-function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'})}
+function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 </script>
 

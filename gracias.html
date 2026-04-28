@@ -10,26 +10,14 @@
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 
-<!-- GA4 + conversiones: carga solo si hay consent, o cuando se acepta -->
+<!-- GA4 + conversiones: Consent Mode v2 -->
 <script>
-function loadGA(){
-  if(window._gaLoaded) return;
-  window._gaLoaded = true;
-  var s=document.createElement('script');
-  s.async=true;
-  s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';
-  document.head.appendChild(s);
-  window.dataLayer=window.dataLayer||[];
-  window.gtag=function(){dataLayer.push(arguments)};
-  gtag('js',new Date());
-  gtag('config','G-JMYYM5NKN8');
-  gtag('config','AW-18046267747');
-  // Evento lead en GA4
-  gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1});
-  // Conversión Google Ads — sustituir AW-XXXXXXXXX con el label de la acción de conversión cuando lo tengas
-  // gtag('event','conversion',{send_to:'AW-18046267747/XXXXXXXXX'});
-}
-if(localStorage.getItem('clavia_consent')==='accepted') loadGA();
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+var _cv=localStorage.getItem('clavia_consent')==='accepted';
+gtag('consent','default',_cv?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();
+gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-18046267747');
+if(_cv){gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1})}
 </script>
 
 <style>
@@ -217,11 +205,13 @@ nav{padding:18px 0;border-bottom:1px solid var(--line);background:var(--cream)}
 function acceptCookies(){
   localStorage.setItem('clavia_consent','accepted');
   document.getElementById('cookieBanner').classList.add('hidden');
-  loadGA(); // carga GA y dispara la conversión
+  gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+  gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1});
 }
 function rejectCookies(){
   localStorage.setItem('clavia_consent','rejected');
   document.getElementById('cookieBanner').classList.add('hidden');
+  gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
 }
 if(localStorage.getItem('clavia_consent')) document.getElementById('cookieBanner').classList.add('hidden');
 </script>
