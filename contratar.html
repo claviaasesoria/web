@@ -262,9 +262,9 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
       </div>
       <button class="change-plan" type="button" onclick="changePlan()">← Cambiar de plan</button>
 
-      <!-- TODO: Crear un formulario nuevo en Tally.so para contratación y reemplazar
-           'WOo5KN' por el nuevo ID en la función submitForm() al final de este archivo -->
-      <form id="contrat-form" onsubmit="submitForm(event)" novalidate>
+      <form id="contrat-form" action="https://formspree.io/f/maqvqgel" method="POST" onsubmit="submitForm(event)" novalidate>
+        <input type="hidden" name="_next" value="https://clavia.es/gracias">
+        <input type="hidden" name="_subject" value="Nueva solicitud de contratación — Clavia">
 
         <div class="form-section-label">Datos personales</div>
 
@@ -426,21 +426,7 @@ function submitForm(e) {
   btn.disabled = true;
   btn.innerHTML = 'Enviando... <span class="submit-arrow">⏳</span>';
 
-  // TODO: reemplazar WOo5KN por el ID del formulario de contratación de Tally
-  var params = new URLSearchParams({
-    plan: _plan,
-    precio: _precio,
-    nombre: form.nombre.value,
-    nif: form.nif.value,
-    email: form.email.value,
-    telefono: form.telefono.value,
-    direccion: form.direccion.value,
-    actividad: form.actividad.value,
-    epigrafe: form.epigrafe.value,
-    n_epigrafes: form.n_epigrafes.value,
-    situacion: situacion.value
-  });
-  window.location.href = 'https://tally.so/r/WOo5KN?' + params.toString();
+  form.submit();
 }
 
 window.addEventListener('scroll', function() {
