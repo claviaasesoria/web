@@ -11,13 +11,6 @@
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-var _cv=localStorage.getItem('clavia_consent')==='accepted';
-gtag('consent','default',_cv?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
-(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();
-gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-17976955492');
-</script>
 <style>
 :root{
   --cream:#fdf0e8;--cream2:#f5e2d0;--cream3:#e8cdb4;
@@ -447,14 +440,7 @@ function submitForm(e) {
   btn.disabled = true;
   btn.innerHTML = 'Enviando... <span class="submit-arrow">⏳</span>';
 
-  // Disparar conversión antes de navegar; form.submit() como fallback a 1s
-  var _sent = false;
-  function _doSubmit() { if (!_sent) { _sent = true; form.submit(); } }
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'generate_lead', {event_category:'Lead', event_label:'Contratación', value:1});
-    gtag('event', 'conversion', {send_to:'AW-17976955492/9KuHCJnj8aMcEOSkivxC', value:1.0, currency:'EUR', event_callback: _doSubmit});
-  }
-  setTimeout(_doSubmit, 1000);
+  form.submit();
 }
 
 window.addEventListener('scroll', function() {
