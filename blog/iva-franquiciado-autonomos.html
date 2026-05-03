@@ -232,7 +232,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
         <li><a href="/#precios">Precios</a></li>
         <li><a href="/#por-que">Por qué Clavia</a></li>
         <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#contacto" class="nav-cta">Empezar ahora</a></li>
+        <li><a href="/empezar" class="nav-cta">Empezar ahora</a></li>
       </ul>
       <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
@@ -244,7 +244,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   <a href="/#precios" onclick="toggleMenu()">Precios</a>
   <a href="/#por-que" onclick="toggleMenu()">Por qué Clavia</a>
   <a href="/blog/" onclick="toggleMenu()">Blog</a>
-  <a href="/#contacto" onclick="toggleMenu()" style="color:var(--coral)">Empezar ahora &rarr;</a>
+  <a href="/empezar" onclick="toggleMenu()" style="color:var(--coral)">Empezar ahora &rarr;</a>
 </div>
 
 <header class="art-hero">
@@ -455,7 +455,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
 <div class="art-cta">
   <h3>¿Tienes dudas sobre cómo te afecta?</h3>
   <p>En Clavia gestionamos el IVA, IRPF y la Renta de autónomos desde 39&euro;/mes (IVA incl.). Si necesitas que alguien revise tu situación fiscal antes de que llegue el franquiciado, hablamos.</p>
-  <a href="/#contacto" class="btn-coral">Consulta gratuita &rarr;</a>
+  <a href="/empezar" class="btn-coral">Consulta gratuita &rarr;</a>
 </div>
 
 </article>
@@ -477,7 +477,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
           <li><a href="/#precios">Plan Básico &mdash; 39&euro;/mes</a></li>
           <li><a href="/#precios">Plan Estándar &mdash; 59&euro;/mes</a></li>
           <li><a href="/#precios">Plan Pro &mdash; 79&euro;/mes</a></li>
-          <li><a href="/#contacto">Consulta gratuita</a></li>
+          <li><a href="/empezar">Consulta gratuita</a></li>
         </ul>
       </div>
       <div>
@@ -518,9 +518,9 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   </div>
 </div>
 <script>
-if(localStorage.getItem('clavia_consent')==='accepted'){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}
-function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');if(!window.gtag){(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-JMYYM5NKN8')}}
-function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden')}
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',localStorage.getItem('clavia_consent')==='accepted'?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();gtag('js',new Date());gtag('config','G-JMYYM5NKN8')
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'})}
+function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 (()=>{const n=document.getElementById('nav');let t=false;window.addEventListener('scroll',()=>{if(!t){t=true;requestAnimationFrame(()=>{n&&n.classList.toggle('stuck',window.scrollY>40);t=false})}},{passive:true})})();
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}

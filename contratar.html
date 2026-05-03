@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>if(location.pathname.endsWith('.html')){location.replace(location.pathname.slice(0,-5)+location.search+location.hash)}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Contratar · Clavia Gestoría Online para Autónomos</title>
+<link rel="canonical" href="https://clavia.es/contratar">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
+<link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{
+  --cream:#fdf0e8;--cream2:#f5e2d0;--cream3:#e8cdb4;
+  --forest:#1c1410;--forest2:#7c3a2d;
+  --sage:#2d6a4f;--sage-lo:rgba(45,106,79,.12);--sage-bd:rgba(45,106,79,.28);
+  --coral:#e8532a;--coral2:#f06030;--coral-lo:rgba(232,83,42,.1);
+  --ink:#1c0e08;--ink2:#3d2418;
+  --grey:#7a5545;--grey2:#aa8878;
+  --line:rgba(28,14,8,.1);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --r:8px;--rr:16px;--rrr:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:180px}
+
+nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.logo{display:flex;align-items:center;gap:4px}
+.logo-text{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.3px;line-height:1}
+.logo-dot{width:7px;height:7px;background:var(--sage);border-radius:50%;margin-bottom:12px;flex-shrink:0}
+.back{font-size:13px;color:var(--grey);display:flex;align-items:center;gap:5px}
+.back:hover{color:var(--ink)}
+
+main{flex:1;padding:48px 24px 80px;position:relative;z-index:1}
+
+/* STEP INDICATOR */
+.step-bar{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px}
+.step-item{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--grey2)}
+.step-item.active{color:var(--ink)}
+.step-num{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--cream3);display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--mono);color:var(--grey);flex-shrink:0}
+.step-item.active .step-num{background:var(--ink);border-color:var(--ink);color:#fff}
+.step-item.done .step-num{background:var(--sage);border-color:var(--sage);color:#fff}
+.step-sep{width:32px;height:1px;background:var(--cream3)}
+
+/* SECTION HEADERS */
+.section-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px}
+.section-eyebrow::before,.section-eyebrow::after{content:'';height:1px;width:20px;background:var(--sage)}
+.section-title{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:400;color:var(--ink);text-align:center;letter-spacing:-.5px;line-height:1.1;margin-bottom:10px}
+.section-sub{font-size:15px;color:var(--grey);text-align:center;margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* PLAN CARDS */
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto 32px}
+.plan-card{border-radius:var(--rrr);padding:32px 28px;display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid var(--cream3);transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,14,8,.1);border-color:var(--cream2)}
+.plan-card.featured{border-color:var(--coral);box-shadow:0 4px 24px rgba(232,83,42,.12)}
+.plan-card.featured:hover{box-shadow:0 12px 40px rgba(232,83,42,.2)}
+.plan-badge{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--coral);background:var(--coral-lo);padding:4px 10px;border-radius:20px;display:inline-block;width:fit-content;margin-bottom:16px}
+.plan-name{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:8px}
+.plan-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
+.plan-price{font-family:var(--serif);font-size:38px;font-weight:400;color:var(--ink);line-height:1}
+.plan-price-suffix{font-size:15px;color:var(--grey)}
+.plan-iva{font-family:var(--mono);font-size:10px;color:var(--grey2);margin-bottom:24px}
+.plan-divider{height:1px;background:var(--cream3);margin-bottom:20px}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:28px}
+.plan-features li{font-size:13px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.plan-features li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px}
+.plan-features li.no{color:var(--grey2)}
+.plan-features li.no::before{content:'—';color:var(--cream3)}
+.plan-btn{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-radius:var(--rr);font-size:15px;font-weight:700;transition:background .2s,transform .1s;background:var(--cream2);color:var(--ink);width:100%}
+.plan-btn:hover{background:var(--cream3)}
+.plan-btn:active{transform:scale(.98)}
+.plan-card.featured .plan-btn{background:var(--coral);color:#fff}
+.plan-card.featured .plan-btn:hover{background:var(--coral2)}
+.plan-arrow{font-size:16px;transition:transform .2s}
+.plan-btn:hover .plan-arrow{transform:translateX(4px)}
+
+/* SUPPLEMENTS */
+.suppl-note{max-width:900px;margin:0 auto 16px;background:#fff;border:1.5px solid var(--cream3);border-radius:var(--rr);padding:16px 20px;font-size:13px;color:var(--grey);display:flex;align-items:center;gap:10px}
+.suppl-note strong{color:var(--ink)}
+
+/* FOOTNOTES */
+.footnotes{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:6px}
+.footnotes p{font-family:var(--mono);font-size:10px;color:var(--grey2);line-height:1.5}
+
+/* FORM SECTION */
+#step-datos{display:none}
+.form-wrap{max-width:600px;margin:0 auto}
+.plan-pill{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;padding:10px 18px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:8px}
+.plan-pill-name{font-family:var(--serif);font-size:16px}
+.plan-pill-price{font-family:var(--mono);font-size:12px;opacity:.6}
+.change-plan{font-size:12px;color:var(--grey);text-decoration:underline;text-underline-offset:3px;display:block;margin-bottom:40px;background:none;border:none;cursor:pointer}
+.change-plan:hover{color:var(--ink)}
+
+.form-section-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--grey2);margin-bottom:16px;margin-top:32px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.field label{font-size:13px;font-weight:600;color:var(--ink2)}
+.field input,.field select,.field textarea{font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--cream3);border-radius:var(--r);padding:12px 14px;transition:border-color .2s,box-shadow .2s;outline:none;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px var(--sage-lo)}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey2)}
+.field-hint{font-size:11px;color:var(--grey2);line-height:1.4}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a5545' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+
+.radio-group{display:flex;flex-direction:column;gap:10px}
+.radio-option{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--r);border:1.5px solid var(--cream3);cursor:pointer;font-size:14px;color:var(--ink2);transition:border-color .2s,background .2s;background:#fff}
+.radio-option:hover{border-color:var(--sage-bd);background:var(--sage-lo)}
+.radio-option input[type=radio]{accent-color:var(--sage);width:16px;height:16px;flex-shrink:0}
+.radio-option.checked{border-color:var(--sage);background:var(--sage-lo)}
+
+.privacy-note{font-size:12px;color:var(--grey2);line-height:1.6;margin-bottom:24px;padding:14px;background:var(--cream2);border-radius:var(--r)}
+.privacy-note a{color:var(--sage);text-decoration:underline;text-underline-offset:2px}
+
+.submit-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-radius:var(--rr);font-size:16px;font-weight:700;background:var(--coral);color:#fff;transition:background .2s,transform .1s}
+.submit-btn:hover{background:var(--coral2)}
+.submit-btn:active{transform:scale(.99)}
+.submit-arrow{font-size:20px;transition:transform .2s}
+.submit-btn:hover .submit-arrow{transform:translateX(4px)}
+.submit-btn:disabled{background:var(--cream3);color:var(--grey);cursor:not-allowed}
+.submit-btn:disabled:hover{background:var(--cream3)}
+.submit-btn:disabled .submit-arrow{transform:none}
+
+footer{text-align:center;padding:24px;font-family:var(--mono);font-size:11px;color:var(--grey2);position:relative;z-index:1}
+footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:760px){
+  nav{padding:16px 20px}
+  .plans-grid{grid-template-columns:1fr}
+  .field-grid{grid-template-columns:1fr}
+  .step-item span:not(.step-num){display:none}
+  .step-sep{width:16px}
+}
+@media(max-width:480px){
+  .plan-card{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">
+    <span class="logo-text">clavia</span><span class="logo-dot"></span>
+  </a>
+  <a href="/empezar" class="back">← Volver</a>
+</nav>
+
+<main>
+  <!-- Step indicator -->
+  <div class="step-bar" id="step-bar">
+    <div class="step-item active" id="si-1">
+      <span class="step-num">1</span><span>Elige tu plan</span>
+    </div>
+    <div class="step-sep"></div>
+    <div class="step-item" id="si-2">
+      <span class="step-num">2</span><span>Tus datos</span>
+    </div>
+  </div>
+
+  <!-- STEP 1: Plan selection -->
+  <div id="step-plan">
+    <div class="section-eyebrow">Elige tu plan</div>
+    <h1 class="section-title">Sin permanencia · Cancelas cuando quieras</h1>
+    <p class="section-sub">Todos los precios llevan IVA incluido. Preaviso de 15 días para cancelar.</p>
+
+    <div class="plans-grid">
+
+      <!-- BÁSICO -->
+      <div class="plan-card" onclick="selectPlan('Básico','39')">
+        <div class="plan-name">Básico</div>
+        <div class="plan-price-row">
+          <span class="plan-price">39€</span>
+          <span class="plan-price-suffix">/mes</span>
+        </div>
+        <div class="plan-iva">IVA incluido</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>IVA trimestral (Modelo 303)</li>
+          <li>IRPF fraccionado (Modelo 130)</li>
+          <li>Declaración de la Renta*</li>
+          <li>Hasta 50 facturas al mes</li>
+          <li class="no">Actividad en países de la UE</li>
+          <li class="no">Requerimientos AEAT</li>
+        </ul>
+        <button class="plan-btn" type="button">
+          Contratar Básico <span class="plan-arrow">→</span>
+        </button>
+      </div>
+
+      <!-- ESTÁNDAR (destacado) -->
+      <div class="plan-card featured" onclick="selectPlan('Estándar','59')">
+        <div class="plan-badge">Más elegido</div>
+        <div class="plan-name">Estándar</div>
+        <div class="plan-price-row">
+          <span class="plan-price">59€</span>
+          <span class="plan-price-suffix">/mes</span>
+        </div>
+        <div class="plan-iva">IVA incluido</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Todo lo del plan Básico</li>
+          <li>Actividad en países de la UE</li>
+          <li>Ingresos por alquiler</li>
+          <li>Subcontratos o personal</li>
+          <li>Hasta 100 facturas al mes</li>
+          <li class="no">Requerimientos AEAT</li>
+        </ul>
+        <button class="plan-btn" type="button">
+          Contratar Estándar <span class="plan-arrow">→</span>
+        </button>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan-card" onclick="selectPlan('Pro','79')">
+        <div class="plan-name">Pro</div>
+        <div class="plan-price-row">
+          <span class="plan-price">79€</span>
+          <span class="plan-price-suffix">/mes</span>
+        </div>
+        <div class="plan-iva">IVA incluido</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Todo lo del plan Estándar</li>
+          <li>Requerimientos AEAT rutinarios**</li>
+          <li>Facturas ilimitadas</li>
+          <li>Atención prioritaria</li>
+        </ul>
+        <button class="plan-btn" type="button">
+          Contratar Pro <span class="plan-arrow">→</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Suplementos -->
+    <div class="suppl-note">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><circle cx="8" cy="8" r="7" stroke="#7a5545" stroke-width="1.2"/><path d="M8 7v4M8 5.5v.5" stroke="#7a5545" stroke-width="1.2" stroke-linecap="round"/></svg>
+      ¿Tienes más de un epígrafe IAE? <strong>&nbsp;2º epígrafe: +15€/mes · Cada epígrafe adicional: +12€/mes</strong> (IVA incl.)
+    </div>
+
+    <div class="footnotes">
+      <p>* Renta incluida a partir de la 3ª mensualidad abonada en el ejercicio.</p>
+      <p>** Requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas. Excluidas inspecciones formales, actas, recursos y reclamaciones (LGT art. 141).</p>
+    </div>
+  </div>
+
+  <!-- STEP 2: Data form -->
+  <div id="step-datos">
+    <div class="form-wrap">
+      <div id="plan-pill" class="plan-pill">
+        <span class="plan-pill-name" id="pill-name"></span>
+        <span class="plan-pill-price" id="pill-price"></span>
+      </div>
+      <button class="change-plan" type="button" onclick="changePlan()">← Cambiar de plan</button>
+
+      <!-- TODO: Crear un formulario nuevo en Tally.so para contratación y reemplazar
+           'WOo5KN' por el nuevo ID en la función submitForm() al final de este archivo -->
+      <form id="contrat-form" onsubmit="submitForm(event)" novalidate>
+
+        <div class="form-section-label">Datos personales</div>
+
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ana García López" autocomplete="name">
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="nif">NIF / NIE *</label>
+            <input type="text" id="nif" name="nif" required placeholder="12345678A" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="ana@ejemplo.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="direccion">Dirección fiscal completa *</label>
+          <input type="text" id="direccion" name="direccion" required placeholder="Calle Mayor 1, 3ºB, 28001 Madrid" autocomplete="street-address">
+        </div>
+
+        <div class="form-section-label" style="margin-top:36px">Actividad y facturación</div>
+
+        <div class="field">
+          <label for="actividad">¿A qué te dedicas? *</label>
+          <input type="text" id="actividad" name="actividad" required placeholder="Ej: Diseñadora gráfica freelance, programador web, consultor...">
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="epigrafe">Epígrafe IAE *</label>
+            <input type="text" id="epigrafe" name="epigrafe" required placeholder="Ej: 763">
+            <span class="field-hint">Si no lo sabes, lo buscamos juntos</span>
+          </div>
+          <div class="field">
+            <label for="n_epigrafes">Número de epígrafes</label>
+            <select id="n_epigrafes" name="n_epigrafes">
+              <option value="1">1 epígrafe — sin suplemento</option>
+              <option value="2">2 epígrafes — +15€/mes</option>
+              <option value="3">3 epígrafes — +27€/mes</option>
+              <option value="4">4 o más epígrafes — +39€/mes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-label" style="margin-top:36px">Tu situación actual</div>
+
+        <div class="field">
+          <label>¿Ya estás dado de alta como autónomo? *</label>
+          <div class="radio-group" id="situacion-group">
+            <label class="radio-option">
+              <input type="radio" name="situacion" value="Ya soy autónomo" required>
+              Sí, ya estoy dado de alta en Hacienda y RETA
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="situacion" value="Me voy a dar de alta">
+              No, pero me voy a dar de alta pronto
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="situacion" value="Aún tengo dudas">
+              Todavía no lo tengo del todo claro
+            </label>
+          </div>
+        </div>
+
+        <!-- Hidden fields -->
+        <input type="hidden" name="plan" id="hidden-plan">
+        <input type="hidden" name="precio" id="hidden-precio">
+
+        <div class="privacy-note">
+          Al enviar aceptas nuestra <a href="/privacidad" target="_blank">Política de Privacidad</a>. Tus datos se tratarán exclusivamente para la prestación del servicio de gestoría. No compartiremos tu información con terceros.
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Enviar solicitud <span class="submit-arrow">→</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/privacidad">Privacidad</a> · <a href="/aviso-legal">Aviso legal</a> · clavia.es
+</footer>
+
+<script>
+let _plan = '', _precio = '';
+
+function selectPlan(plan, precio) {
+  _plan = plan;
+  _precio = precio;
+  document.getElementById('pill-name').textContent = 'Plan ' + plan;
+  document.getElementById('pill-price').textContent = precio + '€/mes · IVA incl.';
+  document.getElementById('hidden-plan').value = plan;
+  document.getElementById('hidden-precio').value = precio;
+  document.getElementById('step-plan').style.display = 'none';
+  document.getElementById('step-datos').style.display = 'block';
+  document.getElementById('si-1').classList.remove('active');
+  document.getElementById('si-1').classList.add('done');
+  document.getElementById('si-2').classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function changePlan() {
+  document.getElementById('step-datos').style.display = 'none';
+  document.getElementById('step-plan').style.display = 'block';
+  document.getElementById('si-1').classList.add('active');
+  document.getElementById('si-1').classList.remove('done');
+  document.getElementById('si-2').classList.remove('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Radio option visual state
+document.querySelectorAll('.radio-option input[type=radio]').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+    document.querySelectorAll('.radio-option').forEach(function(opt) {
+      opt.classList.remove('checked');
+    });
+    this.closest('.radio-option').classList.add('checked');
+  });
+});
+
+function submitForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('contrat-form');
+
+  // Basic validation
+  var required = form.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(el) {
+    if (el.type === 'radio') return; // handled separately
+    if (!el.value.trim()) { el.style.borderColor = 'var(--coral)'; valid = false; }
+    else el.style.borderColor = '';
+  });
+  var situacion = form.querySelector('input[name=situacion]:checked');
+  if (!situacion) {
+    document.getElementById('situacion-group').style.outline = '2px solid var(--coral)';
+    document.getElementById('situacion-group').style.borderRadius = 'var(--r)';
+    valid = false;
+  } else {
+    document.getElementById('situacion-group').style.outline = '';
+  }
+  if (!valid) {
+    var firstError = form.querySelector('[style*="var(--coral)"]');
+    if (firstError) firstError.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = 'Enviando... <span class="submit-arrow">⏳</span>';
+
+  // TODO: reemplazar WOo5KN por el ID del formulario de contratación de Tally
+  var params = new URLSearchParams({
+    plan: _plan,
+    precio: _precio,
+    nombre: form.nombre.value,
+    nif: form.nif.value,
+    email: form.email.value,
+    telefono: form.telefono.value,
+    direccion: form.direccion.value,
+    actividad: form.actividad.value,
+    epigrafe: form.epigrafe.value,
+    n_epigrafes: form.n_epigrafes.value,
+    situacion: situacion.value
+  });
+  window.location.href = 'https://tally.so/r/WOo5KN?' + params.toString();
+}
+
+window.addEventListener('scroll', function() {
+  document.querySelector('nav').classList.toggle('stuck', window.scrollY > 10);
+});
+</script>
+</body>
+</html>

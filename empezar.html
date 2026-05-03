@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>if(location.pathname.endsWith('.html')){location.replace(location.pathname.slice(0,-5)+location.search+location.hash)}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Empieza con Clavia · Gestoría Online para Autónomos</title>
+<link rel="canonical" href="https://clavia.es/empezar">
+<meta name="description" content="Empieza con Clavia. Contrata directamente o consulta tus dudas. Gestoría online para autónomos desde 39€/mes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
+<link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{
+  --cream:#fdf0e8;--cream2:#f5e2d0;--cream3:#e8cdb4;
+  --forest:#1c1410;--forest2:#7c3a2d;
+  --sage:#2d6a4f;--sage-lo:rgba(45,106,79,.12);--sage-bd:rgba(45,106,79,.28);
+  --coral:#e8532a;--coral2:#f06030;--coral-lo:rgba(232,83,42,.1);
+  --ink:#1c0e08;--ink2:#3d2418;
+  --grey:#7a5545;--grey2:#aa8878;
+  --line:rgba(28,14,8,.1);--line-inv:rgba(255,255,255,.12);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --r:8px;--rr:16px;--rrr:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{text-decoration:none;color:inherit}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:180px}
+
+/* NAV */
+nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.logo{display:flex;align-items:center;gap:4px}
+.logo-text{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.3px;line-height:1}
+.logo-dot{width:7px;height:7px;background:var(--sage);border-radius:50%;margin-bottom:12px;flex-shrink:0}
+.back{font-size:13px;color:var(--grey);display:flex;align-items:center;gap:5px}
+.back:hover{color:var(--ink)}
+
+/* MAIN */
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px 80px;position:relative;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.eyebrow::before,.eyebrow::after{content:'';height:1px;width:20px;background:var(--sage)}
+h1{font-family:var(--serif);font-size:clamp(32px,5vw,52px);font-weight:400;color:var(--ink);text-align:center;letter-spacing:-.5px;line-height:1.1;margin-bottom:14px}
+.sub{font-size:16px;color:var(--grey);text-align:center;margin-bottom:56px;max-width:400px}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:760px}
+.card{border-radius:var(--rrr);padding:40px 36px;display:flex;flex-direction:column;gap:16px;transition:transform .2s,box-shadow .2s;cursor:pointer;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px)}
+.card-a{background:var(--forest);box-shadow:0 8px 40px rgba(28,14,8,.18)}
+.card-a:hover{box-shadow:0 16px 56px rgba(28,14,8,.28)}
+.card-b{background:#fff;border:1.5px solid var(--cream3);box-shadow:0 4px 20px rgba(28,14,8,.06)}
+.card-b:hover{box-shadow:0 8px 32px rgba(28,14,8,.1)}
+
+.card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.card-a .card-icon{background:rgba(255,255,255,.1)}
+.card-b .card-icon{background:var(--sage-lo)}
+
+.card-title{font-family:var(--serif);font-size:clamp(22px,3vw,28px);font-weight:400;line-height:1.15}
+.card-a .card-title{color:#fff}
+.card-b .card-title{color:var(--ink)}
+
+.card-desc{font-size:14px;line-height:1.65;flex:1}
+.card-a .card-desc{color:rgba(255,255,255,.6)}
+.card-b .card-desc{color:var(--grey)}
+
+.card-price{font-family:var(--mono);font-size:12px;letter-spacing:.5px;padding:5px 12px;border-radius:20px;display:inline-block;width:fit-content}
+.card-a .card-price{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.card-b .card-price{background:var(--sage-lo);color:var(--sage)}
+
+.card-btn{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-radius:var(--rr);font-size:15px;font-weight:700;margin-top:8px;transition:background .2s}
+.card-a .card-btn{background:var(--coral);color:#fff}
+.card-a .card-btn:hover{background:var(--coral2)}
+.card-b .card-btn{background:var(--cream2);color:var(--ink)}
+.card-b .card-btn:hover{background:var(--cream3)}
+
+.arrow{font-size:18px;transition:transform .2s}
+.card:hover .arrow{transform:translateX(4px)}
+
+/* FOOTER */
+footer{text-align:center;padding:24px;font-family:var(--mono);font-size:11px;color:var(--grey2);position:relative;z-index:1}
+footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:580px){
+  nav{padding:16px 20px}
+  .cards{grid-template-columns:1fr}
+  .card{padding:32px 28px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">
+    <span class="logo-text">clavia</span><span class="logo-dot"></span>
+  </a>
+  <a href="/" class="back">← Volver al inicio</a>
+</nav>
+
+<main>
+  <div class="eyebrow">¿Cómo quieres continuar?</div>
+  <h1>Tú decides el siguiente paso</h1>
+  <p class="sub">Sin llamadas obligatorias. Sin formularios interminables. Elige lo que necesitas ahora.</p>
+
+  <div class="cards">
+    <a href="/contratar" class="card card-a">
+      <div class="card-icon">⚡</div>
+      <div class="card-price">Desde 39€/mes · IVA incl.</div>
+      <div class="card-title">Quiero contratarlo ahora mismo</div>
+      <div class="card-desc">Sé lo que necesito. Quiero elegir mi plan, dar mis datos y que empecéis a gestionarme cuanto antes.</div>
+      <div class="card-btn">
+        Elegir mi plan <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <a href="https://tally.so/r/WOo5KN" target="_blank" rel="noopener" class="card card-b">
+      <div class="card-icon">💬</div>
+      <div class="card-price">Respuesta en menos de 24h</div>
+      <div class="card-title">Tengo dudas y quiero que me expliquen</div>
+      <div class="card-desc">No tengo claro qué plan me corresponde, qué incluye o cómo funciona el proceso. Prefiero que me orienten primero.</div>
+      <div class="card-btn">
+        Escribir mi consulta <span class="arrow">→</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <a href="/privacidad">Privacidad</a> · <a href="/aviso-legal">Aviso legal</a> · clavia.es
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').classList.toggle('stuck',window.scrollY>10)
+})
+</script>
+</body>
+</html>
