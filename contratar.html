@@ -129,35 +129,6 @@ main{flex:1;padding:48px 24px 80px;position:relative;z-index:1}
 .submit-btn:disabled:hover{background:var(--cream3)}
 .submit-btn:disabled .submit-arrow{transform:none}
 
-/* HOW IT WORKS */
-.how-wrap{max-width:900px;margin:48px auto 0}
-.how-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--grey2);text-align:center;margin-bottom:20px}
-.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.how-card{background:#fff;border:1.5px solid var(--cream3);border-radius:var(--rr);padding:24px}
-.how-card-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:16px}
-.how-card-body{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:16px}
-
-/* Calendar strip */
-.cal-strip{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-bottom:12px}
-.cal-m{display:flex;flex-direction:column;align-items:center;gap:3px}
-.cal-ml{font-family:var(--mono);font-size:8px;font-weight:700;text-align:center;padding:4px 2px;border-radius:4px;color:var(--grey);background:var(--cream2);width:100%;line-height:1.2}
-.cal-ml span{display:block;font-size:6px;opacity:.8;font-weight:400}
-.cal-ml.quarter{background:var(--coral);color:#fff}
-.cal-ml.renta{background:var(--sage);color:#fff}
-.cal-dot{width:5px;height:5px;border-radius:50%;background:var(--cream3);border:1.5px solid var(--grey2)}
-.cal-d{font-family:var(--mono);font-size:8px;color:var(--grey2)}
-.cal-legend{display:flex;flex-wrap:wrap;gap:10px}
-.cal-legend span{font-size:11px;color:var(--grey);display:flex;align-items:center;gap:5px}
-.cal-leg-box{display:inline-block;width:10px;height:10px;border-radius:2px;flex-shrink:0}
-.cal-leg-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cream3);border:1.5px solid var(--grey2);flex-shrink:0}
-
-/* Drive */
-.drive-path{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:var(--cream2);border-radius:var(--r);padding:10px 12px;margin-bottom:12px}
-.drive-folder{font-family:var(--mono);font-size:11px;color:var(--ink2)}
-.drive-arr{color:var(--grey2);font-size:12px}
-.drive-tip{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--grey);line-height:1.5;background:var(--sage-lo);border-radius:var(--r);padding:10px 12px}
-
-@media(max-width:640px){.how-grid{grid-template-columns:1fr}.cal-strip{gap:2px}.cal-ml{font-size:7px}}
 
 footer{text-align:center;padding:24px;font-family:var(--mono);font-size:11px;color:var(--grey2);position:relative;z-index:1}
 footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
@@ -283,55 +254,6 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
       <p>** Requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas. Excluidas inspecciones formales, actas, recursos y reclamaciones (LGT art. 141).</p>
     </div>
 
-    <!-- ASÍ FUNCIONA -->
-    <div class="how-wrap">
-      <div class="how-label">Así funciona</div>
-
-      <div class="how-grid">
-        <!-- Calendario -->
-        <div class="how-card">
-          <div class="how-card-title">📅 Cuándo pasa cada cosa</div>
-          <div class="cal-strip">
-            <div class="cal-m"><div class="cal-ml quarter">ENE<span>4T+anual</span></div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">FEB</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">MAR</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml quarter">ABR<span>1T</span></div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">MAY</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml renta">JUN<span>Renta</span></div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml quarter">JUL<span>2T</span></div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">AGO</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">SEP</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml quarter">OCT<span>3T</span></div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">NOV</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-            <div class="cal-m"><div class="cal-ml">DIC</div><div class="cal-dot"></div><div class="cal-d">5</div></div>
-          </div>
-          <div class="cal-legend">
-            <span><span class="cal-leg-box" style="background:var(--coral)"></span>Trimestral (día 20)</span>
-            <span><span class="cal-leg-box" style="background:var(--sage)"></span>Renta (30 jun)</span>
-            <span><span class="cal-leg-dot"></span>Día 5 — nos mandas facturas</span>
-          </div>
-        </div>
-
-        <!-- Drive -->
-        <div class="how-card">
-          <div class="how-card-title">📁 Cómo nos mandas las facturas</div>
-          <p class="how-card-body">Te creamos una carpeta de Google Drive con tu nombre. Cada mes, abres la carpeta del mes en curso y arrastras tus facturas — desde el ordenador o el móvil. Sin emails con adjuntos, sin WhatsApps con 40 PDFs.</p>
-          <div class="drive-path">
-            <span class="drive-folder">📁 Tu nombre</span>
-            <span class="drive-arr">›</span>
-            <span class="drive-folder">📂 01_Enero</span>
-            <span class="drive-arr">›</span>
-            <span class="drive-folder">📂 02_Febrero</span>
-            <span class="drive-arr">›</span>
-            <span class="drive-folder" style="opacity:.4">···</span>
-          </div>
-          <div class="drive-tip">
-            <span>📱</span>
-            <span>Instala Google Drive en el móvil y sube un ticket en 10 segundos desde donde estés.</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- STEP 2: Data form -->
