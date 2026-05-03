@@ -74,6 +74,7 @@ main{flex:1;padding:48px 24px 80px;position:relative;z-index:1}
 .plan-features li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px}
 .plan-features li.no{color:var(--grey2)}
 .plan-features li.no::before{content:'—';color:var(--cream3)}
+.plan-features em{font-size:11px;opacity:.7;font-style:normal}
 .plan-btn{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-radius:var(--rr);font-size:15px;font-weight:700;transition:background .2s,transform .1s;background:var(--cream2);color:var(--ink);width:100%}
 .plan-btn:hover{background:var(--cream3)}
 .plan-btn:active{transform:scale(.98)}
@@ -180,12 +181,13 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
         <div class="plan-iva">IVA incluido</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li>IVA trimestral (Modelo 303)</li>
-          <li>IRPF fraccionado (Modelo 130)</li>
-          <li>Declaración de la Renta*</li>
-          <li>Hasta 50 facturas al mes</li>
-          <li class="no">Actividad en países de la UE</li>
-          <li class="no">Requerimientos AEAT</li>
+          <li>IVA trimestral (Mod. 303)</li>
+          <li>IRPF trimestral (Mod. 130)</li>
+          <li>Retenciones (Mod. 111)</li>
+          <li>Mod. 390 · Mod. 190 · Mod. 347</li>
+          <li>Alta en Hacienda incluida</li>
+          <li>Hasta 50 facturas/mes</li>
+          <li>Consultas por WhatsApp y email <em>(48h)</em></li>
         </ul>
         <button class="plan-btn" type="button">
           Contratar Básico <span class="plan-arrow">→</span>
@@ -203,12 +205,12 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
         <div class="plan-iva">IVA incluido</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li>Todo lo del plan Básico</li>
-          <li>Actividad en países de la UE</li>
-          <li>Ingresos por alquiler</li>
-          <li>Subcontratos o personal</li>
-          <li>Hasta 100 facturas al mes</li>
-          <li class="no">Requerimientos AEAT</li>
+          <li>Todo el plan Básico</li>
+          <li>Mod. 349 Intracomunitario</li>
+          <li>Mod. 115 Retención Alquileres</li>
+          <li>Declaración de la Renta incluida*</li>
+          <li>Hasta 100 facturas/mes</li>
+          <li>Consultas WhatsApp y email <em>(24h)</em></li>
         </ul>
         <button class="plan-btn" type="button">
           Contratar Estándar <span class="plan-arrow">→</span>
@@ -225,10 +227,12 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
         <div class="plan-iva">IVA incluido</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li>Todo lo del plan Estándar</li>
-          <li>Requerimientos AEAT rutinarios**</li>
+          <li>Todo el plan Estándar</li>
           <li>Facturas ilimitadas</li>
-          <li>Atención prioritaria</li>
+          <li>Trámite requerimientos AEAT**</li>
+          <li>Revisión fiscal trimestral con informe</li>
+          <li>Videollamada trimestral 30 min</li>
+          <li>Consultas prioritarias <em>(24h)</em></li>
         </ul>
         <button class="plan-btn" type="button">
           Contratar Pro <span class="plan-arrow">→</span>
