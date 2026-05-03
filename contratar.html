@@ -104,6 +104,7 @@ main{flex:1;padding:48px 24px 80px;position:relative;z-index:1}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
 .field label{font-size:13px;font-weight:600;color:var(--ink2)}
 .field input,.field select,.field textarea{font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--cream3);border-radius:var(--r);padding:12px 14px;transition:border-color .2s,box-shadow .2s;outline:none;width:100%}
+.field textarea{resize:vertical;min-height:100px}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px var(--sage-lo)}
 .field input::placeholder,.field textarea::placeholder{color:var(--grey2)}
 .field-hint{font-size:11px;color:var(--grey2);line-height:1.4}
@@ -303,8 +304,8 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
 
         <div class="field-grid">
           <div class="field">
-            <label for="epigrafe">Epígrafe IAE *</label>
-            <input type="text" id="epigrafe" name="epigrafe" required placeholder="Ej: 763">
+            <label for="epigrafe">Epígrafe IAE</label>
+            <input type="text" id="epigrafe" name="epigrafe" placeholder="Ej: 763">
             <span class="field-hint">Si no lo sabes, lo buscamos juntos</span>
           </div>
           <div class="field">
@@ -316,6 +317,17 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
               <option value="4">4 o más epígrafes — +39€/mes</option>
             </select>
           </div>
+        </div>
+
+        <div class="field">
+          <label for="facturacion">Facturación mensual aproximada</label>
+          <select id="facturacion" name="facturacion">
+            <option value="">— Selecciona un rango (opcional)</option>
+            <option value="Menos de 1.000€/mes">Menos de 1.000€/mes</option>
+            <option value="1.000–5.000€/mes">1.000–5.000€/mes</option>
+            <option value="5.000–15.000€/mes">5.000–15.000€/mes</option>
+            <option value="Más de 15.000€/mes">Más de 15.000€/mes</option>
+          </select>
         </div>
 
         <div class="form-section-label" style="margin-top:36px">Tu situación actual</div>
@@ -331,11 +343,12 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
               <input type="radio" name="situacion" value="Me voy a dar de alta">
               No, pero me voy a dar de alta pronto
             </label>
-            <label class="radio-option">
-              <input type="radio" name="situacion" value="Aún tengo dudas">
-              Todavía no lo tengo del todo claro
-            </label>
           </div>
+        </div>
+
+        <div class="field">
+          <label for="notas">Notas u observaciones</label>
+          <textarea id="notas" name="notas" rows="4" placeholder="Cuéntanos cómo funciona tu negocio, dudas que tengas, o cualquier cosa que quieras que sepamos antes de empezar..."></textarea>
         </div>
 
         <!-- Hidden fields -->
