@@ -161,6 +161,12 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .plan-btn:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25)}
 .plan.hi .plan-btn{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,83,42,.3)}
 .plan.hi .plan-btn:hover{background:var(--coral2)}
+.puntual-block{margin-top:56px;padding-top:48px;border-top:1px solid rgba(255,255,255,.08)}
+.puntual-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border-radius:var(--rr);overflow:hidden;margin-top:28px}
+.pitem{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;background:rgba(255,255,255,.03);gap:16px;transition:background .2s}
+.pitem:hover{background:rgba(255,255,255,.07)}
+.pitem-name{font-size:14px;color:rgba(255,255,255,.6)}
+.pitem-price{font-size:15px;font-weight:600;color:#fff;white-space:nowrap;font-family:var(--mono)}
 .plan-notes{margin-top:20px;padding:0 2px;font-size:11px;color:rgba(255,255,255,.22);line-height:1.8;font-family:var(--mono)}
 
 /* FAQ */
@@ -483,6 +489,22 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
     <div class="plan-notes">
       * Renta incluida a partir de la 3.ª mensualidad abonada en ese ejercicio fiscal.<br>
       ** Solo requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas (art. 141 LGT). Excluye inspecciones formales, actas, recursos y reclamaciones.
+    </div>
+    <div class="puntual-block rv">
+      <div style="text-align:center;margin-bottom:28px">
+        <div class="eyebrow">Sin suscripción</div>
+        <h3 style="font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);color:#fff;font-weight:400;margin:8px 0 6px">Servicios puntuales</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.45)">La sesión de asesoría va incluida en todos los trámites · Consultas por email, siempre gratis</p>
+      </div>
+      <div class="puntual-grid">
+        <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€</div></div>
+        <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€</div></div>
+        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">79€</div></div>
+        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+19€</div></div>
+        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">70 – 100€</div></div>
+        <div class="pitem"><div class="pitem-name">Sesión de asesoría</div><div class="pitem-price">39€</div></div>
+      </div>
+      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">Todos los precios IVA incluido · La Renta varía según complejidad — te confirmamos el importe antes de empezar</p>
     </div>
   </div>
 </section>

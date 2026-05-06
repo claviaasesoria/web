@@ -203,7 +203,13 @@ p strong{color:var(--forest)}
 .afq.open .afq-ico{transform:rotate(45deg)}
 .afa{display:none;padding:0 20px 18px;font-size:14px;color:var(--grey);line-height:1.75}
 .afa.open{display:block}
-@media(max-width:700px){main{padding:56px 20px 80px}.grid2{grid-template-columns:1fr}.price-row{grid-template-columns:1fr}.cta-band{padding:40px 28px}.page-hero{padding:100px 20px 60px}.foot-grid{grid-template-columns:1fr 1fr}}
+.puntual-block{margin-top:32px;padding-top:32px;border-top:1px solid var(--line)}
+.puntual-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:12px;overflow:hidden;margin-top:20px}
+.pitem{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--cream2);gap:16px;transition:background .2s}
+.pitem:hover{background:#fff}
+.pitem-name{font-size:14px;color:var(--ink2)}
+.pitem-price{font-size:15px;font-weight:600;color:var(--forest);white-space:nowrap;font-family:var(--mono)}
+@media(max-width:700px){main{padding:56px 20px 80px}.grid2{grid-template-columns:1fr}.price-row{grid-template-columns:1fr}.cta-band{padding:40px 28px}.page-hero{padding:100px 20px 60px}.foot-grid{grid-template-columns:1fr 1fr}.puntual-grid{grid-template-columns:1fr}}
 nav.nav-dark:not(.stuck) .logo-text{color:#fff}
 nav.nav-dark:not(.stuck) .nav-links a{color:rgba(255,255,255,.65)}
 nav.nav-dark:not(.stuck) .nav-links a:hover{color:#fff}
@@ -309,6 +315,19 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
   </div>
 </div>
 <div class="alert-box"><p><strong>Sin permanencia.</strong> Si en algún momento decides que no te encaja, cancelas con 15 días de preaviso y sin penalización. Así de simple.</p></div>
+<div class="puntual-block">
+  <h3 style="font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:400;color:var(--ink);margin-bottom:6px">¿Solo necesitas un trámite?</h3>
+  <p style="font-size:14px;color:var(--grey2);margin-bottom:0">Sin suscripción · Sesión de asesoría incluida en todos los trámites · Consultas por email, siempre gratis</p>
+  <div class="puntual-grid">
+    <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€</div></div>
+    <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€</div></div>
+    <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">79€</div></div>
+    <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+19€</div></div>
+    <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">70 – 100€</div></div>
+    <div class="pitem"><div class="pitem-name">Sesión de asesoría</div><div class="pitem-price">39€</div></div>
+  </div>
+  <p style="font-size:11px;color:var(--grey2);margin-top:14px;font-family:var(--mono)">Todos los precios IVA incluido · La Renta varía según complejidad — te confirmamos el importe antes de empezar</p>
+</div>
 </div>
 
 <div class="section">
