@@ -47,13 +47,20 @@ h1{font-family:var(--serif);font-size:clamp(32px,5vw,52px);font-weight:400;color
 .sub{font-size:16px;color:var(--grey);text-align:center;margin-bottom:56px;max-width:400px}
 
 /* CARDS */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:760px}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1060px}
 .card{border-radius:var(--rrr);padding:40px 36px;display:flex;flex-direction:column;gap:16px;transition:transform .2s,box-shadow .2s;cursor:pointer;position:relative;overflow:hidden}
 .card:hover{transform:translateY(-4px)}
 .card-a{background:var(--forest);box-shadow:0 8px 40px rgba(28,14,8,.18)}
 .card-a:hover{box-shadow:0 16px 56px rgba(28,14,8,.28)}
 .card-b{background:#fff;border:1.5px solid var(--cream3);box-shadow:0 4px 20px rgba(28,14,8,.06)}
 .card-b:hover{box-shadow:0 8px 32px rgba(28,14,8,.1)}
+.card-c{background:var(--cream2);border:1.5px solid var(--cream3);box-shadow:0 4px 20px rgba(28,14,8,.06)}
+.card-c:hover{box-shadow:0 8px 32px rgba(28,14,8,.1)}
+.card-c .card-title{color:var(--ink)}
+.card-c .card-desc{color:var(--grey)}
+.card-c .card-price{background:rgba(232,83,42,.1);color:var(--coral)}
+.card-c .card-btn{background:var(--ink);color:#fff}
+.card-c .card-btn:hover{background:var(--ink2)}
 
 .card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .card-a .card-icon{background:rgba(255,255,255,.1)}
@@ -84,6 +91,7 @@ h1{font-family:var(--serif);font-size:clamp(32px,5vw,52px);font-weight:400;color
 footer{text-align:center;padding:24px;font-family:var(--mono);font-size:11px;color:var(--grey2);position:relative;z-index:1}
 footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
 
+@media(max-width:780px){.cards{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){
   nav{padding:16px 20px}
   .cards{grid-template-columns:1fr}
@@ -110,6 +118,16 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
       <div class="card-desc">Sé lo que necesito. Quiero elegir mi plan, dar mis datos y que empecéis a gestionarme cuanto antes.</div>
       <div class="card-btn">
         Elegir mi plan <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/tramites" class="card card-c">
+      <div class="card-icon">🧾</div>
+      <div class="card-price">Desde 39€ · sin suscripción</div>
+      <div class="card-title">Solo necesito un trámite</div>
+      <div class="card-desc">Alta en Hacienda, declaración de la Renta, trimestre suelto o una sesión de asesoría. Sin compromiso mensual.</div>
+      <div class="card-btn">
+        Ver trámites y precios <span class="arrow">→</span>
       </div>
     </a>
 
