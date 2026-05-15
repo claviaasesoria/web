@@ -6,10 +6,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Trámites puntuales · Clavia Gestoría Online</title>
 <link rel="canonical" href="https://clavia.es/tramites">
-<meta name="description" content="Contrata un trámite puntual sin suscripción. Alta en Hacienda, declaración de la Renta, trimestres sueltos y más. Precio fijo, IVA incluido, sesión de asesoría incluida.">
+<meta name="description" content="Trámites puntuales sin suscripción mensual. Alta en Hacienda (036), Renta, trimestres sueltos. Precio fijo con IVA incluido y asesoría incluida.">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Trámites puntuales sin suscripción · Clavia">
 <meta property="og:description" content="Alta en Hacienda, Renta, trimestres sueltos. Precio fijo, IVA incluido, sesión de asesoría incluida.">
 <meta property="og:url" content="https://clavia.es/tramites">
+    <meta property="og:image" content="https://clavia.es/social.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
@@ -93,7 +95,24 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
   .tramite-right{width:100%;justify-content:space-between}
   .tramite-ico{display:none}
 }
+/* FAQ */
+.faq-section{width:100%;max-width:680px;margin:48px 0 0}
+.faq-section h2{font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--ink);margin-bottom:24px;text-align:center}
+.art-faq{border-top:1px solid var(--line)}
+.afrow{border-bottom:1px solid var(--line)}
+.afq{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-family:var(--serif);font-size:17px;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+.afq:hover{color:var(--coral)}
+.afq-ico{width:24px;height:24px;border-radius:50%;background:var(--cream2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--grey);transition:transform .3s,background .2s;font-style:normal}
+.afq.open .afq-ico{transform:rotate(45deg);background:var(--coral);color:#fff}
+.afa{display:none;padding:0 0 20px;font-size:15px;color:var(--ink2);line-height:1.8}
+.afa.open{display:block}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://clavia.es/tramites","url":"https://clavia.es/tramites","name":"Trámites puntuales · Clavia Gestoría Online","datePublished":"2026-04-01","dateModified":"2026-05-15","mainEntityOfPage":{"@type":"WebPage","@id":"https://clavia.es/tramites"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta el alta en Hacienda?","acceptedAnswer":{"@type":"Answer","text":"El alta en Hacienda mediante el Modelo 036 tiene un coste de 49€ (IVA incl.), pago único. Incluye sesión de asesoría para elegir el epígrafe IAE correcto."}},{"@type":"Question","name":"¿Qué incluye un trimestre suelto?","acceptedAnswer":{"@type":"Answer","text":"El servicio de trimestre suelto (79€ IVA incl.) incluye la preparación y presentación del Mod. 303 (IVA) y el Mod. 130 (IRPF fraccionado). Modelos adicionales como el 111 o 115 se añaden a 19€ cada uno."}},{"@type":"Question","name":"¿Puedo contratar solo la declaración de la Renta?","acceptedAnswer":{"@type":"Answer","text":"Sí. La declaración de la Renta como servicio puntual tiene un coste de 70–100€ (IVA incl.) según complejidad. Incluye revisión completa, optimización de deducciones y presentación en la AEAT."}},{"@type":"Question","name":"¿La sesión de asesoría está incluida en los trámites?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos los trámites puntuales incluyen una sesión de asesoría. Solo tiene precio propio (39€ IVA incl.) si se contrata sin ningún trámite asociado."}}]}
+</script>
 </head>
 <body>
 <nav>
@@ -212,10 +231,21 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
     Todos los precios IVA incluido · Herencias, regímenes forales o situaciones patrimoniales complejas no están incluidas<br>
     ¿Tienes dudas sobre qué trámite necesitas? <a href="https://tally.so/r/WOo5KN" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px">Consulta gratuita →</a>
   </p>
+
+  <div class="faq-section">
+    <h2>Preguntas frecuentes sobre trámites</h2>
+    <div class="art-faq">
+      <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Cuánto cuesta el alta en Hacienda?<span class="afq-ico">+</span></button><div class="afa">El alta en Hacienda mediante el Modelo 036 tiene un coste de <strong>49€ (IVA incl.)</strong>, pago único. Incluye sesión de asesoría para elegir el epígrafe IAE correcto.</div></div>
+      <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Qué incluye un trimestre suelto?<span class="afq-ico">+</span></button><div class="afa">El servicio de trimestre suelto (<strong>79€ IVA incl.</strong>) incluye la preparación y presentación del Mod. 303 (IVA) y el Mod. 130 (IRPF fraccionado). Modelos adicionales como el 111 o 115 se añaden a <strong>19€ cada uno</strong>.</div></div>
+      <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿Puedo contratar solo la declaración de la Renta?<span class="afq-ico">+</span></button><div class="afa">Sí. La declaración de la Renta como servicio puntual tiene un coste de <strong>70–100€ (IVA incl.)</strong> según complejidad. Incluye revisión completa, optimización de deducciones y presentación en la AEAT.</div></div>
+      <div class="afrow"><button class="afq" onclick="toggleFaq(this)">¿La sesión de asesoría está incluida en los trámites?<span class="afq-ico">+</span></button><div class="afa">Sí, todos los trámites puntuales incluyen una sesión de asesoría. Solo tiene precio propio (<strong>39€ IVA incl.</strong>) si se contrata sin ningún trámite asociado.</div></div>
+    </div>
+  </div>
 </main>
 
 <footer>
   <a href="/privacidad">Privacidad</a> · <a href="/aviso-legal">Aviso legal</a> · clavia.es
 </footer>
+<script>function toggleFaq(btn){const a=btn.nextElementSibling;const open=btn.classList.toggle('open');a.classList.toggle('open',open)}</script>
 </body>
 </html>
