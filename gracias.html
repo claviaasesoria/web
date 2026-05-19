@@ -18,6 +18,7 @@ gtag('consent','default',_cv?{analytics_storage:'granted',ad_storage:'granted',a
 (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();
 gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-17976955492');
 gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1});
+gtag('event','lead2_gracias',{event_category:'Lead',event_label:'Formulario Tally',value:1});
 gtag('event','conversion',{send_to:'AW-17976955492/9KuHCJnj8aMcEOSkivxC',value:1.0,currency:'EUR'});
 </script>
 
@@ -207,8 +208,6 @@ function acceptCookies(){
   localStorage.setItem('clavia_consent','accepted');
   document.getElementById('cookieBanner').classList.add('hidden');
   gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
-  gtag('event','generate_lead',{event_category:'Lead',event_label:'Formulario Tally',value:1});
-  gtag('event','conversion',{send_to:'AW-17976955492/9KuHCJnj8aMcEOSkivxC',value:1.0,currency:'EUR'});
 }
 function rejectCookies(){
   localStorage.setItem('clavia_consent','rejected');
