@@ -1,6 +1,10 @@
 (function(){
   var STORAGE_KEY = 'clavia_attribution';
-  var TRACKING_KEYS = ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+  var TRACKING_KEYS = [
+    'gclid','gbraid','wbraid',
+    'utm_source','utm_medium','utm_campaign','utm_term','utm_content',
+    'gad_campaignid','gad_adgroupid','gad_creative','gad_keyword','gad_matchtype','gad_device','gad_network'
+  ];
   var GA_ID = 'G-JMYYM5NKN8';
   var ADS_ID = 'AW-17976955492';
 
