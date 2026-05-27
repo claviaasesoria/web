@@ -115,7 +115,7 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
   <div class="eyebrow">¿Cómo quieres continuar?</div>
   <h1>Tú decides el siguiente paso</h1>
   <div class="cards">
-    <a href="/contratar" class="card card-a">
+    <a href="/contratar" class="card card-a" id="empezar-contratar-card" data-track="empezar_contratar">
       <div class="card-icon">⚡</div>
       <div class="card-price">Desde 39€/mes · IVA incl.</div>
       <div class="card-title">Quiero contratarlo ahora mismo</div>
@@ -125,7 +125,7 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
       </div>
     </a>
 
-    <a href="/tramites" class="card card-c">
+    <a href="/tramites" class="card card-c" id="empezar-tramites-card" data-track="empezar_tramites">
       <div class="card-icon">🧾</div>
       <div class="card-price">Desde 39€ · sin suscripción</div>
       <div class="card-title">Solo necesito un trámite</div>
@@ -135,7 +135,7 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
       </div>
     </a>
 
-    <a href="https://tally.so/r/WOo5KN" class="card card-b">
+    <a href="https://tally.so/r/WOo5KN" class="card card-b" id="empezar-tally-card" data-track="empezar_tally">
       <div class="card-icon">💬</div>
       <div class="card-price">Respuesta en menos de 24h</div>
       <div class="card-title">Tengo dudas y quiero que me expliquen</div>
@@ -156,5 +156,7 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').classList.toggle('stuck',window.scrollY>10)
 })
 </script>
+<script src="/assets/clavia-tracking.js"></script>
+<script>ClaviaTracking.init({trackClicks:true})</script>
 </body>
 </html>

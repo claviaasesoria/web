@@ -286,7 +286,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li>Asesor personal por WhatsApp</li>
           <li>Sin permanencia ni costes ocultos</li>
         </ul>
-        <button class="hcard-btn" onclick="window.open('/empezar','_blank')" id="hcard-cta-btn">
+        <button class="hcard-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="hcard-cta-btn">
           Empezar ahora — es gratis →
         </button>
         <div class="hcard-note">Sin permanencia · Sin compromiso · Consulta gratuita</div>
@@ -453,7 +453,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Hasta 50 facturas/mes</li>
           <li><span class="ck"></span>WhatsApp y email (resp. 48h)</li>
         </ul>
-        <button class="plan-btn" onclick="window.open('/empezar','_blank')" id="plan-basico-btn">Empezar con Básico</button>
+        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-basico-btn">Empezar con Básico</button>
       </div>
       <div class="plan hi">
         <div class="plan-tier">Estándar</div>
@@ -468,7 +468,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Hasta 100 facturas/mes</li>
           <li><span class="ck"></span>WhatsApp y email (resp. 24h)</li>
         </ul>
-        <button class="plan-btn" onclick="window.open('/empezar','_blank')" id="plan-estandar-btn">Empezar con Estándar</button>
+        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-estandar-btn">Empezar con Estándar</button>
       </div>
       <div class="plan">
         <div class="plan-tier">Pro</div>
@@ -483,7 +483,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Videollamada trimestral 30 min</li>
           <li><span class="ck"></span>Prioridad en respuesta</li>
         </ul>
-        <button class="plan-btn" onclick="window.open('/empezar','_blank')" id="plan-pro-btn">Empezar con Pro</button>
+        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-pro-btn">Empezar con Pro</button>
       </div>
     </div>
     <div class="plan-notes">
@@ -558,7 +558,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
   <div class="wrap">
     <h2>¿Listo para<br><em>olvidarte de Hacienda?</em></h2>
     <p>Cuéntanos tu situación y te preparamos una propuesta en menos de 24 horas. Sin compromiso ni permanencia.</p>
-    <button class="btn-main-lg" onclick="window.open('/empezar','_blank')" id="final-cta-btn">
+    <button class="btn-main-lg" onclick="ClaviaTracking.open('/empezar','_blank')" id="final-cta-btn">
       Solicitar consulta gratuita →
     </button>
     <div class="cta-final-trust">
@@ -605,7 +605,6 @@ function doFaq(btn){
 function trackCTA(id){
   if(typeof gtag!=='undefined'){
     gtag('event','click_cta',{event_category:'CTA',event_label:id})
-    gtag('event','conversion',{send_to:'AW-CONVERSION_ID/CONVERSION_LABEL'})
   }
 }
 document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
@@ -613,7 +612,9 @@ document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
 })
 </script>
 
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',localStorage.getItem('clavia_consent')==='accepted'?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();gtag('js',new Date());gtag('config','G-JMYYM5NKN8');gtag('config','AW-17976955492')</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',localStorage.getItem('clavia_consent')==='accepted'?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});window.__claviaConsentDefault=true;(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();gtag('js',new Date());window.__claviaGtagStarted=true;gtag('config','G-JMYYM5NKN8');gtag('config','AW-17976955492');window.__claviaConfiguredIds={'G-JMYYM5NKN8':true,'AW-17976955492':true}</script>
+<script src="/assets/clavia-tracking.js"></script>
+<script>ClaviaTracking.init({gtag:false})</script>
 
 <div class="cookie-banner" id="cookieBanner">
   <p>Usamos cookies técnicas y analíticas para mejorar tu experiencia. <a href="/cookies.html">Política de cookies</a></p>

@@ -381,6 +381,7 @@ let _plan = '', _precio = '';
 function selectPlan(plan, precio) {
   _plan = plan;
   _precio = precio;
+  ClaviaTracking.track('select_plan', {event_category:'Funnel', event_label:plan, value:Number(precio)});
   document.getElementById('pill-name').textContent = 'Plan ' + plan;
   document.getElementById('pill-price').textContent = precio + '€/mes · IVA incl.';
   document.getElementById('hidden-plan').value = plan;
@@ -441,6 +442,8 @@ function submitForm(e) {
   var btn = document.getElementById('submit-btn');
   btn.disabled = true;
   btn.innerHTML = 'Enviando... <span class="submit-arrow">⏳</span>';
+  ClaviaTracking.applyFormAttribution('contrat-form');
+  ClaviaTracking.track('form_submit', {event_category:'Lead', event_label:'Web3Forms contratación'});
 
   form.submit();
 }
@@ -449,5 +452,7 @@ window.addEventListener('scroll', function() {
   document.querySelector('nav').classList.toggle('stuck', window.scrollY > 10);
 });
 </script>
+<script src="/assets/clavia-tracking.js"></script>
+<script>ClaviaTracking.init({formId:'contrat-form',trackClicks:true})</script>
 </body>
 </html>
