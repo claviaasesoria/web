@@ -1,5 +1,10 @@
 (function(){
   var STORAGE_KEY = 'clavia_attribution';
+  var SESSION_KEY = 'clavia_session_id';
+  var META_KEYS = [
+    'clavia_session_id','landing_page','landing_query','first_referrer',
+    'page_before_tally','captured_at','source_inferred'
+  ];
   var TRACKING_KEYS = [
     'gclid','gbraid','wbraid',
     'utm_source','utm_medium','utm_campaign','utm_term','utm_content',
@@ -11,6 +16,29 @@
   function parseStored(){
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
     catch(e){ return {}; }
+  }
+
+  function sessionId(){
+    var id = localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY);
+    if(!id){
+      var rand = Math.random().toString(36).slice(2, 10);
+      id = 'clv_' + Date.now().toString(36) + '_' + rand;
+      localStorage.setItem(SESSION_KEY, id);
+    }
+    sessionStorage.setItem(SESSION_KEY, id);
+    return id;
+  }
+
+  function inferSource(data){
+    if(data.gclid || data.gbraid || data.wbraid) return 'google_ads';
+    if(data.utm_source || data.utm_medium) return [data.utm_source || 'unknown', data.utm_medium || 'unknown'].join('/');
+    var ref = data.first_referrer || document.referrer || '';
+    if(ref.indexOf('google.') !== -1) return 'google_organic_or_unknown';
+    if(ref) {
+      try { return 'referral:' + new URL(ref).hostname; }
+      catch(e){ return 'referral'; }
+    }
+    return 'direct_or_unknown';
   }
 
   function clean(obj){
@@ -28,15 +56,16 @@
       var value = params.get(key);
       if(value) current[key] = value;
     });
-    if(Object.keys(current).length){
-      var stored = parseStored();
-      var merged = Object.assign({}, stored, current, {
-        landing_page: stored.landing_page || window.location.pathname,
-        captured_at: new Date().toISOString()
-      });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-    }
+    var stored = parseStored();
+    var merged = Object.assign({}, stored, current);
+    merged.clavia_session_id = stored.clavia_session_id || sessionId();
+    merged.landing_page = stored.landing_page || window.location.pathname;
+    merged.landing_query = stored.landing_query || window.location.search;
+    merged.first_referrer = stored.first_referrer || document.referrer || '';
+    merged.captured_at = stored.captured_at || new Date().toISOString();
+    merged.source_inferred = inferSource(merged);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
   }
 
   function attribution(){
@@ -51,9 +80,11 @@
   function withTracking(url, extra){
     var data = attribution();
     var filtered = {};
-    TRACKING_KEYS.forEach(function(key){
+    META_KEYS.concat(TRACKING_KEYS).forEach(function(key){
       if(data[key]) filtered[key] = data[key];
     });
+    filtered.page_before_tally = window.location.pathname + window.location.search;
+    filtered.source_inferred = inferSource(Object.assign({}, data, filtered));
     var merged = Object.assign({}, filtered, clean(extra || {}));
     var target;
     try { target = new URL(url, window.location.origin); }
