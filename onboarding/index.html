@@ -128,6 +128,13 @@ h2 em{font-style:italic;color:var(--forest2)}
 .form-top h3{font-family:var(--serif);font-size:26px;font-weight:400;color:#fff}
 .form-top span{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.34)}
 .form-body{background:#fff;padding:26px}
+.form-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.choice-btn{border:1px solid var(--line);background:var(--cream);border-radius:var(--rr);padding:18px;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.choice-btn:hover{border-color:var(--sage-bd);background:#fff}
+.choice-btn.active{border-color:var(--sage);background:#fff;box-shadow:0 8px 26px rgba(45,106,79,.1)}
+.choice-k{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:7px}
+.choice-t{display:block;font-size:15px;font-weight:800;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.choice-d{display:block;font-size:12.5px;color:var(--grey);line-height:1.55}
 .form-placeholder{border:1.5px dashed var(--cream3);border-radius:var(--rr);padding:34px;text-align:center;background:var(--cream)}
 .form-placeholder h4{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:10px}
 .form-placeholder p{font-size:14px;color:var(--grey);line-height:1.75;max-width:560px;margin:0 auto 22px}
@@ -198,6 +205,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   .steps{grid-template-columns:1fr}
   .step{min-height:0}
   .form-body{padding:18px}
+  .form-choice{grid-template-columns:1fr}
   .form-placeholder{padding:26px 18px}
   .foot-grid{grid-template-columns:1fr;gap:28px}
   .fbot{align-items:flex-start;flex-direction:column}
@@ -300,12 +308,24 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <span id="planLabel">Clavia</span>
         </div>
         <div class="form-body">
+          <div class="form-choice" aria-label="Tipo de onboarding">
+            <button class="choice-btn active" type="button" data-form-type="alta">
+              <span class="choice-k">Alta nueva</span>
+              <span class="choice-t">Alta en Hacienda y Seguridad Social</span>
+              <span class="choice-d">Para quien todavía no está de alta como autónomo/a o necesita preparar el alta completa.</span>
+            </button>
+            <button class="choice-btn" type="button" data-form-type="gestion">
+              <span class="choice-k">Gestión mensual</span>
+              <span class="choice-t">Ya soy autónomo/a</span>
+              <span class="choice-d">Para quien ya está dado de alta y quiere empezar la gestión fiscal mensual con Clavia.</span>
+            </button>
+          </div>
           <iframe class="zoho-frame" id="zohoFrame" title="Formulario de onboarding Clavia"></iframe>
           <div class="form-placeholder">
-            <h4>Formulario pendiente de enlazar</h4>
-            <p>Cuando recibas el enlace personalizado, aquí aparecerá el formulario de datos. Si has llegado a esta página sin enlace, escríbenos y te mandamos el acceso correcto.</p>
-            <a href="mailto:info@clavia.es?subject=Formulario%20de%20onboarding%20Clavia" class="btn-coral">Pedir enlace de formulario</a>
-            <div class="param-note">Uso interno: /onboarding?form=URL_DEL_FORMULARIO&plan=Plan%20Básico</div>
+            <h4>No se ha podido cargar el formulario</h4>
+            <p>Si el navegador bloquea el formulario dentro de la página, puedes abrirlo en una pestaña nueva y volver aquí después.</p>
+            <a href="https://forms.zohopublic.eu/infocla1/form/Datosparapreparartualtacomoautnomoa/formperma/TyFZS5WtK1BL7iH2LdHZ-fHSLTZqeljvOntqBBL3tRs" class="btn-coral" id="formFallback" target="_blank" rel="noopener">Abrir formulario →</a>
+            <div class="param-note">Uso interno: /onboarding?tipo=alta o /onboarding?tipo=gestion</div>
           </div>
         </div>
       </div>
@@ -480,21 +500,49 @@ function safeUrl(value){
 }
 
 (function initOnboardingParams(){
+  var forms = {
+    alta: {
+      label: 'Alta nueva',
+      url: 'https://forms.zohopublic.eu/infocla1/form/Datosparapreparartualtacomoautnomoa/formperma/TyFZS5WtK1BL7iH2LdHZ-fHSLTZqeljvOntqBBL3tRs'
+    },
+    gestion: {
+      label: 'Gestión mensual',
+      url: 'https://forms.zohopublic.eu/infocla1/form/Datosparaempezar/formperma/RrF6KuyiuXghgAhahpkvV4KXd_44Fr9k1n7Krnx8sps'
+    }
+  };
   var params = new URLSearchParams(location.search);
-  var formUrl = safeUrl(params.get('form'));
+  var tipo = params.get('tipo') === 'gestion' ? 'gestion' : 'alta';
+  var formUrl = safeUrl(params.get('form')) || forms[tipo].url;
   var driveUrl = safeUrl(params.get('drive'));
   var signUrl = safeUrl(params.get('sign'));
   var plan = params.get('plan');
 
   if(plan){
     document.getElementById('planLabel').textContent = plan.slice(0,80);
+  }else{
+    document.getElementById('planLabel').textContent = forms[tipo].label;
   }
-  if(formUrl){
+  function setForm(nextTipo, nextUrl){
+    var selected = forms[nextTipo] ? nextTipo : tipo;
     var shell = document.getElementById('formShell');
     var frame = document.getElementById('zohoFrame');
-    frame.src = formUrl;
+    var fallback = document.getElementById('formFallback');
+    var url = nextUrl || forms[selected].url;
+    frame.src = url;
+    fallback.href = url;
     shell.classList.add('has-form');
+    document.querySelectorAll('[data-form-type]').forEach(function(btn){
+      btn.classList.toggle('active',btn.getAttribute('data-form-type') === selected);
+    });
+    if(!plan) document.getElementById('planLabel').textContent = forms[selected].label;
   }
+  setForm(tipo, formUrl);
+  document.querySelectorAll('[data-form-type]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tipo = btn.getAttribute('data-form-type');
+      setForm(tipo);
+    });
+  });
   if(driveUrl){
     var drive = document.getElementById('driveLink');
     drive.href = driveUrl;
