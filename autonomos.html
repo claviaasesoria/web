@@ -60,8 +60,8 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .hero h1 .ul::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--coral);border-radius:2px}
 .hero-p{font-size:17px;color:var(--grey);line-height:1.72;max-width:460px;margin-bottom:32px}
 .hero-cta-wrap{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
-.btn-main{background:var(--coral);color:#fff;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(232,83,42,.35);animation:pulse 2.5s infinite;width:fit-content}
-.btn-main:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,83,42,.42);animation:none}
+.btn-main{background:var(--coral);color:#fff;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(232,83,42,.35);width:fit-content}
+.btn-main:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,83,42,.42)}
 .btn-sub{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--grey);cursor:pointer;background:none;border:none;padding:0;width:fit-content}
 .btn-sub:hover{color:var(--ink)}
 .trust-row{display:flex;flex-wrap:wrap;gap:16px}
@@ -79,7 +79,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .hcard-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
 .hcard-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.78)}
 .hcard-list li::before{content:'';width:18px;height:18px;border-radius:50%;background:rgba(0,192,122,.22);border:1px solid rgba(0,192,122,.35);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300c07a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.hcard-btn{width:100%;padding:15px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 18px rgba(232,83,42,.38)}
+.hcard-btn{width:100%;padding:15px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 18px rgba(232,83,42,.38);display:block;text-align:center;text-decoration:none}
 .hcard-btn:hover{background:var(--coral2);transform:translateY(-1px)}
 .hcard-note{text-align:center;font-size:12px;color:rgba(255,255,255,.28);margin-top:10px;font-family:var(--mono)}
 
@@ -157,7 +157,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .plan.hi .plan-feats li{color:var(--ink2)}
 .ck{width:16px;height:16px;border-radius:4px;background:rgba(0,192,122,.18);flex-shrink:0;margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300c07a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
 .plan.hi .ck{background-color:rgba(0,192,122,.13);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%230e6644' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
-.plan-btn{width:100%;padding:12px;border-radius:var(--r);font-size:14px;font-weight:600;font-family:var(--sans);border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.55);transition:all .2s;cursor:pointer}
+.plan-btn{width:100%;padding:12px;border-radius:var(--r);font-size:14px;font-weight:600;font-family:var(--sans);border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.55);transition:all .2s;cursor:pointer;display:block;text-align:center;text-decoration:none}
 .plan-btn:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25)}
 .plan.hi .plan-btn{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,83,42,.3)}
 .plan.hi .plan-btn:hover{background:var(--coral2)}
@@ -191,7 +191,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .cta-final h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,58px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:16px}
 .cta-final h2 em{font-style:italic;color:rgba(45,106,79,.9)}
 .cta-final p{font-size:17px;color:rgba(255,255,255,.5);max-width:460px;margin:0 auto 36px;line-height:1.7}
-.btn-main-lg{background:var(--coral);color:#fff;padding:18px 42px;border-radius:100px;font-size:17px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 28px rgba(232,83,42,.4);cursor:pointer}
+.btn-main-lg{background:var(--coral);color:#fff;padding:18px 42px;border-radius:100px;font-size:17px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 28px rgba(232,83,42,.4);cursor:pointer;text-decoration:none}
 .btn-main-lg:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(232,83,42,.45)}
 .cta-final-trust{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
 .cta-trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.35);font-family:var(--mono)}
@@ -244,7 +244,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         <span class="logo-text">clavia</span>
         <span class="logo-dot"></span>
       </a>
-      <a href="/empezar" target="_blank" class="nav-cta" id="nav-cta-btn">Consulta gratuita →</a>
+      <a href="/empezar" class="nav-cta" id="nav-cta-btn">Cuéntanos tu caso →</a>
     </div>
   </div>
 </nav>
@@ -255,12 +255,12 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
   <div class="wrap">
     <div class="hero-grid">
       <div style="animation:fadeUp .5s .05s both">
-        <div class="hero-label">Gestoría online · España</div>
-        <h1>Tu declaración<br>trimestral,<br><em>sin el <span class="ul">agobio</span></em></h1>
-        <p class="hero-p">IVA, IRPF y Renta gestionados por tu asesor personal. Tú solo mandas las facturas — nosotros nos encargamos de todo lo demás. A precio fijo y sin sorpresas.</p>
+        <div class="hero-label">Gestoría online para autónomos · España</div>
+        <h1>Tu gestoría<br>online,<br><em>sin el <span class="ul">agobio</span></em></h1>
+        <p class="hero-p">IVA, IRPF y Renta gestionados por tu asesor personal. Tú nos envías la documentación y nosotros nos encargamos de los modelos, los plazos y el seguimiento. A precio fijo y sin permanencia.</p>
         <div class="hero-cta-wrap">
-          <a href="/empezar" target="_blank" class="btn-main" id="hero-cta-btn">
-            Solicitar consulta gratuita →
+          <a href="/empezar" class="btn-main" id="hero-cta-btn">
+            Recibir propuesta por email →
           </a>
           <button class="btn-sub" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">
             ↓ Ver cómo funciona
@@ -269,13 +269,13 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         <div class="trust-row">
           <div class="trust-chip">Desde 39€/mes IVA incl.</div>
           <div class="trust-chip">Sin permanencia</div>
-          <div class="trust-chip">Respuesta en 24h</div>
+          <div class="trust-chip">Respuesta por email</div>
           <div class="trust-chip">100% online</div>
         </div>
       </div>
 
       <div class="hcard">
-        <div class="hcard-badge">Plazas disponibles</div>
+        <div class="hcard-badge">Gestión mensual</div>
         <div class="hcard-label" style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Tu plan desde</div>
         <div class="hcard-price"><sup>€</sup>39</div>
         <div class="hcard-price-note">/ mes · precio fijo · IVA incl.</div>
@@ -283,13 +283,13 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li>IVA trimestral (Modelo 303)</li>
           <li>IRPF trimestral (Modelo 130)</li>
           <li>Alta en Hacienda — 49€ (IVA incl.) si eres nuevo autónomo</li>
-          <li>Asesor personal por WhatsApp</li>
+          <li>Atención por email y WhatsApp</li>
           <li>Sin permanencia ni costes ocultos</li>
         </ul>
-        <button class="hcard-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="hcard-cta-btn">
-          Empezar ahora — es gratis →
-        </button>
-        <div class="hcard-note">Sin permanencia · Sin compromiso · Consulta gratuita</div>
+        <a href="/empezar" class="hcard-btn" id="hcard-cta-btn">
+          Recibir propuesta por email →
+        </a>
+        <div class="hcard-note">Sin permanencia · Sin compromiso</div>
       </div>
     </div>
   </div>
@@ -309,7 +309,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         <div class="tpill"><span class="tpill-ico">📋</span> IVA trimestral</div>
         <div class="tpill"><span class="tpill-ico">📊</span> IRPF trimestral</div>
         <div class="tpill"><span class="tpill-ico">📄</span> Renta (Estándar y Pro)*</div>
-        <div class="tpill"><span class="tpill-ico">💬</span> Asesor por WhatsApp</div>
+        <div class="tpill"><span class="tpill-ico">💬</span> Email y WhatsApp</div>
         <div class="tpill"><span class="tpill-ico">🔓</span> Sin permanencia</div>
       </div>
     </div>
@@ -368,8 +368,8 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <div class="sol-item">
             <div class="sol-ico">✓</div>
             <div class="sol-txt">
-              <strong>Respuesta en menos de 24 horas</strong>
-              Por WhatsApp, email o videollamada. Un asesor real que conoce tu negocio, no un bot.
+              <strong>Comunicación clara y por escrito</strong>
+              Por email y WhatsApp. Un asesor real que conoce tu negocio, no un bot ni una centralita.
             </div>
           </div>
           <div class="sol-item">
@@ -403,8 +403,8 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
     <div class="steps">
       <div class="step">
         <div class="step-n">01</div>
-        <div class="step-t">Consulta gratuita</div>
-        <div class="step-d">Rellena el formulario. Cuéntanos tu actividad y te respondemos en menos de 24 horas con una propuesta.</div>
+        <div class="step-t">Cuéntanos tu caso</div>
+        <div class="step-d">Rellena el formulario con tu actividad y situación. Te respondemos por email con el plan o trámite que encaja.</div>
       </div>
       <div class="step">
         <div class="step-n">02</div>
@@ -423,8 +423,8 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
       </div>
     </div>
     <div class="how-cta">
-      <a href="/empezar" target="_blank" class="btn-main" style="margin:0 auto" id="how-cta-btn">
-        Empezar ahora — consulta gratuita →
+      <a href="/empezar" class="btn-main" style="margin:0 auto" id="how-cta-btn">
+        Recibir propuesta por email →
       </a>
     </div>
   </div>
@@ -453,7 +453,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Hasta 50 facturas/mes</li>
           <li><span class="ck"></span>WhatsApp y email (resp. 48h)</li>
         </ul>
-        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-basico-btn">Empezar con Básico</button>
+        <a href="/empezar" class="plan-btn" id="plan-basico-btn">Consultar Plan Básico</a>
       </div>
       <div class="plan hi">
         <div class="plan-tier">Estándar</div>
@@ -468,7 +468,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Hasta 100 facturas/mes</li>
           <li><span class="ck"></span>WhatsApp y email (resp. 24h)</li>
         </ul>
-        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-estandar-btn">Empezar con Estándar</button>
+        <a href="/empezar" class="plan-btn" id="plan-estandar-btn">Consultar Plan Estándar</a>
       </div>
       <div class="plan">
         <div class="plan-tier">Pro</div>
@@ -483,27 +483,12 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li><span class="ck"></span>Videollamada trimestral 30 min</li>
           <li><span class="ck"></span>Prioridad en respuesta</li>
         </ul>
-        <button class="plan-btn" onclick="ClaviaTracking.open('/empezar','_blank')" id="plan-pro-btn">Empezar con Pro</button>
+        <a href="/empezar" class="plan-btn" id="plan-pro-btn">Consultar Plan Pro</a>
       </div>
     </div>
     <div class="plan-notes">
       * Renta incluida a partir de la 3.ª mensualidad abonada en ese ejercicio fiscal.<br>
       ** Solo requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas (art. 141 LGT). Excluye inspecciones formales, actas, recursos y reclamaciones.
-    </div>
-    <div class="puntual-block rv">
-      <div style="text-align:center;margin-bottom:28px">
-        <div class="eyebrow">Sin suscripción</div>
-        <h3 style="font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);color:#fff;font-weight:400;margin:8px 0 6px">Servicios puntuales</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,.45)">Orientación incluida en todos los trámites · Consultas iniciales por email</p>
-      </div>
-      <div class="puntual-grid">
-        <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€</div></div>
-        <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€</div></div>
-        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">79€</div></div>
-        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+19€</div></div>
-        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">70 – 100€</div></div>
-      </div>
-      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">Todos los precios IVA incluido · La Renta varía según complejidad — te confirmamos el importe antes de empezar</p>
     </div>
   </div>
 </section>
@@ -515,13 +500,13 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
       <div class="faq-left">
         <div class="eyebrow" style="justify-content:flex-start">Preguntas frecuentes</div>
         <h2>Todo lo que<br>necesitas<br><em>saber</em></h2>
-        <p>Si tienes alguna duda que no esté aquí, escríbenos. Respondemos en menos de 24h.</p>
-        <a href="/empezar" target="_blank" class="btn-main" style="font-size:14px;padding:13px 26px" id="faq-cta-btn">Consulta gratuita →</a>
+        <p>Si tienes alguna duda que no esté aquí, cuéntanos tu caso y te respondemos por email.</p>
+        <a href="/empezar" class="btn-main" style="font-size:14px;padding:13px 26px" id="faq-cta-btn">Cuéntanos tu caso →</a>
       </div>
       <div class="faq-rows">
         <div class="frow">
           <button class="fq" onclick="doFaq(this)">¿Qué incluye exactamente el Plan Básico?<span class="fq-ico">+</span></button>
-          <div class="fa">El Plan Básico incluye IVA trimestral (Modelo 303), IRPF fraccionado (Modelo 130), retenciones si procede (Modelo 111), y los resúmenes anuales obligatorios (390, 190, 347). El alta en Hacienda para nuevos autónomos tiene un coste único de 49€ (IVA incl.) — si ya estás dado de alta, no pagas nada adicional. Todo lo demás, 39€/mes IVA incluido, sin costes adicionales por consultas puntuales.</div>
+          <div class="fa">El Plan Básico incluye IVA trimestral (Modelo 303), IRPF fraccionado (Modelo 130), retenciones si procede (Modelo 111), y los resúmenes anuales obligatorios (390, 190, 347). El alta en Hacienda para nuevos autónomos tiene un coste único de 49€ (IVA incl.) — si ya estás dado de alta, no pagas nada adicional. Todo lo demás, 39€/mes IVA incluido, con consultas ordinarias del plan incluidas.</div>
         </div>
         <div class="frow">
           <button class="fq" onclick="doFaq(this)">¿La declaración de la Renta está incluida?<span class="fq-ico">+</span></button>
@@ -537,11 +522,11 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         </div>
         <div class="frow">
           <button class="fq" onclick="doFaq(this)">¿Cuánto tarda en estar todo listo?<span class="fq-ico">+</span></button>
-          <div class="fa">En menos de 24 horas te respondemos con una propuesta. Una vez aceptada, firmamos digitalmente y gestionamos el apoderamiento con la AEAT. En 2-3 días laborables estás operativo y con tu asesor asignado.</div>
+          <div class="fa">Normalmente te respondemos por email en el siguiente día laborable con una propuesta o con las dudas necesarias para confirmar el encaje. Una vez aceptada, firmamos digitalmente y gestionamos el apoderamiento con la AEAT.</div>
         </div>
         <div class="frow">
           <button class="fq" onclick="doFaq(this)">¿Y si tengo dudas fiscales fuera del trimestre?<span class="fq-ico">+</span></button>
-          <div class="fa">Las consultas están incluidas en el precio. Escríbenos por WhatsApp o email cuando necesites resolver algo. El tiempo de respuesta es de 24-48h según el plan, sin coste adicional por cada pregunta.</div>
+          <div class="fa">Las consultas ordinarias relacionadas con tu gestión están incluidas en el precio. Escríbenos por WhatsApp o email cuando necesites resolver algo de tu actividad. El tiempo de respuesta es de 24-48h según el plan.</div>
         </div>
         <div class="frow">
           <button class="fq" onclick="doFaq(this)">¿Cómo funciona el cambio de gestoría?<span class="fq-ico">+</span></button>
@@ -555,15 +540,15 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="wrap">
-    <h2>¿Listo para<br><em>olvidarte de Hacienda?</em></h2>
-    <p>Cuéntanos tu situación y te preparamos una propuesta en menos de 24 horas. Sin compromiso ni permanencia.</p>
-    <button class="btn-main-lg" onclick="ClaviaTracking.open('/empezar','_blank')" id="final-cta-btn">
-      Solicitar consulta gratuita →
-    </button>
+    <h2>¿Quieres tener<br><em>Hacienda controlada?</em></h2>
+    <p>Cuéntanos tu situación y te respondemos por email con el plan o trámite que encaja. Sin compromiso ni permanencia.</p>
+    <a href="/empezar" class="btn-main-lg" id="final-cta-btn">
+      Recibir propuesta por email →
+    </a>
     <div class="cta-final-trust">
       <div class="cta-trust-item">Sin permanencia</div>
       <div class="cta-trust-item">Precio fijo desde 39€/mes IVA incl.</div>
-      <div class="cta-trust-item">Respuesta en 24h</div>
+      <div class="cta-trust-item">Respuesta por email</div>
       <div class="cta-trust-item">100% online</div>
     </div>
   </div>
