@@ -125,6 +125,7 @@
         ad_personalization:'denied',
         wait_for_update:500
       });
+      gtag('set', 'url_passthrough', true);
       window.__claviaConsentDefault = true;
     }
     if(!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=' + GA_ID + '"]')){
