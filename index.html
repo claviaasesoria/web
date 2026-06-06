@@ -7,16 +7,16 @@
 <link rel="canonical" href="https://clavia.es/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://clavia.es/">
-<meta property="og:title" content="Clavia · Gestoría online para autónomos desde 39€/mes">
-<meta property="og:description" content="Gestoría fiscal y contable online para autónomos. Precio fijo desde 39€/mes. Sin permanencia. IVA, IRPF, Renta — todo gestionado.">
+<meta property="og:title" content="Clavia · Gestoría online para autónomos">
+<meta property="og:description" content="Hacienda no debería ser un problema. Gestoría online para autónomos desde 39€ + IVA al mes, sin permanencia y con alcance claro.">
     <meta property="og:image" content="https://clavia.es/social.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Clavia · Gestoría online para autónomos desde 39€/mes">
-<meta name="twitter:description" content="Gestoría fiscal y contable online para autónomos. Precio fijo desde 39€/mes. Sin permanencia. IVA, IRPF, Renta — todo gestionado.">
+<meta name="twitter:title" content="Clavia · Gestoría online para autónomos">
+<meta name="twitter:description" content="Hacienda no debería ser un problema. Gestoría online para autónomos desde 39€ + IVA al mes, sin permanencia y con alcance claro.">
 <meta name="twitter:image" content="https://clavia.es/social.png">
-<meta name="description" content="Gestoría fiscal y contable online para autónomos. Precio fijo desde 39€/mes. Sin permanencia. IVA, IRPF, Renta — todo gestionado por tu asesor personal.">
+<meta name="description" content="Gestoría online para autónomos. Hacienda no debería ser un problema: IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
@@ -110,8 +110,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .trust{display:flex;flex-wrap:wrap;gap:20px}
 .trust-i{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--grey2)}
 .trust-i .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0}
-.hero-card{background:var(--forest);border-radius:var(--rrr);padding:36px;position:relative;overflow:hidden;animation:fadeUp .9s .2s both;box-shadow:0 32px 72px rgba(30,58,34,.25)}
-.hero-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(0,192,122,.2);pointer-events:none}
+.hero-card{background:linear-gradient(rgba(255,255,255,.04),rgba(255,255,255,.04)),var(--forest);border:1px solid rgba(255,255,255,.08);border-radius:var(--rrr);padding:36px;position:relative;overflow:hidden;animation:fadeUp .9s .2s both;box-shadow:0 32px 72px rgba(30,58,34,.25)}
+.hero-card::before{display:none}
 .hc-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
 .hc-price{font-family:var(--serif);font-size:72px;font-weight:400;color:#fff;line-height:1;margin-bottom:4px}
 .hc-price sup{font-size:30px;vertical-align:super}
@@ -122,6 +122,12 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .hc-cta{width:100%;padding:14px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(232,83,42,.35)}
 .hc-cta:hover{background:var(--coral2);transform:translateY(-1px)}
 .hc-note{text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:10px;font-family:var(--mono)}
+.hero-card .plan-tier{margin-bottom:22px;color:rgba(255,255,255,.3)}
+.hero-card .plan-price{font-size:58px;margin-bottom:4px;color:#fff}
+.hero-card .plan-mo{margin-bottom:24px;color:rgba(255,255,255,.3)}
+.hero-card .plan-sep{background:rgba(255,255,255,.08);margin-bottom:22px}
+.hero-card .plan-feats{margin-bottom:30px}
+.hero-card .plan-feats li{color:rgba(255,255,255,.6)}
 .ticker{background:var(--forest);padding:14px 0;overflow:hidden;position:relative}
 .ticker-track{display:flex;animation:roll 28s linear infinite;white-space:nowrap}
 .t-item{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);padding:0 24px}
@@ -154,7 +160,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .pricing h2{color:#fff}
 .pricing h2 em{color:rgba(45,106,79,.9)}
 .pricing .section-header p{color:rgba(255,255,255,.5)}
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.plans-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:52px auto 0;max-width:860px}
 .plan{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--rr);padding:36px 30px;transition:background .25s,transform .25s;position:relative}
 .plan:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
 .plan.hi{background:var(--cream);border-color:var(--cream)}
@@ -184,6 +190,11 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .pitem:hover{background:rgba(255,255,255,.07)}
 .pitem-name{font-size:14px;color:rgba(255,255,255,.6)}
 .pitem-price{font-size:15px;font-weight:600;color:#fff;white-space:nowrap;font-family:var(--mono)}
+.scope-block{max-width:860px;margin:28px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.scope-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:var(--rr);padding:22px}
+.scope-card h3{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;margin-bottom:10px}
+.scope-card p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65}
+.scope-card strong{color:rgba(255,255,255,.78);font-weight:600}
 .why{padding:100px 0}
 .why-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
 .why-sticky{position:sticky;top:120px}
@@ -284,7 +295,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 @media(max-width:960px){
   .hero-layout,.why-layout,.sobre-layout,.faq-layout,.contact-layout,.erp-layout{grid-template-columns:1fr;gap:48px}
   .hero-card{max-width:440px}.steps-row{grid-template-columns:1fr 1fr}
-  .stats-grid{grid-template-columns:1fr 1fr}.plans-grid{grid-template-columns:1fr;max-width:400px;margin:52px auto 0}
+  .stats-grid{grid-template-columns:1fr 1fr}.plans-grid{grid-template-columns:1fr;max-width:400px;margin:52px auto 0}.scope-block{grid-template-columns:1fr;max-width:400px}
   .why-sticky,.faq-sticky,.sobre-left{position:static}.why-big{display:none}
   .creatives{margin:0 20px;padding:48px 28px}.creatives-layout{grid-template-columns:1fr;gap:36px}
   .contact-inner{padding:48px 36px}.foot-grid{grid-template-columns:1fr 1fr}
@@ -303,7 +314,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Clavia",
-  "description": "Gestoría fiscal y contable online para autónomos en España. IVA, IRPF y Renta desde 39€/mes (IVA incl.), sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
+  "description": "Gestoría fiscal y contable online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
   "url": "https://clavia.es",
   "logo": "https://clavia.es/favicon.svg",
   "email": "info@clavia.es",
@@ -321,7 +332,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     {"@type": "City", "name": "Massamagrell"}
   ],
   "serviceType": ["Gestoría fiscal", "Gestoría online autónomos", "Contabilidad para autónomos", "Declaración de IVA", "Declaración de IRPF", "Declaración de la Renta", "Asesoría fiscal autónomos"],
-  "priceRange": "39€–79€/mes",
+  "priceRange": "39€–59€ + IVA/mes",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
@@ -336,16 +347,16 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <nav id="nav">
   <div class="wrap">
     <div class="nav-row">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <span class="logo-text">clavia</span>
         <span class="logo-dot"></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
-        <li><a href="index.html#precios">Precios</a></li>
-        <li><a href="index.html#por-que">Por qué Clavia</a></li>
-        <li><a href="index.html#sobre-clavia">Sobre Clavia</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#por-que">Por qué Clavia</a></li>
+        <li><a href="#sobre-clavia">Sobre Clavia</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="/alta-autonomo">Alta autónomo</a></li>
         <li><a href="blog/">Blog</a></li>
         <li><a href="/empezar" class="nav-cta">Empezar ahora</a></li>
@@ -356,11 +367,11 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 </nav>
 <div class="mob" id="mob">
   <span class="mob-x" onclick="toggleMenu()">×</span>
-  <a href="index.html#como-funciona" onclick="toggleMenu()">Cómo funciona</a>
-  <a href="index.html#precios" onclick="toggleMenu()">Precios</a>
-  <a href="index.html#por-que" onclick="toggleMenu()">Por qué Clavia</a>
-  <a href="index.html#sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
-  <a href="index.html#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#como-funciona" onclick="toggleMenu()">Cómo funciona</a>
+  <a href="#precios" onclick="toggleMenu()">Precios</a>
+  <a href="#por-que" onclick="toggleMenu()">Por qué Clavia</a>
+  <a href="#sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="/alta-autonomo" onclick="toggleMenu()">Alta autónomo</a>
   <a href="blog/" onclick="toggleMenu()">Blog</a>
   <a href="/empezar" onclick="toggleMenu()" style="color:var(--coral)">Empezar ahora →</a>
@@ -374,31 +385,34 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <div>
         <div class="eyebrow" style="animation:fadeUp .5s .05s both">Asesoría fiscal online</div>
         <h1 style="animation:fadeUp .5s .15s both">Hacienda<br>no debería<br>ser un <span class="hi">problema</span></h1>
-        <p class="hero-p" style="animation:fadeUp .5s .25s both">IVA, IRPF, Renta — todo gestionado por tu asesor personal a precio fijo mensual. Sin permanencia, sin sorpresas, sin que tengas que entender nada de fiscal.</p>
+        <p class="hero-p" style="animation:fadeUp .5s .25s both">IVA, IRPF, retenciones e intracomunitarias bajo control, con precios claros y un proceso digital ordenado desde el primer día.</p>
         <div class="hero-btns" style="animation:fadeUp .5s .35s both">
-          <a href="#contacto" class="btn-coral">Solicitar consulta →</a>
+          <a href="/empezar" class="btn-coral">Recibir propuesta por email →</a>
           <a href="#como-funciona" class="btn-outline">Ver cómo funciona</a>
         </div>
         <div class="trust" style="animation:fadeUp .5s .45s both">
           <div class="trust-i"><span class="dot"></span>Sin permanencia</div>
-          <div class="trust-i"><span class="dot"></span>Respuesta en 24h</div>
-          <div class="trust-i"><span class="dot"></span>Alta en Hacienda — 49€ (única vez)</div>
+          <div class="trust-i"><span class="dot"></span>Desde 39€ + IVA/mes</div>
+          <div class="trust-i"><span class="dot"></span>Consultas por escrito</div>
           <div class="trust-i"><span class="dot"></span>100% online</div>
         </div>
       </div>
       <div class="hero-card">
-        <div class="hc-label">Tu plan desde</div>
-        <div class="hc-price"><sup>€</sup>39</div>
-        <div class="hc-price-sub">/ mes · precio fijo · IVA incl.</div>
-        <ul class="hc-feats">
-          <li>IVA trimestral (Mod. 303)</li>
-          <li>IRPF trimestral (Mod. 130)</li>
-          <li>Retenciones (Mod. 111)</li>
-          <li>Mod. 390 · Mod. 190 · Mod. 347</li>
-          <li>Alta en Hacienda — 49€ si eres nuevo autónomo</li>
-          <li>Hasta 50 facturas/mes</li>
+        <div class="plan-tier">Básico Digital</div>
+        <div class="plan-price"><sup>€</sup>39</div>
+        <div class="plan-mo">/ mes + IVA</div>
+        <div class="plan-sep"></div>
+        <ul class="plan-feats">
+          <li><span class="ck"></span>IVA trimestral (Mod. 303)</li>
+          <li><span class="ck"></span>IRPF trimestral (Mod. 130)</li>
+          <li><span class="ck"></span>Retenciones habituales (Mod. 111 y 115)</li>
+          <li><span class="ck"></span>Operaciones intracomunitarias (Mod. 349)</li>
+          <li><span class="ck"></span>Resúmenes anuales: 390, 190 y 347 si corresponde</li>
+          <li><span class="ck"></span>Hasta 50 facturas al trimestre</li>
+          <li><span class="ck"></span>Consultas ordinarias por email y WhatsApp</li>
+          <li><span class="ck"></span>Sin permanencia</li>
         </ul>
-        <button class="hc-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Solicitar consulta gratuita</button>
+        <button class="hc-cta" onclick="window.location.href='/empezar'">Recibir propuesta por email</button>
         <div class="hc-note">Sin permanencia · Sin compromiso</div>
       </div>
     </div>
@@ -409,20 +423,24 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <div class="ticker">
   <div class="ticker-track">
     <span class="t-item">IVA trimestral <span class="t-sep">·</span></span>
-    <span class="t-item">IRPF y Renta <span class="t-sep">·</span></span>
+    <span class="t-item">IRPF trimestral <span class="t-sep">·</span></span>
+    <span class="t-item">Retenciones <span class="t-sep">·</span></span>
+    <span class="t-item">Intracomunitarias <span class="t-sep">·</span></span>
     <span class="t-item">Sin permanencia <span class="t-sep">·</span></span>
     <span class="t-item">Precio fijo mensual <span class="t-sep">·</span></span>
-    <span class="t-item">Respuesta en 24h <span class="t-sep">·</span></span>
-    <span class="t-item">Asesor personal <span class="t-sep">·</span></span>
-    <span class="t-item">Alta en Hacienda <span class="t-sep">·</span></span>
+    <span class="t-item">Consultas por escrito <span class="t-sep">·</span></span>
+    <span class="t-item">Alcance claro <span class="t-sep">·</span></span>
+    <span class="t-item">Sin sorpresas <span class="t-sep">·</span></span>
     <span class="t-item">100% online <span class="t-sep">·</span></span>
     <span class="t-item">IVA trimestral <span class="t-sep">·</span></span>
-    <span class="t-item">IRPF y Renta <span class="t-sep">·</span></span>
+    <span class="t-item">IRPF trimestral <span class="t-sep">·</span></span>
+    <span class="t-item">Retenciones <span class="t-sep">·</span></span>
+    <span class="t-item">Intracomunitarias <span class="t-sep">·</span></span>
     <span class="t-item">Sin permanencia <span class="t-sep">·</span></span>
     <span class="t-item">Precio fijo mensual <span class="t-sep">·</span></span>
-    <span class="t-item">Respuesta en 24h <span class="t-sep">·</span></span>
-    <span class="t-item">Asesor personal <span class="t-sep">·</span></span>
-    <span class="t-item">Alta en Hacienda <span class="t-sep">·</span></span>
+    <span class="t-item">Consultas por escrito <span class="t-sep">·</span></span>
+    <span class="t-item">Alcance claro <span class="t-sep">·</span></span>
+    <span class="t-item">Sin sorpresas <span class="t-sep">·</span></span>
     <span class="t-item">100% online <span class="t-sep">·</span></span>
   </div>
 </div>
@@ -431,8 +449,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <section class="stats">
   <div class="wrap">
     <div class="stats-grid rv">
-      <div class="stat"><div class="stat-n">39<span class="unit">€</span></div><div class="stat-l">Precio de entrada al mes</div></div>
-      <div class="stat"><div class="stat-n">24<span class="unit">h</span></div><div class="stat-l">Tiempo máximo de respuesta</div></div>
+      <div class="stat"><div class="stat-n">39<span class="unit">€</span></div><div class="stat-l">Precio de entrada + IVA al mes</div></div>
+      <div class="stat"><div class="stat-n">2<span class="unit">x</span></div><div class="stat-l">Planes mensuales con alcance claro</div></div>
       <div class="stat"><div class="stat-n">0<span class="unit">x</span></div><div class="stat-l">Meses de permanencia</div></div>
       <div class="stat"><div class="stat-n">0<span class="unit">€</span></div><div class="stat-l">Costes de cancelación</div></div>
     </div>
@@ -445,13 +463,13 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     <div class="section-header rv">
       <div class="eyebrow">Cómo funciona</div>
       <h2>Así de fácil<br><em>empezar</em></h2>
-      <p>Sin papeles, sin reuniones presenciales, sin esperas. Todo desde tu móvil u ordenador.</p>
+      <p>Un proceso digital, con cada paso bien documentado y sin perder tiempo en idas y venidas.</p>
     </div>
     <div class="steps-row rv" style="transition-delay:.15s">
-      <div class="step"><div class="step-num">01</div><div class="step-t">Consulta gratuita</div><div class="step-d">Rellena el formulario y cuéntanos tu situación. Te respondemos en menos de 24h, sin compromiso.</div></div>
-      <div class="step"><div class="step-num">02</div><div class="step-t">Propuesta a medida</div><div class="step-d">Te enviamos una propuesta personalizada con el plan exacto que necesitas. Sin letra pequeña.</div></div>
-      <div class="step"><div class="step-num">03</div><div class="step-t">Alta y traspaso</div><div class="step-d">Firmamos digitalmente y te facilitamos el apoderamiento en la AEAT para operar en tu nombre.</div></div>
-      <div class="step"><div class="step-num">04</div><div class="step-t">Tú a lo tuyo</div><div class="step-d">Solo envíanos tus facturas cada mes. Tu asesor personal se ocupa de todo lo demás.</div></div>
+      <div class="step"><div class="step-num">01</div><div class="step-t">Cuéntanos tu caso</div><div class="step-d">Rellena el formulario con tu actividad, situación y necesidades fiscales principales.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-t">Confirmamos alcance</div><div class="step-d">Te respondemos por escrito con el plan adecuado, lo incluido y cualquier extra si fuera necesario.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-t">Firma y acceso</div><div class="step-d">Firmamos la hoja de encargo y configuramos apoderamiento, carpeta documental y forma de pago.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-t">Gestión mensual</div><div class="step-d">Subes tus facturas antes del día 5 y nos encargamos de los modelos incluidos en tu plan.</div></div>
     </div>
   </div>
 </section>
@@ -461,74 +479,72 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   <div class="wrap">
     <div class="section-header rv">
       <div class="eyebrow">Precios</div>
-      <h2>Precio fijo.<br><em>Sin sorpresas.</em></h2>
-      <p>Sabes exactamente lo que pagas cada mes. Sin costes por consulta, sin extras ocultos, sin permanencia.</p>
+      <h2>Dos planes.<br><em>Alcance claro.</em></h2>
+      <p>La cuota mensual cubre la gestión recurrente. El salto de plan no depende de un modelo aislado, sino del volumen, la planificación anual y la complejidad real del caso.</p>
     </div>
     <div class="plans-grid">
       <div class="plan rv" style="transition-delay:.1s">
-        <div class="plan-tier">Básico</div>
+        <div class="plan-tier">Básico Digital</div>
         <div class="plan-price"><sup>€</sup>39</div>
-        <div class="plan-mo">/ mes · facturación simple · IVA incl.</div>
+        <div class="plan-mo">/ mes + IVA</div>
         <div class="plan-sep"></div>
         <ul class="plan-feats">
           <li><span class="ck"></span>IVA trimestral (Mod. 303)</li>
           <li><span class="ck"></span>IRPF trimestral (Mod. 130)</li>
-          <li><span class="ck"></span>Retenciones (Mod. 111)</li>
-          <li><span class="ck"></span>Mod. 390 · Mod. 190 · Mod. 347</li>
-          <li><span class="ck"></span>Alta en Hacienda — 49€ (IVA incl.) si eres nuevo autónomo</li>
-          <li><span class="ck"></span>Hasta 50 facturas/mes</li>
-          <li><span class="ck"></span>Consultas por WhatsApp y email <em style="font-size:11px;opacity:.7">(48h)</em></li>
+          <li><span class="ck"></span>Retenciones habituales (Mod. 111 y 115)</li>
+          <li><span class="ck"></span>Operaciones intracomunitarias (Mod. 349)</li>
+          <li><span class="ck"></span>Resúmenes anuales habituales: 390, 190 y 347 si corresponde</li>
+          <li><span class="ck"></span>Hasta 50 facturas al trimestre</li>
+          <li><span class="ck"></span>Consultas ordinarias por email y WhatsApp</li>
+          <li><span class="ck"></span>Sin permanencia</li>
         </ul>
-        <button class="plan-btn" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Empezar ahora</button>
+        <button class="plan-btn" onclick="window.location.href='/empezar'">Consultar Plan Básico</button>
       </div>
       <div class="plan hi rv" style="transition-delay:.2s">
-        <div class="plan-tier">Estándar</div>
+        <div class="plan-tier">Avanzado</div>
         <div class="plan-price"><sup>€</sup>59</div>
-        <div class="plan-mo">/ mes · autónomo completo · IVA incl.</div>
+        <div class="plan-mo">/ mes + IVA</div>
         <div class="plan-sep"></div>
         <ul class="plan-feats">
           <li><span class="ck"></span>Todo el plan Básico</li>
-          <li><span class="ck"></span>Mod. 349 Intracomunitario</li>
-          <li><span class="ck"></span>Mod. 115 Retención Alquileres</li>
-          <li><span class="ck"></span>Declaración de la Renta incluida*</li>
-          <li><span class="ck"></span>Hasta 100 facturas/mes</li>
-          <li><span class="ck"></span>Consultas WhatsApp y email <em style="font-size:11px;opacity:.7">(24h)</em></li>
+          <li><span class="ck"></span>Más de 50 facturas al trimestre</li>
+          <li><span class="ck"></span>Hasta 2 epígrafes IAE incluidos</li>
+          <li><span class="ck"></span>Previsión básica de IRPF durante el año</li>
+          <li><span class="ck"></span>Renta incluida a partir de la 3.ª mensualidad*</li>
+          <li><span class="ck"></span>Requerimientos sencillos AEAT**</li>
+          <li><span class="ck"></span>Revisión de gastos y cierre fiscal con más detalle</li>
+          <li><span class="ck"></span>Seguimiento fiscal más completo por escrito</li>
         </ul>
-        <button class="plan-btn" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Empezar ahora</button>
+        <button class="plan-btn" onclick="window.location.href='/empezar'">Consultar Plan Avanzado</button>
       </div>
-      <div class="plan rv" style="transition-delay:.3s">
-        <div class="plan-tier">Pro</div>
-        <div class="plan-price"><sup>€</sup>79</div>
-        <div class="plan-mo">/ mes · volumen alto · IVA incl.</div>
-        <div class="plan-sep"></div>
-        <ul class="plan-feats">
-          <li><span class="ck"></span>Todo el plan Estándar</li>
-          <li><span class="ck"></span>Facturas ilimitadas</li>
-          <li><span class="ck"></span>Trámite requerimientos AEAT**</li>
-          <li><span class="ck"></span>Revisión fiscal trimestral con informe</li>
-          <li><span class="ck"></span>Videollamada trimestral 30 min</li>
-          <li><span class="ck"></span>Consultas prioritarias <em style="font-size:11px;opacity:.7">(24h)</em></li>
-        </ul>
-        <button class="plan-btn" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Empezar ahora</button>
+    </div>
+    <div class="scope-block rv" style="transition-delay:.25s">
+      <div class="scope-card">
+        <h3>Qué va aparte</h3>
+        <p><strong>Altas, bajas, Renta en Plan Básico, regularizaciones, recursos, sanciones y trimestres anteriores</strong> se presupuestan como servicios puntuales. Así la cuota mensual no se infla ni se convierte en un cajón de sastre.</p>
+      </div>
+      <div class="scope-card">
+        <h3>Cómo atendemos</h3>
+        <p>La gestión se apoya en email, WhatsApp y documentación compartida para que cada decisión quede clara, revisada y fácil de seguir durante el trimestre.</p>
       </div>
     </div>
     <div style="margin-top:20px;padding:0 4px">
-      <p style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.8;font-family:var(--mono)">* Renta incluida para el ejercicio fiscal correspondiente a partir de la 3.ª mensualidad abonada en ese mismo ejercicio.<br>** Solo requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas (art. 141 LGT). No incluye inspecciones formales, actas, recursos ni reclamaciones.</p>
+      <p style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.8;font-family:var(--mono)">* Renta incluida en el Plan Avanzado para el ejercicio correspondiente a partir de la 3.ª mensualidad abonada en ese mismo ejercicio. No incluye rentas de ejercicios anteriores al inicio del servicio ni casos con complejidad extraordinaria sin presupuesto previo.<br>** Solo solicitudes de documentación y comprobaciones limitadas sobre modelos gestionados por Clavia. Casos complejos, sanciones, recursos o ejercicios anteriores se presupuestan aparte.</p>
     </div>
     <div class="puntual-block rv" style="transition-delay:.25s">
       <div style="text-align:center;margin-bottom:28px">
         <div class="eyebrow">Sin suscripción</div>
         <h3 style="font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);color:#fff;font-weight:400;margin:8px 0 6px">Servicios puntuales</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,.45)">Orientación incluida en todos los trámites · Consultas iniciales por email</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.45)">Servicios puntuales para casos concretos, sin suscripción mensual</p>
       </div>
       <div class="puntual-grid">
         <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€</div></div>
         <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€</div></div>
-        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">79€</div></div>
-        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+19€</div></div>
-        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">70 – 100€</div></div>
+        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">119€</div></div>
+        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+29€</div></div>
+        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">desde 65€</div></div>
       </div>
-      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">Todos los precios IVA incluido · La Renta varía según complejidad — te confirmamos el importe antes de empezar</p>
+      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">Precios + IVA · El trimestre suelto no incluye modelos anuales ni declaraciones informativas posteriores · La Renta varía según complejidad y se confirma antes de empezar</p>
     </div>
   </div>
 </section>
@@ -545,7 +561,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       </div>
       <div class="why-rows rv" style="transition-delay:.15s">
         <div class="wrow"><div class="wrow-h"><span class="wnum">01.</span><span class="wtit">Precio fijo y transparente</span></div><div class="wdes">Sabes exactamente lo que pagas desde el primer día. Sin costes por consulta, sin extras sorpresa.</div></div>
-        <div class="wrow"><div class="wrow-h"><span class="wnum">02.</span><span class="wtit">Tu asesor personal siempre disponible</span></div><div class="wdes">Un asesor asignado que conoce tu negocio. No un call center. Responde en menos de 24 horas.</div></div>
+        <div class="wrow"><div class="wrow-h"><span class="wnum">02.</span><span class="wtit">Comunicación clara y documentada</span></div><div class="wdes">Trabajamos por email, WhatsApp y documentación compartida para revisar bien cada caso y dejar constancia de lo acordado.</div></div>
         <div class="wrow"><div class="wrow-h"><span class="wnum">03.</span><span class="wtit">Sin permanencia, sin ataduras</span></div><div class="wdes">Cancela cuando quieras. Sin contratos anuales ni penalizaciones. Nos obliga a hacerlo bien cada mes.</div></div>
         <div class="wrow"><div class="wrow-h"><span class="wnum">04.</span><span class="wtit">Onboarding claro y sin complicaciones</span></div><div class="wdes">Te guiamos para el apoderamiento en la AEAT. Un proceso sencillo que se hace una sola vez.</div></div>
         <div class="wrow"><div class="wrow-h"><span class="wnum">05.</span><span class="wtit">Tecnología que simplifica tu vida</span></div><div class="wdes">Sube facturas desde el móvil — foto, PDF o Excel. Nos adaptamos a lo que sea más cómodo para ti.</div></div>
@@ -705,7 +721,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <div class="faq-sticky rv">
         <div class="eyebrow">FAQ</div>
         <h2 style="font-family:var(--serif);font-size:clamp(30px,3.5vw,46px);color:var(--ink);font-weight:400;line-height:1.05;margin-bottom:14px">Preguntas<br><em style="color:var(--forest2)">frecuentes</em></h2>
-        <p style="font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:24px">Si tu duda no está aquí, escríbenos. Respondemos en menos de 24 horas.</p>
+        <p style="font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:24px">Si tu duda no está aquí, escríbenos y te responderemos con el alcance adecuado.</p>
         <a href="#contacto" class="btn-outline">Hacer una pregunta →</a>
       </div>
       <div class="faq-rows rv" style="transition-delay:.15s">
@@ -728,14 +744,14 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="rv">
           <div class="eyebrow">Contacto</div>
           <h2 class="cnt-h">Hablemos<br><em>sin compromiso</em></h2>
-          <p class="cnt-p">Cuéntanos tu situación y te preparamos una propuesta en menos de 24 horas. Sin permanencia, cancela cuando quieras.</p>
-          <div class="cnt-feat"><div class="cnt-ico">⚡</div><div class="cnt-txt"><strong>Respuesta en menos de 24h</strong><span>En días laborables, siempre</span></div></div>
+          <p class="cnt-p">Cuéntanos tu situación y te preparamos una propuesta por email. Sin permanencia, cancela cuando quieras.</p>
+          <div class="cnt-feat"><div class="cnt-ico">⚡</div><div class="cnt-txt"><strong>Propuesta por escrito</strong><span>Con el plan adecuado y el alcance claro</span></div></div>
           <div class="cnt-feat"><div class="cnt-ico">🔓</div><div class="cnt-txt"><strong>Sin permanencia</strong><span>Cancela cuando quieras, sin coste</span></div></div>
           <div class="cnt-feat"><div class="cnt-ico">🔄</div><div class="cnt-txt"><strong>Onboarding guiado</strong><span>Te explicamos cada paso del apoderamiento en la AEAT</span></div></div>
         </div>
         <div class="form-box rv" style="transition-delay:.15s">
-          <div class="form-title">Solicitar consulta gratuita</div>
-          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin-bottom:28px">Cuéntanos tu situación en un formulario rápido de 5 preguntas. Te respondemos con una propuesta personalizada en menos de 24 horas.</p>
+          <div class="form-title">Recibir propuesta por email</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin-bottom:28px">Cuéntanos tu situación en un formulario rápido. Te respondemos con el plan o trámite adecuado y el alcance antes de empezar.</p>
           <a href="/empezar" target="_blank" rel="noopener" class="fsub" style="display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none">
             Abrir formulario de consulta →
           </a>
@@ -747,7 +763,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
             </div>
             <div class="cnt-feat" style="gap:12px">
               <div style="width:32px;height:32px;border-radius:7px;background:var(--coral-lo);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px">📬</div>
-              <div><strong style="display:block;font-size:13px;color:var(--ink);margin-bottom:2px">Respuesta en menos de 24h</strong><span style="font-size:12px;color:var(--grey)">Con propuesta personalizada</span></div>
+              <div><strong style="display:block;font-size:13px;color:var(--ink);margin-bottom:2px">Propuesta clara</strong><span style="font-size:12px;color:var(--grey)">Plan, alcance y siguientes pasos</span></div>
             </div>
             <div class="cnt-feat" style="gap:12px">
               <div style="width:32px;height:32px;border-radius:7px;background:var(--coral-lo);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px">🔓</div>
@@ -764,7 +780,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="index.html" class="flogo">
+        <a href="/" class="flogo">
           <span class="flogo-w">clavia</span>
           <span class="flogo-d"></span>
         </a>
@@ -774,19 +790,19 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <div>
         <div class="fh">Servicios</div>
         <ul class="fli">
-          <li><a href="index.html#precios">Plan Básico — 39€/mes</a></li>
-          <li><a href="index.html#precios">Plan Estándar — 59€/mes</a></li>
-          <li><a href="index.html#precios">Plan Pro — 79€/mes</a></li>
-          <li><a href="/empezar">Consulta gratuita</a></li>
+          <li><a href="#precios">Básico Digital — 39€ + IVA/mes</a></li>
+          <li><a href="#precios">Avanzado — 59€ + IVA/mes</a></li>
+          <li><a href="/autonomos">Gestoría autónomos</a></li>
+          <li><a href="/empezar">Recibir propuesta</a></li>
         </ul>
       </div>
       <div>
         <div class="fh">Empresa</div>
         <ul class="fli">
-          <li><a href="index.html#como-funciona">Cómo funciona</a></li>
-          <li><a href="index.html#sobre-clavia">Sobre Clavia</a></li>
-          <li><a href="index.html#por-que">Por qué Clavia</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#sobre-clavia">Sobre Clavia</a></li>
+          <li><a href="#por-que">Por qué Clavia</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="/blog/">Blog fiscal</a></li>
         </ul>
       </div>
