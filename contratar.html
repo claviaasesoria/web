@@ -57,7 +57,7 @@ main{flex:1;padding:48px 24px 80px;position:relative;z-index:1}
 .section-sub{font-size:15px;color:var(--grey);text-align:center;margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6}
 
 /* PLAN CARDS */
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto 32px}
+.plans-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px;margin:0 auto 32px}
 .plan-card{border-radius:var(--rrr);padding:32px 28px;display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid var(--cream3);transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer}
 .plan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,14,8,.1);border-color:var(--cream2)}
 .plan-card.featured{border-color:var(--coral);box-shadow:0 4px 24px rgba(232,83,42,.12)}
@@ -169,75 +169,54 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
   <div id="step-plan">
     <div class="section-eyebrow">Elige tu plan</div>
     <h1 class="section-title">Sin permanencia · Cancelas cuando quieras</h1>
-    <p class="section-sub">Todos los precios llevan IVA incluido. Preaviso de 15 días para cancelar.</p>
+    <p class="section-sub">Precios + IVA. Preaviso de 15 días para cancelar.</p>
 
     <div class="plans-grid">
 
       <!-- BÁSICO -->
-      <div class="plan-card" onclick="selectPlan('Básico','39')">
-        <div class="plan-name">Básico</div>
+      <div class="plan-card" onclick="selectPlan('Básico Digital','39')">
+        <div class="plan-name">Básico Digital</div>
         <div class="plan-price-row">
           <span class="plan-price">39€</span>
           <span class="plan-price-suffix">/mes</span>
         </div>
-        <div class="plan-iva">IVA incluido</div>
+        <div class="plan-iva">+ IVA</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li>IVA trimestral (Mod. 303)</li>
           <li>IRPF trimestral (Mod. 130)</li>
-          <li>Retenciones (Mod. 111)</li>
-          <li>Mod. 390 · Mod. 190 · Mod. 347</li>
-          <li>Alta en Hacienda — 49€ (IVA incl.) si eres nuevo autónomo</li>
-          <li>Hasta 50 facturas/mes</li>
-          <li>Consultas por WhatsApp y email <em>(48h)</em></li>
+          <li>Retenciones habituales (Mod. 111 y 115)</li>
+          <li>Operaciones intracomunitarias (Mod. 349)</li>
+          <li>Resúmenes anuales: 390, 190 y 347 si corresponde</li>
+          <li>Hasta 50 facturas al trimestre</li>
+          <li>Consultas por email y WhatsApp</li>
         </ul>
         <button class="plan-btn" type="button">
           Contratar Básico <span class="plan-arrow">→</span>
         </button>
       </div>
 
-      <!-- ESTÁNDAR (destacado) -->
-      <div class="plan-card featured" onclick="selectPlan('Estándar','59')">
+      <!-- AVANZADO (destacado) -->
+      <div class="plan-card featured" onclick="selectPlan('Avanzado','59')">
         <div class="plan-badge">Más elegido</div>
-        <div class="plan-name">Estándar</div>
+        <div class="plan-name">Avanzado</div>
         <div class="plan-price-row">
           <span class="plan-price">59€</span>
           <span class="plan-price-suffix">/mes</span>
         </div>
-        <div class="plan-iva">IVA incluido</div>
+        <div class="plan-iva">+ IVA</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li>Todo el plan Básico</li>
-          <li>Mod. 349 Intracomunitario</li>
-          <li>Mod. 115 Retención Alquileres</li>
-          <li>Declaración de la Renta incluida*</li>
-          <li>Hasta 100 facturas/mes</li>
-          <li>Consultas WhatsApp y email <em>(24h)</em></li>
+          <li>Más de 50 facturas al trimestre</li>
+          <li>Hasta 2 epígrafes IAE incluidos</li>
+          <li>Previsión básica de IRPF durante el año</li>
+          <li>Renta incluida a partir de la 3.ª mensualidad*</li>
+          <li>Requerimientos sencillos AEAT**</li>
+          <li>Revisión de gastos y cierre fiscal con más detalle</li>
         </ul>
         <button class="plan-btn" type="button">
-          Contratar Estándar <span class="plan-arrow">→</span>
-        </button>
-      </div>
-
-      <!-- PRO -->
-      <div class="plan-card" onclick="selectPlan('Pro','79')">
-        <div class="plan-name">Pro</div>
-        <div class="plan-price-row">
-          <span class="plan-price">79€</span>
-          <span class="plan-price-suffix">/mes</span>
-        </div>
-        <div class="plan-iva">IVA incluido</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li>Todo el plan Estándar</li>
-          <li>Facturas ilimitadas</li>
-          <li>Trámite requerimientos AEAT**</li>
-          <li>Revisión fiscal trimestral con informe</li>
-          <li>Videollamada trimestral 30 min</li>
-          <li>Consultas prioritarias <em>(24h)</em></li>
-        </ul>
-        <button class="plan-btn" type="button">
-          Contratar Pro <span class="plan-arrow">→</span>
+          Contratar Avanzado <span class="plan-arrow">→</span>
         </button>
       </div>
 
@@ -246,12 +225,12 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
     <!-- Suplementos -->
     <div class="suppl-note">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><circle cx="8" cy="8" r="7" stroke="#7a5545" stroke-width="1.2"/><path d="M8 7v4M8 5.5v.5" stroke="#7a5545" stroke-width="1.2" stroke-linecap="round"/></svg>
-      ¿Tienes más de un epígrafe IAE? <strong>&nbsp;2º epígrafe: +15€/mes · Cada epígrafe adicional: +12€/mes</strong> (IVA incl.)
+      En el Plan Avanzado se incluyen hasta 2 epígrafes IAE. En Básico Digital, o a partir del 3.º epígrafe, se puede presupuestar suplemento.
     </div>
 
     <div class="footnotes">
-      <p>* Renta incluida a partir de la 3ª mensualidad abonada en el ejercicio.</p>
-      <p>** Requerimientos rutinarios: solicitudes de documentación y comprobaciones limitadas. Excluidas inspecciones formales, actas, recursos y reclamaciones (LGT art. 141).</p>
+      <p>* Renta incluida a partir de la 3.ª mensualidad abonada en el ejercicio.</p>
+      <p>** Solo solicitudes de documentación y comprobaciones limitadas sobre modelos gestionados por Clavia. Casos complejos, sanciones, recursos o ejercicios anteriores se presupuestan aparte.</p>
     </div>
 
   </div>
@@ -314,10 +293,10 @@ footer a{color:var(--grey2);text-decoration:underline;text-underline-offset:3px}
           <div class="field">
             <label for="n_epigrafes">Número de epígrafes</label>
             <select id="n_epigrafes" name="n_epigrafes">
-              <option value="1">1 epígrafe — sin suplemento</option>
-              <option value="2">2 epígrafes — +15€/mes</option>
-              <option value="3">3 epígrafes — +27€/mes</option>
-              <option value="4">4 o más epígrafes — +39€/mes</option>
+              <option value="1">1 epígrafe</option>
+              <option value="2">2 epígrafes</option>
+              <option value="3">3 epígrafes</option>
+              <option value="4">4 o más epígrafes</option>
             </select>
           </div>
         </div>
@@ -383,7 +362,7 @@ function selectPlan(plan, precio) {
   _precio = precio;
   ClaviaTracking.track('select_plan', {event_category:'Funnel', event_label:plan, value:Number(precio)});
   document.getElementById('pill-name').textContent = 'Plan ' + plan;
-  document.getElementById('pill-price').textContent = precio + '€/mes · IVA incl.';
+  document.getElementById('pill-price').textContent = precio + '€/mes + IVA';
   document.getElementById('hidden-plan').value = plan;
   document.getElementById('hidden-precio').value = precio;
   document.getElementById('step-plan').style.display = 'none';
