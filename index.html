@@ -140,16 +140,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .stat-n{font-family:var(--mono);font-size:48px;font-weight:500;color:var(--forest);line-height:1;margin-bottom:8px;display:flex;align-items:baseline;gap:4px}
 .stat-n .unit{font-size:22px;color:var(--coral)}
 .stat-l{font-size:13px;color:var(--grey);line-height:1.4}
-.fit{padding:100px 0;background:var(--cream2);border-bottom:1px solid var(--line)}
-.fit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
-.fit h2{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:400;color:var(--ink);line-height:1.05;margin-bottom:16px}
-.fit h2 em{font-style:italic;color:var(--forest2)}
-.fit p{font-size:16px;color:var(--grey);line-height:1.7;max-width:480px}
-.fit-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fit-item{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;gap:12px;align-items:flex-start}
-.fit-check{width:20px;height:20px;border-radius:6px;background:rgba(0,192,122,.16);color:var(--sage);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.fit-text{font-size:14px;color:var(--grey);line-height:1.55}
-.fit-text strong{display:block;color:var(--ink2);font-size:14px;margin-bottom:3px}
 .how{padding:100px 0}
 .section-header{margin-bottom:56px}
 .section-header .eyebrow{margin-bottom:14px}
@@ -305,7 +295,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 @media(max-width:960px){
   .hero-layout,.why-layout,.sobre-layout,.faq-layout,.contact-layout,.erp-layout{grid-template-columns:1fr;gap:48px}
   .hero-card{max-width:440px}.steps-row{grid-template-columns:1fr 1fr}
-  .fit-grid,.fit-list{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}.plans-grid{grid-template-columns:1fr;max-width:400px;margin:52px auto 0}.scope-block{grid-template-columns:1fr;max-width:400px}
   .why-sticky,.faq-sticky,.sobre-left{position:static}.why-big{display:none}
   .creatives{margin:0 20px;padding:48px 28px}.creatives-layout{grid-template-columns:1fr;gap:36px}
@@ -464,45 +453,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <div class="stat"><div class="stat-n">2<span class="unit">x</span></div><div class="stat-l">Planes mensuales con alcance claro</div></div>
       <div class="stat"><div class="stat-n">0<span class="unit">x</span></div><div class="stat-l">Meses de permanencia</div></div>
       <div class="stat"><div class="stat-n">0<span class="unit">€</span></div><div class="stat-l">Costes de cancelación</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ENCAJE -->
-<section class="fit">
-  <div class="wrap">
-    <div class="fit-grid rv">
-      <div>
-        <div class="eyebrow">Encaje</div>
-        <h2>Clavia encaja<br><em>contigo si...</em></h2>
-        <p>Funciona especialmente bien para autónomos que quieren una gestión fiscal digital, ordenada y con el alcance claro desde el principio. Antes de empezar revisamos tu caso para confirmar que el plan encaja.</p>
-      </div>
-      <div class="fit-list">
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Quieres una gestión digital</strong>Prefieres email, WhatsApp y documentación compartida antes que papeles, visitas o llamadas improvisadas.</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Buscas precio claro</strong>Quieres saber qué incluye tu cuota mensual y qué trámites se presupuestan aparte antes de empezar.</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Puedes subir documentación ordenada</strong>Facturas, tickets y datos básicos en una carpeta compartida para preparar cada trimestre sin prisas.</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Tu actividad está en territorio común</strong>El servicio estándar está pensado para autónomos que tributan con AEAT, IVA e IRPF estatal.</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Quieres delegar sin perder control</strong>Te avisamos de modelos, importes y próximos pasos para que entiendas lo que se presenta.</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-check">✓</div>
-          <div class="fit-text"><strong>Valoras respuestas por escrito</strong>Así queda constancia de lo acordado y podemos revisar bien las dudas fiscales antes de contestar.</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
