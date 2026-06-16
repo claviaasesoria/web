@@ -4,9 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Gestoría Online para Autónomos · Planes claros · Clavia</title>
-<meta name="robots" content="noindex">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://clavia.es/autonomos">
 <meta name="description" content="Gestoría online para autónomos. Hacienda no debería ser un problema: IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gestoría online para autónomos · Clavia">
+<meta property="og:description" content="Gestión fiscal online para autónomos: IVA, IRPF, retenciones, operaciones intracomunitarias y modelos anuales desde 39€ + IVA/mes.">
+<meta property="og:url" content="https://clavia.es/autonomos">
+<meta property="og:site_name" content="Clavia">
+<meta property="og:image" content="https://clavia.es/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestoría online para autónomos · Clavia">
+<meta name="twitter:description" content="IVA, IRPF, retenciones, intracomunitarias y modelos anuales desde 39€ + IVA/mes. Sin permanencia.">
+<meta name="twitter:image" content="https://clavia.es/social.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
@@ -184,6 +196,15 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .scope-card p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65}
 .scope-card strong{color:rgba(255,255,255,.78);font-weight:600}
 
+/* ENLAZADO INTERNO SEO */
+.seo-links{padding:76px 0;background:var(--cream)}
+.seo-links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.seo-card{background:#fff;border:1px solid var(--line);border-radius:var(--rr);padding:22px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s}
+.seo-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(28,14,8,.08);border-color:rgba(232,83,42,.28)}
+.seo-k{font-family:var(--mono);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--coral);margin-bottom:9px}
+.seo-card h3{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink);line-height:1.15;margin-bottom:8px}
+.seo-card p{font-size:13px;color:var(--grey);line-height:1.6}
+
 /* FAQ */
 .faq{padding:88px 0}
 .faq-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
@@ -231,6 +252,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
   .steps{grid-template-columns:1fr 1fr}
   .plans{grid-template-columns:1fr}
   .scope-block{grid-template-columns:1fr}
+  .seo-links-grid{grid-template-columns:1fr}
   .puntual-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr;gap:0}
   .faq-left{position:static;margin-bottom:40px}
@@ -251,6 +273,127 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .cb-accept{background:#e8532a;color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer;font-size:11px;letter-spacing:1px}
 .cb-reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.4);padding:9px 16px;border-radius:5px;cursor:pointer;font-size:11px}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://clavia.es/"},
+    {"@type": "ListItem", "position": 2, "name": "Gestoría online para autónomos", "item": "https://clavia.es/autonomos"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://clavia.es/#professionalservice",
+  "name": "Clavia",
+  "alternateName": "Clavia Gestoría Online",
+  "url": "https://clavia.es/autonomos",
+  "logo": "https://clavia.es/social.png",
+  "image": "https://clavia.es/social.png",
+  "description": "Gestoría online para autónomos en España. Gestión trimestral de IVA, IRPF, retenciones, operaciones intracomunitarias y modelos anuales desde 39€ + IVA/mes.",
+  "email": "info@clavia.es",
+  "telephone": "+34634450038",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
+    "addressCountry": "ES"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "España"
+  },
+  "serviceType": [
+    "Gestoría online para autónomos",
+    "Asesoría fiscal para autónomos",
+    "Presentación Modelo 303",
+    "Presentación Modelo 130",
+    "Modelo 111",
+    "Modelo 115",
+    "Modelo 349",
+    "Declaración de la Renta autónomos"
+  ],
+  "priceRange": "39€-59€ + IVA/mes",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planes de gestoría online para autónomos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Plan Básico Digital",
+        "price": "39",
+        "priceCurrency": "EUR",
+        "description": "Gestión recurrente para autónomos con volumen moderado: 303, 130, 111, 115, 349 y modelos anuales habituales hasta 50 facturas por trimestre. Precio mensual + IVA.",
+        "url": "https://clavia.es/autonomos#precios"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plan Avanzado",
+        "price": "59",
+        "priceCurrency": "EUR",
+        "description": "Gestión para autónomos con más volumen, hasta 2 epígrafes, previsión de IRPF, Renta desde la tercera mensualidad y requerimientos sencillos AEAT. Precio mensual + IVA.",
+        "url": "https://clavia.es/autonomos#precios"
+      },
+      {
+        "@type": "Offer",
+        "name": "Alta como autónomo",
+        "price": "49",
+        "priceCurrency": "EUR",
+        "description": "Servicio puntual de alta censal y RETA. Precio + IVA.",
+        "url": "https://clavia.es/autonomos#precios"
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gestoría online para autónomos",
+  "serviceType": "Gestión fiscal recurrente de autónomos",
+  "provider": {"@id": "https://clavia.es/#professionalservice"},
+  "areaServed": {"@type": "Country", "name": "España"},
+  "url": "https://clavia.es/autonomos",
+  "description": "Servicio de gestoría online para autónomos: IVA trimestral, IRPF, retenciones, operaciones intracomunitarias, modelos anuales y consultas ordinarias por email y WhatsApp."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye exactamente el Plan Básico Digital?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Incluye la gestión recurrente de un autónomo con volumen moderado: IVA trimestral, pago fraccionado de IRPF, retenciones habituales, operaciones intracomunitarias y modelos anuales cuando correspondan. El límite orientativo es hasta 50 facturas por trimestre."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿La declaración de la Renta está incluida?",
+      "acceptedAnswer": {"@type": "Answer", "text": "En el Plan Avanzado está incluida a partir de la tercera mensualidad abonada en ese ejercicio fiscal. En el Plan Básico Digital no está incluida. Las rentas anteriores al inicio del servicio, o las que tengan una complejidad especial, se presupuestan aparte antes de empezar."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cancelar en cualquier momento?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. No hay permanencia anual. Solo pedimos preaviso de 15 días naturales para cerrar correctamente la gestión, documentación pendiente y próximos vencimientos."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo os mando las facturas?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Usamos una carpeta compartida para que subas facturas emitidas, recibidas y justificantes de gasto. La fecha objetivo es el día 5 de cada mes, así evitamos prisas antes del cierre trimestral."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las consultas están incluidas?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Las consultas ordinarias relacionadas con la gestión incluida en tu plan sí están incluidas. Si una consulta implica estudiar una operación especial, revisar documentación anterior o preparar un trámite adicional, se avisa antes de presupuestarlo."}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -334,6 +477,49 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         <div class="tpill"><span class="tpill-ico">📄</span> Modelos anuales</div>
         <div class="tpill"><span class="tpill-ico">🔓</span> Sin permanencia</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENLAZADO INTERNO SEO -->
+<section class="seo-links" aria-labelledby="recursos-autonomos">
+  <div class="wrap">
+    <div class="section-hd">
+      <div class="eyebrow">Guías útiles</div>
+      <h2 id="recursos-autonomos">Información fiscal para<br><em>autónomos en España</em></h2>
+      <p>Recursos prácticos para entender tus obligaciones antes de contratar una gestoría o empezar una actividad.</p>
+    </div>
+    <div class="seo-links-grid">
+      <a href="/alta-autonomo" class="seo-card">
+        <div class="seo-k">Alta autónomo</div>
+        <h3>Cómo darse de alta como autónomo</h3>
+        <p>Modelo 036, RETA, tarifa plana y primeros pasos fiscales antes de empezar a facturar.</p>
+      </a>
+      <a href="/tramites" class="seo-card">
+        <div class="seo-k">Servicios puntuales</div>
+        <h3>Trámites fiscales para autónomos</h3>
+        <p>Altas, bajas, modificaciones, trimestres sueltos, modelos adicionales y Renta.</p>
+      </a>
+      <a href="/blog/cuanto-cuesta-ser-autonomo-2026" class="seo-card">
+        <div class="seo-k">Costes</div>
+        <h3>Cuánto cuesta ser autónomo en 2026</h3>
+        <p>Cuota RETA, IRPF, gestoría, seguros y costes reales que conviene prever.</p>
+      </a>
+      <a href="/blog/gastos-deducibles-autonomos-2026" class="seo-card">
+        <div class="seo-k">Gastos deducibles</div>
+        <h3>Gastos deducibles para autónomos</h3>
+        <p>Qué gastos pueden deducirse, qué justificantes guardar y qué suele revisar Hacienda.</p>
+      </a>
+      <a href="/blog/retencion-irpf-facturas-autonomos" class="seo-card">
+        <div class="seo-k">Facturación</div>
+        <h3>Retención de IRPF en facturas</h3>
+        <p>Cuándo aplicar 15%, cuándo puede aplicarse 7% y qué depende del epígrafe IAE.</p>
+      </a>
+      <a href="/blog/verifactu-factura-electronica-autonomos" class="seo-card">
+        <div class="seo-k">VeriFactu</div>
+        <h3>VeriFactu y factura electrónica</h3>
+        <p>Qué cambios llegan para los autónomos y cómo prepararse sin improvisar a última hora.</p>
+      </a>
     </div>
   </div>
 </section>
