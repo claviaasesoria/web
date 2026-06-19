@@ -17,6 +17,9 @@
 <meta name="twitter:description" content="Guías prácticas de fiscalidad para autónomos en España: IVA, IRPF, deducciones y novedades de Hacienda explicadas sin tecnicismos.">
 <meta name="twitter:image" content="https://clavia.es/social.png">
 <meta name="description" content="Blog de fiscalidad para autónomos. Guías prácticas sobre IVA, IRPF, modelos tributarios, gastos deducibles y novedades de Hacienda.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://clavia.es/blog/#page","url":"https://clavia.es/blog/","name":"Blog fiscal para autónomos de Clavia","description":"Artículos y novedades sobre fiscalidad, contabilidad y gestión para autónomos.","isPartOf":{"@id":"https://clavia.es/#website"},"about":{"@id":"https://clavia.es/#organization"},"author":{"@id":"https://clavia.es/#juan-redondo"}}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
@@ -121,7 +124,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .nl-input:focus{border-color:var(--coral)}
 .nl-btn{background:var(--coral);color:#fff;border:none;padding:12px 22px;border-radius:var(--r);font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-hero{padding:100px 20px 60px}.blog-wrap{padding:48px 20px 80px}.nl-form{flex-direction:column}}
+@media(max-width:760px){.nav-links{display:none}.ham{display:flex}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}.wrap{padding:0 22px}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-hero{padding:100px 20px 60px}.blog-wrap{padding:48px 20px 80px}.nl-form{flex-direction:column}.foot-grid{grid-template-columns:1fr}.cookie-banner{padding:14px 20px}}
 nav.nav-dark:not(.stuck) .logo-text{color:#fff}
 nav.nav-dark:not(.stuck) .nav-links a{color:rgba(255,255,255,.65)}
 nav.nav-dark:not(.stuck) .nav-links a:hover{color:#fff}
@@ -141,6 +145,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
           <li><a href="../index.html#precios">Precios</a></li>
           <li><a href="../index.html#por-que">Por qué Clavia</a></li>
           <li><a href="../index.html#sobre-clavia">Sobre Clavia</a></li>
+          <li><a href="/guias-autonomos">Guías fiscales</a></li>
           <li><a href="../index.html#faq">FAQ</a></li>
           <li><a href="/empezar" class="nav-cta">Empezar ahora</a></li>
       </ul>
@@ -164,7 +169,11 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
     <p>Guías prácticas, novedades de Hacienda y recursos útiles para autónomos que quieren entender sus obligaciones fiscales sin volverse locos.</p>
   </div>
 </div>
-<div class="blog-wrap">
+  <div class="blog-wrap">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px;padding:18px 20px;background:var(--cream2);border:1px solid var(--line);border-radius:8px">
+    <div><strong style="display:block;font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:3px">¿Buscas una respuesta por tema?</strong><span style="font-size:13px;color:var(--grey)">Consulta el mapa de altas, trimestres, facturación, Renta y Seguridad Social.</span></div>
+    <a href="/guias-autonomos" style="font-size:13px;color:var(--coral);font-weight:700;white-space:nowrap">Ver todas las guías →</a>
+  </div>
   <div class="categories">
     <button class="cat-btn active">Todos</button>
     <button class="cat-btn">IRPF y Renta</button>
@@ -194,8 +203,8 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
     </a>
     <a href="/blog/verifactu-factura-electronica-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Facturación · Novedades</div>
-      <h2 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin:0">Verifactu 2026: La Factura Electrónica Obligatoria para Autónomos</h2>
-      <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0">Qué es, cuándo entra en vigor, a quién afecta y cómo prepararte antes de que sea obligatorio.</p>
+      <h2 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin:0">VeriFactu para Autónomos: Requisitos y Plazos de 2027</h2>
+      <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0">Qué exige a los sistemas de facturación, en qué se diferencia de la factura electrónica y cuándo deben adaptarse los autónomos.</p>
       <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
     </a>
     <a href="/blog/cuota-autonomos-2026-ingresos-reales" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
@@ -274,6 +283,7 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
           <li><a href="../index.html#por-que">Por qué Clavia</a></li>
           <li><a href="../index.html#faq">FAQ</a></li>
           <li><a href="../blog/index.html">Blog fiscal</a></li>
+          <li><a href="/guias-autonomos">Guías para autónomos</a></li>
         </ul>
       </div>
       <div>
