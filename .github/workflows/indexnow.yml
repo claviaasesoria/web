@@ -1,0 +1,73 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "llms.txt"
+      - "2f4c1cfefde641b498416aa33a49253c.txt"
+  workflow_dispatch:
+  schedule:
+    - cron: "23 5 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait for GitHub Pages deployment
+        if: github.event_name == 'push'
+        run: sleep 90
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 2f4c1cfefde641b498416aa33a49253c
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          root = ET.parse("sitemap.xml").getroot()
+          urls = [
+              node.text.strip()
+              for node in root.findall("sm:url/sm:loc", namespace)
+              if node.text
+          ]
+
+          payload = {
+              "host": "clavia.es",
+              "key": os.environ["INDEXNOW_KEY"],
+              "keyLocation": (
+                  "https://clavia.es/"
+                  + os.environ["INDEXNOW_KEY"]
+                  + ".txt"
+              ),
+              "urlList": urls,
+          }
+
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  print("IndexNow status:", response.status)
+          except urllib.error.HTTPError as error:
+              if error.code not in (200, 202):
+                  raise
+              print("IndexNow status:", error.code)
+          PY

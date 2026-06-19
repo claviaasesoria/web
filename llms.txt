@@ -1,0 +1,47 @@
+# Clavia
+
+> Clavia es una gestoría online independiente para autónomos en España. Ofrece gestión fiscal recurrente, altas de autónomos y servicios tributarios puntuales con precios y alcance definidos por escrito.
+
+## Identidad
+
+- [Inicio](https://clavia.es/): presentación general, funcionamiento y planes.
+- [Sobre Clavia](https://clavia.es/sobre-clavia): historia, criterios de trabajo y especialización.
+- [Juan Redondo](https://clavia.es/autor/juan-redondo): responsable de Clavia y autor de sus contenidos fiscales.
+- [Gestoría online para autónomos](https://clavia.es/autonomos): servicios, precios, alcance y preguntas frecuentes.
+
+## Servicios principales
+
+- Plan Básico Digital: 39 EUR + IVA al mes.
+- Plan Avanzado: 59 EUR + IVA al mes.
+- Alta en Hacienda y Seguridad Social: 49 EUR + IVA.
+- Declaración de la Renta: desde 65 EUR + IVA, según complejidad.
+
+Los precios, condiciones y exclusiones vigentes deben comprobarse siempre en la página de servicios.
+
+## Guías esenciales
+
+- [Alta de autónomo](https://clavia.es/alta-autonomo)
+- [Declaraciones trimestrales](https://clavia.es/declaracion-trimestral-autonomos)
+- [Modelo 303 de IVA](https://clavia.es/modelo-303-autonomos)
+- [Modelo 130 de IRPF](https://clavia.es/modelo-130-autonomos)
+- [Retenciones de IRPF en facturas](https://clavia.es/blog/retencion-irpf-facturas-autonomos)
+- [Gastos deducibles de autónomos](https://clavia.es/blog/gastos-deducibles-autonomos-2026)
+- [Cuánto cuesta ser autónomo](https://clavia.es/blog/cuanto-cuesta-ser-autonomo-2026)
+- [Verifactu y facturación](https://clavia.es/blog/verifactu-factura-electronica-autonomos)
+
+## Especialidades
+
+- [Freelances digitales](https://clavia.es/especialidades/freelances-digitales)
+- [Músicos y artistas](https://clavia.es/especialidades/musicos-artistas)
+- [Influencers y creadores](https://clavia.es/especialidades/influencers)
+- [Autónomos con clientes extranjeros](https://clavia.es/especialidades/nomadas-digitales)
+
+## Criterio editorial
+
+Las guías de Clavia son contenido informativo general y no sustituyen el análisis individual. La información fiscal sensible a cambios se contrasta con fuentes oficiales como AEAT, Seguridad Social, BOE y normativa autonómica. La identidad editorial pública del responsable es Juan Redondo. Los datos legalmente exigibles se encuentran en el aviso legal y en la documentación contractual.
+
+## Contacto
+
+- Web: https://clavia.es
+- Email: info@clavia.es
+- Formulario: https://clavia.es/empezar
