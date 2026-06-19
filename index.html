@@ -312,7 +312,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "AccountingService",
+  "@id": "https://clavia.es/#organization",
   "name": "Clavia",
   "description": "Gestoría fiscal y contable online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
   "url": "https://clavia.es",
@@ -339,7 +340,12 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     "addressRegion": "Comunitat Valenciana",
     "addressCountry": "ES"
   },
-  "sameAs": []
+  "founder": {
+    "@type": "Person",
+    "@id": "https://clavia.es/#juan-redondo",
+    "name": "Juan Redondo",
+    "url": "https://clavia.es/autor/juan-redondo"
+  }
 }
 </script>
 </head>
@@ -355,7 +361,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#por-que">Por qué Clavia</a></li>
-        <li><a href="#sobre-clavia">Sobre Clavia</a></li>
+        <li><a href="/sobre-clavia">Sobre Clavia</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/alta-autonomo">Alta autónomo</a></li>
         <li><a href="blog/">Blog</a></li>
@@ -370,7 +376,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   <a href="#como-funciona" onclick="toggleMenu()">Cómo funciona</a>
   <a href="#precios" onclick="toggleMenu()">Precios</a>
   <a href="#por-que" onclick="toggleMenu()">Por qué Clavia</a>
-  <a href="#sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
+  <a href="/sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="/alta-autonomo" onclick="toggleMenu()">Alta autónomo</a>
   <a href="blog/" onclick="toggleMenu()">Blog</a>
@@ -608,8 +614,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="sobre-avatar">c</div>
         <h2>Una firma con<br>criterio propio</h2>
         <p class="sobre-tagline">Clavia es un despacho independiente de gestión y contabilidad. Trabajamos de forma directa con cada cliente, sin grandes estructuras ni intermediarios.</p>
-        <div class="sobre-firma">Clavia</div>
-        <div class="sobre-cargo">Gestoría online para autónomos</div>
+        <div class="sobre-firma">Juan Redondo</div>
+        <div class="sobre-cargo">Responsable de Clavia</div>
       </div>
       <div class="sobre-texto rv" style="transition-delay:.15s">
         <p>Durante años llevamos desde dentro la gestión económica, contable y administrativa de <strong>proyectos del sector cultural</strong>. No como asesores externos, sino como los responsables de que todo saliera bien: facturas, modelos trimestrales, nóminas, contratos, altas y bajas en Seguridad Social.</p>
@@ -623,7 +629,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         </ul>
         <p><strong>Trabajamos directamente contigo</strong>, con comunicación clara y sin intermediarios. Las dudas que surgen en el día a día se resuelven cuando aparecen.</p>
         <div class="sobre-cta-row">
-          <a href="#contacto" class="btn-coral">Escríbenos sin compromiso →</a>
+          <a href="/sobre-clavia" class="btn-coral">Conoce cómo trabajamos →</a>
         </div>
       </div>
     </div>
@@ -817,7 +823,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="fh">Empresa</div>
         <ul class="fli">
           <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="#sobre-clavia">Sobre Clavia</a></li>
+          <li><a href="/sobre-clavia">Sobre Clavia</a></li>
           <li><a href="#por-que">Por qué Clavia</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="/blog/">Blog fiscal</a></li>
