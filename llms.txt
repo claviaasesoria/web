@@ -10,6 +10,8 @@
 - [Criterios editoriales](https://clavia.es/criterios-editoriales): fuentes oficiales, revisión, límites y política de correcciones.
 - [Guías fiscales para autónomos](https://clavia.es/guias-autonomos): mapa temático de altas, trimestres, facturación, Renta y Seguridad Social.
 - [Gestoría online para autónomos](https://clavia.es/autonomos): servicios, precios, alcance y preguntas frecuentes.
+- [Gestoría para autónomos en Valencia](https://clavia.es/gestoria-autonomos-valencia): servicio local online para Valencia y su área metropolitana.
+- [Gestoría para autónomos en Horta Nord](https://clavia.es/horta-nord): cobertura específica para la comarca y municipios cercanos.
 
 ## Servicios principales
 
