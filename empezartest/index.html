@@ -118,12 +118,12 @@
                 <div class="field"><label for="flatRate">¿Tarifa plana previa?</label><select id="flatRate"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
                 <div class="field"><label for="benefits">¿Paro o prestación?</label><select id="benefits"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
                 <div class="field"><label for="pluriactividad">¿Trabaja también por cuenta ajena (pluriactividad)?</label><select id="pluriactividad"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
-                <div class="field"><label for="income">Ingresos netos mensuales previstos</label><input id="income" type="number" min="0" placeholder="Ej. 1000"></div>
+                <div class="field"><label for="income">Ingresos netos mensuales previstos <em>*</em></label><input id="income" type="number" min="0" placeholder="Ej. 1000"><p class="field-error">Este campo es obligatorio.</p></div>
                 <div class="field"><label for="clave">Acceso Cl@ve</label><select id="clave"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
                 <div class="field"><label for="certificate">Certificado digital</label><select id="certificate"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
-                <div class="field"><label for="mutua">Mutua preferida</label><input id="mutua" placeholder="Sin preferencia"></div>
-                <div class="field"><label for="college">Colegio o mutualidad alternativa</label><input id="college" placeholder="No / nombre de la entidad"></div>
-                <div class="field"><label for="iban">IBAN para cuota RETA</label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"></div>
+                <div class="field"><label for="mutua">Mutua preferida <em>*</em></label><input id="mutua" placeholder="Escribe “Sin preferencia” si aplica"><p class="field-error">Indica una mutua o “Sin preferencia”.</p></div>
+                <div class="field"><label for="college">Colegio o mutualidad alternativa <em>*</em></label><input id="college" placeholder="Escribe “No” si no aplica"><p class="field-error">Indica “No” o el nombre de la entidad.</p></div>
+                <div class="field"><label for="iban">IBAN para cuota RETA <em>*</em></label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"><p class="field-error">Este campo es obligatorio.</p></div>
               </div>
               <p class="field-note" style="margin:16px 0 10px">Marca si te encuentras en alguna de estas situaciones — pueden ampliar la duración de la tarifa plana:</p>
               <div class="switches">
@@ -308,7 +308,7 @@
       if(n===2)return ['#name','#nif','#birth','#email','#phone','#address'];
       if(n===3){
         const ids=['#workplace','#activity'];
-        if(chosen().includes('alta'))ids.unshift('#start');
+        if(chosen().includes('alta'))ids.unshift('#start','#income','#mutua','#college','#iban');
         return ids;
       }
       return [];
@@ -362,7 +362,7 @@
         finish.disabled=false; finish.innerHTML=original;
       }
     }
-    $$('#name,#nif,#birth,#email,#phone,#address,#start,#workplace,#activity').forEach(el=>el.addEventListener('input',()=>clearFieldError(el)));
+    $$('#name,#nif,#birth,#email,#phone,#address,#start,#workplace,#activity,#income,#mutua,#college,#iban').forEach(el=>el.addEventListener('input',()=>clearFieldError(el)));
     $$('[data-next]').forEach(b=>b.addEventListener('click',()=>{
       if(page===1&&chosen().length===0){alert('Selecciona al menos un servicio para continuar.');return}
       if((page===2||page===3)&&!validatePage(page))return;
