@@ -123,7 +123,7 @@
                 <div class="field"><label for="certificate">Certificado digital</label><select id="certificate"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
                 <div class="field"><label for="mutua">Mutua preferida <em>*</em></label><input id="mutua" placeholder="Escribe “Sin preferencia” si aplica"><p class="field-error">Indica una mutua o “Sin preferencia”.</p></div>
                 <div class="field"><label for="college">Colegio o mutualidad alternativa <em>*</em></label><input id="college" placeholder="Escribe “No” si no aplica"><p class="field-error">Indica “No” o el nombre de la entidad.</p></div>
-                <div class="field"><label for="iban">IBAN para cuota RETA <em>*</em></label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"><p class="field-error">Este campo es obligatorio.</p></div>
+                <div class="field"><label for="iban">IBAN para cuota RETA <em>*</em></label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"><p class="field-error">Introduce un IBAN español válido (ES + 22 dígitos).</p></div>
               </div>
               <p class="field-note" style="margin:16px 0 10px">Marca si te encuentras en alguna de estas situaciones — pueden ampliar la duración de la tarifa plana:</p>
               <div class="switches">
@@ -302,6 +302,20 @@
       if(isBasico){ if(docs.value==='mas50') docs.value='hasta50'; note.style.display='block' } else { note.style.display='none' }
     }
     function isEmailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
+    function isIbanValid(v){
+      const clean=(v||'').replace(/\s+/g,'').toUpperCase();
+      // Formato español: ES + 2 dígitos de control + 20 dígitos de cuenta = 24 caracteres.
+      if(!/^ES\d{22}$/.test(clean))return false;
+      // Checksum oficial IBAN (módulo 97, ISO 7064): mover los 4 primeros al final,
+      // sustituir letras por números (A=10..Z=35) y comprobar que el resto sea 1.
+      const rearranged=clean.slice(4)+clean.slice(0,4);
+      const numeric=rearranged.replace(/[A-Z]/g,ch=>(ch.charCodeAt(0)-55).toString());
+      let remainder=0;
+      for(let i=0;i<numeric.length;i+=7){
+        remainder=parseInt(String(remainder)+numeric.substring(i,i+7),10)%97;
+      }
+      return remainder===1;
+    }
     function clearFieldError(el){const f=el.closest('.field');if(f)f.classList.remove('error')}
     function setFieldError(el){const f=el.closest('.field');if(f)f.classList.add('error')}
     function requiredFieldsForPage(n){
@@ -319,7 +333,7 @@
       ids.forEach(id=>{
         const el=$(id); if(!el)return;
         const v=(el.value||'').trim();
-        const invalid = id==='#email' ? !isEmailValid(v) : !v;
+        const invalid = id==='#email' ? !isEmailValid(v) : id==='#iban' ? !isIbanValid(v) : !v;
         if(invalid){ setFieldError(el); ok=false; if(!firstInvalid)firstInvalid=el } else { clearFieldError(el) }
       });
       if(firstInvalid){ firstInvalid.closest('.field').scrollIntoView({behavior:'smooth',block:'center'}); firstInvalid.focus({preventScroll:true}) }
