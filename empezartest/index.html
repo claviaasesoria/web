@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Contratación · Clavia</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root{
+      --ink:#101828; --ink-soft:#344054; --muted:#667085; --line:#dde3ea;
+      --canvas:#f5f7f8; --surface:#ffffff; --lime:#c5f56a; --lime-dark:#1d3b09;
+      --mint:#e8f8cf; --cyan:#dff6fb; --cyan-ink:#075b75; --danger:#c63b4e;
+      --serif:'Fraunces',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,monospace; --radius:18px; --shadow:0 22px 55px rgba(16,24,40,.08);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    button,input,select,textarea{font:inherit} button{cursor:pointer} a{color:inherit}
+    .app{min-height:100dvh;display:grid;grid-template-columns:290px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100dvh;background:var(--ink);color:white;padding:30px 24px;display:flex;flex-direction:column;justify-content:space-between;overflow:auto}
+    .brand{display:flex;align-items:center;gap:4px;text-decoration:none;width:max-content}.brand-word{font-family:var(--serif);font-size:25px;letter-spacing:-.7px}.brand-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);margin-bottom:13px}
+    .test-label{margin-top:38px;display:inline-flex;align-items:center;gap:8px;color:#c6d0c3;font:600 10px/1 var(--mono);letter-spacing:1.4px;text-transform:uppercase}.test-label:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(197,245,106,.12)}
+    .side-title{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-1px;line-height:1.02;margin:16px 0 8px}.side-copy{max-width:210px;font-size:13px;line-height:1.65;color:#aab5c0;margin:0}
+    .steps{list-style:none;margin:38px 0 0;padding:0;display:grid;gap:4px}.step{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:10px;color:#8491a0;font-size:13px;font-weight:600;transition:.2s}.step-n{width:23px;height:23px;display:grid;place-items:center;border:1px solid #3b4653;border-radius:50%;font:500 10px var(--mono)}.step.active{background:rgba(255,255,255,.08);color:white}.step.active .step-n{background:var(--lime);border-color:var(--lime);color:var(--lime-dark)}.step.done{color:#d5e8c0}.step.done .step-n{background:#273e19;border-color:#5d9130;color:var(--lime)}
+    .side-bottom{border-top:1px solid #283542;padding-top:20px;font-size:12px;color:#92a0ae;line-height:1.55}.side-bottom strong{color:white;display:block;font-size:13px;margin-bottom:3px}.secure{display:flex;gap:8px;align-items:center;margin-top:16px;color:#c4d0ba;font:500 10px var(--mono);letter-spacing:.3px}.secure svg{width:15px;height:15px;stroke:var(--lime)}
+    .main{padding:34px clamp(22px,5vw,80px) 52px;min-width:0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:970px;margin:0 auto 45px}.back{border:0;background:transparent;padding:6px 0;color:var(--muted);font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:7px}.back:hover{color:var(--ink)}.back svg{width:16px}.save{font:500 11px var(--mono);color:var(--cyan-ink);background:var(--cyan);padding:8px 11px;border-radius:999px}
+    .shell{max-width:970px;margin:auto}.page{display:none;animation:enter .35s ease both}.page.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .eyebrow{font:700 10px var(--mono);letter-spacing:1.5px;color:#518219;text-transform:uppercase;display:flex;gap:9px;align-items:center;margin-bottom:15px}.eyebrow:before{content:'';height:1px;width:18px;background:#6eaa31}.page h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);font-weight:400;line-height:.99;letter-spacing:-2px;max-width:720px;margin:0 0 16px}.intro{color:var(--muted);font-size:16px;line-height:1.65;max-width:660px;margin:0 0 34px}
+    .panel{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:clamp(22px,3vw,36px)}.section-head{display:flex;align-items:start;justify-content:space-between;gap:20px;margin-bottom:25px}.section-title{font-size:17px;font-weight:800;letter-spacing:-.3px;margin:0}.section-help{font-size:12px;line-height:1.55;color:var(--muted);max-width:360px;margin:3px 0 0}
+    .choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{position:relative;border:1px solid var(--line);border-radius:14px;padding:19px 17px;min-height:145px;display:flex;flex-direction:column;gap:9px;background:white;transition:.18s}.choice:hover{border-color:#9ec55d;transform:translateY(-2px)}.choice input{position:absolute;opacity:0;pointer-events:none}.choice:has(input:checked){border:2px solid #7fb63b;background:#f7fee9;padding:18px 16px}.choice:has(input:checked) .choice-check{background:var(--lime);border-color:var(--lime)}.choice-check{width:20px;height:20px;border:1px solid #c8d0d8;border-radius:50%;display:grid;place-items:center}.choice-check:after{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime-dark);opacity:0}.choice:has(input:checked) .choice-check:after{opacity:1}.choice h3{font-size:15px;letter-spacing:-.2px;margin:4px 0 0}.choice p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}.choice-price{margin-top:auto;font:700 12px var(--mono);color:var(--ink)}.choice-price span{font-weight:500;color:var(--muted)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.field-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.field.full{grid-column:1/-1}.field label{display:block;font-size:12px;font-weight:800;color:var(--ink-soft);margin:0 0 7px}.field label em{font-style:normal;color:var(--danger);margin-left:3px}.field input,.field select,.field textarea{appearance:none;width:100%;border:1px solid #cfd7df;border-radius:10px;background:white;color:var(--ink);padding:13px 13px;font-size:14px;outline:0;transition:.18s}.field textarea{min-height:104px;resize:vertical;line-height:1.5}.field input:focus,.field select:focus,.field textarea:focus{border-color:#72a82f;box-shadow:0 0 0 4px rgba(197,245,106,.3)}.field input::placeholder,.field textarea::placeholder{color:#9da8b4}.field-note{font-size:11px;line-height:1.45;color:var(--muted);margin:6px 0 0}.divider{height:1px;background:var(--line);margin:30px 0}
+    .switches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.switch{border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff}.switch strong{font-size:12px;line-height:1.35}.switch span{font-size:11px;color:var(--muted);display:block;margin-top:2px}.switch input{accent-color:#5e971d;width:18px;height:18px;flex:0 0 auto}
+    .actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:28px}.btn{border:0;border-radius:999px;padding:14px 20px;font-size:14px;font-weight:800;transition:.18s;min-height:46px}.btn.primary{background:var(--lime);color:var(--lime-dark);padding-left:25px}.btn.primary:hover{transform:scale(1.035);background:#d2ff7d}.btn.secondary{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}.btn.secondary:hover{border-color:#9ba6b1;color:var(--ink)}.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none}.btn-arrow{margin-left:8px;font-size:17px;line-height:0}
+    .note{display:flex;gap:11px;align-items:start;border-radius:12px;padding:13px 14px;background:#f8fafb;border:1px solid #e8edf1;color:var(--muted);font-size:12px;line-height:1.55;margin-top:18px}.note svg{width:18px;min-width:18px;stroke:#5c911c;margin-top:1px}.note strong{color:var(--ink-soft)}
+    .summary{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}.summary-block{border:1px solid var(--line);border-radius:13px;padding:18px}.summary-block h3{font-size:12px;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);font-family:var(--mono);margin:0 0 14px}.summary-item{display:flex;justify-content:space-between;gap:15px;padding:9px 0;border-bottom:1px solid #edf0f2;font-size:13px}.summary-item:last-child{border:0;padding-bottom:0}.summary-item span{color:var(--muted)}.summary-item b{text-align:right}.bill{background:var(--ink);color:white;border-radius:14px;padding:21px}.bill .tiny{font:600 10px var(--mono);letter-spacing:1px;color:#aeb8c2;text-transform:uppercase}.line-bill{height:1px;background:#2b3846;margin:17px 0}.bill-row{display:flex;justify-content:space-between;font-size:13px;color:#d7dde3;margin:9px 0}.bill-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}.bill-total span{font-size:13px;color:#c8d1da}.bill-total strong{font-family:var(--serif);font-size:36px;font-weight:400;letter-spacing:-1px;color:var(--lime)}.bill-help{font-size:11px;color:#9eabb7;line-height:1.5;margin:16px 0 0}
+    .accept{margin-top:24px;border:1px solid #cce4a8;background:#f9fff1;border-radius:13px;padding:17px;display:flex;gap:12px;align-items:flex-start}.accept input{accent-color:#548e13;width:20px;height:20px;margin:1px 0 0;flex:0 0 auto}.accept label{font-size:12px;line-height:1.6;color:var(--ink-soft)}.accept a{font-weight:800;text-underline-offset:3px}.review-lock{font:600 11px var(--mono);color:var(--cyan-ink);margin:16px 0 0;display:flex;gap:7px;align-items:center}.review-lock svg{width:15px}
+    .success{background:var(--ink);color:white;border-radius:22px;padding:clamp(28px,6vw,64px);max-width:720px}.success-mark{width:54px;height:54px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--lime-dark);font-size:26px;margin-bottom:25px}.success h1{color:white;font-size:clamp(39px,5vw,62px);max-width:560px}.success p{color:#b4c0cb;max-width:540px;line-height:1.7;font-size:15px}.success-card{margin-top:27px;padding:16px;border:1px solid #324150;border-radius:12px;display:flex;justify-content:space-between;gap:15px;align-items:center}.success-card span{font:600 10px var(--mono);letter-spacing:.8px;color:#aab8c6}.success-card b{font-size:12px;color:var(--lime)}
+    @media(max-width:840px){.app{display:block}.sidebar{position:relative;height:auto;padding:20px}.test-label,.side-title,.side-copy,.steps,.side-bottom{display:none}.sidebar .brand{margin:auto}.main{padding:22px 18px 42px}.topbar{margin-bottom:28px}.choice-grid{grid-template-columns:1fr}.field-grid,.field-grid.three,.switches,.summary{grid-template-columns:1fr}.page h1{letter-spacing:-1.5px}.section-head{display:block}.section-help{margin-top:7px}.summary{gap:14px}.actions{position:sticky;bottom:10px;background:rgba(245,247,248,.94);backdrop-filter:blur(10px);padding:12px 0 0;z-index:3}.btn{padding:13px 16px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="/" aria-label="Volver a Clavia"><span class="brand-word">clavia</span><span class="brand-dot"></span></a>
+        <div class="test-label">Entorno de prueba</div>
+        <h2 class="side-title">Tu alta,<br>bien planteada.</h2>
+        <p class="side-copy">Este prototipo no envía datos ni crea ningún contrato. Estamos probando el proceso.</p>
+        <ol class="steps" id="stepNav">
+          <li class="step active"><span class="step-n">01</span>Servicio</li>
+          <li class="step"><span class="step-n">02</span>Tus datos</li>
+          <li class="step"><span class="step-n">03</span>Actividad y RETA</li>
+          <li class="step"><span class="step-n">04</span>Plan y revisión</li>
+        </ol>
+      </div>
+      <div class="side-bottom"><strong>¿Necesitas ayuda?</strong>El proceso real siempre tendrá revisión humana antes de cualquier trámite.
+        <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> PROTOTIPO · SIN ENVÍO</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar"><a class="back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>Volver a clavia.es</a><span class="save">BORRADOR LOCAL · V0.1</span></div>
+      <div class="shell">
+        <section class="page active" data-page="1">
+          <div class="eyebrow">Paso 1 de 4</div><h1>Empecemos por lo que necesitas.</h1><p class="intro">Puedes contratar el alta como autónomo/a, la gestión mensual o ambas. El precio se muestra con claridad antes de continuar.</p>
+          <div class="panel">
+            <div class="section-head"><div><h2 class="section-title">¿Qué quieres activar ahora?</h2><p class="section-help">Selecciona una o varias opciones. Podrás revisar el resumen antes de aceptar.</p></div></div>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="service" value="alta" checked><span class="choice-check"></span><h3>Alta como autónomo/a</h3><p>Hacienda (036), RETA y revisión del encuadre inicial. Incluye ROI/VIES si procede.</p><div class="choice-price">49 € + IVA <span>· pago único</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="basico"><span class="choice-check"></span><h3>Plan Básico Digital</h3><p>Gestión fiscal mensual para actividad ordinaria y hasta 50 facturas por trimestre.</p><div class="choice-price">39 € + IVA <span>· / mes</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="avanzado"><span class="choice-check"></span><h3>Plan Avanzado</h3><p>Dos epígrafes, previsión IRPF, más volumen, Renta y operaciones complejas.</p><div class="choice-price">59 € + IVA <span>· / mes</span></div></label>
+            </div>
+            <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9h.01"/></svg><div><strong>El alta y la gestión mensual son servicios distintos.</strong> Puedes contratar uno solo o ambos. Si eliges los dos, el contrato final los dejará diferenciados.</div></div>
+          </div>
+          <div class="actions"><span></span><button class="btn primary" data-next>Continuar <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="2">
+          <div class="eyebrow">Paso 2 de 4</div><h1>Primero, los datos para identificarte.</h1><p class="intro">Son los mismos datos que aparecen en la hoja de encargo y se usan para preparar el alta y el contrato.</p>
+          <div class="panel"><div class="field-grid">
+            <div class="field full"><label for="name">Nombre y apellidos <em>*</em></label><input id="name" placeholder="Tal como aparece en tu DNI o NIE" autocomplete="name"></div>
+            <div class="field"><label for="nif">DNI o NIE <em>*</em></label><input id="nif" placeholder="12345678A" autocomplete="off"></div>
+            <div class="field"><label for="birth">Fecha de nacimiento <em>*</em></label><input id="birth" type="date"></div>
+            <div class="field"><label for="email">Email <em>*</em></label><input id="email" type="email" placeholder="tu@email.com" autocomplete="email"></div>
+            <div class="field"><label for="phone">Teléfono <em>*</em></label><input id="phone" type="tel" placeholder="600 000 000" autocomplete="tel"></div>
+            <div class="field full"><label for="address">Domicilio fiscal completo <em>*</em></label><input id="address" placeholder="Calle, número, piso, código postal, municipio y provincia" autocomplete="street-address"><p class="field-note">Necesario para el modelo censal. Si trabajas desde otra dirección, podrás indicarlo después.</p></div>
+          </div></div>
+          <div class="actions"><button class="btn secondary" data-prev>← Atrás</button><button class="btn primary" data-next>Continuar <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="3">
+          <div class="eyebrow">Paso 3 de 4</div><h1>Cuéntanos cómo va a ser tu actividad.</h1><p class="intro">Estas respuestas permiten decidir el encuadre de Hacienda y Seguridad Social. Si algo no está claro, lo revisamos antes de presentar.</p>
+          <div class="panel">
+            <div class="field-grid">
+              <div class="field"><label for="start">Fecha prevista de inicio <em>*</em></label><input id="start" type="date"></div>
+              <div class="field"><label for="workplace">Lugar principal de trabajo <em>*</em></label><input id="workplace" placeholder="Domicilio, coworking, local…"></div>
+              <div class="field full"><label for="activity">Describe tu actividad <em>*</em></label><textarea id="activity" placeholder="Qué vendes o qué servicios prestas, a quién y por qué canales."></textarea><p class="field-note">Ejemplo: gestión de redes sociales para empresas, venta online de producto propio, diseño web…</p></div>
+              <div class="field"><label for="epigraphs">Número de actividades / epígrafes</label><select id="epigraphs"><option value="1">Una actividad</option><option value="2">Dos actividades</option><option value="3">Tres o más actividades</option></select></div>
+              <div class="field"><label for="intra">Operativa internacional</label><select id="intra"><option value="no">No por ahora</option><option value="ue">Clientes o proveedores UE · ROI/VIES</option><option value="imports">Importaciones o compras fuera de la UE</option><option value="both">UE e importaciones</option></select></div>
+            </div>
+            <div class="divider"></div>
+            <div class="switches">
+              <label class="switch"><div><strong>¿Local abierto al público?</strong><span>Local, despacho o tienda atendida</span></div><input type="checkbox" id="publicLocal"></label>
+              <label class="switch"><div><strong>¿Vas a contratar?</strong><span>Trabajadores desde el inicio</span></div><input type="checkbox" id="staff"></label>
+              <label class="switch"><div><strong>¿Local o alquiler afecto?</strong><span>Espacio alquilado para actividad</span></div><input type="checkbox" id="rentedSpace"></label>
+            </div>
+            <div class="divider"></div>
+            <div class="section-head"><div><h2 class="section-title">RETA, cotización y acceso</h2><p class="section-help">Los datos que nos permiten preparar el alta con Seguridad Social.</p></div></div>
+            <div class="field-grid three">
+              <div class="field"><label for="lastReta">¿Alta RETA últimos 2 años?</label><select id="lastReta"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+              <div class="field"><label for="flatRate">¿Tarifa plana previa?</label><select id="flatRate"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+              <div class="field"><label for="benefits">¿Paro o prestación?</label><select id="benefits"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+              <div class="field"><label for="income">Ingresos netos mensuales previstos</label><input id="income" type="number" min="0" placeholder="Ej. 1000"></div>
+              <div class="field"><label for="clave">Acceso Cl@ve</label><select id="clave"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
+              <div class="field"><label for="certificate">Certificado digital</label><select id="certificate"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
+              <div class="field"><label for="mutua">Mutua preferida</label><input id="mutua" placeholder="Sin preferencia"></div>
+              <div class="field"><label for="college">Colegio o mutualidad alternativa</label><input id="college" placeholder="No / nombre de la entidad"></div>
+              <div class="field"><label for="iban">IBAN para cuota RETA</label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"></div>
+            </div>
+            <div class="field" style="margin-top:17px"><label for="notes">Algo relevante que debamos saber</label><textarea id="notes" placeholder="Pluriactividad, stock importado, facturación inmediata, domicilio comercial diferente, observaciones…"></textarea></div>
+          </div>
+          <div class="actions"><button class="btn secondary" data-prev>← Atrás</button><button class="btn primary" data-next>Ver revisión <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="4">
+          <div class="eyebrow">Paso 4 de 4</div><h1>Revisa tu contratación.</h1><p class="intro">Este es el resumen que verías antes de aceptar. En el flujo real podrás corregir cualquier dato y revisar el documento completo.</p>
+          <div class="panel"><div class="summary">
+            <div class="summary-block"><h3>Datos del cliente</h3>
+              <div class="summary-item"><span>Nombre</span><b data-summary="name">—</b></div><div class="summary-item"><span>DNI / NIE</span><b data-summary="nif">—</b></div><div class="summary-item"><span>Contacto</span><b data-summary="contact">—</b></div><div class="summary-item"><span>Actividad</span><b data-summary="activity">—</b></div><div class="summary-item"><span>Inicio previsto</span><b data-summary="start">—</b></div><div class="summary-item"><span>Operativa</span><b data-summary="intra">—</b></div>
+            </div>
+            <div class="bill"><div class="tiny">Resumen económico</div><div class="line-bill"></div><div id="billItems"></div><div class="line-bill"></div><div class="bill-total"><span>Primer pago</span><strong id="billTotal">0 €</strong></div><p class="bill-help" id="billHelp">IVA incluido en el cálculo. La gestión mensual se cobra de forma recurrente según el método elegido.</p></div>
+          </div>
+          <div class="divider"></div>
+          <div class="field-grid"><div class="field"><label for="payment">Método de cobro mensual</label><select id="payment"><option value="gocardless">Domiciliación SEPA · GoCardless</option><option value="stripe">Tarjeta · Stripe</option><option value="later">Prefiero decidirlo después</option></select></div><div class="field"><label for="monthlyDocs">Volumen estimado de facturas</label><select id="monthlyDocs"><option>Hasta 50 por trimestre</option><option>Más de 50 por trimestre</option><option>No estoy seguro/a</option></select></div></div>
+          <div class="accept"><input type="checkbox" id="accept"><label for="accept">He revisado el resumen y entiendo que este es un <strong>prototipo de contratación</strong>: no se envían datos, no se inicia ningún trámite y no se genera ningún contrato real. En la versión definitiva podré revisar el documento completo, corregir errores y aceptar las condiciones de forma separada.</label></div>
+          <div class="review-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>NO SE ENVÍA NINGUNA INFORMACIÓN DESDE ESTA PÁGINA</div>
+          </div>
+          <div class="actions"><button class="btn secondary" data-prev>← Corregir datos</button><button class="btn primary" id="finish" disabled>Ver confirmación de prueba <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="5"><div class="success"><div class="success-mark">✓</div><div class="eyebrow" style="color:var(--lime)">Prototipo completado</div><h1>Así se sentiría contratar con Clavia.</h1><p>No hemos enviado ni guardado tus datos. En la versión productiva, el siguiente paso sería verificar tu email y abrir la firma del documento.</p><div class="success-card"><span>SIGUIENTE HITO REAL</span><b>Firma electrónica integrada →</b></div><div class="actions" style="margin-top:30px"><button class="btn primary" onclick="location.reload()">Probar de nuevo</button></div></div></section>
+      </div>
+    </main>
+  </div>
+  <script>
+    let page=1; const maxPage=4;
+    const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+    const formatDate=v=>{if(!v)return 'Pendiente';const [y,m,d]=v.split('-');return `${d}/${m}/${y}`};
+    function chosen(){return $$('input[name="service"]:checked').map(x=>x.value)}
+    function updateSteps(){ $$('#stepNav .step').forEach((s,i)=>{s.classList.toggle('active',i===Math.min(page,4)-1);s.classList.toggle('done',i<Math.min(page,4)-1)}) }
+    function show(n){page=n; $$('.page').forEach(p=>p.classList.toggle('active',+p.dataset.page===n)); updateSteps();window.scrollTo({top:0,behavior:'smooth'});if(n===4)updateReview()}
+    function value(id,fallback='—'){return $(id)?.value?.trim()||fallback}
+    function updateReview(){
+      const map={name:value('#name'),nif:value('#nif'),contact:[value('#email',''),value('#phone','')].filter(Boolean).join(' · ')||'—',activity:value('#activity'),start:formatDate(value('#start','')),intra:value('#intra')};
+      Object.entries(map).forEach(([k,v])=>{const node=$(`[data-summary="${k}"]`);if(node)node.textContent=v});
+      const c=chosen(); let lines=[],total=0,monthly=0;
+      if(c.includes('alta')){lines.push(['Alta autónomo/a','49 € + IVA']);total+=49}
+      if(c.includes('basico')){lines.push(['Plan Básico','39 € + IVA / mes']);monthly+=39}
+      if(c.includes('avanzado')){lines.push(['Plan Avanzado','59 € + IVA / mes']);monthly+=59}
+      if(c.length===0)lines.push(['Sin servicio seleccionado','—']);
+      $('#billItems').innerHTML=lines.map(([a,b])=>`<div class="bill-row"><span>${a}</span><b>${b}</b></div>`).join('');
+      const first=(total+monthly)*1.21; $('#billTotal').textContent=new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(first);
+      $('#billHelp').textContent=monthly?`Primer pago estimado: alta puntual y primer mes, IVA incluido. La cuota recurrente mensual sería ${new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(monthly*1.21)}.`:'Alta puntual, IVA incluido. No se activa ninguna suscripción en este prototipo.';
+    }
+    $$('[data-next]').forEach(b=>b.addEventListener('click',()=>{if(page===1&&chosen().length===0){alert('Selecciona al menos un servicio para continuar.');return}show(page+1)}));
+    $$('[data-prev]').forEach(b=>b.addEventListener('click',()=>show(page-1)));
+    $('#accept').addEventListener('change',e=>$('#finish').disabled=!e.target.checked);$('#finish').addEventListener('click',()=>show(5));
+    $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='basico'&&i.checked)$('input[value="avanzado"]').checked=false;if(i.value==='avanzado'&&i.checked)$('input[value="basico"]').checked=false;}));
+  </script>
+</body>
+</html>
