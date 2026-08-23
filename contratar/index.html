@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Contratar · Clavia</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root{
+      --ink:#101828; --ink-soft:#344054; --muted:#667085; --line:#dde3ea;
+      --canvas:#f5f9f6; --surface:#ffffff; --lime:#6FC194; --lime-dark:#16281E;
+      --mint:#F0FAF4; --cyan:#dff6fb; --cyan-ink:#075b75; --danger:#c63b4e;
+      --serif:'Fraunces',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,monospace; --radius:18px; --shadow:0 22px 55px rgba(16,24,40,.08);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    button,input,select,textarea{font:inherit} button{cursor:pointer} a{color:inherit}
+    .app{min-height:100dvh;display:grid;grid-template-columns:290px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100dvh;background:var(--ink);color:white;padding:30px 24px;display:flex;flex-direction:column;justify-content:space-between;overflow:auto}
+    .brand{display:flex;align-items:center;gap:4px;text-decoration:none;width:max-content}.brand-word{font-family:var(--serif);font-size:25px;letter-spacing:-.7px}.brand-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);margin-bottom:13px}
+    .test-label{margin-top:38px;display:inline-flex;align-items:center;gap:8px;color:#a8ccb8;font:600 10px/1 var(--mono);letter-spacing:1.4px;text-transform:uppercase}.test-label:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(111,193,148,.18)}
+    .side-title{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-1px;line-height:1.02;margin:16px 0 8px}.side-copy{max-width:210px;font-size:13px;line-height:1.65;color:#aab5c0;margin:0}
+    .steps{list-style:none;margin:38px 0 0;padding:0;display:grid;gap:4px}.step{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:10px;color:#8491a0;font-size:13px;font-weight:600;transition:.2s}.step-n{width:23px;height:23px;display:grid;place-items:center;border:1px solid #3b4653;border-radius:50%;font:500 10px var(--mono)}.step.active{background:rgba(255,255,255,.08);color:white}.step.active .step-n{background:var(--lime);border-color:var(--lime);color:var(--lime-dark)}.step.done{color:#c9dfd0}.step.done .step-n{background:#1e3a2a;border-color:#3d8a63;color:var(--lime)}
+    .side-bottom{border-top:1px solid #283542;padding-top:20px;font-size:12px;color:#92a0ae;line-height:1.55}.side-bottom strong{color:white;display:block;font-size:13px;margin-bottom:3px}.secure{display:flex;gap:8px;align-items:center;margin-top:16px;color:#c4d0ba;font:500 10px var(--mono);letter-spacing:.3px}.secure svg{width:15px;height:15px;stroke:var(--lime)}
+    .main{padding:34px clamp(22px,5vw,80px) 52px;min-width:0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:970px;margin:0 auto 45px}.back{border:0;background:transparent;padding:6px 0;color:var(--muted);font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:7px}.back:hover{color:var(--ink)}.back svg{width:16px}.save{font:500 11px var(--mono);color:var(--cyan-ink);background:var(--cyan);padding:8px 11px;border-radius:999px}
+    .shell{max-width:970px;margin:auto}.page{display:none;animation:enter .35s ease both}.page.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .eyebrow{font:700 10px var(--mono);letter-spacing:1.5px;color:#3D9166;text-transform:uppercase;display:flex;gap:9px;align-items:center;margin-bottom:15px}.eyebrow:before{content:'';height:1px;width:18px;background:#6FC194;}.page h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);font-weight:400;line-height:.99;letter-spacing:-2px;max-width:720px;margin:0 0 16px}.intro{color:var(--muted);font-size:16px;line-height:1.65;max-width:660px;margin:0 0 34px}
+    .panel{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:clamp(22px,3vw,36px)}.section-head{display:flex;align-items:start;justify-content:space-between;gap:20px;margin-bottom:25px}.section-title{font-size:17px;font-weight:800;letter-spacing:-.3px;margin:0}.section-help{font-size:12px;line-height:1.55;color:var(--muted);max-width:360px;margin:3px 0 0}
+    .choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{position:relative;border:1px solid var(--line);border-radius:14px;padding:19px 17px;min-height:145px;display:flex;flex-direction:column;gap:9px;background:white;transition:.18s}.choice:hover{border-color:#6FC194;transform:translateY(-2px)}.choice input{position:absolute;opacity:0;pointer-events:none}.choice:has(input:checked){border:2px solid #3D9166;background:#F0FAF4;padding:18px 16px}.choice:has(input:checked) .choice-check{background:var(--lime);border-color:var(--lime)}.choice-check{width:20px;height:20px;border:1px solid #c8d0d8;border-radius:50%;display:grid;place-items:center}.choice-check:after{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime-dark);opacity:0}.choice:has(input:checked) .choice-check:after{opacity:1}.choice h3{font-size:15px;letter-spacing:-.2px;margin:4px 0 0}.choice p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}.choice-price{margin-top:auto;font:700 12px var(--mono);color:var(--ink)}.choice-price span{font-weight:500;color:var(--muted)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.field-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.field.full{grid-column:1/-1}.field label{display:block;font-size:12px;font-weight:800;color:var(--ink-soft);margin:0 0 7px}.field label em{font-style:normal;color:var(--danger);margin-left:3px}.field input,.field select,.field textarea{appearance:none;width:100%;border:1px solid #cfd7df;border-radius:10px;background:white;color:var(--ink);padding:13px 13px;font-size:14px;outline:0;transition:.18s}.field textarea{min-height:104px;resize:vertical;line-height:1.5}.field input:focus,.field select:focus,.field textarea:focus{border-color:#3D9166;box-shadow:0 0 0 4px rgba(111,193,148,.28)}.field input::placeholder,.field textarea::placeholder{color:#9da8b4}.field-note{font-size:11px;line-height:1.45;color:var(--muted);margin:6px 0 0}.divider{height:1px;background:var(--line);margin:30px 0}
+    .field.error input,.field.error select,.field.error textarea{border-color:var(--danger);background:#fdf3f4}.field.error input:focus,.field.error select:focus,.field.error textarea:focus{box-shadow:0 0 0 4px rgba(198,59,78,.15)}.field-error{font-size:11px;font-weight:700;color:var(--danger);margin:6px 0 0;display:none}.field.error .field-error{display:block}.field.error .field-note{display:none}
+    .switches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.switch{border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff}.switch strong{font-size:12px;line-height:1.35}.switch span{font-size:11px;color:var(--muted);display:block;margin-top:2px}.switch input{accent-color:#3D9166;width:18px;height:18px;flex:0 0 auto}
+    .actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:28px}.btn{border:0;border-radius:999px;padding:14px 20px;font-size:14px;font-weight:800;transition:.18s;min-height:46px}.btn.primary{background:var(--lime);color:var(--lime-dark);padding-left:25px}.btn.primary:hover{transform:scale(1.035);background:#8ed4ab}.btn.secondary{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}.btn.secondary:hover{border-color:#9ba6b1;color:var(--ink)}.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none}.btn-arrow{margin-left:8px;font-size:17px;line-height:0}
+    .note{display:flex;gap:11px;align-items:start;border-radius:12px;padding:13px 14px;background:#f8fafb;border:1px solid #e8edf1;color:var(--muted);font-size:12px;line-height:1.55;margin-top:18px}.note svg{width:18px;min-width:18px;stroke:#3D9166;margin-top:1px}.note strong{color:var(--ink-soft)}
+    .summary{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}.summary-block{border:1px solid var(--line);border-radius:13px;padding:18px}.summary-block h3{font-size:12px;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);font-family:var(--mono);margin:0 0 14px}.summary-item{display:flex;justify-content:space-between;gap:15px;padding:9px 0;border-bottom:1px solid #edf0f2;font-size:13px}.summary-item:last-child{border:0;padding-bottom:0}.summary-item span{color:var(--muted)}.summary-item b{text-align:right}.bill{background:var(--ink);color:white;border-radius:14px;padding:21px}.bill .tiny{font:600 10px var(--mono);letter-spacing:1px;color:#aeb8c2;text-transform:uppercase}.line-bill{height:1px;background:#2b3846;margin:17px 0}.bill-row{display:flex;justify-content:space-between;font-size:13px;color:#d7dde3;margin:9px 0}.bill-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}.bill-total span{font-size:13px;color:#c8d1da}.bill-total strong{font-family:var(--serif);font-size:36px;font-weight:400;letter-spacing:-1px;color:var(--lime)}.bill-help{font-size:11px;color:#9eabb7;line-height:1.5;margin:16px 0 0}
+    .accept{margin-top:24px;border:1px solid #b8ddc4;background:#F0FAF4;border-radius:13px;padding:17px;display:flex;gap:12px;align-items:flex-start}.accept input{accent-color:#3D9166;width:20px;height:20px;margin:1px 0 0;flex:0 0 auto}.accept label{font-size:12px;line-height:1.6;color:var(--ink-soft)}.accept a{font-weight:800;text-underline-offset:3px}.review-lock{font:600 11px var(--mono);color:var(--cyan-ink);margin:16px 0 0;display:flex;gap:7px;align-items:center}.review-lock svg{width:15px}
+    .legal-doc{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:22px}.legal-doc summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8fafb;font-weight:800;font-size:13px;color:var(--ink-soft)}.legal-doc summary::-webkit-details-marker{display:none}.legal-doc summary .chev{transition:.2s;font-size:16px;color:var(--muted)}.legal-doc[open] summary .chev{transform:rotate(180deg)}.legal-doc summary .tag{font:600 10px var(--mono);color:#3D9166;background:#F0FAF4;padding:4px 9px;border-radius:999px;margin-right:auto;margin-left:12px}.legal-body{padding:18px 20px 22px;max-height:340px;overflow:auto;font-size:12.5px;line-height:1.7;color:var(--ink-soft);border-top:1px solid var(--line)}.legal-body h4{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:#3D9166;margin:18px 0 6px}.legal-body h4:first-child{margin-top:0}.legal-body p{margin:0 0 10px}.legal-body ul{margin:0 0 10px;padding-left:18px}.legal-actions{padding:12px 18px;background:#f8fafb;border-top:1px solid var(--line);display:flex;gap:14px;align-items:center;font-size:11px;color:var(--muted)}.legal-actions a,.legal-actions button{font:800 11px var(--sans);color:var(--cyan-ink);background:transparent;border:0;padding:0;cursor:pointer;text-decoration:none}.legal-actions button:disabled{opacity:.45;cursor:not-allowed}
+    .accept-group{display:flex;flex-direction:column;gap:10px;margin-top:16px}.accept-group .accept{margin-top:0}.accept.warn{border-color:#e3c98f;background:#fff9ec}.accept.warn input{accent-color:#b8860b}
+    .success{background:var(--ink);color:white;border-radius:22px;padding:clamp(28px,6vw,64px);max-width:720px}.success-mark{width:54px;height:54px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--lime-dark);font-size:26px;margin-bottom:25px}.success h1{color:white;font-size:clamp(39px,5vw,62px);max-width:560px}.success p{color:#b4c0cb;max-width:540px;line-height:1.7;font-size:15px}.success-card{margin-top:27px;padding:16px;border:1px solid #324150;border-radius:12px;display:flex;justify-content:space-between;gap:15px;align-items:center}.success-card span{font:600 10px var(--mono);letter-spacing:.8px;color:#aab8c6}.success-card b{font-size:12px;color:var(--lime)}
+    @media(max-width:840px){.app{display:block}.sidebar{position:relative;height:auto;padding:20px}.test-label,.side-title,.side-copy,.steps,.side-bottom{display:none}.sidebar .brand{margin:auto}.main{padding:22px 18px 42px}.topbar{margin-bottom:28px}.choice-grid{grid-template-columns:1fr}.field-grid,.field-grid.three,.switches,.summary{grid-template-columns:1fr}.page h1{letter-spacing:-1.5px}.section-head{display:block}.section-help{margin-top:7px}.summary{gap:14px}.actions{position:sticky;bottom:10px;background:rgba(245,247,248,.94);backdrop-filter:blur(10px);padding:12px 0 0;z-index:3}.btn{padding:13px 16px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="/" aria-label="Volver a Clavia"><span class="brand-word">clavia</span><span class="brand-dot"></span></a>
+        <div class="test-label">Contratación online</div>
+        <h2 class="side-title">Tu alta,<br>bien planteada.</h2>
+        <p class="side-copy">Rellena tus datos, revisa el documento y firma electrónicamente. Un asesor humano revisa cada encargo antes de tramitarlo.</p>
+        <ol class="steps" id="stepNav">
+          <li class="step active"><span class="step-n">01</span>Servicio</li>
+          <li class="step"><span class="step-n">02</span>Tus datos</li>
+          <li class="step"><span class="step-n">03</span>Actividad y RETA</li>
+          <li class="step"><span class="step-n">04</span>Plan y revisión</li>
+        </ol>
+      </div>
+      <div class="side-bottom"><strong>¿Necesitas ayuda?</strong>Escríbenos a info@clavia.es o por WhatsApp — revisamos tu solicitud antes de tramitar nada.
+        <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> CONEXIÓN SEGURA · FIRMA ELECTRÓNICA</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar"><a class="back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>Volver a clavia.es</a><span class="save">CONTRATACIÓN SEGURA</span></div>
+      <div class="shell">
+        <section class="page active" data-page="1">
+          <div class="eyebrow">Paso 1 de 4</div><h1>Empecemos por lo que necesitas.</h1><p class="intro">Puedes contratar el alta como autónomo/a, la gestión mensual o ambas. El precio se muestra con claridad antes de continuar.</p>
+          <div class="panel">
+            <div class="section-head"><div><h2 class="section-title">¿Qué quieres activar ahora?</h2><p class="section-help">Selecciona una o varias opciones. Podrás revisar el resumen antes de aceptar.</p></div></div>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="service" value="alta" checked><span class="choice-check"></span><h3>Alta como autónomo/a</h3><p>Hacienda (036), RETA y revisión del encuadre inicial. Incluye ROI/VIES si procede.</p><div class="choice-price">49 € + IVA <span>· pago único</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="basico"><span class="choice-check"></span><h3>Plan Básico Digital</h3><p>Gestión fiscal mensual para actividad ordinaria y hasta 50 facturas por trimestre.</p><div class="choice-price">39 € + IVA <span>· / mes</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="avanzado"><span class="choice-check"></span><h3>Plan Avanzado</h3><p>Dos epígrafes, previsión IRPF, más volumen, Renta y operaciones complejas.</p><div class="choice-price">59 € + IVA <span>· / mes</span></div></label>
+            </div>
+            <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9h.01"/></svg><div><strong>El alta y la gestión mensual son servicios distintos.</strong> Puedes contratar uno solo o ambos. Si eliges los dos, el contrato final los dejará diferenciados.</div></div>
+          </div>
+          <div class="actions"><span></span><button class="btn primary" data-next>Continuar <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="2">
+          <div class="eyebrow">Paso 2 de 4</div><h1>Primero, los datos para identificarte.</h1><p class="intro">Son los mismos datos que aparecen en la hoja de encargo y se usan para preparar el alta y el contrato.</p>
+          <div class="panel"><div class="field-grid">
+            <div class="field full"><label for="name">Nombre y apellidos <em>*</em></label><input id="name" placeholder="Tal como aparece en tu DNI o NIE" autocomplete="name"><p class="field-error">Este campo es obligatorio.</p></div>
+            <div class="field"><label for="nif">DNI o NIE <em>*</em></label><input id="nif" placeholder="12345678A" autocomplete="off"><p class="field-error">Este campo es obligatorio.</p></div>
+            <div class="field"><label for="birth">Fecha de nacimiento <em>*</em></label><input id="birth" type="date"><p class="field-error">Este campo es obligatorio.</p></div>
+            <div class="field"><label for="email">Email <em>*</em></label><input id="email" type="email" placeholder="tu@email.com" autocomplete="email"><p class="field-error">Introduce un email válido.</p></div>
+            <div class="field"><label for="phone">Teléfono <em>*</em></label><input id="phone" type="tel" placeholder="600 000 000" autocomplete="tel"><p class="field-error">Este campo es obligatorio.</p></div>
+            <div class="field full"><label for="address">Domicilio fiscal completo <em>*</em></label><input id="address" placeholder="Calle, número, piso, código postal, municipio y provincia" autocomplete="street-address"><p class="field-note">Necesario para el modelo censal. Si trabajas desde otra dirección, podrás indicarlo después.</p><p class="field-error">Este campo es obligatorio.</p></div>
+          </div></div>
+          <div class="actions"><button class="btn secondary" data-prev>← Atrás</button><button class="btn primary" data-next>Continuar <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="3">
+          <div class="eyebrow">Paso 3 de 4</div><h1>Cuéntanos cómo va a ser tu actividad.</h1><p class="intro">Estas respuestas permiten decidir el encuadre de Hacienda y Seguridad Social. Si algo no está claro, lo revisamos antes de presentar.</p>
+          <div class="panel">
+            <div class="field-grid">
+              <div class="field" id="startFieldWrap"><label for="start">Fecha prevista de inicio <em>*</em></label><input id="start" type="date"><p class="field-error">Este campo es obligatorio.</p></div>
+              <div class="field"><label for="workplace">Lugar principal de trabajo <em>*</em></label><input id="workplace" placeholder="Domicilio, coworking, local…"><p class="field-error">Este campo es obligatorio.</p></div>
+              <div class="field full"><label for="activity">Describe tu actividad <em>*</em></label><textarea id="activity" placeholder="Qué vendes o qué servicios prestas, a quién y por qué canales."></textarea><p class="field-note">Ejemplo: gestión de redes sociales para empresas, venta online de producto propio, diseño web…</p><p class="field-error">Este campo es obligatorio.</p></div>
+              <div class="field"><label for="epigraphs">Número de actividades / epígrafes</label><select id="epigraphs"><option value="1">Una actividad</option><option value="2">Dos actividades</option><option value="3">Tres o más actividades</option></select><p class="field-note" id="epigraphsNote" style="display:none;color:#3D9166;font-weight:700">Con el Plan Básico solo se incluye 1 epígrafe/actividad. Para más, contrata el Plan Avanzado.</p></div>
+              <div class="field"><label for="intra">Operativa internacional</label><select id="intra"><option value="no">No por ahora</option><option value="ue">Clientes o proveedores UE · ROI/VIES</option><option value="imports">Importaciones o compras fuera de la UE</option><option value="both">UE e importaciones</option></select></div>
+              <div class="field" id="viesRoiFieldWrap" style="display:none"><label for="viesRoi">¿Solicitas el alta en el VIES-ROI como operador intracomunitario?</label><select id="viesRoi"><option value="no">No</option><option value="si">Sí</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note">Registro de Operadores Intracomunitarios — necesario para operar con IVA intracomunitario dentro de la UE.</p></div>
+              <div class="field"><label for="monthlyDocs">Volumen estimado de facturas</label><select id="monthlyDocs"><option value="hasta50">Hasta 50 por trimestre</option><option value="mas50">Más de 50 por trimestre</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note" id="monthlyDocsNote" style="display:none;color:#3D9166;font-weight:700">El Plan Básico incluye hasta 50 facturas por trimestre. Para más volumen, contrata el Plan Avanzado.</p></div>
+            </div>
+            <div class="divider"></div>
+            <div class="switches">
+              <label class="switch"><div><strong>¿Local abierto al público?</strong><span>Local, despacho o tienda atendida</span></div><input type="checkbox" id="publicLocal"></label>
+              <label class="switch"><div><strong>¿Vas a contratar?</strong><span>Trabajadores desde el inicio</span></div><input type="checkbox" id="staff"></label>
+              <label class="switch"><div><strong>¿Local o alquiler afecto?</strong><span>Espacio alquilado para actividad</span></div><input type="checkbox" id="rentedSpace"></label>
+            </div>
+            <div id="retaSection">
+              <div class="divider"></div>
+              <div class="section-head"><div><h2 class="section-title">RETA, cotización y acceso</h2><p class="section-help">Los datos que nos permiten preparar el alta con Seguridad Social.</p></div></div>
+              <div class="field-grid three">
+                <div class="field"><label for="lastReta">¿Alta RETA últimos 2 años?</label><select id="lastReta"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="flatRate">¿Tarifa plana previa?</label><select id="flatRate"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="benefits">¿Paro o prestación?</label><select id="benefits"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="pluriactividad">¿Trabaja también por cuenta ajena (pluriactividad)?</label><select id="pluriactividad"><option>No</option><option>Sí</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="income">Ingresos netos mensuales previstos <em>*</em></label><input id="income" type="number" min="0" placeholder="Ej. 1000"><p class="field-error">Este campo es obligatorio.</p></div>
+                <div class="field"><label for="clave">Acceso Cl@ve</label><select id="clave"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="certificate">Certificado digital</label><select id="certificate"><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></div>
+                <div class="field"><label for="mutua">Mutua preferida <em>*</em></label><input id="mutua" placeholder="Escribe “Sin preferencia” si aplica"><p class="field-error">Indica una mutua o “Sin preferencia”.</p></div>
+                <div class="field"><label for="college">Colegio o mutualidad alternativa <em>*</em></label><input id="college" placeholder="Escribe “No” si no aplica"><p class="field-error">Indica “No” o el nombre de la entidad.</p></div>
+                <div class="field"><label for="iban">IBAN para cuota RETA <em>*</em></label><input id="iban" placeholder="ES00 0000 0000 0000 0000 0000"><p class="field-error">Este campo es obligatorio.</p></div>
+              </div>
+              <p class="field-note" style="margin:16px 0 10px">Marca si te encuentras en alguna de estas situaciones — pueden ampliar la duración de la tarifa plana:</p>
+              <div class="switches">
+                <label class="switch"><div><strong>Víctima de terrorismo</strong><span>Bonificación RETA ampliada</span></div><input type="checkbox" id="victimTerrorism"></label>
+                <label class="switch"><div><strong>Discapacidad ≥33%</strong><span>Bonificación RETA ampliada</span></div><input type="checkbox" id="disability"></label>
+                <label class="switch"><div><strong>Víctima de violencia de género</strong><span>Bonificación RETA ampliada</span></div><input type="checkbox" id="victimGenderViolence"></label>
+              </div>
+            </div>
+            <div class="field" style="margin-top:17px"><label for="notes">Algo relevante que debamos saber</label><textarea id="notes" placeholder="Stock importado, facturación inmediata, domicilio comercial diferente, observaciones…"></textarea></div>
+          </div>
+          <div class="actions"><button class="btn secondary" data-prev>← Atrás</button><button class="btn primary" data-next>Ver revisión <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="4">
+          <div class="eyebrow">Paso 4 de 4</div><h1>Revisa tu contratación.</h1><p class="intro">Este es el resumen que verías antes de aceptar. En el flujo real podrás corregir cualquier dato y revisar el documento completo.</p>
+          <div class="panel"><div class="summary">
+            <div class="summary-block"><h3>Datos del cliente</h3>
+              <div class="summary-item"><span>Nombre</span><b data-summary="name">—</b></div><div class="summary-item"><span>DNI / NIE</span><b data-summary="nif">—</b></div><div class="summary-item"><span>Contacto</span><b data-summary="contact">—</b></div><div class="summary-item"><span>Actividad</span><b data-summary="activity">—</b></div><div class="summary-item"><span>Inicio previsto</span><b data-summary="start">—</b></div><div class="summary-item"><span>Operativa</span><b data-summary="intra">—</b></div>
+            </div>
+            <div class="bill"><div class="tiny">Resumen económico</div><div class="line-bill"></div><div id="billItems"></div><p class="bill-help" id="billHelp" style="margin-top:16px"></p></div>
+          </div>
+          <div class="divider"></div>
+          <div class="field-grid"><div class="field full"><label for="payment">Método de cobro</label><select id="payment"><option value="stripe">Stripe · Domiciliación Bancaria</option></select><p class="field-note">Se configurará cuando el servicio esté activo — hoy no se realiza ningún cargo.</p></div></div>
+
+          <details class="legal-doc">
+            <summary>📄 Hoja de encargo y condiciones generales <span class="tag">LECTURA OBLIGATORIA</span> <span class="chev">⌄</span></summary>
+            <div class="legal-body" id="legalBody">
+              <h4>1. Identidad del profesional</h4>
+              <p><strong>Juan José Zanza Redondo</strong> · NIF 20047795Y · Clavia · info@clavia.es · Calle 133, 17 — 46116 Moncada, Valencia.</p>
+
+              <h4>2. Objeto y alcance del encargo</h4>
+              <p id="legalNoService" style="color:var(--muted)">Selecciona un servicio en el paso 1 para ver aquí el alcance detallado.</p>
+
+              <div id="legalAlta" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
+                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Alta como autónomo/a — 49 € + IVA · servicio puntual</p>
+                <p><strong>Objeto:</strong> el cliente encarga a Clavia un servicio puntual y no recurrente consistente en preparar y tramitar el alta fiscal en Hacienda mediante el modelo censal 036 y el alta en el Régimen Especial de Trabajadores Autónomos (RETA) de la Seguridad Social, conforme a los datos facilitados en el formulario de alta. Este encargo se limita exclusivamente al alta inicial.</p>
+                <p><strong>Incluye:</strong> revisión básica de los datos facilitados; orientación sobre el encuadre censal y de Seguridad Social; preparación y tramitación del alta en Hacienda; preparación y tramitación del alta en RETA; comunicación de los justificantes y confirmaciones obtenidos. Cuando proceda según la actividad y operaciones declaradas, tramitación de la inscripción en el ROI‑VIES.</p>
+                <p><strong>No incluye:</strong> gestión contable o fiscal periódica, presentación de impuestos trimestrales o anuales, declaración de la Renta, atención a requerimientos, recursos, reclamaciones ni trámites posteriores no indicados aquí expresamente. Cualquier modificación posterior, baja, regularización, subsanación, cambio de datos, consulta adicional o gestión periódica se presupuesta aparte, salvo acuerdo escrito distinto.</p>
+                <p><strong>Honorarios:</strong> 49 € + IVA, pago único. El pago se realiza una vez tramitado el alta, mediante factura y transferencia o domiciliación bancaria.</p>
+              </div>
+
+              <div id="legalBasico" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
+                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Básico Digital — 39 € + IVA / mes</p>
+                <p><strong>Incluido:</strong> consultas y asesoría fiscal ordinaria; presentación de los modelos 303, 130, 111/115/349 cuando proceda; modelos anuales habituales (390, 190, 347 cuando proceda); hasta 50 facturas por trimestre.</p>
+                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de AEAT, recursos, reclamaciones e inspecciones formales; gestión de más de 50 facturas por trimestre (se presupuesta aparte); alta de nuevos epígrafes o actividades adicionales a la primera.</p>
+                <p><strong>Ámbito y limitaciones del servicio:</strong> este plan se presta exclusivamente a personas físicas dadas de alta como autónomos o profesionales — no se presta a sociedades mercantiles ni a otras personas jurídicas — y a clientes residentes fiscales en España sujetos al régimen general del IVA (Península y Baleares). Quedan excluidos los clientes con domicilio fiscal en Canarias, Ceuta, Melilla o en los territorios forales de País Vasco y Navarra, por aplicarse allí regímenes fiscales distintos (IGIC, IPSI y TicketBAI, respectivamente). El servicio no incluye asesoría ni gestión laboral — nóminas, seguros sociales de trabajadores, contratos de trabajo, altas y bajas laborales u otras obligaciones laborales —, salvo la tramitación del alta del propio autónomo en el RETA cuando forme parte del encargo contratado; la presentación del modelo 111, cuando proceda, se limita a las retenciones practicadas en el ámbito fiscal y no constituye gestión laboral de terceros.</p>
+              </div>
+
+              <div id="legalAvanzado" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
+                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Avanzado — 59 € + IVA / mes</p>
+                <p><strong>Incluido:</strong> consultas y asesoría fiscal ordinaria; presentación de los modelos 303, 130, 111/115/349 cuando proceda; modelos anuales habituales (390, 190, 347 cuando proceda); más de 50 facturas por trimestre; hasta 2 epígrafes de actividad (IAE); previsión básica de IRPF; declaración de la Renta a partir de la 3ª mensualidad abonada en el ejercicio*; atención a requerimientos sencillos de AEAT**.</p>
+                <p><strong>No incluido:</strong> inspecciones formales, sanciones, recursos, reclamaciones, procedimientos contenciosos y ejercicios fiscales anteriores al inicio del encargo; epígrafes adicionales al 2º (se presupuestan aparte).</p>
+                <p><strong>Ámbito y limitaciones del servicio:</strong> este plan se presta exclusivamente a personas físicas dadas de alta como autónomos o profesionales — no se presta a sociedades mercantiles ni a otras personas jurídicas — y a clientes residentes fiscales en España sujetos al régimen general del IVA (Península y Baleares). Quedan excluidos los clientes con domicilio fiscal en Canarias, Ceuta, Melilla o en los territorios forales de País Vasco y Navarra, por aplicarse allí regímenes fiscales distintos (IGIC, IPSI y TicketBAI, respectivamente). El servicio no incluye asesoría ni gestión laboral — nóminas, seguros sociales de trabajadores, contratos de trabajo, altas y bajas laborales u otras obligaciones laborales —, salvo la tramitación del alta del propio autónomo en el RETA cuando forme parte del encargo contratado; la presentación del modelo 111, cuando proceda, se limita a las retenciones practicadas en el ámbito fiscal y no constituye gestión laboral de terceros.</p>
+                <p style="font-size:11px;color:var(--muted);margin-top:8px">* La Renta se incluye a partir de la 3ª mensualidad abonada dentro del ejercicio en curso — es un criterio de elegibilidad, no un requisito de permanencia.<br>** Requerimientos sencillos de AEAT: solicitudes de documentación y comprobaciones limitadas sobre los modelos gestionados por Clavia. Quedan excluidas inspecciones formales, sanciones, recursos, reclamaciones, contencioso y ejercicios anteriores.</p>
+              </div>
+
+              <h4>3. Forma de pago</h4>
+              <p id="legalPrice">Todos los importes se muestran en el resumen económico con IVA desglosado. Cada concepto se cobra por separado, en el momento indicado: el alta al completar el trámite, mediante factura y transferencia o domiciliación; la mensualidad, por domiciliación bancaria, a partir de la activación del servicio.</p>
+
+              <div id="legalDuration" style="display:none">
+                <h4>4. Duración y baja</h4>
+                <p>Los planes de gestión mensual tienen duración indefinida (mes a mes) y pueden darse de baja con un preaviso mínimo de 15 días, sin coste ni penalización, comunicándolo a info@clavia.es.</p>
+              </div>
+
+              <div id="legalWithdrawalBlock" style="display:none">
+                <h4>5. Derecho de desistimiento</h4>
+                <p id="legalWithdrawalText"></p>
+              </div>
+
+              <h4 id="legalObligNum">6. Obligaciones del cliente</h4>
+              <p>El cliente se compromete a facilitar información veraz, completa y actualizada; revisar los datos antes de cualquier presentación; colaborar en los accesos necesarios (Cl@ve, certificado digital, apoderamiento o sistema equivalente); y comunicar cualquier circunstancia relevante que pueda afectar a la gestión. El cliente es responsable de la exactitud de los datos facilitados y de las consecuencias derivadas de información incompleta, incorrecta o comunicada fuera de plazo.</p>
+              <div id="legalMonthlyObligations" style="display:none">
+                <p><strong>Entrega de documentación mensual:</strong> en los planes de gestión mensual, el cliente se compromete a subir a la carpeta compartida las facturas, tickets y demás documentación del mes correspondiente <strong>antes del día 5 del mes siguiente</strong>. Este plazo es necesario para poder contabilizar, calcular y presentar en plazo los modelos fiscales aplicables.</p>
+                <p><strong>Confirmación previa a la presentación:</strong> antes de presentar cualquier modelo o borrador ante la AEAT, Clavia lo pondrá en conocimiento del cliente para su revisión y confirmación. El cliente se compromete a revisar y confirmar dicho borrador dentro del plazo que se le indique para permitir la presentación en tiempo.</p>
+                <p><strong>Consecuencias del incumplimiento de plazos:</strong> si el cliente no entrega la documentación antes del día 5 indicado, o no confirma el borrador dentro del plazo señalado, Clavia queda <strong>exonerada de responsabilidad</strong> por los recargos, intereses, sanciones o cualquier otra consecuencia derivada de una presentación fuera de plazo, tardía o no realizada, así como de cualquier reclamación del cliente frente a Clavia por dicho motivo. Clavia hará lo razonablemente posible por presentar la documentación recibida tardíamente, sin garantía de cumplir el plazo legal cuando la demora sea imputable al cliente.</p>
+              </div>
+
+              <h4>7. Obligaciones de Clavia y seguro de responsabilidad civil</h4>
+              <p>Clavia se compromete a prestar el servicio con diligencia profesional, utilizando la información facilitada por el cliente, y a informar de cualquier incidencia detectada durante la tramitación o gestión. Clavia no garantiza la concesión de bonificaciones, tarifa plana u otros beneficios cuando dependan de requisitos legales o administrativos ajenos a su control. <strong>Clavia mantiene vigente un seguro de responsabilidad civil profesional</strong> adecuado a la actividad objeto de este encargo, sin perjuicio de los límites, condiciones y exclusiones previstos en la póliza aplicable.</p>
+              <div id="legalMonthlyAttention" style="display:none">
+                <p><strong>Atención a consultas ordinarias:</strong> la comunicación y las cuestiones fiscales ordinarias o las relacionadas con la operativa o alcance del plan, se realizan por WhatsApp y email. Las consultas que excedan el alcance del plan contratado, o que requieran un análisis extenso, podrán presupuestarse aparte antes de resolverse.</p>
+              </div>
+
+              <h4>8. Protección de datos</h4>
+              <p>Los datos personales facilitados serán tratados por Juan José Zanza Redondo / Clavia con la finalidad de gestionar el presente encargo y cumplir las obligaciones legales aplicables. El cliente podrá ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a info@clavia.es.</p>
+
+              <h4>9. Reclamaciones y jurisdicción</h4>
+              <p>Los medios para presentar quejas y reclamaciones son info@clavia.es y la vía postal indicada en el punto 1. Para cualquier controversia derivada de esta hoja de encargo, ambas partes se someten a los juzgados y tribunales que legalmente correspondan, con referencia profesional en Valencia, sin perjuicio del derecho del cliente a acudir a plataformas de resolución extrajudicial de conflictos de consumo cuando le sea aplicable.</p>
+            </div>
+            <div class="legal-actions"><span>Documento completo · hoja de encargo</span><a id="downloadTerms" href="./hoja-encargo-alta.pdf" download="Hoja-de-encargo-Clavia-Alta.pdf">Descargar PDF</a><button type="button" id="printTerms">Imprimir</button></div>
+          </details>
+
+          <div class="accept-group">
+            <div class="accept"><input type="checkbox" id="acceptTerms"><label for="acceptTerms">He leído y acepto la <strong>hoja de encargo y las condiciones generales</strong> mostradas arriba.</label></div>
+            <div class="accept warn" id="acceptAltaWrap" style="display:none"><input type="checkbox" id="acceptAltaInmediata"><label for="acceptAltaInmediata"><strong>Solicito expresamente</strong> que Clavia empiece a tramitar mi alta de inmediato. Entiendo que, una vez completado el trámite, <strong>pierdo mi derecho de desistimiento de 14 días</strong> sobre este servicio puntual.</label></div>
+            <div class="accept"><input type="checkbox" id="accept"><label for="accept">He revisado el resumen y confirmo que los datos facilitados son correctos. Al pulsar "Firmar y continuar" se abrirá el documento para tu firma electrónica; el encargo queda formalizado cuando ambas partes lo hayan firmado.</label></div>
+          </div>
+          <div class="review-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>CONEXIÓN CIFRADA · TUS DATOS SOLO SE USAN PARA ESTE ENCARGO</div>
+          </div>
+          <div class="actions"><button class="btn secondary" data-prev>← Corregir datos</button><button class="btn primary" id="finish" disabled>Firmar y continuar <span class="btn-arrow">→</span></button></div>
+        </section>
+
+        <section class="page" data-page="5"><div class="success"><div class="success-mark">✓</div><div class="eyebrow" id="testResultEyebrow" style="color:var(--lime)">Encargo iniciado</div><h1 id="testResultTitle">Tu hoja de encargo está lista para firmar.</h1><p id="testResultCopy">Hemos abierto el documento en una pestaña aparte para que lo firmes. En cuanto Clavia lo firme también, recibirás el PDF completo por email.</p><div class="success-card"><span id="testDocumentLabel">CLAVIA · FIRMA ELECTRÓNICA</span><b id="testDocumentId">Documento creado</b></div><div class="actions" style="margin-top:30px"><button class="btn secondary" id="openSigningAgain">Abrir firma de nuevo</button><button class="btn primary" onclick="location.reload()">Volver al inicio</button></div></div></section>
+      </div>
+    </main>
+  </div>
+  <script>
+    let page=1; const maxPage=4;
+    const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+    const formatDate=v=>{if(!v)return 'Pendiente';const [y,m,d]=v.split('-');return `${d}/${m}/${y}`};
+    function chosen(){return $$('input[name="service"]:checked').map(x=>x.value)}
+    function updateSteps(){ $$('#stepNav .step').forEach((s,i)=>{s.classList.toggle('active',i===Math.min(page,4)-1);s.classList.toggle('done',i<Math.min(page,4)-1)}) }
+    function show(n){page=n; $$('.page').forEach(p=>p.classList.toggle('active',+p.dataset.page===n)); updateSteps();window.scrollTo({top:0,behavior:'smooth'});if(n===4)updateReview()}
+    function value(id,fallback='—'){return $(id)?.value?.trim()||fallback}
+    function updateReview(){
+      const map={name:value('#name'),nif:value('#nif'),contact:[value('#email',''),value('#phone','')].filter(Boolean).join(' · ')||'—',activity:value('#activity'),start:formatDate(value('#start','')),intra:value('#intra')};
+      Object.entries(map).forEach(([k,v])=>{const node=$(`[data-summary="${k}"]`);if(node)node.textContent=v});
+      const c=chosen(); const fmt=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(n);
+      let lines=[];
+      if(c.includes('alta')){lines.push({label:'Alta como autónomo/a',base:fmt(49),iva:fmt(49*0.21),total:fmt(49*1.21),suffix:'',when:'Se factura al completar el trámite en Hacienda y RETA'})}
+      if(c.includes('basico')){lines.push({label:'Plan Básico · mensual',base:fmt(39),iva:fmt(39*0.21),total:fmt(39*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
+      if(c.includes('avanzado')){lines.push({label:'Plan Avanzado · mensual',base:fmt(59),iva:fmt(59*0.21),total:fmt(59*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
+      if(lines.length===0)lines.push({label:'Sin servicio seleccionado',base:'—',iva:'',total:'',suffix:'',when:''});
+      $('#billItems').innerHTML=lines.map(l=>`<div class="bill-row" style="flex-direction:column;align-items:flex-start;gap:4px;padding:12px 0"><div style="display:flex;justify-content:space-between;width:100%"><span>${l.label}</span><b style="color:#fff;font-weight:800">${l.base}${l.suffix} <span style="font-weight:500;color:#9aa8b2">+ IVA</span></b></div>${l.total?`<div style="display:flex;justify-content:space-between;width:100%;font-size:11px;color:#8ba79a"><span>IVA (${l.iva})</span><span>Total: ${l.total}${l.suffix}</span></div>`:''}${l.when?`<span style="font-size:10px;color:#8ba79a">${l.when}</span>`:''}</div>`).join('');
+      $('#billHelp').textContent = 'Hoy no se realiza ningún cargo. Cada importe se cobra por separado, en el momento indicado.';
+      updateLegalScope(c);
+      updateAcceptCheckboxes();
+    }
+    function updateLegalScope(c){
+      const hasAlta=c.includes('alta'), hasBasico=c.includes('basico'), hasAvanzado=c.includes('avanzado');
+      const hasAny = hasAlta||hasBasico||hasAvanzado;
+      $('#legalNoService').style.display = hasAny ? 'none' : '';
+      $('#legalAlta').style.display = hasAlta ? '' : 'none';
+      $('#legalBasico').style.display = hasBasico ? '' : 'none';
+      $('#legalAvanzado').style.display = hasAvanzado ? '' : 'none';
+      const hasMonthly = hasBasico||hasAvanzado;
+      $('#legalDuration').style.display = hasMonthly ? '' : 'none';
+      $('#legalMonthlyObligations').style.display = hasMonthly ? '' : 'none';
+      $('#legalMonthlyAttention').style.display = hasMonthly ? '' : 'none';
+      $('#legalWithdrawalBlock').style.display = hasAlta ? '' : 'none';
+      if(hasAlta){
+        $('#legalWithdrawalText').innerHTML = 'En la contratación del servicio de <strong>Alta como autónomo/a</strong>, como consumidor dispones de <strong>14 días naturales</strong> desde la contratación para desistir sin indicar motivo y sin coste. Este derecho se pierde si, con tu consentimiento expreso, Clavia ejecuta completamente el servicio antes de que finalice ese plazo — ver casilla correspondiente más abajo. Los planes de gestión mensual no están sujetos a este plazo por tratarse de servicios contratados para el ejercicio de tu actividad profesional; su baja se rige por el punto 4 (duración y baja).';
+      }
+      const pdfMap={alta:'hoja-encargo-alta.pdf',basico:'hoja-encargo-basico.pdf',avanzado:'hoja-encargo-avanzado.pdf',alta_basico:'hoja-encargo-alta-basico.pdf',alta_avanzado:'hoja-encargo-alta-avanzado.pdf'};
+      let comboKey = hasBasico&&hasAvanzado ? null : hasAlta&&hasBasico ? 'alta_basico' : hasAlta&&hasAvanzado ? 'alta_avanzado' : hasAlta ? 'alta' : hasBasico ? 'basico' : hasAvanzado ? 'avanzado' : null;
+      const dl=$('#downloadTerms');
+      if(comboKey && pdfMap[comboKey]){ dl.href='./'+pdfMap[comboKey]; dl.setAttribute('download','Hoja-de-encargo-Clavia-'+comboKey+'.pdf'); dl.style.pointerEvents=''; dl.style.opacity='' }
+      else { dl.removeAttribute('href'); dl.style.pointerEvents='none'; dl.style.opacity='0.5' }
+    }
+    function updateAcceptCheckboxes(){
+      const c=chosen();
+      const hasAlta=c.includes('alta');
+      $('#acceptAltaWrap').style.display = hasAlta ? '' : 'none';
+      if(!hasAlta)$('#acceptAltaInmediata').checked=false;
+      validateFinish();
+    }
+    function validateFinish(){
+      const c=chosen();
+      const hasAlta=c.includes('alta');
+      const required=[$('#accept').checked,$('#acceptTerms').checked];
+      if(hasAlta)required.push($('#acceptAltaInmediata').checked);
+      $('#finish').disabled = !required.every(Boolean);
+    }
+    function updateAltaVisibility(){
+      const hasAlta = chosen().includes('alta');
+      $('#retaSection').style.display = hasAlta ? '' : 'none';
+      $('#startFieldWrap').style.display = hasAlta ? '' : 'none';
+    }
+    function updateEpigraphsLimit(){
+      const isBasico = chosen().includes('basico') && !chosen().includes('avanzado');
+      const epi = $('#epigraphs'); const note = $('#epigraphsNote');
+      [...epi.options].forEach(o=>{ o.disabled = isBasico && o.value!=='1' });
+      if(isBasico){ epi.value='1'; note.style.display='block' } else { note.style.display='none' }
+    }
+    function updateViesRoiVisibility(){
+      const v = $('#intra').value;
+      $('#viesRoiFieldWrap').style.display = (v==='ue'||v==='both') ? '' : 'none';
+    }
+    function updateMonthlyDocsLimit(){
+      const isBasico = chosen().includes('basico') && !chosen().includes('avanzado');
+      const docs = $('#monthlyDocs'); const note = $('#monthlyDocsNote');
+      [...docs.options].forEach(o=>{ o.disabled = isBasico && o.value==='mas50' });
+      if(isBasico){ if(docs.value==='mas50') docs.value='hasta50'; note.style.display='block' } else { note.style.display='none' }
+    }
+    function isEmailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
+    function isIbanValid(v){
+      const clean=(v||'').replace(/\s+/g,'').toUpperCase();
+      // Formato amplio: 2 letras de país + entre 13 y 32 caracteres alfanuméricos.
+      // Sin validar el dígito de control — solo que tenga pinta de IBAN real.
+      return /^[A-Z]{2}[A-Z0-9]{13,32}$/.test(clean);
+    }
+    function clearFieldError(el){const f=el.closest('.field');if(f)f.classList.remove('error')}
+    function setFieldError(el){const f=el.closest('.field');if(f)f.classList.add('error')}
+    function requiredFieldsForPage(n){
+      if(n===2)return ['#name','#nif','#birth','#email','#phone','#address'];
+      if(n===3){
+        const ids=['#workplace','#activity'];
+        if(chosen().includes('alta'))ids.unshift('#start','#income','#mutua','#college','#iban');
+        return ids;
+      }
+      return [];
+    }
+    function validatePage(n){
+      const ids=requiredFieldsForPage(n);
+      let firstInvalid=null, ok=true;
+      ids.forEach(id=>{
+        const el=$(id); if(!el)return;
+        const v=(el.value||'').trim();
+        const invalid = id==='#email' ? !isEmailValid(v) : id==='#iban' ? !isIbanValid(v) : !v;
+        if(invalid){ setFieldError(el); ok=false; if(!firstInvalid)firstInvalid=el } else { clearFieldError(el) }
+      });
+      if(firstInvalid){ firstInvalid.closest('.field').scrollIntoView({behavior:'smooth',block:'center'}); firstInvalid.focus({preventScroll:true}) }
+      return ok;
+    }
+    const CONTRACT_API = 'https://clavia-contratacion.noisy-sea-21c2.workers.dev/api/contract';
+    let signingUrl = '';
+    function buildContractPayload(){
+      return {
+        services: chosen(),
+        name:value('#name',''), nif:value('#nif',''), birth:value('#birth',''), email:value('#email',''), phone:value('#phone',''), address:value('#address',''),
+        start:value('#start',''), workplace:value('#workplace',''), activity:value('#activity',''), epigraphs:value('#epigraphs',''), intra:value('#intra',''), viesRoi:value('#viesRoi',''), monthlyDocs:value('#monthlyDocs',''),
+        publicLocal:$('#publicLocal').checked, staff:$('#staff').checked, rentedSpace:$('#rentedSpace').checked,
+        lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
+        victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
+        notes:value('#notes',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
+      };
+    }
+    async function startSignwellContract(){
+      const services=chosen();
+      if(services.includes('basico') && services.includes('avanzado')){
+        alert('No se puede contratar el Plan Básico y el Plan Avanzado a la vez. Elige uno de los dos.');
+        return;
+      }
+      const popup=window.open('', '_blank');
+      const finish=$('#finish'); const original=finish.innerHTML;
+      finish.disabled=true; finish.textContent='Preparando tu documento…';
+      try{
+        const response=await fetch(CONTRACT_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(buildContractPayload())});
+        const data=await response.json();
+        if(!response.ok)throw new Error(data.error||'No se pudo generar el documento. Inténtalo de nuevo.');
+        signingUrl=data.signingUrl;
+        if(popup)popup.location.href=signingUrl; else window.location.href=signingUrl;
+        $('#testDocumentId').textContent=`Documento ${data.documentId}`;
+        show(5);
+      }catch(error){
+        if(popup)popup.close();
+        alert(error.message||'No se pudo generar el documento. Inténtalo de nuevo.');
+      }finally{
+        finish.disabled=false; finish.innerHTML=original;
+      }
+    }
+    $$('#name,#nif,#birth,#email,#phone,#address,#start,#workplace,#activity,#income,#mutua,#college,#iban').forEach(el=>el.addEventListener('input',()=>clearFieldError(el)));
+    $$('[data-next]').forEach(b=>b.addEventListener('click',()=>{
+      if(page===1&&chosen().length===0){alert('Selecciona al menos un servicio para continuar.');return}
+      if((page===2||page===3)&&!validatePage(page))return;
+      show(page+1)
+    }));
+    $$('[data-prev]').forEach(b=>b.addEventListener('click',()=>show(page-1)));
+    $$('#accept, #acceptTerms, #acceptAltaInmediata').forEach(el=>el.addEventListener('change',validateFinish));
+    $('#finish').addEventListener('click',startSignwellContract);
+    $('#openSigningAgain').addEventListener('click',()=>{if(signingUrl)window.open(signingUrl,'_blank')});
+    $('#printTerms').addEventListener('click',()=>window.print());
+    $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='basico'&&i.checked)$('input[value="avanzado"]').checked=false;if(i.value==='avanzado'&&i.checked)$('input[value="basico"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();}));
+    $('#intra').addEventListener('change',updateViesRoiVisibility);
+    updateAltaVisibility();updateEpigraphsLimit();updateViesRoiVisibility();updateMonthlyDocsLimit();
+  </script>
+</body>
+</html>
