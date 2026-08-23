@@ -20,20 +20,20 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","@id":"https://clavia.es/blog/#page","url":"https://clavia.es/blog/","name":"Blog fiscal para autónomos de Clavia","description":"Artículos y novedades sobre fiscalidad, contabilidad y gestión para autónomos.","isPartOf":{"@id":"https://clavia.es/#website"},"about":{"@id":"https://clavia.es/#organization"},"author":{"@id":"https://clavia.es/#juan-redondo"}}
 </script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23f5f9f6'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%23101828' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%233D9166'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23f5f9f6'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%23101828' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%233D9166'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root {
-  --cream:#fdf0e8; --cream2:#f5e2d0; --cream3:#e8cdb4;
-  --forest:#1c1410; --forest2:#7c3a2d;
-  --sage:#2d6a4f; --sage-lo:rgba(45,106,79,.12); --sage-bd:rgba(45,106,79,.28);
-  --coral:#e8532a; --coral2:#f06030; --coral-lo:rgba(232,83,42,.1);
-  --ink:#1c0e08; --ink2:#3d2418;
-  --grey:#7a5545; --grey2:#aa8878;
-  --line:rgba(28,14,8,.1); --line-inv:rgba(255,255,255,.12);
+  --cream:#f5f9f6; --cream2:#f0faf4; --cream3:#dde3ea;
+  --forest:#101828; --forest2:#344054;
+  --sage:#3D9166; --sage-lo:rgba(61,145,102,.12); --sage-bd:rgba(61,145,102,.28);
+  --coral:#6FC194; --coral2:#8ed4ab; --coral-lo:rgba(111,193,148,.1);
+  --ink:#101828; --ink2:#344054;
+  --grey:#667085; --grey2:#98a2b3;
+  --line:rgba(16,24,40,.1); --line-inv:rgba(255,255,255,.12);
   --serif:'Fraunces',Georgia,serif;
   --sans:'Plus Jakarta Sans',system-ui,sans-serif;
   --mono:'JetBrains Mono',monospace;
@@ -54,7 +54,7 @@ body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:translateY(0)}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 0;transition:all .3s;border-bottom:1px solid transparent}
-nav.stuck{background:rgba(253,240,232,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
+nav.stuck{background:rgba(245,249,246,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
 .nav-row{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:4px;text-decoration:none}
 .logo-text{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-.3px;line-height:1}
@@ -97,7 +97,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
 .eyebrow::before{content:'';width:20px;height:1.5px;background:var(--sage)}
 .blog-hero{background:var(--forest);padding:120px 40px 80px;position:relative;overflow:hidden}
-.blog-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.12) 0%,transparent 65%);pointer-events:none}
+.blog-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(61,145,102,.12) 0%,transparent 65%);pointer-events:none}
 .blog-hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
 .bh-tag{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--coral);text-transform:uppercase;margin-bottom:18px}
 .blog-hero h1{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:14px}
@@ -201,13 +201,13 @@ nav.nav-dark:not(.stuck) .ham span{background:#fff}
       <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;margin:0">Todo lo que debes revisar antes del 30 de junio: deducciones olvidadas, errores frecuentes y plazos clave.</p>
       <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
     </a>
-    <a href="/blog/verifactu-factura-electronica-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+    <a href="/blog/verifactu-factura-electronica-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(16,24,40,.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Facturación · Novedades</div>
       <h2 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin:0">VeriFactu para Autónomos: Requisitos y Plazos de 2027</h2>
       <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0">Qué exige a los sistemas de facturación, en qué se diferencia de la factura electrónica y cuándo deben adaptarse los autónomos.</p>
       <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
     </a>
-    <a href="/blog/cuota-autonomos-2026-ingresos-reales" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
+    <a href="/blog/cuota-autonomos-2026-ingresos-reales" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(16,24,40,.1)'" onmouseout="this.style.boxShadow='none'">
       <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Seguridad Social · Cuota</div>
       <h2 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin:0">Cuota de Autónomos 2026 por Ingresos Reales</h2>
       <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0">El sistema de ingresos reales cambia tu cuota cada año. Así funciona, cómo calcularla y cuándo cambiarla.</p>
