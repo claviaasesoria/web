@@ -267,6 +267,11 @@
       if(hasAlta){
         $('#legalWithdrawalText').innerHTML = 'En la contratación del servicio de <strong>Alta como autónomo/a</strong>, como consumidor dispones de <strong>14 días naturales</strong> desde la contratación para desistir sin indicar motivo y sin coste. Este derecho se pierde si, con tu consentimiento expreso, Clavia ejecuta completamente el servicio antes de que finalice ese plazo — ver casilla correspondiente más abajo. Los planes de gestión mensual no están sujetos a este plazo por tratarse de servicios contratados para el ejercicio de tu actividad profesional; su baja se rige por el punto 4 (duración y baja).';
       }
+      const pdfMap={alta:'hoja-encargo-alta.pdf',basico:'hoja-encargo-basico.pdf',avanzado:'hoja-encargo-avanzado.pdf',alta_basico:'hoja-encargo-alta-basico.pdf',alta_avanzado:'hoja-encargo-alta-avanzado.pdf'};
+      let comboKey = hasBasico&&hasAvanzado ? null : hasAlta&&hasBasico ? 'alta_basico' : hasAlta&&hasAvanzado ? 'alta_avanzado' : hasAlta ? 'alta' : hasBasico ? 'basico' : hasAvanzado ? 'avanzado' : null;
+      const dl=$('#downloadTerms');
+      if(comboKey && pdfMap[comboKey]){ dl.href='./'+pdfMap[comboKey]; dl.setAttribute('download','Hoja-de-encargo-Clavia-'+comboKey+'.pdf'); dl.style.pointerEvents=''; dl.style.opacity='' }
+      else { dl.removeAttribute('href'); dl.style.pointerEvents='none'; dl.style.opacity='0.5' }
     }
     function updateAcceptCheckboxes(){
       const c=chosen();
@@ -333,7 +338,7 @@
       if(firstInvalid){ firstInvalid.closest('.field').scrollIntoView({behavior:'smooth',block:'center'}); firstInvalid.focus({preventScroll:true}) }
       return ok;
     }
-    const TEST_API = 'https://clavia-contratacion-test.noisy-sea-21c2.workers.dev/api/test-alta';
+    const TEST_API = 'https://clavia-contratacion-test.noisy-sea-21c2.workers.dev/api/test-contract';
     let testSigningUrl = '';
     function buildTestPayload(){
       return {
@@ -348,8 +353,8 @@
     }
     async function startSignwellTest(){
       const services=chosen();
-      if(services.length!==1 || services[0]!=='alta'){
-        alert('La firma conectada está disponible por ahora solo para la prueba de Alta como autónomo/a. Las plantillas de Plan Básico y Avanzado están todavía en preparación.');
+      if(services.includes('basico') && services.includes('avanzado')){
+        alert('No se puede contratar el Plan Básico y el Plan Avanzado a la vez. Elige uno de los dos.');
         return;
       }
       const popup=window.open('', '_blank');
