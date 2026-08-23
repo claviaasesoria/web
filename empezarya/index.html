@@ -389,7 +389,7 @@
     $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='basico'&&i.checked)$('input[value="avanzado"]').checked=false;if(i.value==='avanzado'&&i.checked)$('input[value="basico"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();}));
     $('#intra').addEventListener('change',updateViesRoiVisibility);
     updateAltaVisibility();updateEpigraphsLimit();updateViesRoiVisibility();updateMonthlyDocsLimit();
-    // Preselección por query string: clavia.es/firmar?plan=alta viene desde
+    // Preselección por query string: clavia.es/empezarya?plan=alta viene desde
     // "Solicitar" en /tramites (Alta en Hacienda). Deja solo Alta marcada.
     (function preselectFromQuery(){
       const plan = new URLSearchParams(location.search).get('plan');
