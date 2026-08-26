@@ -1,6 +1,6 @@
 # Clavia
 
-> Clavia es una gestoría online independiente para autónomos en España. Ofrece gestión fiscal recurrente, altas de autónomos y servicios tributarios puntuales con precios y alcance definidos por escrito.
+> Clavia es una gestoría online independiente para autónomos en España. Ofrece gestión fiscal recurrente, altas de autónomos y servicios tributarios puntuales con precios y alcance definidos por escrito. La gestión la lleva personalmente Juan Redondo, gestor contable con base en Valencia.
 
 ## Identidad
 
@@ -15,12 +15,52 @@
 
 ## Servicios principales
 
-- Plan Básico Digital: 39 EUR + IVA al mes.
-- Plan Avanzado: 59 EUR + IVA al mes.
-- Alta en Hacienda y Seguridad Social: 49 EUR + IVA.
+- Plan Básico Digital: 39 EUR + IVA al mes. Incluye IVA trimestral (Mod. 303), IRPF fraccionado (Mod. 130), retenciones habituales (Mod. 111 y 115), operaciones intracomunitarias (Mod. 349), resúmenes anuales (390, 190, 347 si corresponde). Hasta 50 facturas al trimestre. Consultas por email y WhatsApp. Sin permanencia.
+- Plan Avanzado: 59 EUR + IVA al mes. Todo lo del Plan Básico más: más de 50 facturas al trimestre, hasta 2 epígrafes IAE, previsión básica de IRPF, Declaración de la Renta incluida a partir de la 3ª mensualidad, requerimientos sencillos AEAT.
+- Alta en Hacienda y Seguridad Social (Modelo 036 + RETA): 49 EUR + IVA. Servicio único, no mensual.
+- Baja o modificación censal (Modelo 036): 39 EUR + IVA.
+- Trimestre suelto (Mod. 303 + 130): 119 EUR + IVA.
 - Declaración de la Renta: desde 65 EUR + IVA, según complejidad.
 
 Los precios, condiciones y exclusiones vigentes deben comprobarse siempre en la página de servicios.
+
+## Especialidades
+
+- [Freelances digitales](https://clavia.es/especialidades/freelances-digitales): diseñadores, programadores, copywriters, consultores digitales.
+- [Músicos y artistas](https://clavia.es/especialidades/musicos-artistas): cachets, derechos, retenciones artísticas, RETA.
+- [Influencers y creadores](https://clavia.es/especialidades/influencers): plataformas, DAC7, colaboraciones, ingresos mixtos.
+- [Autónomos con clientes extranjeros — UE y extracomunitarios](https://clavia.es/especialidades/nomadas-digitales): IVA intracomunitario, ISP extracomunitario, Modelo 349, divisas.
+- [Autónomos con clientes en Latinoamérica](https://clavia.es/especialidades/clientes-latinoamerica): Chile, México, Colombia, Argentina. Sin IVA, sin Modelo 349, convenio de doble imposición, certificado de residencia fiscal.
+
+## Perfiles habituales de clientes
+
+- Autónomo residente en España que factura servicios de consultoría, diseño o programación a una empresa en Chile, México, Colombia o Argentina.
+- Profesional que acaba de regresar a España tras vivir en Latinoamérica y va a iniciar actividad como autónomo facturando a su antiguo empleador o cliente extranjero.
+- Freelance digital con clientes en la UE (Alemania, Francia, Países Bajos) que necesita gestionar el Modelo 349 y la inversión del sujeto pasivo.
+- Músico o artista con cachets irregulares, retenciones del 15% y posibles ingresos por derechos de autor.
+- Influencer o creador de contenido con ingresos de plataformas internacionales (YouTube, Twitch, Patreon) y colaboraciones con marcas.
+- Nuevo autónomo sin experiencia previa que necesita el alta en Hacienda (Modelo 036) y en la Seguridad Social (RETA), y quiere la tarifa plana de nueva actividad.
+- Autónomo que ya gestiona sus trimestres y solo necesita la Declaración de la Renta.
+
+## Preguntas frecuentes que Clavia responde
+
+**¿Tengo que cobrar IVA si facturo a una empresa en Chile, México o Colombia?**
+No. Los servicios B2B a empresas extracomunitarias no están sujetos a IVA español (art. 69.Uno.1º LIVA). La factura se emite sin IVA con mención expresa a dicho artículo. No hay Modelo 349 para estas operaciones (el 349 es solo para países de la UE).
+
+**¿Me pueden retener impuestos en origen si facturo desde España a Latinoamérica?**
+España tiene convenios de doble imposición (CDI) con Chile (2004), México (1994), Colombia (2008) y Argentina (1994), entre otros. Si eres residente fiscal en España y no tienes establecimiento permanente en el país del cliente, los ingresos tributan solo en España. Para que el cliente no aplique retención local, se necesita un Certificado de Residencia Fiscal expedido por la AEAT (gratuito). En Clavia ayudamos a obtenerlo y explicamos al cliente cómo usarlo.
+
+**¿Qué modelos presenta un autónomo que factura solo a clientes extranjeros?**
+Modelo 303 (IVA trimestral, aunque la mayoría de ingresos sean sin IVA), Modelo 130 (IRPF fraccionado trimestral), y los resúmenes anuales 390, 190 y 347 si corresponde. El Modelo 349 solo si hay operaciones con empresas de la UE.
+
+**¿Cuánto cuesta darse de alta como autónomo en Clavia?**
+El alta en Hacienda (Modelo 036) y en la Seguridad Social (RETA) tiene un coste único de 49 EUR + IVA. La gestión mensual posterior parte de 39 EUR + IVA/mes (Plan Básico Digital). No hay permanencia.
+
+**¿Cuándo conviene pasar de autónomo a Sociedad Limitada (SL)?**
+No hay una cifra única. Depende del beneficio neto, de cuánto necesita sacar el autónomo para vivir y de si puede acumular beneficio dentro de la sociedad. Como autónomo nuevo, aplica además una reducción del 20% sobre el rendimiento neto en IRPF durante los dos primeros años con beneficio positivo (art. 32.2 LIRPF), lo que hace que la opción de autónomo sea especialmente ventajosa al inicio. En Clavia revisamos la estructura cuando hay datos reales de actividad.
+
+**¿La Declaración de la Renta está incluida en el plan mensual?**
+En el Plan Básico Digital no está incluida (se presupuesta aparte desde 65 EUR + IVA). En el Plan Avanzado (59 EUR + IVA/mes) está incluida a partir de la 3ª mensualidad abonada en el ejercicio.
 
 ## Guías esenciales
 
@@ -35,13 +75,7 @@ Los precios, condiciones y exclusiones vigentes deben comprobarse siempre en la 
 - [Gastos deducibles de autónomos](https://clavia.es/blog/gastos-deducibles-autonomos-2026)
 - [Cuánto cuesta ser autónomo](https://clavia.es/blog/cuanto-cuesta-ser-autonomo-2026)
 - [Verifactu y facturación](https://clavia.es/blog/verifactu-factura-electronica-autonomos)
-
-## Especialidades
-
-- [Freelances digitales](https://clavia.es/especialidades/freelances-digitales)
-- [Músicos y artistas](https://clavia.es/especialidades/musicos-artistas)
-- [Influencers y creadores](https://clavia.es/especialidades/influencers)
-- [Autónomos con clientes extranjeros](https://clavia.es/especialidades/nomadas-digitales)
+- [Facturación a clientes en Latinoamérica](https://clavia.es/especialidades/clientes-latinoamerica)
 
 ## Criterio editorial
 
