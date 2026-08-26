@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consulta gratuita · Clavia</title>
+  <meta name="description" content="Cuéntanos tu situación como autónomo y te respondemos por email o WhatsApp. Sin compromiso.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260823-2">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root {
+      --cream: #f5f9f6;
+      --panel: #ffffff;
+      --ink: #101828;
+      --ink-soft: #344054;
+      --muted: #667085;
+      --line: rgba(16, 24, 40, .12);
+      --lime: #3d9166;
+      --lime-dark: #256f4b;
+      --danger: #b42318;
+      --radius: 16px;
+      --sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: "Fraunces", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--cream); font-family: var(--sans); }
+    .nav { height: 72px; border-bottom: 1px solid var(--line); display: flex; align-items: center; padding: 0 24px; background: rgba(245,249,246,.92); }
+    .brand { display: inline-flex; align-items: center; gap: 4px; font-family: var(--serif); font-size: 23px; color: var(--ink); text-decoration: none; }
+    .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--lime); margin-bottom: 13px; }
+    .main { width: min(100%, 760px); margin: 0 auto; padding: 56px 24px 88px; }
+    .eyebrow { margin: 0 0 14px; color: var(--lime); letter-spacing: .14em; text-transform: uppercase; font-size: 11px; font-weight: 800; }
+    h1 { margin: 0; max-width: 640px; font-family: var(--serif); font-size: clamp(38px, 6vw, 56px); line-height: 1.03; font-weight: 500; letter-spacing: -.035em; }
+    .intro { max-width: 590px; margin: 18px 0 32px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .card { padding: clamp(24px, 5vw, 40px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: 0 18px 60px rgba(16,24,40,.07); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: grid; gap: 8px; margin-bottom: 18px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: var(--ink-soft); font-size: 14px; font-weight: 700; }
+    label em { color: var(--lime); font-style: normal; }
+    input, select, textarea { width: 100%; min-height: 48px; padding: 12px 13px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--ink); font: inherit; outline: none; transition: border-color .18s, box-shadow .18s; }
+    textarea { min-height: 116px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--lime); box-shadow: 0 0 0 3px rgba(61,145,102,.14); }
+    .consent { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 22px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .consent input { width: 18px; min-height: 18px; margin: 1px 0 0; accent-color: var(--lime); }
+    .consent a { color: var(--ink-soft); font-weight: 700; }
+    .submit { display: inline-flex; width: 100%; min-height: 52px; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 9px; background: var(--lime); color: #fff; cursor: pointer; font: inherit; font-weight: 800; transition: background .18s, transform .18s; }
+    .submit:hover { background: var(--lime-dark); transform: translateY(-1px); }
+    .submit:disabled { cursor: wait; opacity: .68; transform: none; }
+    .result { display: none; margin-top: 18px; padding: 13px 15px; border-radius: 9px; font-size: 14px; line-height: 1.5; }
+    .result.ok { display: block; color: #075b35; background: #eaf8ef; border: 1px solid #b6dfc5; }
+    .result.error { display: block; color: var(--danger); background: #fef3f2; border: 1px solid #fecdca; }
+    .fineprint { margin: 22px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; text-align: center; }
+    @media (max-width: 620px) { .main { padding-top: 40px; } .grid { grid-template-columns: 1fr; gap: 0; } }
+  </style>
+  <!--
+    Real site-wide attribution + Google tag script (assets/clavia-tracking.js), same
+    one used across clavia.es. It captures gclid/utm/referrer into localStorage on
+    landing (config-only — this does NOT fire any conversion) and exposes
+    ClaviaTracking.attribution() so the real captured source travels with this lead,
+    instead of a hardcoded placeholder.
+  -->
+  <script src="/assets/clavia-tracking.js?v=20260826-1"></script>
+  <script>ClaviaTracking.init({trackClicks:true})</script>
+</head>
+<body>
+  <nav class="nav"><a class="brand" href="/"><span>clavia</span><span class="dot"></span></a></nav>
+  <main class="main">
+    <p class="eyebrow">Consulta gratuita · sin compromiso</p>
+    <h1>Cuéntanos tu caso.</h1>
+    <p class="intro">Escríbenos tu situación y te respondemos por email o WhatsApp con orientación clara, sin tecnicismos. No hace falta que sepas qué plan necesitas todavía.</p>
+
+    <section class="card" aria-labelledby="form-title">
+      <form id="consulta-form" novalidate>
+        <div class="grid">
+          <div class="field full">
+            <label for="name">¿Cómo te llamas? <em>*</em></label>
+            <input id="name" name="name" autocomplete="name" required maxlength="120" placeholder="Ana García López">
+          </div>
+          <div class="field">
+            <label for="email">Email <em>*</em></label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="ana@ejemplo.com">
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono <span style="color:var(--muted);font-weight:600">(opcional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="600 000 000">
+          </div>
+          <div class="field full">
+            <label for="activity">¿A qué te dedicas? <em>*</em></label>
+            <input id="activity" name="activity" required maxlength="300" placeholder="Por ejemplo, consultoría, diseño, comercio, música…">
+          </div>
+          <div class="field full">
+            <label for="current_status">¿Cuál es tu situación? <em>*</em></label>
+            <select id="current_status" name="current_status" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Ya soy autónomo">Ya soy autónomo</option>
+              <option value="Voy a darme de alta">Voy a darme de alta</option>
+              <option value="Solo necesito orientación">Solo necesito orientación</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="notes">¿Hay algo concreto que quieras contarnos? <em>*</em></label>
+            <textarea id="notes" name="notes" required minlength="15" maxlength="4000" placeholder="Cuéntanos brevemente qué necesitas y qué dudas tienes (mínimo unas palabras, para poder ayudarte bien)."></textarea>
+          </div>
+        </div>
+        <label class="consent"><input id="privacy_accepted" name="privacy_accepted" type="checkbox" required><span>He leído y acepto la <a href="/privacidad.html">política de privacidad</a> para que Clavia pueda atender esta consulta.</span></label>
+        <button class="submit" id="submit" type="submit">Enviar mi consulta <span>→</span></button>
+        <p class="result" id="result" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <p class="fineprint">Respondemos en horario laboral, normalmente el mismo día. Tus datos solo se usan para atender tu consulta.</p>
+  </main>
+
+  <script>
+    const ENDPOINT = "https://clavia-leads-api.noisy-sea-21c2.workers.dev/api/leads";
+
+    const form = document.getElementById("consulta-form");
+    const button = document.getElementById("submit");
+    const result = document.getElementById("result");
+
+    function showResult(type, message) {
+      result.className = `result ${type}`;
+      result.textContent = message;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      result.className = "result";
+      if (!form.reportValidity()) return;
+
+      const formData = new FormData(form);
+      const attribution = (window.ClaviaTracking && window.ClaviaTracking.attribution)
+        ? window.ClaviaTracking.attribution()
+        : { lead_source: "consulta_directa" };
+
+      const payload = {
+        diagnostic: false,
+        form_version: "consulta-v1",
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        activity: formData.get("activity"),
+        current_status: formData.get("current_status"),
+        notes: formData.get("notes"),
+        privacy_accepted: formData.get("privacy_accepted") === "on",
+        attribution
+      };
+
+      button.disabled = true;
+      button.textContent = "Enviando…";
+      try {
+        const response = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        if (response.status !== 201 && response.status !== 200) {
+          throw new Error(data.error || "No se pudo enviar tu consulta.");
+        }
+        // The form never fires a conversion itself. It only navigates to the success
+        // page carrying lead_id + conversion_token; gracias.html is what confirms with
+        // the server and decides whether to fire the tag.
+        const params = new URLSearchParams();
+        params.set("lead_id", data.lead_id);
+        if (data.conversion_token) params.set("conversion_token", data.conversion_token);
+        window.location.href = `gracias.html?${params.toString()}`;
+      } catch (error) {
+        showResult("error", error.message || "Error de red. Inténtalo de nuevo.");
+        button.disabled = false;
+        button.innerHTML = "Enviar mi consulta <span>→</span>";
+      }
+    });
+  </script>
+</body>
+</html>

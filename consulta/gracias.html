@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>¡Recibido! · Clavia</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260823-2">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root {
+      --cream: #f5f9f6; --panel: #ffffff; --ink: #101828; --muted: #667085;
+      --line: rgba(16, 24, 40, .12); --lime: #3d9166;
+      --sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+      --serif: "Fraunces", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--cream); font-family: var(--sans); display: flex; flex-direction: column; }
+    .nav { height: 72px; border-bottom: 1px solid var(--line); display: flex; align-items: center; padding: 0 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 4px; font-family: var(--serif); font-size: 23px; color: var(--ink); text-decoration: none; }
+    .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--lime); margin-bottom: 13px; }
+    .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 56px 24px; text-align: center; }
+    .card { max-width: 520px; }
+    h1 { font-family: var(--serif); font-size: clamp(34px, 5vw, 48px); font-weight: 500; margin: 0 0 16px; }
+    p { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 0 8px; }
+    #status { margin-top: 24px; font-size: 12px; color: var(--muted); }
+  </style>
+  <!--
+    Real gtag.js, same as index.html: config-only load so the gclid captured on the
+    landing page can be matched to this conversion. The event ITSELF only fires after
+    the server (handleConfirm in worker.js) validates lead_id + conversion_token as
+    real, unused, and not expired.
+  -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17976955492"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "AW-17976955492");
+  </script>
+</head>
+<body>
+  <nav class="nav"><a class="brand" href="/"><span>clavia</span><span class="dot"></span></a></nav>
+  <main class="main">
+    <div class="card">
+      <h1>¡Recibido!</h1>
+      <p>Hemos guardado tu consulta correctamente. Te responderemos por email o WhatsApp, normalmente el mismo día.</p>
+      <p id="status"></p>
+    </div>
+  </main>
+
+  <script>
+    const CONFIRM_ENDPOINT = "https://clavia-leads-api.noisy-sea-21c2.workers.dev/api/leads/confirm";
+    const statusEl = document.getElementById("status");
+
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const leadId = params.get("lead_id");
+      const conversionToken = params.get("conversion_token");
+
+      // A bare visit to this page (no params, or a manual reload without the real
+      // params) must never be able to represent a lead or fire a conversion.
+      if (!leadId || !conversionToken) return;
+
+      try {
+        const response = await fetch(CONFIRM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lead_id: leadId, conversion_token: conversionToken })
+        });
+        const data = await response.json();
+
+        if (data.should_fire_conversion && data.send_to) {
+          gtag("event", "conversion", { send_to: data.send_to, value: 1, currency: "EUR" });
+          statusEl.textContent = "Confirmado.";
+        }
+      } catch (error) {
+        // Silent by design: the visitor already sees a friendly thank-you regardless.
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -100,11 +100,10 @@
       'a[href^="/empezar"]',
       'a[href^="/contratar"]',
       'a[href^="/tramites"]',
-      'a[href*="tally.so/r/WOo5KN"]'
+      'a[href^="/consulta"]'
     ].join(',');
     document.querySelectorAll(selector).forEach(function(link){
-      var extra = link.href.indexOf('tally.so/r/WOo5KN') !== -1 ? {lead_source:'tally'} : {};
-      link.href = withTracking(link.getAttribute('href'), extra);
+      link.href = withTracking(link.getAttribute('href'), {});
     });
   }
 
