@@ -71,7 +71,12 @@
         const data = await response.json();
 
         if (data.should_fire_conversion && data.send_to) {
-          gtag("event", "conversion", { send_to: data.send_to, value: 1, currency: "EUR" });
+          // Google requires user-provided data to be set before the conversion event.
+          // The Worker returns only SHA-256 hashed values; no PII is exposed here.
+          if (data.user_data) {
+            gtag("set", "user_data", data.user_data);
+          }
+          gtag("event", "conversion", { send_to: data.send_to });
           statusEl.textContent = "Confirmado.";
         }
       } catch (error) {

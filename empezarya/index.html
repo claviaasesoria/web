@@ -8,6 +8,8 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260823-2">
   <link rel="apple-touch-icon" href="/assets/favicon.svg?v=20260823-2">
   <link rel="stylesheet" href="/fonts/fonts.css">
+  <script src="/assets/clavia-tracking.js?v=20260826-1"></script>
+  <script>ClaviaTracking.init({trackClicks:true})</script>
   <style>
     :root{
       --ink:#101828; --ink-soft:#344054; --muted:#667085; --line:#dde3ea;
@@ -351,6 +353,7 @@
         lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
         victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
         notes:value('#notes',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
+        attribution:(window.ClaviaTracking&&window.ClaviaTracking.attribution)?window.ClaviaTracking.attribution():{lead_source:'contratacion_directa'},
       };
     }
     async function startSignwellContract(){
@@ -367,6 +370,7 @@
         const data=await response.json();
         if(!response.ok)throw new Error(data.error||'No se pudo generar el documento. Inténtalo de nuevo.');
         signingUrl=data.signingUrl;
+        if(data.documentId) localStorage.setItem('clavia_pending_contract_document_id',data.documentId);
         if(popup)popup.location.href=signingUrl; else window.location.href=signingUrl;
         $('#testDocumentId').textContent=`Documento ${data.documentId}`;
         show(5);

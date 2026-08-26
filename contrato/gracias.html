@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Contrato recibido · Clavia</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260823-2">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root{--canvas:#f5f9f6;--ink:#101828;--muted:#667085;--lime:#3d9166;--serif:"Fraunces",Georgia,serif;--sans:"Plus Jakarta Sans",system-ui,sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--canvas);color:var(--ink);font-family:var(--sans);display:grid;place-items:center;padding:24px}.card{max-width:620px;background:#fff;border:1px solid rgba(16,24,40,.12);border-radius:18px;padding:clamp(28px,6vw,56px);box-shadow:0 22px 55px rgba(16,24,40,.08)}.mark{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--lime);font-size:25px;margin-bottom:24px}h1{font-family:var(--serif);font-size:clamp(38px,6vw,58px);font-weight:500;line-height:1;letter-spacing:-.04em;margin:0 0 18px}p{color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 10px}#status{font-size:13px;margin-top:22px}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17976955492"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","AW-17976955492");</script>
+</head>
+<body>
+  <main class="card">
+    <div class="mark">✓</div>
+    <h1>Gracias por firmar.</h1>
+    <p>Hemos recibido tu firma. Revisaremos el encargo y te escribiremos con los siguientes pasos.</p>
+    <p id="status" aria-live="polite">Comprobando el estado del documento…</p>
+  </main>
+  <script>
+    const STATUS_ENDPOINT = "https://clavia-contratacion.noisy-sea-21c2.workers.dev/api/contract/status";
+    const statusEl = document.getElementById("status");
+    const params = new URLSearchParams(location.search);
+    const documentId = params.get("document_id") || localStorage.getItem("clavia_pending_contract_document_id");
+
+    async function checkStatus(attempt = 0) {
+      if (!documentId) {
+        statusEl.textContent = "Firma recibida. Puedes cerrar esta ventana.";
+        return;
+      }
+      try {
+        const response = await fetch(`${STATUS_ENDPOINT}?document_id=${encodeURIComponent(documentId)}`);
+        const data = await response.json();
+        if (data.status === "completed" && data.should_fire_conversion && data.send_to) {
+          if (data.user_data) gtag("set", "user_data", data.user_data);
+          gtag("event", "conversion", { send_to: data.send_to });
+          statusEl.textContent = "Contrato firmado y registrado correctamente.";
+          localStorage.removeItem("clavia_pending_contract_document_id");
+          return;
+        }
+        if (data.status === "completed") {
+          statusEl.textContent = data.reason === "conversion_not_configured"
+            ? "Contrato firmado correctamente. La medición publicitaria está pendiente de configuración."
+            : "Contrato firmado y registrado correctamente.";
+          return;
+        }
+        if (attempt < 10) {
+          statusEl.textContent = "Firma recibida; terminando de sincronizar…";
+          setTimeout(() => checkStatus(attempt + 1), 2000);
+          return;
+        }
+        statusEl.textContent = "Firma recibida. La sincronización terminará automáticamente.";
+      } catch {
+        if (attempt < 10) setTimeout(() => checkStatus(attempt + 1), 2000);
+        else statusEl.textContent = "Firma recibida. Puedes cerrar esta ventana.";
+      }
+    }
+    checkStatus();
+  </script>
+</body>
+</html>
