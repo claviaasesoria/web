@@ -35,17 +35,9 @@
       try {
         const response = await fetch(`${STATUS_ENDPOINT}?document_id=${encodeURIComponent(documentId)}`);
         const data = await response.json();
-        if (data.status === "completed" && data.should_fire_conversion && data.send_to) {
-          if (data.user_data) gtag("set", "user_data", data.user_data);
-          gtag("event", "conversion", { send_to: data.send_to });
+        if (data.status === "completed") {
           statusEl.textContent = "Contrato firmado y registrado correctamente.";
           localStorage.removeItem("clavia_pending_contract_document_id");
-          return;
-        }
-        if (data.status === "completed") {
-          statusEl.textContent = data.reason === "conversion_not_configured"
-            ? "Contrato firmado correctamente. La medición publicitaria está pendiente de configuración."
-            : "Contrato firmado y registrado correctamente.";
           return;
         }
         if (attempt < 10) {
