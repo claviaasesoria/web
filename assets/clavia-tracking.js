@@ -74,6 +74,9 @@
       var sessionStored = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
       stored = Object.assign({}, stored, sessionStored);
     } catch(e){}
+    var consentGranted = localStorage.getItem('clavia_consent') === 'accepted';
+    stored.ad_user_data_consent = consentGranted ? 'granted' : 'denied';
+    stored.ad_personalization_consent = consentGranted ? 'granted' : 'denied';
     return clean(stored);
   }
 
