@@ -48,7 +48,7 @@ Los precios, condiciones y exclusiones vigentes deben comprobarse siempre en la 
 No. Los servicios B2B a empresas extracomunitarias no están sujetos a IVA español (art. 69.Uno.1º LIVA). La factura se emite sin IVA con mención expresa a dicho artículo. No hay Modelo 349 para estas operaciones (el 349 es solo para países de la UE).
 
 **¿Me pueden retener impuestos en origen si facturo desde España a Latinoamérica?**
-España tiene convenios de doble imposición (CDI) con Chile (2004), México (1994), Colombia (2008) y Argentina (1994), entre otros. Si eres residente fiscal en España y no tienes establecimiento permanente en el país del cliente, los ingresos tributan solo en España. Para que el cliente no aplique retención local, se necesita un Certificado de Residencia Fiscal expedido por la AEAT (gratuito). En Clavia ayudamos a obtenerlo y explicamos al cliente cómo usarlo.
+España tiene convenios de doble imposición (CDI) con Chile (2004), México (1994), Colombia (2008) y Argentina (2013), entre otros. Si eres residente fiscal en España y no tienes establecimiento permanente en el país del cliente, los ingresos tributan solo en España. Para que el cliente no aplique retención local, se necesita un Certificado de Residencia Fiscal expedido por la AEAT (gratuito). En Clavia ayudamos a obtenerlo y explicamos al cliente cómo usarlo.
 
 **¿Qué modelos presenta un autónomo que factura solo a clientes extranjeros?**
 Modelo 303 (IVA trimestral, aunque la mayoría de ingresos sean sin IVA), Modelo 130 (IRPF fraccionado trimestral), y los resúmenes anuales 390, 190 y 347 si corresponde. El Modelo 349 solo si hay operaciones con empresas de la UE.
@@ -57,7 +57,7 @@ Modelo 303 (IVA trimestral, aunque la mayoría de ingresos sean sin IVA), Modelo
 El alta en Hacienda (Modelo 036) y en la Seguridad Social (RETA) tiene un coste único de 49 EUR + IVA. La gestión mensual posterior parte de 39 EUR + IVA/mes (Plan Básico Digital). No hay permanencia.
 
 **¿Cuándo conviene pasar de autónomo a Sociedad Limitada (SL)?**
-No hay una cifra única. Depende del beneficio neto, de cuánto necesita sacar el autónomo para vivir y de si puede acumular beneficio dentro de la sociedad. Como autónomo nuevo, aplica además una reducción del 20% sobre el rendimiento neto en IRPF durante los dos primeros años con beneficio positivo (art. 32.2 LIRPF), lo que hace que la opción de autónomo sea especialmente ventajosa al inicio. En Clavia revisamos la estructura cuando hay datos reales de actividad.
+No hay una cifra única. Depende del beneficio neto, de cuánto necesita sacar el autónomo para vivir y de si puede acumular beneficio dentro de la sociedad. Como autónomo nuevo, aplica además una reducción del 20% sobre el rendimiento neto en IRPF durante los dos primeros años con beneficio positivo (art. 32.3 LIRPF), lo que hace que la opción de autónomo sea especialmente ventajosa al inicio. En Clavia revisamos la estructura cuando hay datos reales de actividad.
 
 **¿La Declaración de la Renta está incluida en el plan mensual?**
 En el Plan Básico Digital no está incluida (se presupuesta aparte desde 65 EUR + IVA). En el Plan Avanzado (59 EUR + IVA/mes) está incluida a partir de la 3ª mensualidad abonada en el ejercicio.
