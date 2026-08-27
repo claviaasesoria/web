@@ -77,6 +77,10 @@ En el Plan Básico Digital no está incluida (se presupuesta aparte desde 65 EUR
 - [Verifactu y facturación](https://clavia.es/blog/verifactu-factura-electronica-autonomos)
 - [Facturación a clientes en Latinoamérica](https://clavia.es/especialidades/clientes-latinoamerica)
 
+## Cobertura geográfica
+
+Clavia gestiona autónomos en régimen común de IVA (Modelo 303) e IRPF estatal. **Fuera de ámbito:** Canarias (IGIC, modelos 420/425), Ceuta y Melilla (IPSI), y territorios forales de Navarra y País Vasco (TicketBAI/Haciendas Forales) — estas consultas se derivan.
+
 ## Criterio editorial
 
 Las guías de Clavia son contenido informativo general y no sustituyen el análisis individual. La información fiscal sensible a cambios se contrasta con fuentes oficiales como AEAT, Seguridad Social, BOE y normativa autonómica. La identidad editorial pública del responsable es Juan Redondo. Los datos legalmente exigibles se encuentran en el aviso legal y en la documentación contractual.
