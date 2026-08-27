@@ -1,0 +1,170 @@
+{
+  "home": {
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://clavia.es/#organization",
+      "name": "Clavia",
+      "alternateName": "Clavia · Gestoría Online para Autónomos",
+      "description": "Gestoría fiscal y contable 100% online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA/mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
+      "url": "https://clavia.es",
+      "logo": "https://clavia.es/assets/favicon.svg",
+      "email": "info@clavia.es",
+      "telephone": "+34 634 450 038",
+      "areaServed": [
+        {"@type": "Country", "name": "ES"},
+        {"@type": "City", "name": "Valencia"},
+        {"@type": "AdministrativeArea", "name": "Comunitat Valenciana"},
+        {"@type": "AdministrativeArea", "name": "Horta Nord"},
+        {"@type": "City", "name": "Burjassot"},
+        {"@type": "City", "name": "Moncada"},
+        {"@type": "City", "name": "Rafelbunyol"},
+        {"@type": "City", "name": "El Puig de Santa Maria"},
+        {"@type": "City", "name": "Godella"},
+        {"@type": "City", "name": "Massamagrell"}
+      ],
+      "serviceType": [
+        "Gestoría fiscal",
+        "Gestoría online autónomos",
+        "Contabilidad para autónomos",
+        "Declaración de IVA",
+        "Declaración de IRPF",
+        "Declaración de la Renta",
+        "Asesoría fiscal autónomos"
+      ],
+      "priceRange": "39€–59€ + IVA/mes",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valencia",
+        "addressRegion": "Comunitat Valenciana",
+        "addressCountry": "ES"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://clavia.es/#juan-redondo",
+        "name": "Juan Redondo",
+        "url": "https://clavia.es/autor/juan-redondo"
+      },
+      "sameAs": [
+        "https://wa.me/34634450038",
+        "mailto:info@clavia.es"
+      ]
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://clavia.es"}
+      ]
+    }
+  },
+  "blog_post": {
+    "template": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": "{CANONICAL_URL}#blogposting",
+      "headline": "{TITLE}",
+      "description": "{DESCRIPTION}",
+      "image": "https://clavia.es/social.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://clavia.es/#juan-redondo",
+        "name": "Juan Redondo",
+        "url": "https://clavia.es/autor/juan-redondo",
+        "sameAs": ["https://wa.me/34634450038"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://clavia.es/#organization",
+        "name": "Clavia",
+        "url": "https://clavia.es",
+        "logo": {"@type": "ImageObject", "url": "https://clavia.es/assets/favicon.svg"}
+      },
+      "datePublished": "{DATE_PUBLISHED}",
+      "dateModified": "{DATE_MODIFIED}",
+      "mainEntityOfPage": "{CANONICAL_URL}",
+      "keywords": "{KEYWORDS}",
+      "articleSection": "Fiscalidad para autónomos",
+      "inLanguage": "es-ES",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".art-summary", ".art-hero h1"]
+      }
+    },
+    "faq": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": []
+    }
+  },
+  "service_page": {
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "{CANONICAL_URL}#service",
+      "name": "{SERVICE_NAME}",
+      "description": "{DESCRIPTION}",
+      "provider": {"@id": "https://clavia.es/#organization"},
+      "areaServed": [
+        {"@type": "Country", "name": "ES"},
+        {"@type": "City", "name": "Valencia"},
+        {"@type": "AdministrativeArea", "name": "Comunitat Valenciana"},
+        {"@type": "AdministrativeArea", "name": "Horta Nord"}
+      ],
+      "serviceType": "Gestoría fiscal online para autónomos",
+      "offers": {
+        "@type": "Offer",
+        "name": "Plan Básico Digital",
+        "price": "39",
+        "priceCurrency": "EUR",
+        "priceSpecification": "IVA no incluido",
+        "availability": "https://schema.org/InStock",
+        "url": "https://clavia.es/empezar"
+      },
+      "category": "Servicios fiscales para autónomos",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://clavia.es/empezar",
+        "servicePhone": "+34 634 450 038",
+        "availableLanguage": "es-ES"
+      }
+    }
+  },
+  "local_business": {
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://clavia.es/#localbusiness",
+      "name": "Clavia · Gestoría Online para Autónomos",
+      "description": "Gestoría fiscal y contable online para autónomos con sede en Valencia.",
+      "url": "https://clavia.es",
+      "telephone": "+34 634 450 038",
+      "email": "info@clavia.es",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Valencia",
+        "addressRegion": "Comunitat Valenciana",
+        "postalCode": "46000",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.4699",
+        "longitude": "-0.3763"
+      },
+      "areaServed": {
+        "@type": "GeoShape",
+        "addressCountry": "ES"
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}
+      ],
+      "priceRange": "39€–59€ + IVA/mes",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Transferencia bancaria, Domiciliación SEPA, Tarjeta",
+      "sameAs": ["https://wa.me/34634450038", "mailto:info@clavia.es"]
+    }
+  }
+}

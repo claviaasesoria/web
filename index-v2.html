@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Clavia · Gestoría Online para Autónomos</title>
+<meta name="robots" content="noindex">
 <link rel="canonical" href="https://clavia.es/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://clavia.es/">
@@ -17,20 +18,20 @@
 <meta name="twitter:description" content="Hacienda no debería ser un problema. Gestoría online para autónomos desde 39€ + IVA al mes, sin permanencia y con alcance claro.">
 <meta name="twitter:image" content="https://clavia.es/social.png">
 <meta name="description" content="Gestoría online para autónomos. Hacienda no debería ser un problema: IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes.">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260823-2">
-<link rel="apple-touch-icon" href="/assets/favicon.svg?v=20260823-2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23fdf0e8'/><text x='258' y='348' font-family='Georgia,serif' font-size='310' fill='%231c0e08' text-anchor='middle'>c</text><circle cx='368' cy='118' r='44' fill='%232d6a4f'/></svg>">
 <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeP2Xz5fU8w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root {
-  --cream:#f5f9f6; --cream2:#f0faf4; --cream3:#dde3ea;
-  --forest:#101828; --forest2:#344054;
-  --sage:#3D9166; --sage-lo:rgba(61,145,102,.12); --sage-bd:rgba(61,145,102,.28);
-  --coral:#6FC194; --coral2:#8ed4ab; --coral-lo:rgba(111,193,148,.1);
-  --ink:#101828; --ink2:#344054;
-  --grey:#667085; --grey2:#98a2b3;
-  --line:rgba(16,24,40,.1); --line-inv:rgba(255,255,255,.12);
+  --cream:#fdf0e8; --cream2:#f5e2d0; --cream3:#e8cdb4;
+  --forest:#1c1410; --forest2:#7c3a2d;
+  --sage:#2d6a4f; --sage-lo:rgba(45,106,79,.12); --sage-bd:rgba(45,106,79,.28);
+  --coral:#e8532a; --coral2:#f06030; --coral-lo:rgba(232,83,42,.1);
+  --ink:#1c0e08; --ink2:#3d2418;
+  --grey:#7a5545; --grey2:#aa8878;
+  --line:rgba(28,14,8,.1); --line-inv:rgba(255,255,255,.12);
   --serif:'Fraunces',Georgia,serif;
   --sans:'Plus Jakarta Sans',system-ui,sans-serif;
   --mono:'JetBrains Mono',monospace;
@@ -52,7 +53,7 @@ body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
 .js-ready .rv{opacity:0;transform:translateY(20px)}
 .js-ready .rv.on{opacity:1;transform:translateY(0)}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 0;transition:all .3s;border-bottom:1px solid transparent}
-nav.stuck{background:rgba(245,249,246,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
+nav.stuck{background:rgba(253,240,232,.92);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
 .nav-row{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:4px;text-decoration:none}
 .logo-text{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-.3px;line-height:1}
@@ -103,14 +104,14 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .hero h1 .hi::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--coral);border-radius:2px}
 .hero-p{font-size:17px;color:var(--grey);line-height:1.7;font-weight:400;max-width:460px;margin-bottom:36px}
 .hero-btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:40px}
-.btn-coral{background:var(--coral);color:#fff;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(111,193,148,.3)}
-.btn-coral:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(111,193,148,.38)}
+.btn-coral{background:var(--coral);color:#fff;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:700;border:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,83,42,.3)}
+.btn-coral:hover{background:var(--coral2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,83,42,.38)}
 .btn-outline{background:transparent;color:var(--ink2);padding:14px 24px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid var(--line);display:inline-flex;align-items:center;gap:6px;transition:all .2s}
 .btn-outline:hover{border-color:var(--ink);color:var(--ink);gap:10px}
 .trust{display:flex;flex-wrap:wrap;gap:20px}
 .trust-i{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--grey2)}
 .trust-i .dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0}
-.hero-card{background:linear-gradient(rgba(255,255,255,.04),rgba(255,255,255,.04)),var(--forest);border:1px solid rgba(255,255,255,.08);border-radius:var(--rrr);padding:36px;position:relative;overflow:hidden;animation:fadeUp .9s .2s both;box-shadow:0 32px 72px rgba(22,40,30,.25)}
+.hero-card{background:linear-gradient(rgba(255,255,255,.04),rgba(255,255,255,.04)),var(--forest);border:1px solid rgba(255,255,255,.08);border-radius:var(--rrr);padding:36px;position:relative;overflow:hidden;animation:fadeUp .9s .2s both;box-shadow:0 32px 72px rgba(30,58,34,.25)}
 .hero-card::before{display:none}
 .hc-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
 .hc-price{font-family:var(--serif);font-size:72px;font-weight:400;color:#fff;line-height:1;margin-bottom:4px}
@@ -119,7 +120,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .hc-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
 .hc-feats li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75)}
 .hc-feats li::before{content:'';width:18px;height:18px;border-radius:50%;background:rgba(0,192,122,.25);border:1px solid rgba(0,192,122,.4);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2300c07a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.hc-cta{width:100%;padding:14px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(111,193,148,.35)}
+.hc-cta{width:100%;padding:14px;background:var(--coral);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:700;font-family:var(--sans);transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(232,83,42,.35)}
 .hc-cta:hover{background:var(--coral2);transform:translateY(-1px)}
 .hc-note{text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:10px;font-family:var(--mono)}
 .hero-card .plan-tier{margin-bottom:22px;color:rgba(255,255,255,.3)}
@@ -158,7 +159,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .pricing .eyebrow{color:rgba(255,255,255,.4)}
 .pricing .eyebrow::before{background:rgba(255,255,255,.3)}
 .pricing h2{color:#fff}
-.pricing h2 em{color:rgba(61,145,102,.9)}
+.pricing h2 em{color:rgba(45,106,79,.9)}
 .pricing .section-header p{color:rgba(255,255,255,.5)}
 .plans-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:52px auto 0;max-width:860px}
 .plan{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--rr);padding:36px 30px;transition:background .25s,transform .25s;position:relative}
@@ -182,7 +183,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .plan.hi .ck{background-color:rgba(0,192,122,.15);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%230e6644' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
 .plan-btn{width:100%;padding:12px;border-radius:var(--r);font-size:14px;font-weight:600;font-family:var(--sans);border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.6);transition:all .2s}
 .plan-btn:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25)}
-.plan.hi .plan-btn{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(111,193,148,.3)}
+.plan.hi .plan-btn{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,83,42,.3)}
 .plan.hi .plan-btn:hover{background:var(--coral2)}
 .puntual-block{margin-top:56px;padding-top:48px;border-top:1px solid rgba(255,255,255,.08)}
 .puntual-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border-radius:var(--rr);overflow:hidden;margin-top:28px}
@@ -220,11 +221,11 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .erp-left h2 em{font-style:italic;color:var(--forest2)}
 .erp-left p{font-size:15px;color:var(--grey);line-height:1.8;margin-bottom:16px}
 .erp-feats{list-style:none;margin:24px 0 0}
-.erp-feats li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(16,24,40,.07);font-size:14px;color:var(--grey)}
+.erp-feats li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(28,20,16,.07);font-size:14px;color:var(--grey)}
 .erp-feats li:last-child{border-bottom:none}
-.erp-feats .ef-ico{width:28px;height:28px;border-radius:6px;background:rgba(52,64,84,.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px}
+.erp-feats .ef-ico{width:28px;height:28px;border-radius:6px;background:rgba(124,58,45,.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px}
 .erp-feats strong{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
-.erp-screen{background:var(--forest);border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(16,24,40,.2);border:1px solid rgba(255,255,255,.06)}
+.erp-screen{background:var(--forest);border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(28,20,16,.2);border:1px solid rgba(255,255,255,.06)}
 .erp-bar{background:rgba(255,255,255,.05);padding:10px 16px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,.06)}
 .erp-dot{width:10px;height:10px;border-radius:50%}
 .erp-url{flex:1;background:rgba(255,255,255,.07);border-radius:4px;padding:4px 10px;margin-left:8px;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.5px}
@@ -244,11 +245,11 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .erp-table-row span:first-child{color:rgba(255,255,255,.4)}
 .erp-table-row span:last-child{color:#fff;font-family:var(--mono)}
 .sobre{padding:100px 0;background:var(--forest);position:relative;overflow:hidden}
-.sobre::before{content:'';position:absolute;top:-120px;left:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(61,145,102,.08) 0%,transparent 65%);pointer-events:none}
-.sobre::after{content:'';position:absolute;bottom:-80px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(111,193,148,.06) 0%,transparent 65%);pointer-events:none}
+.sobre::before{content:'';position:absolute;top:-120px;left:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.08) 0%,transparent 65%);pointer-events:none}
+.sobre::after{content:'';position:absolute;bottom:-80px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(232,83,42,.06) 0%,transparent 65%);pointer-events:none}
 .sobre-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;position:relative;z-index:1}
 .sobre-left{position:sticky;top:120px}
-.sobre-avatar{width:64px;height:64px;border-radius:50%;background:rgba(111,193,148,.12);border:1.5px solid rgba(232,83,42,.22);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;color:var(--coral);margin-bottom:22px;font-style:italic}
+.sobre-avatar{width:64px;height:64px;border-radius:50%;background:rgba(232,83,42,.12);border:1.5px solid rgba(232,83,42,.22);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;color:var(--coral);margin-bottom:22px;font-style:italic}
 .sobre-left h2{font-family:var(--serif);font-size:clamp(28px,3vw,40px);color:#fff;font-weight:400;line-height:1.1;margin-bottom:10px}
 .sobre-tagline{font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:24px;font-style:italic}
 .sobre-firma{font-family:var(--serif);font-size:21px;color:rgba(255,255,255,.75);font-style:italic;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
@@ -273,7 +274,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .frow.open .fa{max-height:300px;padding-bottom:20px}
 .contact{padding:100px 0 0}
 .contact-inner{background:var(--forest);border-radius:var(--rrr) var(--rrr) 0 0;padding:72px 72px 80px;position:relative;overflow:hidden}
-.contact-inner::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(111,193,148,.12) 0%,transparent 65%);pointer-events:none}
+.contact-inner::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,83,42,.12) 0%,transparent 65%);pointer-events:none}
 .contact-inner::after{content:'';position:absolute;bottom:-100px;left:60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,192,122,.08) 0%,transparent 65%);pointer-events:none}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .contact-inner .eyebrow{color:rgba(255,255,255,.35)}
@@ -312,8 +313,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "@id": "https://clavia.es/#organization",
+  "@type": "ProfessionalService",
   "name": "Clavia",
   "description": "Gestoría fiscal y contable online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA al mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
   "url": "https://clavia.es",
@@ -340,82 +340,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     "addressRegion": "Comunitat Valenciana",
     "addressCountry": "ES"
   },
-  "founder": {
-    "@type": "Person",
-    "@id": "https://clavia.es/#juan-redondo",
-    "name": "Juan Redondo",
-    "url": "https://clavia.es/autor/juan-redondo"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Inicio",
-      "item": "https://clavia.es"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://clavia.es/#localbusiness",
-  "name": "Clavia · Gestoría Online para Autónomos",
-  "description": "Gestoría fiscal y contable online para autónomos con sede en Valencia.",
-  "url": "https://clavia.es",
-  "telephone": "+34 634 450 038",
-  "email": "info@clavia.es",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "",
-    "addressLocality": "Valencia",
-    "addressRegion": "Comunitat Valenciana",
-    "postalCode": "46000",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "39.4699",
-    "longitude": "-0.3763"
-  },
-  "areaServed": {
-    "@type": "GeoShape",
-    "addressCountry": "ES"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "14:00"
-    }
-  ],
-  "priceRange": "39€–59€ + IVA/mes",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Transferencia bancaria, Domiciliación SEPA, Tarjeta",
-  "sameAs": [
-    "https://wa.me/34634450038",
-    "mailto:info@clavia.es"
-  ]
+  "sameAs": []
 }
 </script>
 </head>
@@ -423,7 +348,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 <nav id="nav">
   <div class="wrap">
     <div class="nav-row">
-      <a href="/" class="logo">
+      <a href="index-v2.html" class="logo">
         <span class="logo-text">clavia</span>
         <span class="logo-dot"></span>
       </a>
@@ -431,7 +356,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#por-que">Por qué Clavia</a></li>
-        <li><a href="/sobre-clavia">Sobre Clavia</a></li>
+        <li><a href="#sobre-clavia">Sobre Clavia</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/alta-autonomo">Alta autónomo</a></li>
         <li><a href="blog/">Blog</a></li>
@@ -446,7 +371,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   <a href="#como-funciona" onclick="toggleMenu()">Cómo funciona</a>
   <a href="#precios" onclick="toggleMenu()">Precios</a>
   <a href="#por-que" onclick="toggleMenu()">Por qué Clavia</a>
-  <a href="/sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
+  <a href="#sobre-clavia" onclick="toggleMenu()">Sobre Clavia</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="/alta-autonomo" onclick="toggleMenu()">Alta autónomo</a>
   <a href="blog/" onclick="toggleMenu()">Blog</a>
@@ -606,7 +531,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     </div>
     <div style="margin-top:20px;padding:0 4px">
       <p style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.8;font-family:var(--mono)">* Renta incluida en el Plan Avanzado para el ejercicio correspondiente a partir de la 3.ª mensualidad abonada en ese mismo ejercicio. No incluye rentas de ejercicios anteriores al inicio del servicio ni casos con complejidad extraordinaria sin presupuesto previo.<br>** Solo solicitudes de documentación y comprobaciones limitadas sobre modelos gestionados por Clavia. Casos complejos, sanciones, recursos o ejercicios anteriores se presupuestan aparte.</p>
-      <p style="font-size:13px;text-align:center;margin-top:16px"><a href="/autonomos" style="color:rgba(255,255,255,.72);text-decoration:underline;text-underline-offset:4px">Ver la página completa de gestoría online para autónomos</a></p>
     </div>
     <div class="puntual-block rv" style="transition-delay:.25s">
       <div style="text-align:center;margin-bottom:28px">
@@ -615,13 +539,13 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <p style="font-size:14px;color:rgba(255,255,255,.45)">Servicios puntuales para casos concretos, sin suscripción mensual</p>
       </div>
       <div class="puntual-grid">
-        <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€ + IVA</div></div>
-        <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€ + IVA</div></div>
-        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">119€ + IVA</div></div>
-        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+29€ + IVA</div></div>
-        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">desde 65€ + IVA</div></div>
+        <div class="pitem"><div class="pitem-name">Alta en Hacienda (Mod. 036)</div><div class="pitem-price">49€</div></div>
+        <div class="pitem"><div class="pitem-name">Baja o modificación (Mod. 036)</div><div class="pitem-price">39€</div></div>
+        <div class="pitem"><div class="pitem-name">Trimestre suelto (303 + 130)</div><div class="pitem-price">119€</div></div>
+        <div class="pitem"><div class="pitem-name">Modelo adicional (111, 115 o 349)</div><div class="pitem-price">+29€</div></div>
+        <div class="pitem"><div class="pitem-name">Declaración de la Renta</div><div class="pitem-price">desde 65€</div></div>
       </div>
-      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">El trimestre suelto no incluye modelos anuales ni declaraciones informativas posteriores · La Renta varía según complejidad y se confirma antes de empezar</p>
+      <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.28);margin-top:16px;font-family:var(--mono)">Precios + IVA · El trimestre suelto no incluye modelos anuales ni declaraciones informativas posteriores · La Renta varía según complejidad y se confirma antes de empezar</p>
     </div>
   </div>
 </section>
@@ -664,7 +588,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <a href="especialidades/influencers" class="ctag">Influencers y creadores</a>
           <a href="especialidades/freelances-digitales" class="ctag">Freelances digitales</a>
           <a href="especialidades/nomadas-digitales" class="ctag">Nómadas digitales</a>
-          <a href="especialidades/clientes-latinoamerica" class="ctag">Clientes en Latinoamérica</a>
         </div>
       </div>
       <div class="rv" style="transition-delay:.15s">
@@ -685,8 +608,8 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="sobre-avatar">c</div>
         <h2>Una firma con<br>criterio propio</h2>
         <p class="sobre-tagline">Clavia es un despacho independiente de gestión y contabilidad. Trabajamos de forma directa con cada cliente, sin grandes estructuras ni intermediarios.</p>
-        <div class="sobre-firma">Juan Redondo</div>
-        <div class="sobre-cargo">Responsable de Clavia</div>
+        <div class="sobre-firma">Clavia</div>
+        <div class="sobre-cargo">Gestoría online para autónomos</div>
       </div>
       <div class="sobre-texto rv" style="transition-delay:.15s">
         <p>Durante años llevamos desde dentro la gestión económica, contable y administrativa de <strong>proyectos del sector cultural</strong>. No como asesores externos, sino como los responsables de que todo saliera bien: facturas, modelos trimestrales, nóminas, contratos, altas y bajas en Seguridad Social.</p>
@@ -700,7 +623,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         </ul>
         <p><strong>Trabajamos directamente contigo</strong>, con comunicación clara y sin intermediarios. Las dudas que surgen en el día a día se resuelven cuando aparecen.</p>
         <div class="sobre-cta-row">
-          <a href="/sobre-clavia" class="btn-coral">Conoce cómo trabajamos →</a>
+          <a href="#contacto" class="btn-coral">Escríbenos sin compromiso →</a>
         </div>
       </div>
     </div>
@@ -714,19 +637,18 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <div class="eyebrow">Blog fiscal</div>
       <h2>Lo que necesitas saber<br><em>como autónomo</em></h2>
       <p>Guías prácticas sobre impuestos, deducciones y novedades fiscales para autónomos en España. Sin tecnicismos.</p>
-      <a href="/guias-autonomos" class="btn-outline" style="margin-top:20px;display:inline-flex;border-color:var(--line)">Explorar todas las guías →</a>
     </div>
     <!-- Destacados: artículos más recientes -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px">
       <a href="/alta-autonomo" style="background:var(--forest);border-radius:16px;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.25)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);font-weight:700">Alta de autónomo · Guía 2026</div>
         <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;line-height:1.25">Alta de Autónomo 2026: Guía Completa Paso a Paso</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">Modelo 036, alta en el RETA, cuota reducida, posibles ayudas y compatibilidad con el paro. Todo lo que necesitas saber antes de empezar.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">Modelo 036, alta en el RETA, tarifa plana de 80 €/mes, cuota cero y cómo compatibilizar el paro. Todo lo que necesitas saber antes de empezar.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer la guía →</span>
       </a>
       <a href="/blog/impuestos-influencers-creadores-contenido-2026" style="background:var(--forest);border-radius:16px;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.25)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);font-weight:700">Influencers · Creadores · Nuevo</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;line-height:1.25">Impuestos de Influencers y Plataformas Extranjeras</h3>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;line-height:1.25">Impuestos de Influencers: lo que YouTube y Twitch ya le Han Dicho a Hacienda</h3>
         <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">DAC7, IVA con plataformas extranjeras, W-8BEN y gastos deducibles. La guía fiscal completa para creadores de contenido en España.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
       </a>
@@ -736,52 +658,21 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">Más de 1,5 millones de autónomos deben declararlo manualmente. Si confirmas el borrador sin revisarlo, puede costarte dinero.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
       </a>
-      <a href="/blog/verifactu-factura-electronica-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(16,24,40,.1)'" onmouseout="this.style.boxShadow='none'">
+      <a href="/blog/verifactu-factura-electronica-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Facturación · Novedades</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">VeriFactu para Autónomos: Requisitos y Plazos de 2027</h3>
-        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">Qué exige el Reglamento a los sistemas de facturación, a quién afecta y cuándo debe estar adaptado el software.</p>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Verifactu: La Factura Electrónica Obligatoria para Autónomos</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">Excel y las plantillas PDF quedan prohibidas. Qué exige la ley, a quién afecta y qué hacer con tu software ahora.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
       </a>
-      <a href="/blog/cuota-autonomos-2026-ingresos-reales" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(16,24,40,.1)'" onmouseout="this.style.boxShadow='none'">
+      <a href="/blog/cuota-autonomos-2026-ingresos-reales" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.1)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Seguridad Social · Cuota</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Cuota de Autónomos 2026 por Ingresos Reales</h3>
+        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Cuota de Autónomos 2026: Estás Pagando Mal</h3>
         <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">El sistema de ingresos reales lleva 3 años y la mayoría sigue mal configurado. Cómo calcularlo y cuándo cambiarlo.</p>
-        <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
-      </a>
-      <a href="/declaracion-trimestral-autonomos" style="background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(16,24,40,.1)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Trimestres · Modelos</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25">Declaración Trimestral de Autónomos: Modelos y Plazos</h3>
-        <p style="font-size:14px;color:var(--grey);line-height:1.7;flex:1">303, 130, 111, 115 y 349. Qué se presenta cada trimestre y cómo evitar llegar tarde.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
       </a>
     </div>
     <!-- Más artículos -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px">
-      <a href="/modelo-303-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IVA · Modelo 303</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">Modelo 303 para Autónomos: IVA Trimestral</h3>
-        <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
-      </a>
-      <a href="/modelo-130-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IRPF · Modelo 130</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">Modelo 130 para Autónomos: IRPF Trimestral</h3>
-        <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
-      </a>
-      <a href="/modelo-349-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">UE · Modelo 349</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">Modelo 349: Operaciones Intracomunitarias</h3>
-        <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
-      </a>
-      <a href="/modelo-115-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Alquiler · Modelo 115</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">Modelo 115: Retención del Alquiler</h3>
-        <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
-      </a>
-      <a href="/recargo-equivalencia-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">Tiendas · IVA</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">Recargo de Equivalencia para Autónomos</h3>
-        <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
-      </a>
       <a href="/blog/renta-2025-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IRPF · Renta 2025</div>
         <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">La Renta 2025 para Autónomos: el Borrador No Vale Nada</h3>
@@ -789,7 +680,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       </a>
       <a href="/blog/iva-franquiciado-autonomos" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:700">IVA · Actualidad</div>
-        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">IVA Franquiciado: Estado Real en España</h3>
+        <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);line-height:1.3">IVA Franquiciado para Autónomos en 2026</h3>
         <span style="font-size:12px;color:var(--coral);font-weight:600;margin-top:auto">Leer →</span>
       </a>
       <a href="/blog/gastos-deducibles-autonomos-2026" style="background:#fff;border-radius:12px;padding:20px;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(28,14,8,.08)'" onmouseout="this.style.boxShadow='none'">
@@ -890,7 +781,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="/" class="flogo">
+        <a href="index-v2.html" class="flogo">
           <span class="flogo-w">clavia</span>
           <span class="flogo-d"></span>
         </a>
@@ -910,12 +801,10 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         <div class="fh">Empresa</div>
         <ul class="fli">
           <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="/sobre-clavia">Sobre Clavia</a></li>
+          <li><a href="#sobre-clavia">Sobre Clavia</a></li>
           <li><a href="#por-que">Por qué Clavia</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="/blog/">Blog fiscal</a></li>
-          <li><a href="/guias-autonomos">Guías para autónomos</a></li>
-          <li><a href="/gestoria-autonomos-valencia">Gestoría en Valencia</a></li>
         </ul>
       </div>
       <div>
@@ -925,8 +814,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <li><a href="especialidades/freelances-digitales">Freelances digitales</a></li>
           <li><a href="especialidades/influencers">Influencers y creadores</a></li>
           <li><a href="especialidades/nomadas-digitales">Nómadas digitales</a></li>
-          <li><a href="especialidades/clientes-latinoamerica">Clientes en Latinoamérica</a></li>
-          <li><a href="/horta-nord">Autónomos Horta Nord</a></li>
+          <li><a href="horta-nord">Autónomos Horta Nord</a></li>
         </ul>
       </div>
     </div>
