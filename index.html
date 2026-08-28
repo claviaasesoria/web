@@ -338,14 +338,37 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
     "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
     "addressCountry": "ES"
   },
   "founder": {
-    "@type": "Person",
-    "@id": "https://clavia.es/#juan-redondo",
-    "name": "Juan Redondo",
-    "url": "https://clavia.es/autor/juan-redondo"
-  }
+     "@type": "Person",
+     "@id": "https://clavia.es/#juan-redondo",
+     "name": "Juan Redondo",
+     "url": "https://clavia.es/autor/juan-redondo"
+   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "39.4699",
+    "longitude": "-0.3763"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Transferencia bancaria, Domiciliación SEPA, Tarjeta",
+  "sameAs": ["https://wa.me/34634450038","mailto:info@clavia.es"]
 }
 </script>
 <script type="application/ld+json">
@@ -359,62 +382,6 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       "name": "Inicio",
       "item": "https://clavia.es"
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://clavia.es/#localbusiness",
-  "name": "Clavia · Gestoría Online para Autónomos",
-  "description": "Gestoría fiscal y contable online para autónomos con sede en Valencia.",
-  "url": "https://clavia.es",
-  "telephone": "+34 634 450 038",
-  "email": "info@clavia.es",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "",
-    "addressLocality": "Valencia",
-    "addressRegion": "Comunitat Valenciana",
-    "postalCode": "46000",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "39.4699",
-    "longitude": "-0.3763"
-  },
-  "areaServed": {
-    "@type": "GeoShape",
-    "addressCountry": "ES"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "14:00"
-    }
-  ],
-  "priceRange": "39€–59€ + IVA/mes",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Transferencia bancaria, Domiciliación SEPA, Tarjeta",
-  "sameAs": [
-    "https://wa.me/34634450038",
-    "mailto:info@clavia.es"
   ]
 }
 </script>
@@ -883,6 +850,18 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section style="padding:40px 0;background:var(--cream2);border-top:1px solid var(--line)" aria-label="También te puede interesar">
+  <div class="wrap">
+    <h2 style="font-size:18px;margin-bottom:16px">También te puede interesar</h2>
+    <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;list-style:none;padding:0;margin:0">
+      <li><a href="/alta-autonomo/">Cómo darte de alta como autónomo</a></li>
+      <li><a href="/modelo-130-autonomos.html">Modelo 130: pago fraccionado IRPF</a></li>
+      <li><a href="/modelo-303.html">Modelo 303: declaración de IVA</a></li>
+      <li><a href="/blog/cuanto-cuesta-ser-autonomo-2026.html">¿Cuánto cuesta ser autónomo en 2026?</a></li>
+    </ul>
   </div>
 </section>
 
