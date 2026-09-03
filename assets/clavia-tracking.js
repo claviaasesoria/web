@@ -143,7 +143,11 @@
     window.__claviaConfiguredIds = window.__claviaConfiguredIds || {};
     [GA_ID, ADS_ID].forEach(function(id){
       if(!window.__claviaConfiguredIds[id]){
-        gtag('config', id);
+        if(id === ADS_ID){
+          gtag('config', id, {'allow_enhanced_conversions': true});
+        } else {
+          gtag('config', id);
+        }
         window.__claviaConfiguredIds[id] = true;
       }
     });
