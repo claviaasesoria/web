@@ -26,18 +26,12 @@
     #status { margin-top: 24px; font-size: 12px; color: var(--muted); }
   </style>
   <!--
-    Real gtag.js, same as index.html: config-only load so the gclid captured on the
-    landing page can be matched to this conversion. The event ITSELF only fires after
-    the server (handleConfirm in worker.js) validates lead_id + conversion_token as
-    real, unused, and not expired.
+    Initialise the shared tracker before loading Google. It records the visitor's
+    Consent Mode choice first, then configures GA4 and Google Ads. The conversion
+    itself still requires the server to validate lead_id + conversion_token.
   -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17976955492"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "AW-17976955492");
-  </script>
+  <script src="/assets/clavia-tracking.js"></script>
+  <script>window.ClaviaTracking.init();</script>
 </head>
 <body>
   <nav class="nav"><a class="brand" href="/"><span>clavia</span><span class="dot"></span></a></nav>
@@ -72,8 +66,10 @@
 
         if (data.should_fire_conversion && data.send_to) {
           // Google requires user-provided data to be set before the conversion event.
-          // The Worker returns only SHA-256 hashed values; no PII is exposed here.
-          if (data.user_data) {
+          // The Worker returns only SHA-256 hashed values, and Enhanced Conversions
+          // must only receive them after the visitor has granted ad_user_data consent.
+          const attribution = window.ClaviaTracking.attribution();
+          if (data.user_data && attribution.ad_user_data_consent === "granted") {
             gtag("set", "user_data", data.user_data);
           }
           gtag("event", "conversion", { send_to: data.send_to });
