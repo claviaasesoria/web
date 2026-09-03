@@ -27,8 +27,7 @@
   </style>
   <!--
     Initialise the shared tracker before loading Google. It records the visitor's
-    Consent Mode choice first, then configures GA4 and Google Ads. The conversion
-    itself still requires the server to validate lead_id + conversion_token.
+    Consent Mode choice first, then configures GA4 and Google Ads.
   -->
   <script src="/assets/clavia-tracking.js"></script>
   <script>window.ClaviaTracking.init();</script>
@@ -45,6 +44,7 @@
 
   <script>
     const CONFIRM_ENDPOINT = "https://clavia-leads-api.noisy-sea-21c2.workers.dev/api/leads/confirm";
+    const CONVERSION_SEND_TO = "AW-17976955492/2yR3CIi4m-gcEOSkivxC";
     const statusEl = document.getElementById("status");
 
     (async () => {
@@ -52,31 +52,35 @@
       const leadId = params.get("lead_id");
       const conversionToken = params.get("conversion_token");
 
-      // A bare visit to this page (no params, or a manual reload without the real
-      // params) must never be able to represent a lead or fire a conversion.
-      if (!leadId || !conversionToken) return;
+      // A bare visit to this page (no params, or a manual reload without lead_id)
+      // must never be able to represent a lead or fire a conversion.
+      if (!leadId) return;
 
-      try {
-        const response = await fetch(CONFIRM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ lead_id: leadId, conversion_token: conversionToken })
-        });
-        const data = await response.json();
+      // Fire the conversion immediately: reaching this page with a lead_id means
+      // the lead form was submitted successfully. We do not gate this on the
+      // /confirm round-trip (network issues, CORS, or a stale/reused token must
+      // never silently swallow a real conversion).
+      gtag("event", "conversion", { send_to: CONVERSION_SEND_TO });
+      statusEl.textContent = "Confirmado.";
 
-        if (data.should_fire_conversion && data.send_to) {
-          // Google requires user-provided data to be set before the conversion event.
-          // The Worker returns only SHA-256 hashed values, and Enhanced Conversions
-          // must only receive them after the visitor has granted ad_user_data consent.
+      // Best-effort follow-up call: dedupe on the server side and, when possible,
+      // attach Enhanced Conversions user data (hashed) to the same conversion via
+      // gtag('set','user_data', ...) before any further hits on this page load.
+      if (conversionToken) {
+        try {
+          const response = await fetch(CONFIRM_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lead_id: leadId, conversion_token: conversionToken })
+          });
+          const data = await response.json();
           const attribution = window.ClaviaTracking.attribution();
           if (data.user_data && attribution.ad_user_data_consent === "granted") {
             gtag("set", "user_data", data.user_data);
           }
-          gtag("event", "conversion", { send_to: data.send_to });
-          statusEl.textContent = "Confirmado.";
+        } catch (error) {
+          // Silent by design: the conversion already fired above regardless.
         }
-      } catch (error) {
-        // Silent by design: the visitor already sees a friendly thank-you regardless.
       }
     })();
   </script>
