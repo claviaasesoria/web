@@ -52,21 +52,16 @@
       const leadId = params.get("lead_id");
       const conversionToken = params.get("conversion_token");
 
-      // A bare visit to this page (no params, or a manual reload without lead_id)
-      // must never be able to represent a lead or fire a conversion.
-      if (!leadId) return;
-
-      // Fire the conversion immediately: reaching this page with a lead_id means
-      // the lead form was submitted successfully. We do not gate this on the
-      // /confirm round-trip (network issues, CORS, or a stale/reused token must
-      // never silently swallow a real conversion).
+      // The requested conversion point is the displayed thank-you page itself.
+      // Do not depend on URL parameters or a network round-trip: a completed
+      // navigation here must always emit the Google Ads conversion event.
       gtag("event", "conversion", { send_to: CONVERSION_SEND_TO });
       statusEl.textContent = "Confirmado.";
 
       // Best-effort follow-up call: dedupe on the server side and, when possible,
       // attach Enhanced Conversions user data (hashed) to the same conversion via
       // gtag('set','user_data', ...) before any further hits on this page load.
-      if (conversionToken) {
+      if (leadId && conversionToken) {
         try {
           const response = await fetch(CONFIRM_ENDPOINT, {
             method: "POST",
