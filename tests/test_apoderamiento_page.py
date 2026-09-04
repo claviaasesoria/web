@@ -3,6 +3,7 @@ import unittest
 
 
 PAGE = Path(__file__).parents[1] / "apoderamiento" / "index.html"
+SS_PAGE = Path(__file__).parents[1] / "apoderamiento-seguridad-social" / "index.html"
 
 
 class ApoderamientoGuideTests(unittest.TestCase):
@@ -19,6 +20,17 @@ class ApoderamientoGuideTests(unittest.TestCase):
         self.assertIn('Marca únicamente GENERALLEY58', page)
         self.assertIn('No marques GENERALDATPE ni GENERALNOT', page)
         self.assertIn('class="note warn power-warning"', page)
+
+    def test_includes_social_security_red_confirmation_guide(self):
+        self.assertTrue(SS_PAGE.is_file())
+        page = SS_PAGE.read_text(encoding="utf-8")
+
+        self.assertIn('id="naf"', page)
+        self.assertIn('Confirma la asignación de tu NAF', page)
+        self.assertIn('assets/apoderamiento-seguridad-social/red-confirmacion.png', page)
+        self.assertIn('assets/apoderamiento-seguridad-social/naf-importass.png', page)
+        self.assertIn('PortalRedirectorN1A?idApp=258', page)
+        self.assertIn('Guarda el justificante en PDF', page)
 
 
 if __name__ == "__main__":
