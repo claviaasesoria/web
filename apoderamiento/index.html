@@ -92,6 +92,10 @@ h1 em{font-style:italic;color:#344054}
 .field-v.code{font-family:var(--mono);font-size:21px;color:var(--sage)}
 .note{background:rgba(61,145,102,.08);border-left:3px solid var(--sage);border-radius:0 var(--r) var(--r) 0;padding:18px 20px;margin-top:20px}
 .warn{background:rgba(232,83,42,.08);border-left-color:var(--coral)}
+.power-warning{display:flex;align-items:flex-start;gap:12px;background:#fff1eb;border:1px solid rgba(185,68,35,.35);border-left:5px solid #b94423;border-radius:var(--r);padding:20px 22px;box-shadow:0 8px 22px rgba(185,68,35,.08)}
+.power-warning::before{content:'!';display:grid;place-items:center;width:24px;height:24px;flex:0 0 auto;border-radius:50%;background:#b94423;color:#fff;font-family:var(--mono);font-size:15px;font-weight:800}
+.power-warning p{font-size:15px;color:#6d2c1c;line-height:1.65}
+.power-warning strong{color:#8d3018}
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .faq-card{background:#fff;border:1px solid var(--line);border-radius:var(--rr);padding:24px}
 .faq-card h3{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:8px}
@@ -244,7 +248,7 @@ footer{background:var(--forest);padding:42px 0;color:rgba(255,255,255,.38)}
           <div class="field-v code">GENERALLEY58</div>
         </div>
       </div>
-      <div class="note warn">
+      <div class="note warn power-warning" role="alert">
         <p><strong>Importante:</strong> Marca únicamente GENERALLEY58. No marques GENERALDATPE ni GENERALNOT, aunque aparezcan en la pantalla de la AEAT.</p>
       </div>
       <div class="note">

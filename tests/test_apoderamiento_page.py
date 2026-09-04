@@ -18,6 +18,7 @@ class ApoderamientoGuideTests(unittest.TestCase):
         self.assertIn('Toca una captura para ampliarla', page)
         self.assertIn('Marca únicamente GENERALLEY58', page)
         self.assertIn('No marques GENERALDATPE ni GENERALNOT', page)
+        self.assertIn('class="note warn power-warning"', page)
 
 
 if __name__ == "__main__":
