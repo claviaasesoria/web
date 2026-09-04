@@ -16,6 +16,8 @@ class ApoderamientoGuideTests(unittest.TestCase):
         self.assertIn('Capturas oficiales de la Agencia Tributaria', page)
         self.assertEqual(page.count('class="aeat-screen-link"'), 3)
         self.assertIn('Toca una captura para ampliarla', page)
+        self.assertIn('Marca únicamente GENERALLEY58', page)
+        self.assertIn('No marques GENERALDATPE ni GENERALNOT', page)
 
 
 if __name__ == "__main__":
