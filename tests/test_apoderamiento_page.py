@@ -32,6 +32,17 @@ class ApoderamientoGuideTests(unittest.TestCase):
         self.assertIn('PortalRedirectorN1A?idApp=258', page)
         self.assertIn('Guarda el justificante en PDF', page)
 
+    def test_social_security_guide_has_four_linked_client_steps(self):
+        page = SS_PAGE.read_text(encoding="utf-8")
+
+        for step_id in ('paso-1-naf', 'paso-2-envio', 'paso-3-confirmacion', 'paso-4-pdf'):
+            self.assertIn(f'id="{step_id}"', page)
+        self.assertEqual(page.count('class="process-link"'), 4)
+        self.assertIn('Qué haces tú', page)
+        self.assertIn('Qué hacemos nosotros', page)
+        self.assertIn('Ahora mismo', page)
+        self.assertIn('Continúa cuando Clavia te confirme que la solicitud ya está enviada.', page)
+
 
 if __name__ == "__main__":
     unittest.main()
