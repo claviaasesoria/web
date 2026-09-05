@@ -43,6 +43,14 @@ class ApoderamientoGuideTests(unittest.TestCase):
         self.assertIn('Ahora mismo', page)
         self.assertIn('Continúa cuando Clavia te confirme que la solicitud ya está enviada.', page)
 
+    def test_social_security_guide_offers_payroll_and_life_history_as_naf_options(self):
+        page = SS_PAGE.read_text(encoding="utf-8")
+
+        self.assertIn('En tu nómina', page)
+        self.assertIn('vida laboral', page.lower())
+        self.assertIn('Acreditación del Número de la Seguridad Social', page)
+        self.assertIn('Si ves el número identificado como NAF, NUSS o Número de Afiliación', page)
+
 
 if __name__ == "__main__":
     unittest.main()
