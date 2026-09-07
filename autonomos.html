@@ -435,6 +435,7 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         </div>
         <div class="trust-row">
           <div class="trust-chip">Desde 39€ + IVA/mes</div>
+          <div class="trust-chip">Solo autónomos · no sociedades</div>
           <div class="trust-chip">Sin permanencia</div>
           <div class="trust-chip">Consultas por escrito</div>
           <div class="trust-chip">100% online</div>
@@ -875,6 +876,7 @@ document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',localStorage.getItem('clavia_consent')==='accepted'?{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}:{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});window.__claviaConsentDefault=true;(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JMYYM5NKN8';document.head.appendChild(s)})();gtag('js',new Date());window.__claviaGtagStarted=true;gtag('config','G-JMYYM5NKN8');gtag('config','AW-17976955492',{'allow_enhanced_conversions':true});window.__claviaConfiguredIds={'G-JMYYM5NKN8':true,'AW-17976955492':true}</script>
 <script src="/assets/clavia-tracking.js?v=20260826-1"></script>
 <script>ClaviaTracking.init({gtag:false})</script>
+<script src="/assets/clavia-openai-pixel.js?v=20260907-2"></script>
 
 <div class="cookie-banner" id="cookieBanner">
   <p>Usamos cookies técnicas y analíticas para mejorar tu experiencia. <a href="/cookies.html">Política de cookies</a></p>
@@ -885,8 +887,8 @@ document.querySelectorAll('[id$="-btn"]').forEach(btn=>{
 </div>
 
 <script>
-function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'})}
-function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})}
+function acceptCookies(){localStorage.setItem('clavia_consent','accepted');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});if(window.ClaviaOpenAIPixel)window.ClaviaOpenAIPixel.setConsent(true)}
+function rejectCookies(){localStorage.setItem('clavia_consent','rejected');document.getElementById('cookieBanner').classList.add('hidden');gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});if(window.ClaviaOpenAIPixel)window.ClaviaOpenAIPixel.setConsent(false)}
 if(localStorage.getItem('clavia_consent')){document.getElementById('cookieBanner').classList.add('hidden')}
 </script>
 

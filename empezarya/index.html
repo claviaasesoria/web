@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <script src="/assets/clavia-tracking.js?v=20260826-1"></script>
   <script>ClaviaTracking.init({trackClicks:true})</script>
+  <script src="/assets/clavia-openai-pixel.js?v=20260907-2"></script>
   <style>
     :root{
       --ink:#101828; --ink-soft:#344054; --muted:#667085; --line:#dde3ea;
@@ -241,6 +242,7 @@
           </details>
 
           <div class="accept-group">
+            <div class="accept"><input type="checkbox" id="acceptAutonomo"><label for="acceptAutonomo">Confirmo que contrato como <strong>persona física autónoma o profesional</strong>. Clavia no presta este servicio a sociedades mercantiles ni a otras personas jurídicas.</label></div>
             <div class="accept"><input type="checkbox" id="acceptTerms"><label for="acceptTerms">He leído y acepto la <strong>hoja de encargo y las condiciones generales</strong> mostradas arriba.</label></div>
             <div class="accept warn" id="acceptAltaWrap" style="display:none"><input type="checkbox" id="acceptAltaInmediata"><label for="acceptAltaInmediata"><strong>Solicito expresamente</strong> que Clavia empiece a tramitar mi alta de inmediato. Entiendo que, una vez completado el trámite, <strong>pierdo mi derecho de desistimiento de 14 días</strong> sobre este servicio puntual.</label></div>
             <div class="accept"><input type="checkbox" id="accept"><label for="accept">He revisado el resumen y confirmo que los datos facilitados son correctos. Al pulsar "Firmar y continuar" se abrirá el documento para tu firma electrónica; el encargo queda formalizado cuando ambas partes lo hayan firmado.</label></div>
@@ -307,7 +309,7 @@
     function validateFinish(){
       const c=chosen();
       const hasAlta=c.includes('alta');
-      const required=[$('#accept').checked,$('#acceptTerms').checked];
+      const required=[$('#accept').checked,$('#acceptTerms').checked,$('#acceptAutonomo').checked];
       if(hasAlta)required.push($('#acceptAltaInmediata').checked);
       $('#finish').disabled = !required.every(Boolean);
     }
@@ -373,7 +375,12 @@
         lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
         victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
         notes:value('#notes',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
-        attribution:(window.ClaviaTracking&&window.ClaviaTracking.attribution)?window.ClaviaTracking.attribution():{lead_source:'contratacion_directa'},
+        client_type:'self_employed_individual',
+        attribution:Object.assign(
+          {},
+          (window.ClaviaTracking&&window.ClaviaTracking.attribution)?window.ClaviaTracking.attribution():{lead_source:'contratacion_directa'},
+          (window.ClaviaOpenAIPixel&&window.ClaviaOpenAIPixel.attribution)?window.ClaviaOpenAIPixel.attribution():{}
+        ),
       };
     }
     async function startSignwellContract(){
@@ -390,7 +397,13 @@
         const data=await response.json();
         if(!response.ok)throw new Error(data.error||'No se pudo generar el documento. Inténtalo de nuevo.');
         signingUrl=data.signingUrl;
-        if(data.documentId) localStorage.setItem('clavia_pending_contract_document_id',data.documentId);
+        if(data.documentId){
+          localStorage.setItem('clavia_pending_contract_document_id',data.documentId);
+          // A document created by the server after validated data and explicit terms
+          // acceptance is the contract-flow lead. Do not use the later signature page
+          // for lead_created: it represents a different, much rarer funnel outcome.
+          if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.leadCreated('contract_'+data.documentId);
+        }
         if(popup)popup.location.href=signingUrl; else window.location.href=signingUrl;
         $('#testDocumentId').textContent=`Documento ${data.documentId}`;
         show(5);
@@ -408,7 +421,7 @@
       show(page+1)
     }));
     $$('[data-prev]').forEach(b=>b.addEventListener('click',()=>show(page-1)));
-    $$('#accept, #acceptTerms, #acceptAltaInmediata').forEach(el=>el.addEventListener('change',validateFinish));
+    $$('#accept, #acceptTerms, #acceptAltaInmediata, #acceptAutonomo').forEach(el=>el.addEventListener('change',validateFinish));
     $('#finish').addEventListener('click',startSignwellContract);
     $('#openSigningAgain').addEventListener('click',()=>{if(signingUrl)window.open(signingUrl,'_blank')});
     $('#printTerms').addEventListener('click',()=>window.print());
