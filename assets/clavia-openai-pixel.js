@@ -9,6 +9,11 @@
     return localStorage.getItem(CONSENT_KEY) === "accepted";
   }
 
+  function readCookie(name) {
+    var match = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/[.$?*|{}()\[\]\\/+^]/g, "\\$&") + "=([^;]*)"));
+    return match ? decodeURIComponent(match[1]) : "";
+  }
+
   // OpenAI requires consent to be set before pixel initialization. Do not default
   // to measurement consent merely because the SDK defaults to true when omitted.
   (function loadPixel() {
@@ -46,6 +51,19 @@
       );
       sessionStorage.setItem(eventId, "1");
       return true;
+    },
+
+    attribution: function () {
+      if (!hasMeasurementConsent()) return {};
+      var params = new URLSearchParams(window.location.search);
+      // The Pixel's opaque first-party browser reference is the CAPI matching key.
+      // Keep the click reference too when the landing URL still carries it.
+      var obref = readCookie("__obref") || readCookie("__oppref");
+      var oppref = params.get("oppref");
+      var data = {};
+      if (obref) data.openai_obref = obref;
+      if (oppref) data.openai_oppref = oppref;
+      return data;
     }
   };
 })();
