@@ -24,6 +24,13 @@
     h1 { font-family: var(--serif); font-size: clamp(34px, 5vw, 48px); font-weight: 500; margin: 0 0 16px; }
     p { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 0 8px; }
     #status { margin-top: 24px; font-size: 12px; color: var(--muted); }
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#101828;z-index:999;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:2px solid #6FC194;transform:translateY(0);transition:transform .4s}
+    .cookie-banner.hidden{transform:translateY(110%)}
+    .cookie-banner p{font-size:13px;color:rgba(255,255,255,.55);margin:0}
+    .cookie-banner a{color:#6FC194}
+    .cookie-btns{display:flex;gap:10px;flex-shrink:0}
+    .cb-accept{background:#6FC194;color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer;font-size:11px;letter-spacing:1px;font-family:var(--sans)}
+    .cb-reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.4);padding:9px 16px;border-radius:5px;cursor:pointer;font-size:11px;font-family:var(--sans)}
   </style>
   <!--
     Initialise the shared tracker before loading Google. It records the visitor's
@@ -41,6 +48,27 @@
       <p id="status"></p>
     </div>
   </main>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Usamos cookies técnicas y analíticas para mejorar tu experiencia. <a href="/cookies.html">Política de cookies</a></p>
+    <div class="cookie-btns">
+      <button class="cb-reject" onclick="rejectCookies()">Solo necesarias</button>
+      <button class="cb-accept" onclick="acceptCookies()">Aceptar</button>
+    </div>
+  </div>
+  <script>
+  function acceptCookies(){
+    localStorage.setItem('clavia_consent','accepted');
+    document.getElementById('cookieBanner').classList.add('hidden');
+    if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+  }
+  function rejectCookies(){
+    localStorage.setItem('clavia_consent','rejected');
+    document.getElementById('cookieBanner').classList.add('hidden');
+    if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  }
+  if(localStorage.getItem('clavia_consent')) document.getElementById('cookieBanner').classList.add('hidden');
+  </script>
 
   <script>
     const CONFIRM_ENDPOINT = "https://clavia-leads-api.noisy-sea-21c2.workers.dev/api/leads/confirm";
