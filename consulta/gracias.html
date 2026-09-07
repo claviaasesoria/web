@@ -36,6 +36,7 @@
     Initialise the shared tracker before loading Google. It records the visitor's
     Consent Mode choice first, then configures GA4 and Google Ads.
   -->
+  <script src="/assets/clavia-openai-pixel.js?v=20260907-1"></script>
   <script src="/assets/clavia-tracking.js"></script>
   <script>window.ClaviaTracking.init();</script>
 </head>
@@ -61,11 +62,13 @@
     localStorage.setItem('clavia_consent','accepted');
     document.getElementById('cookieBanner').classList.add('hidden');
     if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+    if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.setConsent(true);
   }
   function rejectCookies(){
     localStorage.setItem('clavia_consent','rejected');
     document.getElementById('cookieBanner').classList.add('hidden');
     if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+    if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.setConsent(false);
   }
   if(localStorage.getItem('clavia_consent')) document.getElementById('cookieBanner').classList.add('hidden');
   </script>
@@ -79,6 +82,13 @@
       const params = new URLSearchParams(window.location.search);
       const leadId = params.get("lead_id");
       const conversionToken = params.get("conversion_token");
+
+      // Unlike the owner-approved Google page-load conversion above, OpenAI's lead
+      // event needs a real successful submission: it is armed only by consulta's
+      // 2xx Worker response and deduplicated with its server-generated lead ID.
+      if (leadId && sessionStorage.getItem("clavia_openai_pending_lead") === leadId) {
+        window.ClaviaOpenAIPixel.leadCreated(leadId);
+      }
 
       // The requested conversion point is the displayed thank-you page itself.
       // Do not depend on URL parameters or a network round-trip: a completed
