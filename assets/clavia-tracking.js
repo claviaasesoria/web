@@ -12,6 +12,7 @@
   ];
   var GA_ID = 'G-JMYYM5NKN8';
   var ADS_ID = 'AW-17976955492';
+  var ATTRIBUTION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
   function parseStored(){
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
@@ -27,6 +28,23 @@
     }
     sessionStorage.setItem(SESSION_KEY, id);
     return id;
+  }
+
+  function rotateSessionId(){
+    localStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem(SESSION_KEY);
+    return sessionId();
+  }
+
+  function attributionExpired(data){
+    var capturedAt = Date.parse((data || {}).captured_at || '');
+    return !capturedAt || (Date.now() - capturedAt) > ATTRIBUTION_TTL_MS;
+  }
+
+  function hasNewPaidClick(current, stored){
+    return ['gclid','gbraid','wbraid'].some(function(key){
+      return current[key] && current[key] !== stored[key];
+    });
   }
 
   function inferSource(data){
@@ -57,6 +75,13 @@
       if(value) current[key] = value;
     });
     var stored = parseStored();
+    // Never mix an old first-touch record into a newer paid click. The previous
+    // implementation kept the first landing page and referrer indefinitely,
+    // which made a later lead look like a hybrid of unrelated visits.
+    if(attributionExpired(stored) || hasNewPaidClick(current, stored)){
+      stored = {};
+      rotateSessionId();
+    }
     var merged = Object.assign({}, stored, current);
     merged.clavia_session_id = stored.clavia_session_id || sessionId();
     merged.landing_page = stored.landing_page || window.location.pathname;
