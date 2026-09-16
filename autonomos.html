@@ -196,6 +196,29 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .scope-card p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65}
 .scope-card strong{color:rgba(255,255,255,.78);font-weight:600}
 
+/* RESEÑAS + QUIENES SOMOS */
+.social-proof{padding:80px 0;background:var(--cream)}
+.sp-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+.sp-rating{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.sp-stars{color:#f5a623;font-size:20px;letter-spacing:2px}
+.sp-rating-num{font-family:var(--serif);font-size:28px;color:var(--ink)}
+.sp-rating-note{font-size:13px;color:var(--grey)}
+.sp-rating-note a{color:var(--sage);font-weight:600}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:var(--rr);padding:20px}
+.review-stars{color:#f5a623;font-size:13px;letter-spacing:1px;margin-bottom:10px}
+.review-text{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:14px}
+.review-author{font-size:12px;font-weight:700;color:var(--ink)}
+.review-meta{font-size:11px;color:var(--grey2);font-family:var(--mono)}
+.review-source{margin-top:8px;font-size:10px;color:var(--grey2);display:flex;align-items:center;gap:5px}
+.who-card{background:var(--forest);border-radius:var(--rrr);padding:32px;display:flex;flex-direction:column;gap:16px}
+.who-avatar{width:56px;height:56px;border-radius:50%;background:var(--sage);color:#fff;font-family:var(--serif);font-size:26px;display:flex;align-items:center;justify-content:center}
+.who-card h3{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff}
+.who-card .who-role{font-size:12px;color:var(--coral2);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-top:-10px}
+.who-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65}
+.who-card a{font-size:13px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);width:fit-content}
+@media(max-width:820px){.sp-grid{grid-template-columns:1fr}.review-grid{grid-template-columns:1fr}}
+
 /* NICHOS POR ACTIVIDAD */
 .niches{padding:80px 0;background:var(--cream2)}
 .niche-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
@@ -554,6 +577,57 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
           <li>Gastos de desplazamiento y material fungible</li>
         </ul>
         <a href="/consulta" class="niche-cta" id="niche-creativos-btn">Cuéntanos tu caso →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS + QUIENES SOMOS -->
+<section class="social-proof" aria-labelledby="resenas-autonomos">
+  <div class="wrap">
+    <div class="sp-grid">
+      <div>
+        <div class="section-hd" style="text-align:left;margin-bottom:24px">
+          <div class="eyebrow" style="justify-content:flex-start">Opiniones reales</div>
+          <h2 id="resenas-autonomos">Lo que dicen<br><em>quienes ya trabajan con nosotros</em></h2>
+        </div>
+        <div class="sp-rating">
+          <div class="sp-stars">★★★★★</div>
+          <div class="sp-rating-num">5,0</div>
+          <div class="sp-rating-note">de 3 reseñas verificadas en<br><a href="https://www.google.com/maps?cid=7205563036474286976" target="_blank" rel="noopener">Google Perfil de Empresa →</a></div>
+        </div>
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Muy buena experiencia. Todo fue claro, organizado y eficaz, y el trato humano marcó la diferencia."</p>
+            <div class="review-author">Alicia Blay Menéndez</div>
+            <div class="review-meta">hace 3 meses</div>
+            <div class="review-source">Reseña de Google</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Llevo años trabajando con ellos y la verdad es que el servicio es impecable. Son puntuales, te resuelven cualquier duda y siempre sabes que todo va a estar en orden. Totalmente recomendado."</p>
+            <div class="review-author">Eduardo Quilis Hernández</div>
+            <div class="review-meta">hace 4 meses</div>
+            <div class="review-source">Reseña de Google</div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Una atención muy profesional, se nota la experiencia y el interés por ayudar, resolvieron todas mis dudas de forma clara y me dieron las soluciones que necesitaba! Recomiendo la asesoría al 100%!"</p>
+            <div class="review-author">Sara Dorado</div>
+            <div class="review-meta">hace 4 meses</div>
+            <div class="review-source">Reseña de Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-avatar">JR</div>
+        <div>
+          <h3>Juan Redondo</h3>
+          <div class="who-role">Responsable de Clavia</div>
+        </div>
+        <p>Gestor contable especializado en autónomos en España. Al frente de Clavia, atendiendo cada caso de forma directa y sin intermediarios entre tú y quien lleva tu gestión.</p>
+        <a href="/autor/juan-redondo">Ver perfil completo →</a>
       </div>
     </div>
   </div>
