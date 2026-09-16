@@ -259,6 +259,19 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
 .sobre-bullets li{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;padding-left:1.2em;position:relative;margin-bottom:4px}
 .sobre-bullets li::before{content:'—';position:absolute;left:0;color:var(--coral);opacity:.7}
 .sobre-cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.reviews{padding:90px 0;background:var(--cream2)}
+.reviews-head{display:flex;align-items:center;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.reviews-stars{color:#f5a623;font-size:20px;letter-spacing:2px}
+.reviews-num{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.reviews-note{font-size:13px;color:var(--grey)}
+.reviews-note a{color:var(--sage);font-weight:600}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:var(--rr);padding:22px}
+.review-card .rc-stars{color:#f5a623;font-size:13px;letter-spacing:1px;margin-bottom:10px}
+.review-card p{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:14px}
+.review-card .rc-author{font-size:12.5px;font-weight:700;color:var(--ink)}
+.review-card .rc-source{margin-top:6px;font-size:11px;color:var(--grey2)}
+@media(max-width:820px){.reviews-grid{grid-template-columns:1fr}}
 .faq{padding:100px 0}
 .faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
 .faq-sticky{position:sticky;top:120px}
@@ -632,12 +645,49 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
           <a href="especialidades/freelances-digitales" class="ctag">Freelances digitales</a>
           <a href="especialidades/nomadas-digitales" class="ctag">Nómadas digitales</a>
           <a href="especialidades/clientes-latinoamerica" class="ctag">Clientes en Latinoamérica</a>
+          <a href="autonomos#sanitarios" class="ctag">Sanitarios</a>
+          <a href="autonomos#ecommerce" class="ctag">E-commerce</a>
         </div>
       </div>
       <div class="rv" style="transition-delay:.15s">
         <p>Si eres creativo, artista o emprendedor digital, tu fiscalidad tiene particularidades que una gestoría generalista no siempre domina: retenciones en cachés, derechos de autor SGAE o AISGE, ingresos de plataformas digitales, facturación a clientes extranjeros.</p>
         <p>En Clavia entendemos ese mundo. Te ayudamos a optimizar tu fiscalidad sabiendo exactamente qué gastos son deducibles en tu actividad concreta.</p>
         <a href="#contacto" class="btn-outline" style="margin-top:22px;display:inline-flex;border-color:var(--line)">Cuéntanos tu situación →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="reviews" id="resenas">
+  <div class="wrap">
+    <div class="section-header rv">
+      <div class="eyebrow">Opiniones reales</div>
+      <h2>Lo que dicen<br><em>quienes ya trabajan con nosotros</em></h2>
+    </div>
+    <div class="reviews-head rv" style="transition-delay:.1s">
+      <div class="reviews-stars">★★★★★</div>
+      <div class="reviews-num">5,0</div>
+      <div class="reviews-note">Reseñas verificadas en <a href="https://www.google.com/maps?cid=7205563036474286976" target="_blank" rel="noopener">Google Perfil de Empresa →</a></div>
+    </div>
+    <div class="reviews-grid rv" style="transition-delay:.15s">
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Muy buena experiencia. Todo fue claro, organizado y eficaz, y el trato humano marcó la diferencia."</p>
+        <div class="rc-author">Alicia Blay Menéndez</div>
+        <div class="rc-source">Reseña de Google</div>
+      </div>
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Llevo años trabajando con ellos y la verdad es que el servicio es impecable. Son puntuales, te resuelven cualquier duda y siempre sabes que todo va a estar en orden. Totalmente recomendado."</p>
+        <div class="rc-author">Eduardo Quilis Hernández</div>
+        <div class="rc-source">Reseña de Google</div>
+      </div>
+      <div class="review-card">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Una atención muy profesional, se nota la experiencia y el interés por ayudar, resolvieron todas mis dudas de forma clara y me dieron las soluciones que necesitaba! Recomiendo la asesoría al 100%!"</p>
+        <div class="rc-author">Sara Dorado</div>
+        <div class="rc-source">Reseña de Google</div>
       </div>
     </div>
   </div>
@@ -694,7 +744,7 @@ footer{background:var(--forest);padding:48px 0 32px;border-top:1px solid rgba(25
       <a href="/blog/vinted-wallapop-tiktok-shop-dac7-autonomos-2026" style="background:var(--forest);border-radius:16px;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.25)'" onmouseout="this.style.boxShadow='none'">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);font-weight:700">DAC7 · Marketplaces · Nuevo</div>
         <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;line-height:1.25">Vinted, Wallapop y TikTok Shop: Cuándo Tributa y Cuándo Darte de Alta</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">DAC7 obliga a las plataformas a informar desde 30 ventas o 2.000€/año. Lo que de verdad decide si pagas: objetos usados vs. reventa habitual.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;flex:1">DAC7 obliga a las plataformas a informar desde 30 ventas o más de 2.000€/año. Lo que de verdad decide si pagas: objetos usados vs. reventa habitual.</p>
         <span style="font-size:13px;color:var(--coral);font-weight:600">Leer →</span>
       </a>
       <a href="/blog/impuestos-influencers-creadores-contenido-2026" style="background:var(--forest);border-radius:16px;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 8px 32px rgba(28,14,8,.25)'" onmouseout="this.style.boxShadow='none'">
