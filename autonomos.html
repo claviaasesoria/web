@@ -211,12 +211,13 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
 .review-author{font-size:12px;font-weight:700;color:var(--ink)}
 .review-meta{font-size:11px;color:var(--grey2);font-family:var(--mono)}
 .review-source{margin-top:8px;font-size:10px;color:var(--grey2);display:flex;align-items:center;gap:5px}
-.who-card{background:var(--forest);border-radius:var(--rrr);padding:32px;display:flex;flex-direction:column;gap:16px}
-.who-avatar{width:56px;height:56px;border-radius:50%;background:var(--sage);color:#fff;font-family:var(--serif);font-size:26px;display:flex;align-items:center;justify-content:center}
-.who-card h3{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff}
-.who-card .who-role{font-size:12px;color:var(--coral2);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-top:-10px}
-.who-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65}
-.who-card a{font-size:13px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);width:fit-content}
+.who-card{background:var(--forest);border-radius:var(--rrr);padding:32px}
+.who-avatar{width:48px;height:48px;border-radius:50%;background:rgba(111,193,148,.12);border:1.5px solid rgba(232,83,42,.22);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--coral2);font-style:italic;margin-bottom:18px}
+.who-card h3{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;line-height:1.15;margin-bottom:14px}
+.who-card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
+.who-firma{font-family:var(--serif);font-size:17px;color:rgba(255,255,255,.7);font-style:italic;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+.who-cargo{font-family:var(--mono);font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:4px;margin-bottom:16px}
+.who-card a{font-size:13px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);width:fit-content;display:inline-block}
 @media(max-width:820px){.sp-grid{grid-template-columns:1fr}.review-grid{grid-template-columns:1fr}}
 
 /* NICHOS POR ACTIVIDAD */
@@ -621,13 +622,12 @@ nav.stuck{background:rgba(253,240,232,.94);backdrop-filter:blur(20px);border-bot
         </div>
       </div>
       <div class="who-card">
-        <div class="who-avatar">JR</div>
-        <div>
-          <h3>Juan Redondo</h3>
-          <div class="who-role">Responsable de Clavia</div>
-        </div>
-        <p>Gestor contable especializado en autónomos en España. Al frente de Clavia, atendiendo cada caso de forma directa y sin intermediarios entre tú y quien lleva tu gestión.</p>
-        <a href="/autor/juan-redondo">Ver perfil completo →</a>
+        <div class="who-avatar">c</div>
+        <h3>Una firma con<br>criterio propio</h3>
+        <p>Clavia es un despacho independiente de gestión y contabilidad. Trabajamos de forma directa con cada cliente, sin grandes estructuras ni intermediarios entre tú y quien lleva tu gestión.</p>
+        <div class="who-firma">Juan Redondo</div>
+        <div class="who-cargo">Responsable de Clavia</div>
+        <a href="/sobre-clavia">Conoce cómo trabajamos →</a>
       </div>
     </div>
   </div>
