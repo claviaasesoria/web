@@ -15,8 +15,10 @@
 
 ## Servicios principales
 
-- Plan Básico Digital: 39 EUR + IVA al mes. Incluye IVA trimestral (Mod. 303), IRPF fraccionado (Mod. 130), retenciones habituales (Mod. 111 y 115), operaciones intracomunitarias (Mod. 349), resúmenes anuales (390, 190, 347 si corresponde). Hasta 50 facturas al trimestre. Consultas por email y WhatsApp. Sin permanencia.
-- Plan Avanzado: 59 EUR + IVA al mes. Todo lo del Plan Básico más: más de 50 facturas al trimestre, hasta 2 epígrafes IAE, previsión básica de IRPF, Declaración de la Renta incluida a partir de la 3ª mensualidad, requerimientos sencillos AEAT.
+- Plan Completo: 54,95 EUR + IVA al mes. Incluye modelos ordinarios cuando proceda (303, 130, 111, 115 y 349), resúmenes anuales habituales (390, 190 y 347), 1 epígrafe, hasta 75 facturas al trimestre y atención directa de Juan Redondo por email y WhatsApp.
+- Plan Premium: 74,95 EUR + IVA al mes. Incluye todo lo anterior, hasta 2 epígrafes, de 76 a 150 facturas al trimestre, Modelo 369 OSS cuando proceda, consultas fiscales personalizadas y revisión/previsión fiscal trimestral por escrito.
+- Declaración de la Renta y requerimientos de la AEAT: se presupuestan aparte según el caso. Expedientes con 3 o más epígrafes, más de 150 facturas trimestrales o complejidad extraordinaria requieren valoración previa.
+- Los planes Completo y Premium son la oferta vigente exclusivamente para nuevas altas. La cuota y el alcance de clientes ya contratados se rigen por su acuerdo individual.
 - Alta en Hacienda y Seguridad Social (Modelo 036 + RETA): 49 EUR + IVA. Servicio único, no mensual.
 - Baja o modificación censal (Modelo 036): 39 EUR + IVA.
 - Trimestre suelto (Mod. 303 + 130): 119 EUR + IVA.
@@ -54,13 +56,13 @@ España tiene convenios de doble imposición (CDI) con Chile (2004), México (19
 Modelo 303 (IVA trimestral, aunque la mayoría de ingresos sean sin IVA), Modelo 130 (IRPF fraccionado trimestral), y los resúmenes anuales 390, 190 y 347 si corresponde. El Modelo 349 solo si hay operaciones con empresas de la UE.
 
 **¿Cuánto cuesta darse de alta como autónomo en Clavia?**
-El alta en Hacienda (Modelo 036) y en la Seguridad Social (RETA) tiene un coste único de 49 EUR + IVA. La gestión mensual posterior parte de 39 EUR + IVA/mes (Plan Básico Digital). No hay permanencia.
+El alta en Hacienda (Modelo 036) y en la Seguridad Social (RETA) tiene un coste único de 49 EUR + IVA. La gestión mensual posterior parte de 54,95 EUR + IVA/mes (Plan Completo). No hay permanencia.
 
 **¿Cuándo conviene pasar de autónomo a Sociedad Limitada (SL)?**
 No hay una cifra única. Depende del beneficio neto, de cuánto necesita sacar el autónomo para vivir y de si puede acumular beneficio dentro de la sociedad. Como autónomo nuevo, aplica además una reducción del 20% sobre el rendimiento neto en IRPF durante los dos primeros años con beneficio positivo (art. 32.3 LIRPF), lo que hace que la opción de autónomo sea especialmente ventajosa al inicio. En Clavia revisamos la estructura cuando hay datos reales de actividad.
 
 **¿La Declaración de la Renta está incluida en el plan mensual?**
-En el Plan Básico Digital no está incluida (se presupuesta aparte desde 65 EUR + IVA). En el Plan Avanzado (59 EUR + IVA/mes) está incluida a partir de la 3ª mensualidad abonada en el ejercicio.
+No. La Declaración de la Renta se presupuesta aparte desde 65 EUR + IVA, según complejidad. Los requerimientos de la AEAT también se valoran aparte según el caso.
 
 ## Guías esenciales
 

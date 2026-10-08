@@ -72,8 +72,8 @@
             <div class="section-head"><div><h2 class="section-title">¿Qué quieres activar ahora?</h2><p class="section-help">Selecciona una o varias opciones. Podrás revisar el resumen antes de aceptar.</p></div></div>
             <div class="choice-grid">
               <label class="choice"><input type="checkbox" name="service" value="alta" checked><span class="choice-check"></span><h3>Alta como autónomo/a</h3><p>Hacienda (036), RETA y revisión del encuadre inicial. Incluye ROI/VIES si procede.</p><div class="choice-price">49 € + IVA <span>· pago único</span></div></label>
-              <label class="choice"><input type="checkbox" name="service" value="basico"><span class="choice-check"></span><h3>Plan Básico Digital</h3><p>Gestión fiscal mensual para actividad ordinaria y hasta 50 facturas por trimestre.</p><div class="choice-price">39 € + IVA <span>· / mes</span></div></label>
-              <label class="choice"><input type="checkbox" name="service" value="avanzado"><span class="choice-check"></span><h3>Plan Avanzado</h3><p>Dos epígrafes, previsión IRPF, más volumen, Renta y operaciones complejas.</p><div class="choice-price">59 € + IVA <span>· / mes</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="completo"><span class="choice-check"></span><h3>Plan Completo</h3><p>Gestión fiscal mensual para una actividad ordinaria y hasta 75 facturas por trimestre.</p><div class="choice-price">54,95 € + IVA <span>· / mes</span></div></label>
+              <label class="choice"><input type="checkbox" name="service" value="premium"><span class="choice-check"></span><h3>Plan Premium</h3><p>Hasta dos epígrafes, de 76 a 150 facturas por trimestre y planificación fiscal personalizada.</p><div class="choice-price">74,95 € + IVA <span>· / mes</span></div></label>
             </div>
             <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9h.01"/></svg><div><strong>El alta y la gestión mensual son servicios distintos.</strong> Puedes contratar uno solo o ambos. Si eliges los dos, el contrato final los dejará diferenciados.</div></div>
           </div>
@@ -100,10 +100,10 @@
               <div class="field" id="startFieldWrap"><label for="start">Fecha prevista de inicio <em>*</em></label><input id="start" type="date"><p class="field-error">Este campo es obligatorio.</p></div>
               <div class="field"><label for="workplace">Lugar principal de trabajo <em>*</em></label><input id="workplace" placeholder="Domicilio, coworking, local…"><p class="field-error">Este campo es obligatorio.</p></div>
               <div class="field full"><label for="activity">Describe tu actividad <em>*</em></label><textarea id="activity" placeholder="Qué vendes o qué servicios prestas, a quién y por qué canales."></textarea><p class="field-note">Ejemplo: gestión de redes sociales para empresas, venta online de producto propio, diseño web…</p><p class="field-error">Este campo es obligatorio.</p></div>
-              <div class="field"><label for="epigraphs">Número de actividades / epígrafes</label><select id="epigraphs"><option value="1">Una actividad</option><option value="2">Dos actividades</option><option value="3">Tres o más actividades</option></select><p class="field-note" id="epigraphsNote" style="display:none;color:#3D9166;font-weight:700">Con el Plan Básico solo se incluye 1 epígrafe/actividad. Para más, contrata el Plan Avanzado.</p></div>
+              <div class="field"><label for="epigraphs">Número de actividades / epígrafes</label><select id="epigraphs"><option value="1">Una actividad</option><option value="2">Dos actividades</option><option value="3">Tres o más actividades</option></select><p class="field-note" id="epigraphsNote" style="display:none;color:#3D9166;font-weight:700">El Plan Completo incluye 1 epígrafe; Premium, hasta 2. Con 3 o más, prepararemos un presupuesto personalizado.</p></div>
               <div class="field"><label for="intra">Operativa internacional</label><select id="intra"><option value="no">No por ahora</option><option value="ue">Clientes o proveedores UE · ROI/VIES</option><option value="imports">Importaciones o compras fuera de la UE</option><option value="both">UE e importaciones</option></select></div>
               <div class="field" id="viesRoiFieldWrap" style="display:none"><label for="viesRoi">¿Solicitas el alta en el VIES-ROI como operador intracomunitario?</label><select id="viesRoi"><option value="no">No</option><option value="si">Sí</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note">Registro de Operadores Intracomunitarios — necesario para operar con IVA intracomunitario dentro de la UE.</p></div>
-              <div class="field"><label for="monthlyDocs">Volumen estimado de facturas</label><select id="monthlyDocs"><option value="hasta50">Hasta 50 por trimestre</option><option value="mas50">Más de 50 por trimestre</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note" id="monthlyDocsNote" style="display:none;color:#3D9166;font-weight:700">El Plan Básico incluye hasta 50 facturas por trimestre. Para más volumen, contrata el Plan Avanzado.</p></div>
+              <div class="field"><label for="monthlyDocs">Volumen estimado de facturas</label><select id="monthlyDocs"><option value="hasta75">Hasta 75 por trimestre</option><option value="de76a150">De 76 a 150 por trimestre</option><option value="mas150">Más de 150 por trimestre</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note" id="monthlyDocsNote" style="display:none;color:#3D9166;font-weight:700">Completo incluye hasta 75 facturas; Premium, de 76 a 150. Por encima, prepararemos un presupuesto personalizado.</p></div>
             </div>
             <div class="divider"></div>
             <div class="switches">
@@ -167,18 +167,18 @@
               </div>
 
               <div id="legalBasico" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
-                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Básico Digital — 39 € + IVA / mes</p>
-                <p><strong>Incluido:</strong> consultas y asesoría fiscal ordinaria; presentación de los modelos 303, 130, 111/115/349 cuando proceda; modelos anuales habituales (390, 190, 347 cuando proceda); hasta 50 facturas por trimestre.</p>
-                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de AEAT, recursos, reclamaciones e inspecciones formales; gestión de más de 50 facturas por trimestre (se presupuesta aparte); alta de nuevos epígrafes o actividades adicionales a la primera.</p>
+                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Completo — 54,95 € + IVA / mes</p>
+                <p><strong>Incluido:</strong> consultas y asesoría fiscal ordinaria; presentación de los modelos 303, 130, 111/115/349 cuando proceda; modelos anuales habituales (390, 190, 347 cuando proceda); 1 epígrafe y hasta 75 facturas por trimestre.</p>
+                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de AEAT, recursos, reclamaciones e inspecciones formales; más de 75 facturas por trimestre o actividades adicionales (se valoran previamente).</p>
                 <p><strong>Ámbito y limitaciones del servicio:</strong> este plan se presta exclusivamente a personas físicas dadas de alta como autónomos o profesionales — no se presta a sociedades mercantiles ni a otras personas jurídicas — y a clientes residentes fiscales en España sujetos al régimen general del IVA (Península y Baleares). Quedan excluidos los clientes con domicilio fiscal en Canarias, Ceuta, Melilla o en los territorios forales de País Vasco y Navarra, por aplicarse allí regímenes fiscales distintos (IGIC, IPSI y TicketBAI, respectivamente). El servicio no incluye asesoría ni gestión laboral — nóminas, seguros sociales de trabajadores, contratos de trabajo, altas y bajas laborales u otras obligaciones laborales —, salvo la tramitación del alta del propio autónomo en el RETA cuando forme parte del encargo contratado; la presentación del modelo 111, cuando proceda, se limita a las retenciones practicadas en el ámbito fiscal y no constituye gestión laboral de terceros.</p>
               </div>
 
               <div id="legalAvanzado" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
-                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Avanzado — 59 € + IVA / mes</p>
-                <p><strong>Incluido:</strong> consultas y asesoría fiscal ordinaria; presentación de los modelos 303, 130, 111/115/349 cuando proceda; modelos anuales habituales (390, 190, 347 cuando proceda); más de 50 facturas por trimestre; hasta 2 epígrafes de actividad (IAE); previsión básica de IRPF; declaración de la Renta a partir de la 3ª mensualidad abonada en el ejercicio*; atención a requerimientos sencillos de AEAT**.</p>
-                <p><strong>No incluido:</strong> inspecciones formales, sanciones, recursos, reclamaciones, procedimientos contenciosos y ejercicios fiscales anteriores al inicio del encargo; epígrafes adicionales al 2º (se presupuestan aparte).</p>
+                <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Premium — 74,95 € + IVA / mes</p>
+                <p><strong>Incluido:</strong> todo lo incluido en el Plan Completo; de 76 a 150 facturas por trimestre; hasta 2 epígrafes de actividad (IAE); Modelo 369 OSS cuando proceda; consultas fiscales personalizadas y previsión fiscal trimestral por escrito.</p>
+                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de AEAT, inspecciones formales, sanciones, recursos, reclamaciones, procedimientos contenciosos y ejercicios fiscales anteriores; más de 150 facturas por trimestre o 3 o más epígrafes (se valoran previamente).</p>
                 <p><strong>Ámbito y limitaciones del servicio:</strong> este plan se presta exclusivamente a personas físicas dadas de alta como autónomos o profesionales — no se presta a sociedades mercantiles ni a otras personas jurídicas — y a clientes residentes fiscales en España sujetos al régimen general del IVA (Península y Baleares). Quedan excluidos los clientes con domicilio fiscal en Canarias, Ceuta, Melilla o en los territorios forales de País Vasco y Navarra, por aplicarse allí regímenes fiscales distintos (IGIC, IPSI y TicketBAI, respectivamente). El servicio no incluye asesoría ni gestión laboral — nóminas, seguros sociales de trabajadores, contratos de trabajo, altas y bajas laborales u otras obligaciones laborales —, salvo la tramitación del alta del propio autónomo en el RETA cuando forme parte del encargo contratado; la presentación del modelo 111, cuando proceda, se limita a las retenciones practicadas en el ámbito fiscal y no constituye gestión laboral de terceros.</p>
-                <p style="font-size:11px;color:var(--muted);margin-top:8px">* La Renta se incluye a partir de la 3ª mensualidad abonada dentro del ejercicio en curso — es un criterio de elegibilidad, no un requisito de permanencia.<br>** Requerimientos sencillos de AEAT: solicitudes de documentación y comprobaciones limitadas sobre los modelos gestionados por Clavia. Quedan excluidas inspecciones formales, sanciones, recursos, reclamaciones, contencioso y ejercicios anteriores.</p>
+                <p style="font-size:11px;color:var(--muted);margin-top:8px">La declaración de la Renta y los requerimientos de la AEAT no se incluyen en la cuota mensual y se presupuestan aparte según el caso.</p>
               </div>
 
               <h4>3. Forma de pago</h4>
@@ -239,14 +239,17 @@
     function updateSteps(){ $$('#stepNav .step').forEach((s,i)=>{s.classList.toggle('active',i===Math.min(page,4)-1);s.classList.toggle('done',i<Math.min(page,4)-1)}) }
     function show(n){page=n; $$('.page').forEach(p=>p.classList.toggle('active',+p.dataset.page===n)); updateSteps();window.scrollTo({top:0,behavior:'smooth'});if(n===4)updateReview()}
     function value(id,fallback='—'){return $(id)?.value?.trim()||fallback}
+    function requiresQuote(){
+      return $('#epigraphs').value === '3' || $('#monthlyDocs').value === 'mas150';
+    }
     function updateReview(){
       const map={name:value('#name'),nif:value('#nif'),contact:[value('#email',''),value('#phone','')].filter(Boolean).join(' · ')||'—',activity:value('#activity'),start:formatDate(value('#start','')),intra:value('#intra')};
       Object.entries(map).forEach(([k,v])=>{const node=$(`[data-summary="${k}"]`);if(node)node.textContent=v});
       const c=chosen(); const fmt=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(n);
       let lines=[];
       if(c.includes('alta')){lines.push({label:'Alta como autónomo/a',base:fmt(49),iva:fmt(49*0.21),total:fmt(49*1.21),suffix:'',when:'Se factura al completar el trámite en Hacienda y RETA'})}
-      if(c.includes('basico')){lines.push({label:'Plan Básico · mensual',base:fmt(39),iva:fmt(39*0.21),total:fmt(39*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
-      if(c.includes('avanzado')){lines.push({label:'Plan Avanzado · mensual',base:fmt(59),iva:fmt(59*0.21),total:fmt(59*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
+      if(c.includes('completo')){lines.push({label:'Plan Completo · mensual',base:fmt(54.95),iva:fmt(54.95*0.21),total:fmt(54.95*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
+      if(c.includes('premium')){lines.push({label:'Plan Premium · mensual',base:fmt(74.95),iva:fmt(74.95*0.21),total:fmt(74.95*1.21),suffix:'/mes',when:'Domiciliación mensual · primer cargo al activarse el servicio'})}
       if(lines.length===0)lines.push({label:'Sin servicio seleccionado',base:'—',iva:'',total:'',suffix:'',when:''});
       $('#billItems').innerHTML=lines.map(l=>`<div class="bill-row" style="flex-direction:column;align-items:flex-start;gap:4px;padding:12px 0"><div style="display:flex;justify-content:space-between;width:100%"><span>${l.label}</span><b style="color:#fff;font-weight:800">${l.base}${l.suffix} <span style="font-weight:500;color:#9aa8b2">+ IVA</span></b></div>${l.total?`<div style="display:flex;justify-content:space-between;width:100%;font-size:11px;color:#8ba79a"><span>IVA (${l.iva})</span><span>Total: ${l.total}${l.suffix}</span></div>`:''}${l.when?`<span style="font-size:10px;color:#8ba79a">${l.when}</span>`:''}</div>`).join('');
       $('#billHelp').textContent = 'Hoy no se realiza ningún cargo. Cada importe se cobra por separado, en el momento indicado.';
@@ -254,7 +257,7 @@
       updateAcceptCheckboxes();
     }
     function updateLegalScope(c){
-      const hasAlta=c.includes('alta'), hasBasico=c.includes('basico'), hasAvanzado=c.includes('avanzado');
+      const hasAlta=c.includes('alta'), hasBasico=c.includes('completo'), hasAvanzado=c.includes('premium');
       const hasAny = hasAlta||hasBasico||hasAvanzado;
       $('#legalNoService').style.display = hasAny ? 'none' : '';
       $('#legalAlta').style.display = hasAlta ? '' : 'none';
@@ -268,8 +271,8 @@
       if(hasAlta){
         $('#legalWithdrawalText').innerHTML = 'En la contratación del servicio de <strong>Alta como autónomo/a</strong>, como consumidor dispones de <strong>14 días naturales</strong> desde la contratación para desistir sin indicar motivo y sin coste. Este derecho se pierde si, con tu consentimiento expreso, Clavia ejecuta completamente el servicio antes de que finalice ese plazo — ver casilla correspondiente más abajo. Los planes de gestión mensual no están sujetos a este plazo por tratarse de servicios contratados para el ejercicio de tu actividad profesional; su baja se rige por el punto 4 (duración y baja).';
       }
-      const pdfMap={alta:'hoja-encargo-alta.pdf',basico:'hoja-encargo-basico.pdf',avanzado:'hoja-encargo-avanzado.pdf',alta_basico:'hoja-encargo-alta-basico.pdf',alta_avanzado:'hoja-encargo-alta-avanzado.pdf'};
-      let comboKey = hasBasico&&hasAvanzado ? null : hasAlta&&hasBasico ? 'alta_basico' : hasAlta&&hasAvanzado ? 'alta_avanzado' : hasAlta ? 'alta' : hasBasico ? 'basico' : hasAvanzado ? 'avanzado' : null;
+      const pdfMap={alta:'hoja-encargo-alta.pdf',completo:'hoja-encargo-completo.pdf',premium:'hoja-encargo-premium.pdf',alta_completo:'hoja-encargo-alta-completo.pdf',alta_premium:'hoja-encargo-alta-premium.pdf'};
+      let comboKey = hasBasico&&hasAvanzado ? null : hasAlta&&hasBasico ? 'alta_completo' : hasAlta&&hasAvanzado ? 'alta_premium' : hasAlta ? 'alta' : hasBasico ? 'completo' : hasAvanzado ? 'premium' : null;
       const dl=$('#downloadTerms');
       if(comboKey && pdfMap[comboKey]){ dl.href='./'+pdfMap[comboKey]; dl.setAttribute('download','Hoja-de-encargo-Clavia-'+comboKey+'.pdf'); dl.style.pointerEvents=''; dl.style.opacity='' }
       else { dl.removeAttribute('href'); dl.style.pointerEvents='none'; dl.style.opacity='0.5' }
@@ -294,7 +297,7 @@
       $('#startFieldWrap').style.display = hasAlta ? '' : 'none';
     }
     function updateEpigraphsLimit(){
-      const isBasico = chosen().includes('basico') && !chosen().includes('avanzado');
+      const isBasico = chosen().includes('completo') && !chosen().includes('premium');
       const epi = $('#epigraphs'); const note = $('#epigraphsNote');
       [...epi.options].forEach(o=>{ o.disabled = isBasico && o.value!=='1' });
       if(isBasico){ epi.value='1'; note.style.display='block' } else { note.style.display='none' }
@@ -304,10 +307,10 @@
       $('#viesRoiFieldWrap').style.display = (v==='ue'||v==='both') ? '' : 'none';
     }
     function updateMonthlyDocsLimit(){
-      const isBasico = chosen().includes('basico') && !chosen().includes('avanzado');
+      const isCompleto = chosen().includes('completo') && !chosen().includes('premium');
       const docs = $('#monthlyDocs'); const note = $('#monthlyDocsNote');
-      [...docs.options].forEach(o=>{ o.disabled = isBasico && o.value==='mas50' });
-      if(isBasico){ if(docs.value==='mas50') docs.value='hasta50'; note.style.display='block' } else { note.style.display='none' }
+      [...docs.options].forEach(o=>{ o.disabled = isCompleto && ['de76a150','mas150'].includes(o.value) });
+      if(isCompleto){ if(['de76a150','mas150'].includes(docs.value)) docs.value='hasta75'; note.style.display='block' } else { note.style.display='none' }
     }
     function isEmailValid(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
     function isIbanValid(v){
@@ -353,9 +356,13 @@
       };
     }
     async function startSignwellTest(){
+      if(requiresQuote()){
+        alert('Solicitar presupuesto personalizado: este caso requiere una valoración antes de la firma.');
+        return;
+      }
       const services=chosen();
-      if(services.includes('basico') && services.includes('avanzado')){
-        alert('No se puede contratar el Plan Básico y el Plan Avanzado a la vez. Elige uno de los dos.');
+      if(services.includes('completo') && services.includes('premium')){
+        alert('No se puede contratar el Plan Completo y el Plan Premium a la vez. Elige uno de los dos.');
         return;
       }
       const popup=window.open('', '_blank');
@@ -387,7 +394,7 @@
     $('#finish').addEventListener('click',startSignwellTest);
     $('#openSigningAgain').addEventListener('click',()=>{if(testSigningUrl)window.open(testSigningUrl,'_blank')});
     $('#printTerms').addEventListener('click',()=>window.print());
-    $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='basico'&&i.checked)$('input[value="avanzado"]').checked=false;if(i.value==='avanzado'&&i.checked)$('input[value="basico"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();}));
+    $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='completo'&&i.checked)$('input[value="premium"]').checked=false;if(i.value==='premium'&&i.checked)$('input[value="completo"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();}));
     $('#intra').addEventListener('change',updateViesRoiVisibility);
     updateAltaVisibility();updateEpigraphsLimit();updateViesRoiVisibility();updateMonthlyDocsLimit();
   </script>

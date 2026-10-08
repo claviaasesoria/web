@@ -6,7 +6,7 @@
       "@id": "https://clavia.es/#organization",
       "name": "Clavia",
       "alternateName": "Clavia · Gestoría Online para Autónomos",
-      "description": "Gestoría fiscal y contable 100% online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 39€ + IVA/mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
+      "description": "Gestoría fiscal y contable 100% online para autónomos en España. IVA, IRPF, retenciones e intracomunitarias desde 54,95€ + IVA/mes, sin permanencia. Con sede en Valencia, atendemos a autónomos de toda España.",
       "url": "https://clavia.es",
       "logo": "https://clavia.es/assets/favicon.svg",
       "email": "info@clavia.es",
@@ -32,7 +32,7 @@
         "Declaración de la Renta",
         "Asesoría fiscal autónomos"
       ],
-      "priceRange": "39€–59€ + IVA/mes",
+      "priceRange": "54,95€–74,95€ + IVA/mes",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Valencia",
@@ -113,13 +113,14 @@
       ],
       "serviceType": "Gestoría fiscal online para autónomos",
       "offers": {
-        "@type": "Offer",
-        "name": "Plan Básico Digital",
-        "price": "39",
+        "@type": "AggregateOffer",
+        "name": "Planes para nuevas altas",
+        "lowPrice": "54.95",
+        "highPrice": "74.95",
         "priceCurrency": "EUR",
-        "priceSpecification": "IVA no incluido",
+        "offerCount": 2,
         "availability": "https://schema.org/InStock",
-        "url": "https://clavia.es/empezar"
+        "url": "https://clavia.es/contratar"
       },
       "category": "Servicios fiscales para autónomos",
       "availableChannel": {
@@ -161,7 +162,7 @@
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}
       ],
-      "priceRange": "39€–59€ + IVA/mes",
+      "priceRange": "54,95€–74,95€ + IVA/mes",
       "currenciesAccepted": "EUR",
       "paymentAccepted": "Transferencia bancaria, Domiciliación SEPA, Tarjeta",
       "sameAs": ["https://wa.me/34634450038", "mailto:info@clavia.es"]

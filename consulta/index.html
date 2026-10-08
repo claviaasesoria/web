@@ -59,14 +59,7 @@
     .cb-accept{background:#6FC194;color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer;font-size:11px;letter-spacing:1px;font-family:var(--sans)}
     .cb-reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.4);padding:9px 16px;border-radius:5px;cursor:pointer;font-size:11px;font-family:var(--sans)}
   </style>
-  <!--
-    Real site-wide attribution + Google tag script (assets/clavia-tracking.js), same
-    one used across clavia.es. It captures gclid/utm/referrer into localStorage on
-    landing (config-only — this does NOT fire any conversion) and exposes
-    ClaviaTracking.attribution() so the real captured source travels with this lead,
-    instead of a hardcoded placeholder.
-  -->
-  <script src="/assets/clavia-openai-pixel.js?v=20260907-2"></script>
+  <!-- El tracker conserva atribución de Google/UTM sin disparar conversiones aquí. -->
   <script src="/assets/clavia-tracking.js?v=20260914-2"></script>
   <script>ClaviaTracking.init({trackClicks:true})</script>
 </head>
@@ -130,13 +123,11 @@
     localStorage.setItem('clavia_consent','accepted');
     document.getElementById('cookieBanner').classList.add('hidden');
     if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
-    if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.setConsent(true);
   }
   function rejectCookies(){
     localStorage.setItem('clavia_consent','rejected');
     document.getElementById('cookieBanner').classList.add('hidden');
     if(typeof gtag==='function') gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-    if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.setConsent(false);
   }
   if(localStorage.getItem('clavia_consent')) document.getElementById('cookieBanner').classList.add('hidden');
   </script>
@@ -162,9 +153,6 @@
       const attribution = (window.ClaviaTracking && window.ClaviaTracking.attribution)
         ? window.ClaviaTracking.attribution()
         : { lead_source: "consulta_directa" };
-      if (window.ClaviaOpenAIPixel && window.ClaviaOpenAIPixel.attribution) {
-        Object.assign(attribution, window.ClaviaOpenAIPixel.attribution());
-      }
 
       const payload = {
         diagnostic: false,
@@ -191,14 +179,11 @@
         if (response.status !== 201 && response.status !== 200) {
           throw new Error(data.error || "No se pudo enviar tu consulta.");
         }
-        // The form never fires a conversion itself. It only navigates to the success
-        // page carrying lead_id + conversion_token; gracias.html is what confirms with
-        // the server and decides whether to fire the tag.
+        // The form navigates only after a successful Worker response. The thank-you
+        // page confirms the lead and records the Google Ads conversion.
         const params = new URLSearchParams();
         params.set("lead_id", data.lead_id);
         if (data.conversion_token) params.set("conversion_token", data.conversion_token);
-        // Only this successful Worker response authorizes the browser lead event.
-        sessionStorage.setItem("clavia_openai_pending_lead", data.lead_id);
         window.location.href = `gracias.html?${params.toString()}`;
       } catch (error) {
         showResult("error", error.message || "Error de red. Inténtalo de nuevo.");
