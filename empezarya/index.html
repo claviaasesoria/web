@@ -11,6 +11,7 @@
   <script src="/assets/clavia-tracking.js?v=20260826-1"></script>
   <script>ClaviaTracking.init({trackClicks:true})</script>
   <script src="/assets/clavia-openai-pixel.js?v=20260907-2"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root{
       --ink:#101828; --ink-soft:#344054; --muted:#667085; --line:#dde3ea;
@@ -247,7 +248,8 @@
             <div class="accept warn" id="acceptAltaWrap" style="display:none"><input type="checkbox" id="acceptAltaInmediata"><label for="acceptAltaInmediata"><strong>Solicito expresamente</strong> que Clavia empiece a tramitar mi alta de inmediato. Entiendo que, una vez completado el trámite, <strong>pierdo mi derecho de desistimiento de 14 días</strong> sobre este servicio puntual.</label></div>
             <div class="accept"><input type="checkbox" id="accept"><label for="accept">He revisado el resumen y confirmo que los datos facilitados son correctos. Al pulsar "Firmar y continuar" se abrirá el documento para tu firma electrónica; el encargo queda formalizado cuando ambas partes lo hayan firmado.</label></div>
           </div>
-          <div class="review-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>CONEXIÓN CIFRADA · TUS DATOS SOLO SE USAN PARA ESTE ENCARGO</div>
+          <div style="margin-top:18px"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFTOXu02cGpMjX2b" data-theme="light"></div></div>
+          <div class="review-lock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>CONEXIÓN CIFRADA · TUS DATOS SOLO SE USAN PARA ESTE ENCARGO</div>
           </div>
           <div class="actions"><button class="btn secondary" data-prev>← Corregir datos</button><button class="btn primary" id="finish" disabled>Firmar y continuar <span class="btn-arrow">→</span></button></div>
         </section>
@@ -377,7 +379,13 @@
       return ok;
     }
     const CONTRACT_API = 'https://clavia-contratacion.noisy-sea-21c2.workers.dev/api/contract';
+    const CONTRACT_IDEMPOTENCY_KEY = 'clavia_contract_idempotency_key';
     let signingUrl = '';
+    function contractIdempotencyKey(){
+      let key=sessionStorage.getItem(CONTRACT_IDEMPOTENCY_KEY);
+      if(!key){ key=crypto.randomUUID(); sessionStorage.setItem(CONTRACT_IDEMPOTENCY_KEY,key); }
+      return key;
+    }
     function buildContractPayload(){
       return {
         services: chosen(),
@@ -386,7 +394,7 @@
         publicLocal:$('#publicLocal').checked, staff:$('#staff').checked, rentedSpace:$('#rentedSpace').checked,
         lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
         victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
-        notes:value('#notes',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
+        notes:value('#notes',''), turnstileToken:value('[name="cf-turnstile-response"]',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
         client_type:'self_employed_individual',
         attribution:Object.assign(
           {},
@@ -405,13 +413,18 @@
         alert('No se puede contratar el Plan Completo y el Plan Premium a la vez. Elige uno de los dos.');
         return;
       }
+      if(!value('[name="cf-turnstile-response"]','')){
+        alert('Completa la verificación de seguridad antes de continuar.');
+        return;
+      }
       const popup=window.open('', '_blank');
       const finish=$('#finish'); const original=finish.innerHTML;
       finish.disabled=true; finish.textContent='Preparando tu documento…';
       try{
-        const response=await fetch(CONTRACT_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(buildContractPayload())});
+        const response=await fetch(CONTRACT_API,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':contractIdempotencyKey()},body:JSON.stringify(buildContractPayload())});
         const data=await response.json();
         if(!response.ok)throw new Error(data.error||'No se pudo generar el documento. Inténtalo de nuevo.');
+        sessionStorage.removeItem(CONTRACT_IDEMPOTENCY_KEY);
         signingUrl=data.signingUrl;
         if(data.documentId){
           localStorage.setItem('clavia_pending_contract_document_id',data.documentId);
@@ -425,6 +438,7 @@
         show(5);
       }catch(error){
         if(popup)popup.close();
+        if(window.turnstile)window.turnstile.reset();
         alert(error.message||'No se pudo generar el documento. Inténtalo de nuevo.');
       }finally{
         finish.disabled=false; finish.innerHTML=original;
