@@ -158,6 +158,10 @@
                 <label class="switch"><div><strong>Discapacidad ≥33%</strong><span>Bonificación RETA ampliada</span></div><input type="checkbox" id="disability"></label>
                 <label class="switch"><div><strong>Víctima de violencia de género</strong><span>Bonificación RETA ampliada</span></div><input type="checkbox" id="victimGenderViolence"></label>
               </div>
+              <div class="accept" id="specialCategoryConsentWrap" style="display:none;margin-top:14px">
+                <input type="checkbox" id="acceptSpecialCategoryData">
+                <label for="acceptSpecialCategoryData">Doy mi <strong>consentimiento explícito</strong> para que Clavia trate el dato marcado arriba (víctima de terrorismo, discapacidad o víctima de violencia de género) con la única finalidad de tramitar la bonificación de cuota RETA correspondiente. Es un dato de categoría especial (art. 9 RGPD) y solo se usará para este fin.</label>
+              </div>
             </div>
             <div class="field" style="margin-top:17px"><label for="notes">Algo relevante que debamos saber</label><textarea id="notes" placeholder="Stock importado, facturación inmediata, domicilio comercial diferente, observaciones…"></textarea></div>
           </div>
@@ -334,8 +338,19 @@
       const hasAlta=c.includes('alta');
       const required=[$('#accept').checked,$('#acceptTerms').checked,$('#acceptAutonomo').checked];
       if(hasAlta)required.push($('#acceptAltaInmediata').checked);
+      if(hasSpecialCategoryData())required.push($('#acceptSpecialCategoryData').checked);
       finish.disabled = !required.every(Boolean);
       finish.innerHTML='Firmar y continuar <span class="btn-arrow">→</span>';
+    }
+    function hasSpecialCategoryData(){
+      return $('#victimTerrorism').checked || $('#disability').checked || $('#victimGenderViolence').checked;
+    }
+    function updateSpecialCategoryConsentVisibility(){
+      const wrap=$('#specialCategoryConsentWrap');
+      const needed=hasSpecialCategoryData();
+      wrap.style.display = needed ? '' : 'none';
+      if(!needed)$('#acceptSpecialCategoryData').checked=false;
+      validateFinish();
     }
     function updateAltaVisibility(){
       const hasAlta = chosen().includes('alta');
@@ -405,7 +420,7 @@
         publicLocal:$('#publicLocal').checked, staff:$('#staff').checked, rentedSpace:$('#rentedSpace').checked,
         lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
         victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
-        notes:value('#notes',''), turnstileToken:value('[name="cf-turnstile-response"]',''), acceptTerms:$('#acceptTerms').checked, acceptAutonomo:$('#acceptAutonomo').checked, acceptAltaInmediata:$('#acceptAltaInmediata').checked,
+        notes:value('#notes',''), turnstileToken:value('[name="cf-turnstile-response"]',''), acceptTerms:$('#acceptTerms').checked, acceptAutonomo:$('#acceptAutonomo').checked, acceptAltaInmediata:$('#acceptAltaInmediata').checked, acceptSpecialCategoryData:$('#acceptSpecialCategoryData').checked,
         client_type:'self_employed_individual',
         attribution:Object.assign(
           {},
@@ -462,7 +477,8 @@
       show(page+1)
     }));
     $$('[data-prev]').forEach(b=>b.addEventListener('click',()=>show(page-1)));
-    $$('#accept, #acceptTerms, #acceptAltaInmediata, #acceptAutonomo').forEach(el=>el.addEventListener('change',validateFinish));
+    $$('#accept, #acceptTerms, #acceptAltaInmediata, #acceptAutonomo, #acceptSpecialCategoryData').forEach(el=>el.addEventListener('change',validateFinish));
+    $$('#victimTerrorism, #disability, #victimGenderViolence').forEach(el=>el.addEventListener('change',updateSpecialCategoryConsentVisibility));
     $('#finish').addEventListener('click',startSignwellContract);
     $('#openSigningAgain').addEventListener('click',()=>{if(signingUrl)window.open(signingUrl,'_blank')});
     $('#printTerms').addEventListener('click',()=>window.print());
