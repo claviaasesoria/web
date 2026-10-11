@@ -125,6 +125,7 @@
               <div class="field" id="startFieldWrap"><label for="start">Fecha prevista de inicio <em>*</em></label><input id="start" type="date"><p class="field-error">Este campo es obligatorio.</p></div>
               <div class="field"><label for="workplace">Lugar principal de trabajo <em>*</em></label><input id="workplace" placeholder="Domicilio, coworking, local…"><p class="field-error">Este campo es obligatorio.</p></div>
               <div class="field full"><label for="activity">Describe tu actividad <em>*</em></label><textarea id="activity" placeholder="Qué vendes o qué servicios prestas, a quién y por qué canales."></textarea><p class="field-note">Ejemplo: gestión de redes sociales para empresas, venta online de producto propio, diseño web…</p><p class="field-error">Este campo es obligatorio.</p></div>
+              <div class="field"><label for="territory">Domicilio fiscal y régimen de IVA <em>*</em></label><select id="territory"><option value="">Selecciona una opción</option><option value="peninsula_baleares_general_iva">Península o Baleares · residente fiscal en España · régimen general de IVA</option><option value="canarias_igic">Canarias / IGIC</option><option value="ceuta_melilla_ipsi">Ceuta o Melilla / IPSI</option><option value="pais_vasco_navarra_foral">País Vasco o Navarra / régimen foral</option><option value="other_or_unsure">Otro caso o no estoy seguro/a</option></select><p class="field-note">La contratación online solo está disponible para Península y Baleares bajo régimen general de IVA.</p><p class="field-error">Selecciona una opción.</p></div>
               <div class="field"><label for="epigraphs">Número de actividades / epígrafes</label><select id="epigraphs"><option value="1">Una actividad</option><option value="2">Dos actividades</option><option value="3">Tres o más actividades</option></select><p class="field-note" id="epigraphsNote" style="display:none;color:#3D9166;font-weight:700">El Plan Completo incluye 1 epígrafe. El Plan Premium incluye hasta 2; tres o más requieren presupuesto personalizado.</p></div>
               <div class="field"><label for="intra">Operativa internacional</label><select id="intra"><option value="no">No por ahora</option><option value="ue">Clientes o proveedores UE · ROI/VIES</option><option value="imports">Importaciones o compras fuera de la UE</option><option value="both">UE e importaciones</option></select></div>
               <div class="field" id="viesRoiFieldWrap" style="display:none"><label for="viesRoi">¿Solicitas el alta en el VIES-ROI como operador intracomunitario?</label><select id="viesRoi"><option value="no">No</option><option value="si">Sí</option><option value="noseguro">No estoy seguro/a</option></select><p class="field-note">Registro de Operadores Intracomunitarios — necesario para operar con IVA intracomunitario dentro de la UE.</p></div>
@@ -171,9 +172,9 @@
             </div>
             <div class="bill"><div class="tiny">Resumen económico</div><div class="line-bill"></div><div id="billItems"></div><p class="bill-help" id="billHelp" style="margin-top:16px"></p></div>
           </div>
-          <div id="quoteNotice" class="note" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg><div><strong>Este encargo requiere presupuesto personalizado.</strong> No se puede firmar online porque supera el alcance ordinario. Te redirigiremos a la consulta para valorar el caso.</div></div>
+          <div id="quoteNotice" class="note" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg><div><strong>Esta solicitud necesita revisión antes de continuar.</strong> La contratación online queda reservada para el alcance ordinario y el territorio indicado. Te redirigiremos a la consulta para valorar el encaje.</div></div>
           <div class="divider"></div>
-          <div class="field-grid"><div class="field full"><label for="payment">Método de cobro</label><select id="payment"><option value="stripe">Stripe · Domiciliación Bancaria</option></select><p class="field-note">Se configurará cuando el servicio esté activo — hoy no se realiza ningún cargo.</p></div></div>
+          <div class="field-grid"><div class="field full"><label for="payment">Forma de cobro</label><input id="payment" value="Stripe para el alta · GoCardless (domiciliación SEPA) para la mensualidad" readonly><p class="field-note">El alta se cobra como pago puntual una vez tramitada; la cuota mensual se activa mediante mandato SEPA. Hoy no se realiza ningún cargo.</p></div></div>
 
           <details class="legal-doc">
             <summary>📄 Hoja de encargo y condiciones generales <span class="tag">LECTURA OBLIGATORIA</span> <span class="chev">⌄</span></summary>
@@ -189,25 +190,25 @@
                 <p><strong>Objeto:</strong> el cliente encarga a Clavia un servicio puntual y no recurrente consistente en preparar y tramitar el alta fiscal en Hacienda mediante el modelo censal 036 y el alta en el Régimen Especial de Trabajadores Autónomos (RETA) de la Seguridad Social, conforme a los datos facilitados en el formulario de alta. Este encargo se limita exclusivamente al alta inicial.</p>
                 <p><strong>Incluye:</strong> revisión básica de los datos facilitados; orientación sobre el encuadre censal y de Seguridad Social; preparación y tramitación del alta en Hacienda; preparación y tramitación del alta en RETA; comunicación de los justificantes y confirmaciones obtenidos. Cuando proceda según la actividad y operaciones declaradas, tramitación de la inscripción en el ROI‑VIES.</p>
                 <p><strong>No incluye:</strong> gestión contable o fiscal periódica, presentación de impuestos trimestrales o anuales, declaración de la Renta, atención a requerimientos, recursos, reclamaciones ni trámites posteriores no indicados aquí expresamente. Cualquier modificación posterior, baja, regularización, subsanación, cambio de datos, consulta adicional o gestión periódica se presupuesta aparte, salvo acuerdo escrito distinto.</p>
-                <p><strong>Honorarios:</strong> 49 € + IVA, pago único. El pago se realiza una vez tramitado el alta, mediante factura y transferencia o domiciliación bancaria.</p>
+                <p><strong>Honorarios:</strong> 49 € + IVA, pago único. El pago se realiza una vez tramitado el alta, mediante factura y pago puntual por Stripe.</p>
               </div>
 
               <div id="legalCompleto" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
                 <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Completo — 54,95 € + IVA / mes</p>
-                <p><strong>Incluido:</strong> gestión y presentación de los modelos 303, 130, 111, 115 y 349 cuando proceda; modelos anuales 390, 190 y 347 cuando proceda; hasta 75 facturas por trimestre; 1 epígrafe IAE; atención directa y personalizada de tu gestor por WhatsApp y email; y consultas ordinarias respondidas por escrito cuando requieran análisis.</p>
-                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de la AEAT, recursos, reclamaciones, inspecciones formales, Modelo 369 OSS, un segundo epígrafe, más de 75 facturas por trimestre y complejidad o volumen extraordinarios. Se valoran y presupuestan aparte antes de iniciar el trabajo.</p>
+                <p><strong>Incluido:</strong> gestión y presentación de los modelos 303, 130, 111 y 115 cuando proceda; modelos anuales 390, 190 y 347 cuando proceda; hasta 75 facturas por trimestre; 1 epígrafe IAE; atención directa y personalizada de tu gestor por WhatsApp y email; y consultas ordinarias respondidas por escrito cuando requieran análisis.</p>
+                <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de la AEAT, recursos, reclamaciones, inspecciones formales, Modelo 349, Modelo 369 OSS, un segundo epígrafe, más de 75 facturas por trimestre y complejidad o volumen extraordinarios. Se valoran y presupuestan aparte antes de iniciar el trabajo.</p>
                 <p><strong>Ámbito y limitaciones:</strong> solo para personas físicas autónomas o profesionales residentes fiscales en España sujetas al régimen general de IVA en Península y Baleares. Se excluyen sociedades, Canarias, Ceuta, Melilla, País Vasco y Navarra. No incluye gestión laboral de terceros; el modelo 111, cuando proceda, se limita al ámbito fiscal.</p>
               </div>
 
               <div id="legalPremium" style="display:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 14px">
                 <p style="font-weight:800;color:var(--ink);margin:0 0 8px">Plan Premium — 74,95 € + IVA / mes</p>
-                <p><strong>Incluido:</strong> todo lo incluido en el Plan Completo; de 76 a 150 facturas por trimestre; hasta 2 epígrafes IAE; Modelo 369 OSS cuando proceda; consultas fiscales personalizadas; y revisión y previsión fiscal trimestral proactiva por escrito. Tu gestor lleva personalmente tu gestión y es tu punto de contacto estable.</p>
+                <p><strong>Incluido:</strong> gestión y presentación de los modelos 303, 130, 111 y 115 cuando proceda; modelos anuales 390, 190 y 347 cuando proceda; Modelo 349 y Modelo 369 OSS cuando proceda; de 76 a 150 facturas por trimestre; hasta 2 epígrafes IAE; consultas fiscales personalizadas; revisión y previsión fiscal trimestral proactiva por escrito; y atención directa y personalizada de tu gestor por WhatsApp y email, como tu punto de contacto estable.</p>
                 <p><strong>No incluido:</strong> declaración de la Renta, requerimientos de la AEAT, recursos, reclamaciones, inspecciones formales, un tercer epígrafe, más de 150 facturas por trimestre y expedientes que acumulen varios factores de complejidad. Se valoran y presupuestan aparte antes de iniciar el trabajo.</p>
                 <p><strong>Ámbito y limitaciones:</strong> solo para personas físicas autónomas o profesionales residentes fiscales en España sujetas al régimen general de IVA en Península y Baleares. Se excluyen sociedades, Canarias, Ceuta, Melilla, País Vasco y Navarra. No incluye gestión laboral de terceros; el modelo 111, cuando proceda, se limita al ámbito fiscal.</p>
               </div>
 
               <h4>3. Forma de pago</h4>
-              <p id="legalPrice">Todos los importes se muestran en el resumen económico con IVA desglosado. Cada concepto se cobra por separado, en el momento indicado: el alta al completar el trámite, mediante factura y transferencia o domiciliación; la mensualidad, por domiciliación bancaria, a partir de la activación del servicio.</p>
+              <p id="legalPrice">Todos los importes se muestran en el resumen económico con IVA desglosado. Cada concepto se cobra por separado, en el momento indicado: el alta, al completar el trámite, mediante factura y pago puntual por Stripe; la mensualidad, mediante domiciliación SEPA con GoCardless, a partir de la activación del servicio.</p>
 
               <div id="legalDuration" style="display:none">
                 <h4>4. Duración y baja</h4>
@@ -266,9 +267,19 @@
     function updateSteps(){ $$('#stepNav .step').forEach((s,i)=>{s.classList.toggle('active',i===Math.min(page,4)-1);s.classList.toggle('done',i<Math.min(page,4)-1)}) }
     function show(n){page=n; $$('.page').forEach(p=>p.classList.toggle('active',+p.dataset.page===n)); updateSteps();window.scrollTo({top:0,behavior:'smooth'});if(n===4)updateReview()}
     function value(id,fallback='—'){return $(id)?.value?.trim()||fallback}
-    function requiresQuote(){
-      return $('#epigraphs').value === '3' || $('#monthlyDocs').value === 'mas150';
+    function scopeRequiresQuote(){
+      const services=chosen();
+      const epigraphs=$('#epigraphs').value;
+      const monthlyDocs=$('#monthlyDocs').value;
+      if(epigraphs==='3'||monthlyDocs==='mas150'||monthlyDocs==='noseguro')return true;
+      const hasCompleto=services.includes('completo');
+      const hasPremium=services.includes('premium');
+      if(hasCompleto && (epigraphs!=='1'||monthlyDocs!=='hasta75'))return true;
+      if(hasPremium && (!['1','2'].includes(epigraphs)||monthlyDocs!=='de76a150'))return true;
+      return false;
     }
+    function territoryRequiresReview(){return $('#territory').value !== 'peninsula_baleares_general_iva'}
+    function requiresQuote(){return scopeRequiresQuote() || territoryRequiresReview()}
     function updateReview(){
       const map={name:value('#name'),nif:value('#nif'),contact:[value('#email',''),value('#phone','')].filter(Boolean).join(' · ')||'—',activity:value('#activity'),start:formatDate(value('#start','')),intra:value('#intra')};
       Object.entries(map).forEach(([k,v])=>{const node=$(`[data-summary="${k}"]`);if(node)node.textContent=v});
@@ -316,7 +327,7 @@
       const finish=$('#finish');
       if(requiresQuote()){
         finish.disabled=false;
-        finish.innerHTML='Solicitar presupuesto personalizado <span class="btn-arrow">→</span>';
+        finish.innerHTML='Solicitar revisión de encaje <span class="btn-arrow">→</span>';
         return;
       }
       const c=chosen();
@@ -360,7 +371,7 @@
     function requiredFieldsForPage(n){
       if(n===2)return ['#name','#nif','#birth','#email','#phone','#address'];
       if(n===3){
-        const ids=['#workplace','#activity'];
+        const ids=['#workplace','#activity','#territory'];
         if(chosen().includes('alta'))ids.unshift('#start','#income','#mutua','#college','#iban');
         return ids;
       }
@@ -390,11 +401,11 @@
       return {
         services: chosen(),
         name:value('#name',''), nif:value('#nif',''), birth:value('#birth',''), email:value('#email',''), phone:value('#phone',''), address:value('#address',''),
-        start:value('#start',''), workplace:value('#workplace',''), activity:value('#activity',''), epigraphs:value('#epigraphs',''), intra:value('#intra',''), viesRoi:value('#viesRoi',''), monthlyDocs:value('#monthlyDocs',''),
+        start:value('#start',''), workplace:value('#workplace',''), activity:value('#activity',''), territory:value('#territory',''), epigraphs:value('#epigraphs',''), intra:value('#intra',''), viesRoi:value('#viesRoi',''), monthlyDocs:value('#monthlyDocs',''),
         publicLocal:$('#publicLocal').checked, staff:$('#staff').checked, rentedSpace:$('#rentedSpace').checked,
         lastReta:value('#lastReta',''), flatRate:value('#flatRate',''), benefits:value('#benefits',''), pluriactividad:value('#pluriactividad',''), income:value('#income',''), clave:value('#clave',''), certificate:value('#certificate',''), mutua:value('#mutua',''), college:value('#college',''), iban:value('#iban',''),
         victimTerrorism:$('#victimTerrorism').checked, disability:$('#disability').checked, victimGenderViolence:$('#victimGenderViolence').checked,
-        notes:value('#notes',''), turnstileToken:value('[name="cf-turnstile-response"]',''), acceptAltaInmediata:$('#acceptAltaInmediata').checked,
+        notes:value('#notes',''), turnstileToken:value('[name="cf-turnstile-response"]',''), acceptTerms:$('#acceptTerms').checked, acceptAutonomo:$('#acceptAutonomo').checked, acceptAltaInmediata:$('#acceptAltaInmediata').checked,
         client_type:'self_employed_individual',
         attribution:Object.assign(
           {},
@@ -458,6 +469,7 @@
     $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='completo'&&i.checked)$('input[value="premium"]').checked=false;if(i.value==='premium'&&i.checked)$('input[value="completo"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();validateFinish();}));
     $('#epigraphs').addEventListener('change',validateFinish);
     $('#monthlyDocs').addEventListener('change',validateFinish);
+    $('#territory').addEventListener('change',()=>{clearFieldError($('#territory'));validateFinish()});
     $('#intra').addEventListener('change',updateViesRoiVisibility);
     updateAltaVisibility();updateEpigraphsLimit();updateViesRoiVisibility();updateMonthlyDocsLimit();
     // Preselección por query string: clavia.es/empezarya?plan=alta viene desde
