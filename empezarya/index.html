@@ -259,7 +259,7 @@
           <div class="actions"><button class="btn secondary" data-prev>← Corregir datos</button><button class="btn primary" id="finish" disabled>Firmar y continuar <span class="btn-arrow">→</span></button></div>
         </section>
 
-        <section class="page" data-page="5"><div class="success"><div class="success-mark">✓</div><div class="eyebrow" id="testResultEyebrow" style="color:var(--lime)">Encargo iniciado</div><h1 id="testResultTitle">Tu hoja de encargo está lista para firmar.</h1><p id="testResultCopy">Hemos abierto el documento en una pestaña aparte para que lo firmes. En cuanto Clavia lo firme también, recibirás el PDF completo por email.</p><div class="success-card"><span id="testDocumentLabel">CLAVIA · FIRMA ELECTRÓNICA</span><b id="testDocumentId">Documento creado</b></div><div class="actions" style="margin-top:30px"><button class="btn secondary" id="openSigningAgain">Abrir firma de nuevo</button><button class="btn primary" onclick="location.reload()">Volver al inicio</button></div></div></section>
+        <section class="page" data-page="5"><div class="success"><div class="success-mark">✓</div><div class="eyebrow" id="testResultEyebrow" style="color:var(--lime)">Encargo iniciado</div><h1 id="testResultTitle">Tu hoja de encargo está lista para firmar.</h1><p id="testResultCopy">Te estamos llevando al documento para firmarlo. En cuanto Clavia lo firme también, recibirás el PDF completo por email.</p><div class="success-card"><span id="testDocumentLabel">CLAVIA · FIRMA ELECTRÓNICA</span><b id="testDocumentId">Documento creado</b></div><div class="actions" style="margin-top:30px"><button class="btn secondary" id="openSigningAgain">Abrir firma de nuevo</button><button class="btn primary" onclick="location.reload()">Volver al inicio</button></div></div></section>
       </div>
     </main>
   </div>
@@ -443,7 +443,6 @@
         alert('Completa la verificación de seguridad antes de continuar.');
         return;
       }
-      const popup=window.open('', '_blank');
       const finish=$('#finish'); const original=finish.innerHTML;
       finish.disabled=true; finish.textContent='Preparando tu documento…';
       try{
@@ -459,11 +458,18 @@
           // for lead_created: it represents a different, much rarer funnel outcome.
           if(window.ClaviaOpenAIPixel) window.ClaviaOpenAIPixel.leadCreated('contract_'+data.documentId);
         }
-        if(popup)popup.location.href=signingUrl; else window.location.href=signingUrl;
+        // Navegar la pestaña actual a la URL de firma, nunca abrir una pestaña
+        // nueva. El patrón anterior — abrir una pestaña en blanco con `open`
+        // y rellenarla después de esperar al fetch — queda sujeto a que el
+        // navegador cierre solo esa pestaña si pasa demasiado tiempo entre
+        // abrirla y navegarla, ocurre en Safari y, en ciertas condiciones de
+        // latencia, también en Chrome. La navegación de la pestaña actual
+        // nunca se bloquea ni se cierra, sin importar el navegador ni cuánto
+        // tarde esta llamada de red.
         $('#testDocumentId').textContent=`Documento ${data.documentId}`;
         show(5);
+        window.location.href=signingUrl;
       }catch(error){
-        if(popup)popup.close();
         if(window.turnstile)window.turnstile.reset();
         alert(error.message||'No se pudo generar el documento. Inténtalo de nuevo.');
       }finally{
@@ -480,7 +486,7 @@
     $$('#accept, #acceptTerms, #acceptAltaInmediata, #acceptAutonomo, #acceptSpecialCategoryData').forEach(el=>el.addEventListener('change',validateFinish));
     $$('#victimTerrorism, #disability, #victimGenderViolence').forEach(el=>el.addEventListener('change',updateSpecialCategoryConsentVisibility));
     $('#finish').addEventListener('click',startSignwellContract);
-    $('#openSigningAgain').addEventListener('click',()=>{if(signingUrl)window.open(signingUrl,'_blank')});
+    $('#openSigningAgain').addEventListener('click',()=>{if(signingUrl)window.location.href=signingUrl});
     $('#printTerms').addEventListener('click',()=>window.print());
     $$('input[name="service"]').forEach(i=>i.addEventListener('change',()=>{if(i.value==='completo'&&i.checked)$('input[value="premium"]').checked=false;if(i.value==='premium'&&i.checked)$('input[value="completo"]').checked=false;updateAltaVisibility();updateEpigraphsLimit();updateMonthlyDocsLimit();validateFinish();}));
     $('#epigraphs').addEventListener('change',validateFinish);
